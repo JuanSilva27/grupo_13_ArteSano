@@ -19,3 +19,13 @@ Específicamente:
 + Encuadernación artesanal
 + Té realizados artesanalmente.
 + Yerba orgánica.
+
+## ***Paginas Referentes:***
++  Por el home y la dinámica en general del sitio:
+[Morph] (https://www.morph.com.ar)
+
++ Por los productos que ofrecen:
+[GEA Ceramica artesanal] (https://geaarteceramico.com.ar/)
+
++ Menú desplegable con iconos y colores:
+[CasaIdeas] (https://casaideas.cl)
