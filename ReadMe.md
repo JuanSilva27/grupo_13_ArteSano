@@ -12,7 +12,7 @@ Nos orientamos a la venta de piezas de cerámica con toques delicados inspirados
 ## Juan Silva:
 - 25 años, Estudiante de programación FullStack con Digital House y Fundación Formar
 
-## *** Productos: ***
+## **Productos:**
 Nuestro sitio ofrecerá productos realizados por artesanos y emprendedores. 
 Específicamente:
 + Cerámica artesanal patagónica.
