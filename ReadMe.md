@@ -19,6 +19,8 @@ Específicamente:
 + Encuadernación artesanal
 + Té realizados artesanalmente.
 + Yerba orgánica.
++ tejidos de crochet.
++ libros.
 
 ## ***Paginas Referentes:***
 +  Por el home y la dinámica en general del sitio:
