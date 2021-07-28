@@ -20,7 +20,7 @@ Específicamente:
 + Té realizados artesanalmente.
 + Yerba orgánica.
 + tejidos de crochet.
-+ libros.
++ Libros.
 
 ## ***Paginas Referentes:***
 +  Por el home y la dinámica en general del sitio:
