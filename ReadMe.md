@@ -19,7 +19,7 @@ Específicamente:
 + Encuadernación artesanal
 + Té realizados artesanalmente.
 + Yerba orgánica.
-+ tejidos de crochet.
++ Tejidos de crochet.
 + Libros.
 
 ## ***Paginas Referentes:***
