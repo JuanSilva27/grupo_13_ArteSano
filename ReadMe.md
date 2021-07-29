@@ -18,12 +18,37 @@ Nos orientamos a la venta de piezas de cerámica con toques delicados inspirados
 ## **Productos:**
 Nuestro sitio ofrecerá productos realizados por artesanos y emprendedores. 
 Específicamente:
-+ Cerámica artesanal patagónica.
-+ Encuadernación artesanal
-+ Té realizados artesanalmente.
-+ Yerba orgánica.
-+ Tejidos de crochet.
-+ Libros.
++ ⚱️ Cerámica artesanal patagónica.
+    + Tazas
+    + Bowls & Compoteras
+    + Hora del Té
+    + Mates
+    + Platos
+    + Deco & Jardín
+    + Jarras
++ 📚 Encuadernación
+    + Tradicional
+    + Anillado
+    + Japonesa
+    + Útiles reciclados
++ ☕️ Infusiones
+    + Blends de Té
+    + Yerba Orgánica
+    + Café
++ 💫 Tejidos
+    + Crochet
+    + Dos Agujas
+    + Telar
++ 👐 Madera
+    + Bandejas
+    + Cucharas
+    + Fuentes
++ 📖 Libros Autodidáctas
+    + Carpinteria
+    + Tejidos
+    + Cerámica
+    + Encuadernación
+    + Hierbas comestibles
 
 ## ***Paginas Referentes:***
 +  Por el home y la dinámica en general del sitio:
