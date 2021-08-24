@@ -3,8 +3,8 @@ const app= express()
 const port= 3030
 const path= require("path")
 
-app.use(express.static("public"))
+app.use(express.static('public'))
 
-app.get("/", (req,res)=> {res.sendFile(path.join(__dirname,"public","views","home.html"))})
+app.get("/", (req,res)=> {res.sendFile(path.join(__dirname,"views","home.html"))})
 
 app.listen(port, ()=> console.log("se levanto server en el puerto " +port))
