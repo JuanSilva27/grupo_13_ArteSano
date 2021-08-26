@@ -1,21 +1,18 @@
-# **Arte ❤️ Sano**
+# **La Siesta Arte**
 
-En Arte-Sano encontrarán diseños únicos creados con materias de primera calidad y sobre todo amor.
-Nos orientamos a la venta de piezas de cerámica con toques delicados inspirados en nuestra patagonia Argentina , acompañado de distintas variedades de infusiones de té orgánicos que armonizaran y acompañarán  tu  dia.
+En La Siesta Arte encontrarán diseños únicos creados con materias de primera calidad y sobre todo amor.
+Nos orientamos a la venta de piezas de cerámica con toques delicados inspirados en nuestra patagonia Argentina.
 
 # Integrantes:
 ## 👩  Sol Benavides:
 - 26 años, diseñadora gráfica. Estudiante de programación FullStack con Digital House y Fundación Formar.
 
-## 👩‍🦱 Romina Benitez:
-- 25 años ,  asistente dental .Estudiante de programación FullStack con Digital House y Fundación Formar
-
 ## 🧑 Juan Silva:
 - 25 años, Estudiante de programación FullStack con Digital House y Fundación Formar
 
 ## **Productos:**
-Nuestro sitio ofrecerá productos realizados por artesanos y emprendedores. 
-Específicamente:
+Nuestro sitio ofrecerá productos realizados artesanalmente en cerámica artesanal
+
 + ⚱️ Cerámica artesanal patagónica.
     + Tazas
     + Bowls & Compoteras
@@ -24,29 +21,6 @@ Específicamente:
     + Platos
     + Deco & Jardín
     + Jarras
-+ 📚 Encuadernación
-    + Tradicional
-    + Anillado
-    + Japonesa
-    + Útiles reciclados
-+ ☕️ Infusiones
-    + Blends de Té
-    + Yerba Orgánica
-    + Café
-+ 💫 Tejidos
-    + Crochet
-    + Dos Agujas
-    + Telar
-+ 👐 Madera
-    + Bandejas
-    + Cucharas
-    + Fuentes
-+ 📖 Libros Autodidáctas
-    + Carpinteria
-    + Tejidos
-    + Cerámica
-    + Encuadernación
-    + Hierbas comestibles
 
 ## ***Paginas Referentes:***
 +  Por el home y la dinámica en general del sitio:
