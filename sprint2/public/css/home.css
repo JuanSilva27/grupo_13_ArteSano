@@ -17,3 +17,10 @@ p {
     font-size: medium;
 }
 
+main .banner {
+    width: 100%;
+}
+
+.photo {
+    width: 100%;
+}
