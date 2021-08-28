@@ -1,0 +1,19 @@
+main .titulo{
+font-family: var(--titulos);
+}
+
+main .subt{
+    font-family: var(--subtitulos);
+}
+
+body {
+    font-family: var(--textos);
+    background-color: var(--crema);
+}
+
+
+p {
+    font-family: var(--textos);
+    font-size: medium;
+}
+
