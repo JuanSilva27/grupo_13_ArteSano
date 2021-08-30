@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/img/logoRojo.png" alt="">
+    <P><h1>Crea tu cuenta</h1></P>
+    <form class="formRegister" action="/register" >
+        <p>
+            <label for="Nombre">NOMBRE Y APELLIDO</label>
+            <input type="text" placeholder="Ricardo Ford" name="Nombre">
+        </p>
+        <p>
+            <label for="telefono">TELEFONO</label>
+            <input type="tel" placeholder="01150322196" name="telefono">
+        </p>
+        <p>
+        <label for="provincia">PROVINCIA</label>
+        <select name="provincia">
+            <option value="1">Buenos Aires</option>
+            <option value="2">Capital Federal</option>
+            <option value="3">Catamarca</option>
+            <option value="4">Chaco</option>
+            <option value="5">Chubut</option>
+            <option value="6">Córdoba</option>
+            <option value="7">Corrientes</option>
+            <option value="8">Entre Ríos</option>
+            <option value="9">Formosa</option>
+            <option value="10">Jujuy</option>
+            <option value="11">Mendoza</option>
+            <option value="12">Misiones</option>
+            <option value="13">Neuquén</option>
+            <option value="14">Río Negro</option>
+            <option value="15">Salta</option>
+            <option value="16">San Juan</option>
+            <option value="17">San Luis/option>
+            <option value="18">Santa Cruz</option>
+            <option value="19">Santa Fe</option>
+            <option value="20">Santiago del Estero</option>
+            <option value="21">Tierra del Fuego</option>
+            <option value="22">Octubre</option>
+            <option value="23">Tucumán</option>
+        </select>
+        </p>
+        <P>
+            <label for="localidad">LOCALIDAD</label>
+        <select name="localidad">
+            <option value="1">Ramos Mejia</option>
+            <option value="2">Lomas de Zamora</option>
+            <option value="3">Moron</option>
+            <option value="4">Caballito</option>
+            <option value="5">Ciudadela</option>
+            <option value="6">Hurlingham</option>
+            <option value="7">Monte Grande</option>
+            <option value="8">Castillo</option>
+            <option value="9">Lomas del Mirador</option>
+            <option value="10">Liniers</option>
+        </select>
+        </P>
+        <p>
+            <label for="email">E-MAIL</label>
+            <input type="email" placeholder="Ricardo@gmail.com" name="email" >
+        </p>
+          
+        <p>
+            <label for="password">CONTRASEÑA:</label>
+            <input type="password" placeholder="**********" name="password">
+        </p>
+        <p class="botonContenedor">
+            <input class="boton" type="submit" value="CONFIRMAR">
+        </p>
+    </form>
+</body>
+</html>
