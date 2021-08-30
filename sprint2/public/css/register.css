@@ -46,13 +46,13 @@ form p{
     .botonContenedor {
         margin-right: 65%;
     }
-    @media (min-width: 769px){ 
-        .formRegister{
-            margin-left: 38%;
-        }
-        .botonContenedor {
-            margin-right: 78%;
-            padding-top: 15px;
-        }
-    
+}
+@media (min-width: 769px){ 
+    .formRegister{
+        margin-left: 38%;
+    }
+    .botonContenedor {
+        margin-right: 78%;
+        padding-top: 15px;
+    }
 }
