@@ -100,7 +100,7 @@ header .search{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: baseline;
+    align-items: flex-start;
     padding: .5px 20px;
 }
 header .search input{
