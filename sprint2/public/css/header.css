@@ -111,7 +111,7 @@ header .search input{
     border: none;
 }
 .header .search .searchBttn{
-        width: 5%;
+        width: 20px;
         background-color: white;
         border: none;
         border-radius: 10px 0 0 10px;    
