@@ -35,7 +35,6 @@ a{
 .header .logo{
     display: block;
     width: 140px;
-    height: 56.4px;
     margin-left: 15px;
 }
 
@@ -194,7 +193,6 @@ header .search input{
 
     .header img.logo{
         width: 250px;
-        height: 83px;
     }
 
     .header a.carrito .fas{
@@ -224,7 +222,6 @@ header .search input{
     .logoInf{
         display: block;
         width: 143px;
-        height: 75px;
     }
 
     .footer nav.Contact {
