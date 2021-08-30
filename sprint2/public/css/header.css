@@ -110,7 +110,7 @@ header .search input{
     margin-bottom: 10px;
     border: none;
 }
-.header .search button{
+.header .search .searchBttn{
         width: 5%;
         background-color: white;
         border: none;
@@ -207,7 +207,7 @@ header .search input{
         height: 27px;
     }
 
-    .header .search button{
+    .header .search .searchBttn{
         height: 27px;
         width: 20px;
     } 
