@@ -1,0 +1,170 @@
+h2, h3{
+    font-family: var(--titulos);
+    color: var(--bordo);
+}
+main .titulo{
+    font-family: var(--titulos);
+    text-align: center;
+    color: var(--bordo);
+    margin-top: 15px;
+}
+.tit-container {
+    padding-bottom: 7px;
+    border-bottom: solid 2px var(--bordo);
+    margin: 20px;
+}    
+h4{
+    font-family: var(--subtitulos);
+}
+p, input,textarea{
+    font-family: var(--textos);
+}
+p{
+    color: var(--rojo);
+}
+body{
+    background-color: var(--crema);
+}
+main{
+    margin: 30px auto;
+}
+main article img{
+    width: 60px;
+    height: 60px;
+}
+main article{
+    margin: 20px 30px;
+}
+main section article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main .detalleCarrito article{
+    margin: 25px 5px;
+}
+main .detalleCarrito input{
+    background-color: var(--crema);
+    color: var(--bordo);
+    border: 1px solid var(--crema);
+    border-radius: 50%;
+}
+main section .product div{
+    display: flex;
+    flex-wrap: wrap;
+}
+main section .cantidad{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+main section textarea{
+    resize:none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--crema)
+}
+main section .cantidad input{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+main section .cantidad textarea{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color: var(--crema);
+}
+main section .cantidad .agregarRestar:hover{
+    color: var(--crema);
+    background-color: var(--bordo);
+    border: 1px solid var(--rojo);
+}
+main section .cantidad div{
+    display: flex;
+    justify-content: space-between;
+}
+main .total input{
+    width:120px;
+    color: var(--bordo);
+    background-color: var(--crema);
+    border: 1px solid var(--rojo);
+    border-radius: 10px;
+}
+main .total input:hover{
+    color: var(--crema);
+    background-color: var(--bordo);
+    border: 1px solid var(--rojo);
+    transform: scale(1.15);
+}
+main .finalizar{
+    display: flex;
+    justify-content: center;
+}
+main .finalizar input{
+    width: 180px;
+    margin: 20px 10px;
+    padding: 5px;
+    color: var(--crema);
+    background-color: var(--bordo);
+    border: 2px solid var(--rojo);
+    border-radius: 20px;
+}
+main .finalizar input:hover{
+    transform:scale(1.2);
+}
+main .finalizar .seguir{
+    color: var(--bordo);
+    background-color: var(--crema);
+    border: 2px solid var(--rojo);
+}
+main .relacionado{
+    margin: 30px auto;
+}
+main .relacionado article{
+    display: flex;
+    justify-content: space-around;
+}
+main .precio{
+    display: none;
+}
+main .eliminar{
+    position: relative;
+    top: 25px;
+    right: 15px;
+}
+main .eliminar:hover{
+    color:var(--bordo);
+}
+
+
+/* Tablet */
+
+@media (min-width:481px) {
+    main .total article{
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    main .precio{
+        display:block;
+    }
+}
+
+
+/* Desktop */
+
+@media (min-width:768px) {
+    main .detalleCarrito article{
+        margin: 25px 20%;
+    }
+    main .relacionado{
+        display: flex;
+        flex-direction: row;
+    }
+    main .relacionado div{
+        margin: 15px auto;
+    }
+    main .relacionado article{
+        flex-direction: column;
+    }
+}
