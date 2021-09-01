@@ -16,7 +16,7 @@ main .titulo{
 h4{
     font-family: var(--subtitulos);
 }
-p, input,textarea{
+p, input{
     font-family: var(--textos);
 }
 p{
@@ -28,80 +28,68 @@ body{
 main{
     margin: 30px auto;
 }
-main article img{
+.carrito article img{
     width: 60px;
     height: 60px;
 }
-main article{
+.carrito article{
     margin: 20px 30px;
 }
-main section article{
+.carrito section article{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-main .detalleCarrito article{
+.carrito .detalleCarrito article{
     margin: 25px 5px;
 }
-main .detalleCarrito input{
+.carrito .detalleCarrito input{
     background-color: var(--crema);
     color: var(--bordo);
     border: 1px solid var(--crema);
     border-radius: 50%;
 }
-main section .product div{
+.carrito section .product div{
     display: flex;
     flex-wrap: wrap;
 }
-main section .cantidad{
+.carrito section .cantidad{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
-main section textarea{
-    resize:none;
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--crema)
-}
-main section .cantidad input{
+.carrito section .cantidad input{
     width: 25px;
     height: 25px;
     text-align: center;
 }
-main section .cantidad textarea{
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    background-color: var(--crema);
-}
-main section .cantidad .agregarRestar:hover{
+.carrito section .cantidad .agregarRestar:hover{
     color: var(--crema);
     background-color: var(--bordo);
     border: 1px solid var(--rojo);
 }
-main section .cantidad div{
+.carrito section .cantidad div{
     display: flex;
     justify-content: space-between;
 }
-main .total input{
+.carrito .total input{
     width:120px;
     color: var(--bordo);
     background-color: var(--crema);
     border: 1px solid var(--rojo);
     border-radius: 10px;
 }
-main .total input:hover{
+.carrito .total input:hover{
     color: var(--crema);
     background-color: var(--bordo);
     border: 1px solid var(--rojo);
     transform: scale(1.15);
 }
-main .finalizar{
+.carrito .finalizar{
     display: flex;
     justify-content: center;
 }
-main .finalizar input{
+.carrito .finalizar input{
     width: 180px;
     margin: 20px 10px;
     padding: 5px;
@@ -110,30 +98,30 @@ main .finalizar input{
     border: 2px solid var(--rojo);
     border-radius: 20px;
 }
-main .finalizar input:hover{
+.carrito .finalizar input:hover{
     transform:scale(1.2);
 }
-main .finalizar .seguir{
+.carrito .finalizar .seguir{
     color: var(--bordo);
     background-color: var(--crema);
     border: 2px solid var(--rojo);
 }
-main .relacionado{
+.carrito .relacionado{
     margin: 30px auto;
 }
-main .relacionado article{
+.carrito .relacionado article{
     display: flex;
     justify-content: space-around;
 }
-main .precio{
+.carrito .precio{
     display: none;
 }
-main .eliminar{
+.carrito .eliminar{
     position: relative;
     top: 25px;
     right: 15px;
 }
-main .eliminar:hover{
+.carrito .eliminar:hover{
     color:var(--bordo);
 }
 
@@ -141,11 +129,11 @@ main .eliminar:hover{
 /* Tablet */
 
 @media (min-width:481px) {
-    main .total article{
+    .carrito .total article{
         margin-left: 25%;
         margin-right: 25%;
     }
-    main .precio{
+    .carrito .precio{
         display:block;
     }
 }
@@ -154,17 +142,17 @@ main .eliminar:hover{
 /* Desktop */
 
 @media (min-width:768px) {
-    main .detalleCarrito article{
+    .carrito .detalleCarrito article{
         margin: 25px 20%;
     }
-    main .relacionado{
+    .carrito .relacionado{
         display: flex;
         flex-direction: row;
     }
-    main .relacionado div{
+    .carrito .relacionado div{
         margin: 15px auto;
     }
-    main .relacionado article{
+    .carrito .relacionado article{
         flex-direction: column;
     }
 }
