@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/00fbdd3112.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
     <title>La Siesta Arte - Detalle de producto</title>
 </head>
 <body>
     <main>
-        <h2>Nombre del producto</h2>
+        <div class="tit-container">
+            <h2 class="titulo">Nombre del producto</h2>
+        </div>
         <div class="producto">
-            <section>
+            <section class="fotos">
                 <div class="imgPri">
+                    <button>
+                        <i class="fas fa-solid fa-angle-left"></i>
+                    </button>
                     <img src="/img/taza01-a.jpg" alt="Imagen principal">
+                    <button>
+                        <i class="fas fa-solid fa-angle-right"></i>
+                    </button>
                 </div>
                 <div class="miniaturas">
                     <div class="imgSec">
@@ -23,7 +32,7 @@
                     </div>
                 </div>
             </section>    
-            <section>
+            <section class="descripcion">
                 <h2>$12.345</h2>
                 <h4>Descripción del producto</h4>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad consequuntur tenetur illo ex delectus, quod dolorum.</p>
@@ -42,7 +51,9 @@
             </section>
         </div>
         <section class="relacionado">
-            <h4 class="titulo">Relacionados con tu carrito</h4>
+            <div class="tit-container">
+                <h2 class="titulo">Te puede interesar:</h2>
+            </div>
             <article>
                 <div class="miniaturas">
                     <div class="imgRelac">
@@ -52,12 +63,22 @@
                             <p>$12.345</p>
                         </div>
                         <div class="prodRelac">
-                            <img  src="/img/taza03-a.jpg" alt="Imagen miniatura 01">
+                            <img  src="/img/taza03-a.jpg" alt="Imagen miniatura 02">
                             <h4>Nombre del producto</h4>
                             <p>$12.345</p>
                         </div>
                         <div class="prodRelac">
-                            <img  src="/img/taza04-a.jpg" alt="Imagen miniatura 01">
+                            <img  src="/img/taza04-a.jpg" alt="Imagen miniatura 03">
+                            <h4>Nombre del producto</h4>
+                            <p>$12.345</p>
+                        </div>  
+                        <div class="prodRelac04">
+                            <img  src="/img/taza05-a.jpg" alt="Imagen miniatura 04">
+                            <h4>Nombre del producto</h4>
+                            <p>$12.345</p>
+                        </div>  
+                        <div class="prodRelac05">
+                            <img  src="/img/taza06-a.jpg" alt="Imagen miniatura 05">
                             <h4>Nombre del producto</h4>
                             <p>$12.345</p>
                         </div>  

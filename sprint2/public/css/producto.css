@@ -2,13 +2,20 @@ main section .imgPri{
     display: flex;
     width:50%;
     margin: 10px auto;
+    align-items: center;
+    justify-content: center;
 }
 main section .imgPri img{
     width: 100%;
     height: 100%;
 }
+main section .imgPri button{
+    width: 100%;
+    height: 10%;
+    border-radius: 50%;
+}
 main section .miniaturas{
-    width:80%;
+    width:85%;
     margin: 20px auto;
 }
 main section  .imgSec{
@@ -19,6 +26,9 @@ main section  .imgSec{
 main section  .imgSec img{
     width: 25%;
     height: 80%;
+}
+.imgSec img:hover{
+    transform: scale(1.1);
 }
 main .descripcion{
     margin: auto 30px;
@@ -67,9 +77,15 @@ img{
     border: 2px solid var(--bordo);
     border-radius: 5px;
 }
+.relacionado{
+    margin: 15% auto;
+}
 .prodRelac{
     width: 33%;
     height: 90%;
+}
+.prodRelac:hover, .prodRelac04:hover, .prodRelac05:hover{
+    transform: scale(1.15);
 }
 .imgRelac{
     display: flex;
@@ -77,12 +93,15 @@ img{
     justify-content: space-between;
 }
 .imgRelac img{
-    width: 70%;
+    width: 85%;
 }
 .producto .botones{
     display: flex;
-    
     justify-content: center;
+}
+.botones input:hover{
+    background-color: var(--verde);
+    transform: scale(1.15);
 }
 .producto h2{
     margin: 20px 0;
@@ -93,19 +112,57 @@ img{
 .producto p{
     margin-bottom: 30px;
 }
+.prodRelac04, .prodRelac05{
+    display: none;
+}
+button {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--amarillo);
+    padding: 5px;
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+}
+
+button h4 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Tablet */
+
+@media (min-width:481px) {
+    .prodRelac04{
+        display: block;
+    }
+    .prodRelac04, .prodRelac{
+        width: 23%;
+    }
+}
+
+
+
+
 /* Desktop */
 
 @media (min-width:768px) {
+    .prodRelac05{
+        display: block;
+    }
+    .prodRelac05, .prodRelac04, .prodRelac{
+        width: 18%;
+    }
     .producto{
         display: flex;
         flex-wrap: wrap;
         margin: 30px auto;
     }
-    .producto section{
-        width: 50%;
+    .fotos, .descripcion{
+        width: 45%;
     }
     .producto .botones{
         margin: 40px auto;
     }
-    
 }
