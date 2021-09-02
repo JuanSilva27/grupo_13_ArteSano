@@ -7,115 +7,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/00fbdd3112.js" crossorigin="anonymous"></script>
+    <link rel="shortcut-icon" type="image/png" href="/img/favicon.png">
     <title>La Siesta Arte</title>
 </head>
 
 <body>
-    <header>
+    <header class="header">
+        <a class="imgConteiner" href=""> <img class="logo" src="/img/Logo_claro.png" alt="Logo"></a>
 
+        <div class="esquina">
+            <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+
+            <img class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user">
+        </div>
+
+
+        <div class="menuBttn">
+            <input class="menu" type="checkbox" id='menu'>
+            <label class="hamburguesa" for='menu'>☰</label>
+            <nav class="options">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">PRODUCTOS</a></li>
+                    <li><a href="">SOBRE NOSOTRAS</a></li>
+                    <li><a href="">CONTACTO</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="searchBar">
+            <form class="search" action="search" method="POST">
+                <button type="submit"><i class="fas fa-search"></i></button>
+                <input type="text" name="search">
+            </form>
+        </div>
     </header>
-  
+
+
+
+
 
 
     <!-- seccion home -->
-    <main>
+    <main class="home">
 
 
-<!--  banner -->
+        <!--  banner -->
         <section class="banner">
 
-            <img class="photo" src='/img/banner01.jpg' alt='Bienvenidos' />
-            <i class="fa-solid fa-angle-left"></i>
-            <i class="fa-solid fa-chevron-right"></i>
-            
+
+            <button>
+                <i class="fas fa-solid fa-angle-left"></i>
+            </button>
+
+            <div class="titulo">
+                <h1>La Siesta Arte</h1>
+            </div>
+
+            <button>
+                <i class="fas fa-solid fa-angle-right"></i>
+            </button>
+
+
         </section>
 
 
-<!-- sobre nosotras -->
+        <!-- sobre nosotras -->
         <section class="nosotras">
-
-            <div>
-                <img src='/img/nosotras.jpg' alt='Nosotras' />
+            <div class="tit-container">
+                <h2 class="titulo">Sobre Nosotras</h2>
             </div>
+            <article class="info">
+                <div class="photo">
+                    <img src='/img/nosotras.jpg' width="100%" alt='Nosotras' />
+                </div>
 
-            <div>
-                <h2 class="titulo">Sobre Nosotras</h2> 
 
-            </div>
 
-            <div>
-                <img src="" alt="">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, ab nam sed porro aperiam
-                    pariatur recusandae modi animi! Qui minus corporis facere mollitia optio aspernatur hic consectetur
-                    necessitatibus vitae doloribus?</p>
-            </div>
-            <button class="subt">Conocenos!</button>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, ab nam sed porro aperiam
+                        pariatur recusandae modi animi! Qui minus corporis facere mollitia optio aspernatur hic
+                        consectetur
+                        necessitatibus vitae doloribus?</p>
+
+                    <button class="button">
+                        <h4>Conocenos!</h4>
+                    </button>
+
+                </div>
+            </article>
         </section>
-<!--         Termina sobre nosotras -->
-<!-- Favoritos -->
+        <!--         Termina sobre nosotras -->
+        <!-- Favoritos -->
         <section class="favoritos">
-            <div>
+            <div class="tit-container">
                 <h2 class="titulo">Favoritos</h3>
             </div>
 
-            <article>
-                <div class="img-container">
-                    <img class="photo" src='/img/taza01-a.jpg' alt='Taza' />
-                </div>
-                <div class="description">
-                    <small>Cocina</small>
-                    <i class="fa-regular fa-heart"></i>
-                    <h3 class="subt">Taza Mediana</h3>
-                    <h2 class="subt">$1000</h2>
-                    <p>Taza mediana, capacidad 500ml. Pintada con Aljabas</p>
-                </div>
-                <article>
-
-                <article>
-                    <div class="img-container">
-                        <img class="photo" src='/img/taza03-a.jpg' alt='Taza' />
+            <div class="fav-container">
+                <article class="fav-01">
+                    <div class="photo">
+                        <img src='/img/taza01-a.jpg' width="100%" alt='Taza' />
                     </div>
                     <div class="description">
-                        <small>Cocina</small>
-                        <i class="fa-regular fa-heart"></i>
+                        <div class="categoria">
+                            <small>Cocina</small>
+                            <i class="fas fa-regular fa-heart"></i>
+                        </div>
+                        <h3 class="subt">Taza Mediana</h3>
+                        <h2 class="subt precio">$1000</h2>
+                        <p>Taza mediana, capacidad 500ml. Pintada con Aljabas</p>
+                    </div>
+                </article>
+
+                <article class="fav-02">
+                    <div class="photo">
+                        <img src='/img/taza03-a.jpg' width="100%" alt='Taza' />
+                    </div>
+                    <div class="description">
+                        <div class="categoria">
+                            <small>Cocina</small>
+                            <i class="fas fa-regular fa-heart"></i>
+                        </div>
                         <h3 class="subt">Ensaladera</h3>
-                        <h2 class="subt">$3000</h2>
+                        <h2 class="subt precio">$3000</h2>
                         <p>Ensaladera grande, 30cm de diámetro. Pintada con Lupinos</p>
                     </div>
-                <article>
+                </article>
+
+                <article class="fav-03">
+                    <div class="photo">
+                        <img src='/img/taza01-a.jpg' width="100%" alt='Taza' />
+                    </div>
+                    <div class="description">
+                        <div class="categoria">
+                            <small>Cocina</small>
+                            <i class="fas fa-regular fa-heart"></i>
+                        </div>
+                        <h3 class="subt">Taza Mediana</h3>
+                        <h2 class="subt precio">$1000</h2>
+                        <p>Taza mediana, capacidad 500ml. Pintada con Aljabas</p>
+                    </div>
+                </article>
+
+                <article class="fav-04">
+                    <div class="photo">
+                        <img src='/img/taza03-a.jpg' width="100%" alt='Taza' />
+                    </div>
+                    <div class="description">
+                        <div class="categoria">
+                            <small>Cocina</small>
+                            <i class="fas fa-regular fa-heart"></i>
+                        </div>
+                        <h3 class="subt">Ensaladera</h3>
+                        <h2 class="subt precio">$3000</h2>
+                        <p>Ensaladera grande, 30cm de diámetro. Pintada con Lupinos</p>
+                    </div>
+                </article>
+            </div>
         </section>
-<!-- Termina Favoritos -->
-<!-- Categorias -->
+        <!-- Termina Favoritos -->
+        <!-- Categorias -->
         <section class="categorias">
-
-            <div class="img-container">
-
-                <img src="" alt="">
-                <a href="">Cocina</a>
-                <img src="" alt="">
-                <a href="">Baño</a>
-                <img src="" alt="">
-                <a href="">Decoración</a>
-                <img src="" alt="">
-                <a href="">Juegos de mesa</a>
-
+            <div class="tit-container">
+                <h2 class="titulo">Categorias</h2>
             </div>
 
-        </section>
-<!-- Termina Categorias -->
+            <article class="sec-categorias">
+                <!-- <div class="img-container"> -->
+                <div class="img-container">
+                    <img class="photo" src="/img/cocina.jpg" width="100%" alt="Sección Cocina">
+                    <a class="titulo" href="">Cocina</a>
+                </div>
+                <div class="img-container">
+                    <img class="photo" src="/img/banio.jpg" width="100%" alt="Sección baño">
+                    <a class="titulo" href="">Baño</a>
+                </div>
+                <div class="img-container">
+                    <img class="photo" src="/img/decoracion.jpg" width="100%" alt="Sección Decoración">
+                    <a class="titulo" href="">Decoración</a>
+                </div>
+                <div class="img-container">
+                    <img class="photo" src="/img/juegos.jpg" width="100%" alt="Sección Juegos de Mesa">
+                    <a class="titulo" href="">Juegos de mesa</a>
+                </div>
 
-<!-- Newsletter -->
+            </article>
+
+
+
+        </section>
+        <!-- Termina Categorias -->
+
+        <!-- Newsletter -->
         <section class="newsletter">
-
+            <h3 class="titulo">Suscribite al newsletter</h3>
+            <form class="news-email" action="suscribe" method="">
+                <input type="text" name="Pasanos tu email!">
+                <button type="submit"><i class="fas fa-solid fa-angle-right"></i></button>
+            </form>
+            <h2>No te pierdas nuestras ofertas!</h2>
         </section>
-<!-- Termina newsletter -->
+        <!-- Termina newsletter -->
 
-<section class="mapa">
-<h2 class="titulo">Donde encontrarnos</h2>
-
-</section>
+        <section class="mapa">
+            <div class="tit-container">
+                <h2 class="titulo">Donde encontrarnos</h2>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.778828121687!2d-71.62974418407576!3d-40.76688901646008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9610bffc90e4d727%3A0xe9f9c7f74ebbc0f5!2sLa%20siesta%20Arte!5e0!3m2!1ses!2sar!4v1630461257375!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
 
     </main>
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <nav class="Contact">
+            <ul class="nosotras">
+                <h3>NOSOTRAS</h3>
+                <li><a href="/home"></a>Home</li>
+                <li><a href=""></a>Categorias</li>
+                <li><a href=""></a>Favoritos</li>
+                <li><a href=""></a>¿Como regalar Siesta arte?</li>
+                <li><a href=""></a>Preguntas Frecuentes</li>
+            </ul>
+
+            <ul class="contactanos">
+                <h3>CONTACTANOS</h3>
+                <li><a href="">+54 123 45678</a></li>
+                <li><a href="">Siesta-Arte@consultas.com</a></li>
+            </ul>
+        </nav>
+
+        <div class="LogoRedes">
+            <div class="ImgConteinerFooter">
+                <img class="logoInf" src="/img/Logo_claro.png" alt="Logo">
+            </div>
+
+            <nav class="redes">
+                <ul>
+                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=5491123627220"><i class="fab fa-whatsapp"></i></a></li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright 2021 - La Siesta arte</p>
+        </div>
+
+    </footer>
 </body>
 
 </html>

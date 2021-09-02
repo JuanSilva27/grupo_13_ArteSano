@@ -1,10 +1,48 @@
+main {
+    width: 100%;
+    color: var(--bordo)
+}
+
 main .titulo{
 font-family: var(--titulos);
+text-align: center;
+color: var(--rojo);
+margin-top: 15px;
 }
 
 main .subt{
     font-family: var(--subtitulos);
+    color: var(--rojo);
 }
+
+
+.banner  {
+width: 100%;
+height: 360px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-image: url("/img/banner01.jpg");
+background-size: cover;
+background-repeat:no-repeat;
+background-position: center;
+}
+
+.banner button {
+    margin: 15px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--crema);
+    font-size: 40px;
+}
+.banner button:hover {
+    color: var(--bordo);
+}
+
+.banner .titulo {
+    color: var(--crema);
+}
+
 
 body {
     font-family: var(--textos);
@@ -14,13 +52,216 @@ body {
 
 p {
     font-family: var(--textos);
-    font-size: medium;
 }
 
-main .banner {
+.tit-container {
+    padding-bottom: 7px;
+    border-bottom: solid 2px var(--rojo);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.nosotras .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nosotras p {
+      margin: 15px;
+}
+
+
+.button {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--amarillo);
+    padding: 5px;
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+}
+
+.button h4 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button:hover {
+    background-color: var(--rojo);
+}
+.fav-container{
+/*     margin-top: 15px; */
+    display: flex;  
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    }
+
+.fav-01, .fav-02 {
+    width: 45%;
+}
+
+.fav-03, .fav-04{
+    display: none;
+}
+
+
+.favorito i {
+    color: var(--bordo)
+
+}
+
+.fav-container .categoria {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.categorias {
+    width: 100%;
+    position: relative;
+}
+
+/* .categorias .sec-categorias {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}  */
+
+
+.sec-categorias a{
+    position: absolute;
+/*     top: 50%; */
+    right: 0;
+    width: 100%;
+    background-color: #922814ad;
+    color: var(--crema);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-transform: uppercase;  
+}
+
+/* .tit-categorias {
+
+align-self: flex-start;
+align-items: space-around;
+
+} */
+
+.categorias .img-container  {
     width: 100%;
 }
 
-.photo {
+.tit-categorias .titulo{
+    font-size: 50px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.newsletter {
     width: 100%;
+    text-align: center; 
+    background-color: var(--amarillo);
+}
+
+.newsletter .news-email { 
+    margin: 30px;
+}
+
+.newsletter input {
+    background-color: var(--crema);
+    color: var(--amarillo);
+    border-radius: 50px;
+}
+
+.mapa {
+    height: 300px;
+}
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* -------- Tablet --------- */
+/* -------- Tablet --------- */
+
+@media (min-width: 481px) {
+ 
+  
+.nosotras .photo{
+    width: 60%;
+
+}
+
+.nosotras .text-container {
+    width: 30%;
+}
+.nosotras .info {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+}
+
+.fav-container{
+        display: flex;  
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        }
+
+
+ .fav-03 {
+     display: block;
+ }
+
+.fav-01, .fav-02, .fav-03 {
+    width: 30%;
+}
+
+}
+
+
+
+/*------------desktop--------------*/
+/*------------desktop--------------*/
+@media (min-width:768px) {
+
+    .banner {
+        height: 450px;
+    }
+     .fav-04{
+        display: block;
+    }
+
+    .fav-01, .fav-02, .fav-03, .fav-04{
+        width: 20%;
+    }
+    
+    .fav-container{
+        display: flex;  
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        }
+
+.sec-categorias .img-container {
+    width: 40%;
+}
+    .sec-categorias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+    }
 }
