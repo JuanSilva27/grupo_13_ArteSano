@@ -1,54 +1,79 @@
-.back {
-        font-family: var(--subtitulos);
-        background-color: var(--crema);
-        width: 100%;
-    }
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--subtitulos);
+    background-color: var(--crema);
+    width: 100%;
+}
 .titulo{
     font-family: var(--titulos);
     text-align: center;
+    color: var(--rojo);
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+.cont.titulo{
+    border-bottom: solid 2px var(--rojo);
 }
 form p{
-    margin-top: 20px;
-    margin-bottom: 20px;  
+margin-top: 20px;
+margin-bottom: 20px;  
 }
 .formLogin{
     width: 100%;
-    margin-left: 23%;
-    margin-top: 20px;
-    margin-bottom: 20px;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+label{
+    display: flex;
+    justify-content: left;
+    color: var(--bordo);
+    font-weight: bold;
+}
+.tamaño {
+    border-radius: 3%;
+    border: solid 2px var(--rojo);
+    height: 23px;
+    width: 255px;
 }
 
 .botonLoginContenedor{
     border: none;
-    margin-right: 50%;
     margin-top: 6px;
     display: flex;
-    align-content: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .botonLogin {
-   border: none;
+    border: none;
     color: white;
-    width: 90%;
-    padding: 4px;
+    width: 110px;
+    padding: 9px;
     border-radius: 10px;
     background-color: var(--rojo);
     font-family: var(--textos);
+    margin-bottom: 70px;
 }
 @media (min-width: 481px){ 
-    .formLogin{
-        margin-left: 33%;
-    }
-    .botonLoginContenedor {
-        margin-right: 65%;
+    .tamaño{
+        height: 26px;
+        width: 290px;
     }
 }
 @media (min-width: 769px){ 
-    .formLogin{
-        margin-left: 38%;
-    }
     .botonLoginContenedor {
-        margin-right: 78%;
         padding-top: 15px;
+    }
+    .tamaño{
+        height: 32px;
+        width: 310px;
+    }
+    .background{
+        background-color: var(--amarillo);
+        width: 50%;
+        margin-top: 15px;
+        margin-bottom: 25px;
     }
 }
