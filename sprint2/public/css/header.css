@@ -1,5 +1,17 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 a{
     font-family: var(--textos);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--amarillo);
 }
 
 .header li, .footer li{
@@ -7,14 +19,14 @@ a{
 }
 .header a, footer a{
     text-decoration: none;
-    color: var(--crema);
+    color: black;
 }
 
 .header{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: var(--bordo) ;
+    background-color: var(--amarillo) ;
     width: 100%;
     height: 95px;
     padding-top: 10px; ;
@@ -68,7 +80,7 @@ header input.menu{
 header label {
     display: block;
     width: 100%;
-    color: var(--crema);
+    color: white;
     text-align: center;
 }
 
@@ -90,29 +102,26 @@ header label {
 }
 
 
-header .search{
+.header .search{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: baseline;
+    align-items: flex-start;
     padding: .5px 20px;
 }
-
-header .search input{
+.header .search input{
     flex-grow: 2;
     width: 80%;
     border-radius:0 10px 10px 0;
     margin-bottom: 10px;
     border: none;
-    background-color: var(--crema);
 }
-
-.header .search button{
-        width: 5%;
-        background-color: var(--crema);
+.header .search .searchBttn{
+        width: 20px;
+        height: 16px;
+        background-color: white;
         border: none;
         border-radius: 10px 0 0 10px;    
-        color: var(--bordo)
 }
 
 .header .search i.fas{
@@ -122,13 +131,20 @@ header .search input{
 
 
 /* FOOTER */
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--amarillo);
+}
 
 .footer {
     display: flex;
     flex-direction: column;
     width: 100%;
     
-    background-color: var(--bordo);
+    background-color: var(--amarillo);
 }
 
 .footer nav{
@@ -139,17 +155,15 @@ header .search input{
 
 .footer h3{
     font-family: var(--titulos);
-    border-bottom:1px solid var(--crema) ;
+    border-bottom:1px solid black ;
     padding-left: 10px;
     margin-top: 25px;
-    color: var(--crema)
 }
 
 .footer li{
     padding-left: 10px;
     margin-top: 10px;
     font-family: var(--textos);
-    color: var(--crema)
 }
 
 
@@ -169,18 +183,18 @@ header .search input{
     height: 40px;
 }
 
-.footer .copyright{
+footer .copyright{
     display: flex;
     justify-content: center;
     background-color: var(--crema);
-    font-size: 12px;
-    color: var(--bordo);
-    margin-top: 5px;
-    margin-bottom: 5px
 }
 
 .copyright p{
     font-family: var(--textos);
+}
+
+footer div.copyright {
+    width: 100%;
 }
 
 
@@ -197,7 +211,6 @@ header .search input{
 
     .header img.logo{
         width: 250px;
-        height: 83px;
     }
 
     .header a.carrito .fas{
@@ -212,7 +225,7 @@ header .search input{
         height: 27px;
     }
 
-    .header .search button{
+    .header .search .searchBttn{
         height: 27px;
         width: 20px;
     } 
@@ -227,7 +240,6 @@ header .search input{
     .logoInf{
         display: block;
         width: 143px;
-        height: 75px;
     }
 
     .footer nav.Contact {
@@ -328,13 +340,23 @@ header .search input{
 
     /* footer */
 
-    .footer nav.Contact{
+   /*  .footer nav.Contact{
         padding-left: 60px;
-    }
+    } */
 
 
     .footer img.logoInf{
         width: 230px;
         height: 100px;
+    }
+}
+
+@media (min-width: 1199px){
+    .header {
+        width: 1199px;
+    }
+
+    .footer{
+        width: 1199px;
     }
 }
