@@ -1,0 +1,19 @@
+{
+  "name": "grupo_13_artesano",
+  "version": "1.0.0",
+  "description": "En La Siesta Arte encontrarán diseños únicos creados con materias de primera calidad y sobre todo amor.\r Nos orientamos a la venta de piezas de cerámica con toques delicados inspirados en nuestra patagonia Argentina.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanSilva27/grupo_13_ArteSano.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanSilva27/grupo_13_ArteSano/issues"
+  },
+  "homepage": "https://github.com/JuanSilva27/grupo_13_ArteSano#readme"
+}
