@@ -8,7 +8,10 @@ Nos orientamos a la venta de piezas de cerámica con toques delicados inspirados
 - 26 años, diseñadora gráfica. Estudiante de programación FullStack con Digital House y Fundación Formar.
 
 ## 🧑 Juan Silva:
-- 25 años, Estudiante de programación FullStack con Digital House y Fundación Formar
+- 25 años, Estudiante de programación FullStack con Digital House y Fundación Formar.
+
+## 🧑 Lucas Ravalle:
+- 21 años, Técnico Aviónico, Estudiante de programación FullStack con Digital House y Fundación Formar.
 
 ## **Productos:**
 Nuestro sitio ofrecerá productos realizados artesanalmente en cerámica artesanal
