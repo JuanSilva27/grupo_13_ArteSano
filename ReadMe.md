@@ -10,7 +10,7 @@ Nos orientamos a la venta de piezas de cerámica con toques delicados inspirados
 ## 🧑 Juan Silva:
 - 25 años, Estudiante de programación FullStack con Digital House y Fundación Formar.
 
-## 🧑 Juan Silva:
+## 🧑 Lucas Ravalle:
 - 21 años, Técnico Aviónico, Estudiante de programación FullStack con Digital House y Fundación Formar.
 
 ## **Productos:**
