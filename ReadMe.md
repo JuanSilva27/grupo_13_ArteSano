@@ -13,6 +13,9 @@ Nos orientamos a la venta de piezas de cerámica con toques delicados inspirados
 ## 🧑 Lucas Ravalle:
 - 21 años, Técnico Aviónico, Estudiante de programación FullStack con Digital House y Fundación Formar.
 
+## 🧑 Benitez Eric:
+- 23 años, Técnico Aeronautico, Estudiante de programación FullStack con Digital House y Fundación Formar.
+
 ## **Productos:**
 Nuestro sitio ofrecerá productos realizados artesanalmente en cerámica artesanal
 
