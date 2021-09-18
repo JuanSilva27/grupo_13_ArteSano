@@ -4,6 +4,8 @@ const port= 3030
 const path= require("path")
 
 app.use(express.static('public'))
+app.set("view engine", "ejs");
+
 
 app.get("/carrito", (req,res)=> {res.sendFile(path.join(__dirname,"views","carrito.html"))})
 app.get("/", (req,res)=> {res.sendFile(path.join(__dirname,"views","home.html"))})
