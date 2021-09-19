@@ -1,0 +1,260 @@
+.home {
+    width: 100%;
+    color: var(--bordo);
+
+}
+
+.home .titulo{
+font-family: var(--titulos);
+text-align: center;
+color: var(--rojo);
+margin-top: 15px;
+}
+
+.home .subt{
+    font-family: var(--subtitulos);
+    color: var(--rojo);
+}
+
+.home .banner  {
+width: 100%;
+height: 360px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-image: url("/img/banner01.jpg");
+background-size: cover;
+background-repeat:no-repeat;
+background-position: center;
+}
+
+.home .banner button {
+    margin: 15px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--crema);
+    font-size: 40px;
+}
+
+.home .banner button:hover {
+    color: var(--bordo);
+}
+
+.home .banner .titulo {
+    color: var(--crema);
+}
+
+.body-home {
+    font-family: var(--textos);
+    background-color: var(--crema);
+}
+
+.body-home p {
+    font-family: var(--textos);
+}
+
+.home .tit-container {
+    padding-bottom: 7px;
+    border-bottom: solid 2px var(--rojo);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.home .nosotras .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.home .nosotras p {
+      margin: 15px;
+}
+
+
+.home .button {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--amarillo);
+    padding: 5px;
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+}
+
+.home .button h4 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.home.button:hover {
+    background-color: var(--rojo);
+}
+
+
+.home.fav-container{
+    display: flex;  
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    }
+
+    .home .fav-01, .fav-02 {
+    width: 45%;
+}
+
+.home .fav-03, .fav-04{
+    display: none;
+}
+
+
+.home .favorito i {
+    color: var(--bordo)
+
+}
+
+.home .fav-container .categoria {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.home .categorias {
+    width: 100%;
+    position: relative;
+}
+
+.home .sec-categorias a{
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    background-color: #922814ad;
+    color: var(--crema);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-transform: uppercase;  
+}
+
+
+.home .categorias .img-container  {
+    width: 100%;
+    position: relative;
+}
+
+.home .tit-categorias .titulo{
+    font-size: 50px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.home .map-container {
+    height: 365px;
+}
+
+.home .mapa iframe {
+    width: 100%;
+    height: 308px;
+}
+
+
+/* -------- Tablet --------- */
+/* -------- Tablet --------- */
+
+@media (min-width: 481px) {
+ 
+  
+    .home .nosotras .photo{
+    width: 60%;
+}
+
+.home .nosotras .text-container {
+    width: 30%;
+}
+
+.home .nosotras .info {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+}
+
+.home .fav-container{
+        display: flex;  
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        }
+
+
+        .home .fav-03 {
+     display: block;
+ }
+
+ .home .fav-01, .fav-02, .fav-03 {
+    width: 30%;
+}
+
+.home .map-container {
+    height: 430px;
+}
+.home .mapa iframe {
+    width: 100%;
+    height: 372px;
+}
+
+}
+
+
+
+/*------------desktop--------------*/
+/*------------desktop--------------*/
+
+@media (min-width:769px) {
+
+    .home .banner {
+        height: 450px;
+    }
+    .home .fav-04{
+        display: block;
+    }
+
+    .home .fav-01, .fav-02, .fav-03, .fav-04{
+        width: 20%;
+    }
+    
+    .home .fav-container{
+        display: flex;  
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        }
+
+        .home .sec-categorias .img-container {
+    width: 40%;
+}
+.home .sec-categorias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .home   .map-container {
+        height: 480px;
+    }   
+    
+    .home  .mapa iframe {
+        width: 100%;
+        height: 420px;
+    }
+}
