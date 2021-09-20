@@ -3,41 +3,7 @@
     <%- include("./partials/head.ejs")  %> 
 <body>
 
-    <header >
-        <div class="header">
-
-            <a class="imgConteiner" href="/"> <img class="logo" src="/img/Logo_claro.png" alt="Logo"></a>
-           
-            <div class="esquina">
-            <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-            
-            <img  class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user">
-            </div>
-
-
-            <div class="menuBttn">
-                <input class="menu" type="checkbox" id='menu'>
-                <label class="hamburguesa" for='menu'>☰</label>
-                <nav class="options">
-                    <ul>
-                        <li><a href="/">HOME</a></li>
-                        <li><a href="">PRODUCTOS</a></li>
-                        <li><a href="">SOBRE NOSOTRAS</a></li>
-                        <li><a href="">CONTACTO</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="searchBar">
-                <form class="search" action="search" method="POST">
-                    <button class="searchBttn" type="submit"><i class="fas fa-search"></i></button>
-                    <input type="text" name="search" >
-                </form>
-            </div>
-
-        </div>
-
-    </header>
+    <%- include("./partials/header.ejs") %> 
 
 
     <main class="carrito">
@@ -190,46 +156,6 @@
         </section>
     </main>
 
-    <footer >
-        <div class="footer">
-            <nav class="Contact">
-                <ul class="nosotras">
-                    <h3>NOSOTRAS</h3>
-                    <li><a href="/">Home</a></li>
-                    <li><a href=""></a>Categorias</li>
-                    <li><a href=""></a>Favoritos</li>
-                    <li><a href=""></a>¿Como regalar Siesta arte?</li>
-                    <li><a href=""></a>Preguntas Frecuentes</li>
-                </ul>
-
-                <ul class="contactanos">
-                    <h3>CONTACTANOS</h3>
-                    <li><a href="">+54 123 45678</a></li>
-                    <li><a href="">Siesta-Arte@consultas.com</a></li>
-                </ul>
-            </nav>
-
-            <div class="LogoRedes" >
-                <div class="ImgConteinerFooter">
-                    <img class="logoInf"src="/img/Logo_claro.png" alt="Logo">
-                </div>
-            
-                <nav class="redes">
-                    <ul>
-                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="https://www.instagram.com/lasiesta.arte/" ><i class="fab fa-instagram"></i></a></li>
-                        <li><a href=""><i class="fab fa-whatsapp"></i></a></li>
-                    </ul>
-                </nav>
-            </div>
-
-
-
-        </div>
-
-        <div class="copyright">
-            <p>Copyright 2021 - La Siesta arte</p>
-        </div> 
-    </footer>
+    <%- include("./partials/footer.ejs") %> 
 </body>
 </html>
