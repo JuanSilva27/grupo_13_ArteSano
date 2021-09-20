@@ -1,52 +1,53 @@
-.main {
+main.login {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: var(--subtitulos);
     background-color: var(--crema);
     width: 100%;
+    justify-content: center;
 }
-.titulo{
+.login .titulo{
     font-family: var(--titulos);
     text-align: center;
     color: var(--rojo);
     margin-top: 35px;
     margin-bottom: 25px;
 }
-.cont.titulo{
+.login .cont.titulo{
     border-bottom: solid 2px var(--rojo);
 }
-form p{
+.login form p{
 margin-top: 20px;
 margin-bottom: 20px;  
 }
-.formLogin{
+.login .formLogin{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 } 
-label{
+.login label{
     display: flex;
     justify-content: left;
     color: var(--bordo);
     font-weight: bold;
 }
-.tamaño {
+.login .tamaño {
     border-radius: 3%;
     border: solid 2px var(--rojo);
     height: 23px;
     width: 255px;
 }
 
-.botonLoginContenedor{
+.login .botonLoginContenedor{
     border: none;
     margin-top: 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.botonLogin {
+.login .botonLogin {
     border: none;
     color: white;
     width: 110px;
@@ -57,20 +58,20 @@ label{
     margin-bottom: 70px;
 }
 @media (min-width: 481px){ 
-    .tamaño{
+    .login .tamaño{
         height: 26px;
         width: 290px;
     }
 }
 @media (min-width: 769px){ 
-    .botonLoginContenedor {
+    .login .botonLoginContenedor {
         padding-top: 15px;
     }
-    .tamaño{
+    .login .tamaño{
         height: 32px;
         width: 310px;
     }
-    .background{
+    .login .background{
         background-color: var(--amarillo);
         width: 50%;
         margin-top: 15px;
