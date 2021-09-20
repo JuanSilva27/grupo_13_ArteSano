@@ -1,41 +1,34 @@
 [
     {
-        "id":1,
+        "id":"",
         "img":"taza02-a.jpg",
         "alt":"Imagen miniatura 01",
         "name":"Nombre del producto",
         "price":"$12.345"
     },
     {
-        "id":1,
-        "img":"taza02-a.jpg",
-        "alt":"Imagen miniatura 01",
-        "name":"Nombre del producto",
-        "price":"$12.345"
-    },
-    {
-        "id":2,
+        "id":"",
         "img":"taza03-a.jpg",
+        "alt":"Imagen miniatura 01",
+        "name":"Nombre del producto",
+        "price":"$12.345"
+    },
+    {
+        "id":"03",
+        "img":"taza04-a.jpg",
         "alt":"Imagen miniatura 02",
         "name":"Nombre del producto",
         "price":"$12.345"
     },
     {
-        "id":3,
-        "img":"taza04-a.jpg",
-        "alt":"Imagen miniatura 03",
-        "name":"Nombre del producto",
-        "price":"$12.345"
-    },
-    {
-        "id":4,
+        "id":"04",
         "img":"taza05-a.jpg",
         "alt":"Imagen miniatura 04",
         "name":"Nombre del producto",
         "price":"$12.345"
     },
     {
-        "id":5,
+        "id":"05",
         "img":"taza06-a.jpg",
         "alt":"Imagen miniatura 05",
         "name":"Nombre del producto",
