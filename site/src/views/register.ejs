@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudﬂare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css">
-    <title>La Siesta Arte - Login</title>
-</head>
+    <%- include("./partials/head.ejs")  %> 
 <body>
     <header >
         <div class="header">
@@ -45,26 +38,76 @@
 
     </header>
 
-   
-
- <main class="login">
-    <P class="cont.titulo"><h1 class="titulo">INGRESA</h1></P>
+ <main class="register">
+    <P class="cont.tituloRegister"><h1>Crea tu cuenta</h1></P>
     <div class="background">
-    <form class="formLogin" action="/register" >
-          <p>
-            <label for="email">CORREO ELECTRONICO</label>
+    <form class="formRegister" action="/register" >
+         
+        <p>
+            <label for="Nombre">NOMBRE Y APELLIDO</label>
+            <input class="tamaño" type="text" placeholder="ej: Ricardo Ford" name="Nombre">
+        </p>
+        <p>
+            <label for="telefono">TELEFONO</label>
+            <input class="tamaño" type="tel" placeholder="ej: 0112345678" name="telefono">
+        </p>
+        <p>
+        <label for="provincia">PROVINCIA</label>
+        <select name="provincia" class="tamaño">
+            <option value="1">Buenos Aires</option>
+            <option value="2">Capital Federal</option>
+            <option value="3">Catamarca</option>
+            <option value="4">Chaco</option>
+            <option value="5">Chubut</option>
+            <option value="6">Córdoba</option>
+            <option value="7">Corrientes</option>
+            <option value="8">Entre Ríos</option>
+            <option value="9">Formosa</option>
+            <option value="10">Jujuy</option>
+            <option value="11">Mendoza</option>
+            <option value="12">Misiones</option>
+            <option value="13">Neuquén</option>
+            <option value="14">Río Negro</option>
+            <option value="15">Salta</option>
+            <option value="16">San Juan</option>
+            <option value="17">San Luis/option>
+            <option value="18">Santa Cruz</option>
+            <option value="19">Santa Fe</option>
+            <option value="20">Santiago del Estero</option>
+            <option value="21">Tierra del Fuego</option>
+            <option value="22">Octubre</option>
+            <option value="23">Tucumán</option>
+        </select>
+        </p>
+        <P>
+            <label for="localidad">LOCALIDAD</label>
+        <select name="localidad" class="tamaño">
+            <option value="1">Ramos Mejia</option>
+            <option value="2">Lomas de Zamora</option>
+            <option value="3">Moron</option>
+            <option value="4">Caballito</option>
+            <option value="5">Ciudadela</option>
+            <option value="6">Hurlingham</option>
+            <option value="7">Monte Grande</option>
+            <option value="8">Castillo</option>
+            <option value="9">Lomas del Mirador</option>
+            <option value="10">Liniers</option>
+        </select>
+        </P>
+        <p>
+            <label for="email">E-MAIL</label>
             <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" >
-          </p>
+        </p>
           
-          <p>
+        <p>
             <label for="password">CONTRASEÑA:</label>
-            <input  class="tamaño" type="password" placeholder="**********" name="password">
-          </p>
-          <p class="botonLoginContenedor">
-              <input  class="botonLogin" type="submit" value="INICIAR SESION">
-          </p>
+            <input class="tamaño" type="password" placeholder="**********" name="password">
+        </p>
+        <p class="botonContenedor">
+            <input class="boton" type="submit" value="CONFIRMAR">
+        </p>
     </form>
-  </div>
+</div>
  </main>
  <footer >
     <div class="footer">
@@ -109,16 +152,3 @@
 </footer>
 </body>
 </html>
-<!-- para titulos generales main .titulo{
-font-family: var(--titulos);
-text-align: center;
-color: var(--bordo);
-margin-top: 15px;
-}
-.tit-container {
-    padding-bottom: 7px;
-    border-bottom: solid 2px var(--bordo);
-    margin: 20px;
-} color de texto y borde de los input. cambiar las generalidades del body al main. Hooder para los botones.
- -->
-  
