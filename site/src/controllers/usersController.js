@@ -1,8 +1,8 @@
 module.exports={
     login:function(req, res, next) {
-        res.render('login');
+        res.render('users/login');
       },
     register:function(req, res, next) {
-        res.render('register');
+        res.render('users/register');
       }
 }

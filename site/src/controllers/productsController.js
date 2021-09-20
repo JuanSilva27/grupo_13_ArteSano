@@ -2,10 +2,10 @@ const relacionados=require("../views/data/relacionados.json")
 
 module.exports={
     carrito:function(req, res, next) {
-        res.render('carrito',{relacionados});
+        res.render('products/carrito',{relacionados});
       },
     products:function(req, res, next) {
-        res.render('products',{relacionados});
+        res.render('products/products',{relacionados});
       }
 }
 
