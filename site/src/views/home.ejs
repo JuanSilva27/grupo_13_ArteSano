@@ -71,7 +71,7 @@
                 <% favoritos.forEach(favorito=>{%>
                     <article class="fav-<%= favorito.id %> ">
                         <div class="photo">
-                            <img src='/img/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' />
+                           <a href="/products/producto"> <img src='/img/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' /></a>
                         </div>
                         <div class="description">
                             <div class="categoria">
@@ -95,7 +95,7 @@
                 <h2 class="titulo">Categorias</h2>
             </div>
 
-            <article class="sec-categorias">
+           <article class="sec-categorias">
                 <!-- <div class="img-container"> -->
                     <% categorias.forEach(categoria=>{%> 
                         <div class="img-container">

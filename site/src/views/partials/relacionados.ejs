@@ -1,7 +1,7 @@
 <% relacionados.forEach(relacionado=>{%>
                 
     <div class="prodRelac">
-        <img  src="/img/<%= relacionado.img %> " alt="<%= relacionado.alt %> ">
+        <a href="/products/producto"><img  src="/img/<%= relacionado.img %> " alt="<%= relacionado.alt %> "></a>
         <h4><%= relacionado.name %> </h4>
         <p><%= relacionado.price %> </p>                
     </div>
