@@ -61,71 +61,31 @@
         </section>
         <!--         Termina sobre nosotras -->
         <!-- Favoritos -->
-        <section class="favoritos">
+        <section class="favoritos" id="favoritos">
             <div class="tit-container">
                 <h2 class="titulo">Favoritos</h3>
             </div>
 
             <div class="fav-container">
-                <article class="fav-01">
-                    <div class="photo">
-                        <img src='/img/taza01-a.jpg' width="100%" alt='Taza' />
-                    </div>
-                    <div class="description">
-                        <div class="categoria">
-                            <small>Cocina</small>
-                            <i class="fas fa-regular fa-heart"></i>
-                        </div>
-                        <h3 class="subt">Taza Mediana</h3>
-                        <h2 class="subt precio">$1000</h2>
-                        <p>Taza mediana, capacidad 500ml. Pintada con Aljabas</p>
-                    </div>
-                </article>
 
-                <article class="fav-02">
-                    <div class="photo">
-                        <img src='/img/taza03-a.jpg' width="100%" alt='Taza' />
-                    </div>
-                    <div class="description">
-                        <div class="categoria">
-                            <small>Cocina</small>
-                            <i class="fas fa-regular fa-heart"></i>
+                <% favoritos.forEach(favorito=>{%>
+                    <article class="fav-<%= favorito.id %> ">
+                        <div class="photo">
+                            <img src='/img/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' />
                         </div>
-                        <h3 class="subt">Ensaladera</h3>
-                        <h2 class="subt precio">$3000</h2>
-                        <p>Ensaladera grande, 30cm de diámetro. Pintada con Lupinos</p>
-                    </div>
-                </article>
+                        <div class="description">
+                            <div class="categoria">
+                                <small><%= favorito.categoria %> </small>
+                                <i class="fas fa-regular fa-heart"></i>
+                            </div>
+                            <h3 class="subt"><%= favorito.name %> </h3>
+                            <h2 class="subt precio"><%= favorito.precio %> </h2>
+                            <p><%= favorito.descipcion %></p>
+                        </div>
+                    </article> 
 
-                <article class="fav-03">
-                    <div class="photo">
-                        <img src='/img/taza01-a.jpg' width="100%" alt='Taza' />
-                    </div>
-                    <div class="description">
-                        <div class="categoria">
-                            <small>Cocina</small>
-                            <i class="fas fa-regular fa-heart"></i>
-                        </div>
-                        <h3 class="subt">Taza Mediana</h3>
-                        <h2 class="subt precio">$1000</h2>
-                        <p>Taza mediana, capacidad 500ml. Pintada con Aljabas</p>
-                    </div>
-                </article>
+                <% }) %>  
 
-                <article class="fav-04">
-                    <div class="photo">
-                        <img src='/img/taza03-a.jpg' width="100%" alt='Taza' />
-                    </div>
-                    <div class="description">
-                        <div class="categoria">
-                            <small>Cocina</small>
-                            <i class="fas fa-regular fa-heart"></i>
-                        </div>
-                        <h3 class="subt">Ensaladera</h3>
-                        <h2 class="subt precio">$3000</h2>
-                        <p>Ensaladera grande, 30cm de diámetro. Pintada con Lupinos</p>
-                    </div>
-                </article>
             </div>
         </section>
         <!-- Termina Favoritos -->
@@ -137,22 +97,12 @@
 
             <article class="sec-categorias">
                 <!-- <div class="img-container"> -->
-                <div class="img-container">
-                    <img class="photo" src="/img/cocina.jpg" width="100%" alt="Sección Cocina">
-                    <a class="titulo" href="">Cocina</a>
-                </div>
-                <div class="img-container">
-                    <img class="photo" src="/img/banio.jpg" width="100%" alt="Sección baño">
-                    <a class="titulo" href="">Baño</a>
-                </div>
-                <div class="img-container">
-                    <img class="photo" src="/img/decoracion.jpg" width="100%" alt="Sección Decoración">
-                    <a class="titulo" href="">Decoración</a>
-                </div>
-                <div class="img-container">
-                    <img class="photo" src="/img/juegos.jpg" width="100%" alt="Sección Juegos de Mesa">
-                    <a class="titulo" href="">Juegos de mesa</a>
-                </div>
+                    <% categorias.forEach(categoria=>{%> 
+                        <div class="img-container">
+                        <img class="photo" src="/img/<%= categoria.img %> " width="100%" alt="<%= categoria.alt %> ">
+                        <a href="" class="titulo"><%= categoria.name %> </a>
+                        </div>
+                    <% }) %> 
 
             </article>
 

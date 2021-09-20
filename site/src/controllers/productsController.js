@@ -3,6 +3,7 @@ module.exports={
         res.render('carrito');
       },
     products:function(req, res, next) {
-        res.render('prodicts');
+        res.render('products');
       }
 }
+

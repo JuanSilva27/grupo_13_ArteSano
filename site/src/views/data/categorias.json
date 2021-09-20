@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "img":"cocina.jpg",
+        "name":"Cocina",
+        "alt":"Sección Cocina"
+    },
+    {
+        "id":2,
+        "img":"banio.jpg",
+        "name":"Baño",
+        "alt":"Sección Baño"
+    },
+    {
+        "id":3,
+        "img":"decoracion.jpg",
+        "name":"Decoracion",
+        "alt":"Sección Decoracion"
+    },
+    {
+        "id":4,
+        "img":"juegos.jpg",
+        "name":"Juegos de mesa",
+        "alt":"Sección Juegos de Mesa"
+    }
+]
