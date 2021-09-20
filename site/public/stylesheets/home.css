@@ -95,7 +95,7 @@ background-position: center;
 }
 
 
-.home.fav-container{
+.home div.fav-container{
     display: flex;  
     justify-content: space-evenly;
     flex-wrap: nowrap;
