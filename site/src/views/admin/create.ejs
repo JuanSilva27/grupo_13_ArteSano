@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head.ejs")  %> 
+<body>
+    <%- include("../partials/header.ejs") %> 
+
+ <main class="register">
+    <P class="cont.tituloRegister"><h1>Crea un producto nuevo</h1></P>
+    <div class="background">
+    <form class="formRegister" action="/" >
+         
+        <p>
+            <label for="nombre">NOMBRE</label>
+            <input class="tamaño" type="text" id="nombre" name="nombre">
+        </p>
+
+        <p>
+            <label for="precio">PRECIO</label>
+            <input class="tamaño" type="number" id="precio" name="precio">
+        </p>
+        
+        <p>
+        <label for="categoria">CATEGORÍA</label>
+        <select name="categoria" class="tamaño">
+            <option selected hidden>Seleccione la categoría</option>
+            <% categorias.forEach(categorias=>{%>
+                <option value="<%= categorias.id %> "><%= categorias.name %> </option>
+            <% }) %>
+        </select>
+        </p>
+
+        <p>
+            <label for="descripcion">DESCRIPCION</label>
+            <textarea class="tamaño-desc" name="" id="descripcion" cols="30" rows="10"></textarea>
+        </p>
+        
+        <p>
+            <label for="imagen">IMAGEN</label>
+            <input  type="file" id="imagen" name="imagen" accept="jpg">
+        </p>
+
+        <p class="botonContenedor">
+            <input class="boton" type="submit" value="CONFIRMAR">
+        </p>
+    </form>
+</div>
+ </main>
+ <%- include("../partials/footer.ejs") %> 
+</body>
+</html>
