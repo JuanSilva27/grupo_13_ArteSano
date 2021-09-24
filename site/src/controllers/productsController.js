@@ -5,7 +5,7 @@ module.exports={
         res.render('products/carrito',{relacionados});
       },
     products:function(req, res, next) {
-        res.render('products/products',{relacionados});
+        res.render('products/detalle',{relacionados});
       }
 }
 
