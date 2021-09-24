@@ -77,6 +77,17 @@ main{
     border: 2px solid var(--rojo);
     border-radius: 20px;
 }
+.botones .guardar{
+    width: 180px;
+    height: 40px;
+    font-size: 15px;
+    margin: 20px 10px;
+    padding: 5px;
+    color: var(--crema);
+    background-color: var(--rojo);
+    border: 2px solid var(--rojo);
+    border-radius: 20px;
+}
 .botones input:hover{
     background-color: var(--rojo);
     transform: scale(1.15);

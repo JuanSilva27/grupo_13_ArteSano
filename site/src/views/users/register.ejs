@@ -5,7 +5,7 @@
     <%- include("../partials/header.ejs") %> 
 
  <main class="register">
-    <P class="cont.tituloRegister"><h1>Crea tu cuenta</h1></P>
+    <P class="cont.tituloRegister"><h1>CREA TU CUENTA</h1></P>
     <div class="background">
     <form class="formRegister" action="/" >
          
@@ -20,6 +20,7 @@
         <p>
         <label for="provincia">PROVINCIA</label>
         <select name="provincia" class="tamaño">
+            <option selected hidden>Seleccione tu provincia</option>
             <option value="1">Buenos Aires</option>
             <option value="2">Capital Federal</option>
             <option value="3">Catamarca</option>
@@ -36,7 +37,7 @@
             <option value="14">Río Negro</option>
             <option value="15">Salta</option>
             <option value="16">San Juan</option>
-            <option value="17">San Luis/option>
+            <option value="17">San Luis</option>
             <option value="18">Santa Cruz</option>
             <option value="19">Santa Fe</option>
             <option value="20">Santiago del Estero</option>
@@ -48,6 +49,7 @@
         <P>
             <label for="localidad">LOCALIDAD</label>
         <select name="localidad" class="tamaño">
+            <option selected hidden>Seleccione tu localidad</option>
             <option value="1">Ramos Mejia</option>
             <option value="2">Lomas de Zamora</option>
             <option value="3">Moron</option>
@@ -74,8 +76,15 @@
             <label for="password">CONFIRMAR CONTRASEÑA:</label>
             <input class="tamaño" type="password" placeholder="**********" name="password">
         </p>
-        <p class="botonContenedor">
-            <input class="boton" type="submit" value="CONFIRMAR">
+        <div class="botones">
+            <a href="/">
+                <input class="guardar" type="button" value="Crear cuenta">
+            </a>
+        </div>
+        <p>¿Ya tenés una cuenta? 
+          <a href="/users/login">
+            <p>¡Ingresá desde acá!</p>
+          </a> 
         </p>
     </form>
 </div>
