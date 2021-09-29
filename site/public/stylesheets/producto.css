@@ -97,7 +97,7 @@
 .relacionado{
     margin: 15% auto;
 }
-.prodRelac:hover, .prodRelac03:hover, .prodRelac04:hover, .prodRelac05:hover{
+.prodRelac:hover{
     transform: scale(1.12);
 }
 .producto .botones{
@@ -113,27 +113,25 @@
 .producto p{
     margin-bottom: 30px;
 }
-.prodRelac03, .prodRelac04, .prodRelac05{
-    display: none;
-}
-.prodRelac img, .prodRelac03 img, .prodRelac04 img, .prodRelac05 img{
+.prodRelac img{
     width: 100px;
     height: 140px;
 }
-.detalle-producto .relacionado{
+.relacionado{
     margin: 30px auto;
 }
-.detalle-producto .relacionado .product:hover{
+.relacionado .product:hover{
     transform: scale(1.2);
 }
-.detalle-producto .relacionado article{
+.relacionado article{
     display: flex;
     justify-content: space-between;
     text-align: center;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 }
-.detalle-producto .relacionado article .prodRelac{
+ .relacionado article .prodRelac{
     margin-bottom: 30px;
 }
 
@@ -141,16 +139,13 @@
 /* Tablet */
 
 @media (min-width:481px) {
-    .detalle-producto .relacionado article{
+    .relacionado article{
         flex-direction: row;
     }
-    .prodRelac03{
-        display: block;
+    .prodRelac{
+        width: 50%;
     }
-    .prodRelac03, .prodRelac{
-        width: 30%;
-    }
-    .detalle-producto .relacionado article .prodRelac{
+    .relacionado article .prodRelac{
         margin: auto 0;
     }
 }
@@ -161,11 +156,8 @@
 /* Desktop */
 
 @media (min-width:768px) {
-    .prodRelac05, .prodRelac04{
-        display: block;
-    }
-    .prodRelac05, .prodRelac04,.prodRelac03, .prodRelac{
-        width: 18%;
+    .prodRelac{
+        width: 16%;
     }
     .producto{
         display: flex;

@@ -1,6 +1,6 @@
 [
     {
-        "id": "",
+        "id": "01",
         "img":"taza01-a.jpg",
         "categoria":"Cocina",
         "name":"Taza Mediana",
@@ -9,7 +9,7 @@
         "alt":"Taza"
     },
     {
-        "id": "",
+        "id": "02",
         "img":"taza03-a.jpg",
         "categoria":"Cocina",
         "name":"Ensaladera",
