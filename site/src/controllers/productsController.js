@@ -1,4 +1,4 @@
-const relacionados=require("../views/data/relacionados.json")
+const relacionados=require("../data/relacionados.json")
 
 module.exports={
     carrito:function(req, res, next) {
