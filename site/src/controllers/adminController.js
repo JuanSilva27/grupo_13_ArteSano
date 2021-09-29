@@ -1,5 +1,5 @@
-const relacionados=require("../views/data/relacionados.json")
-const categorias=require("../views/data/categorias.json")
+const relacionados=require("../data/relacionados.json")
+const categorias=require("../data/categorias.json")
 
 module.exports={
     list:function(req, res, next) {

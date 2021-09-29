@@ -4,7 +4,7 @@ const {carrito, products}=require("../controllers/productsController")
 /* GET users listing. */
 router.get('/carrito', carrito);
 
-router.get('/producto', products);
+router.get('/detail', products);
 
 
 module.exports=router

@@ -13,11 +13,6 @@
     <!-- seccion home -->
     <main class="home">
 
-        <div class="goTop">
-            <a href="#"><i class="fas fa-chevron-up"></i></a>
-        </div>
-
-
         <!--  banner -->
         <section class="banner">
 
@@ -75,7 +70,7 @@
                 <% favoritos.forEach(favorito=>{%>
                     <article class="fav-<%= favorito.id %> ">
                         <div class="photo">
-                           <a href="/products/producto"> <img src='/img/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' /></a>
+                           <a href="/products/detail"> <img src='/img/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' /></a>
                         </div>
                         <div class="description">
                             <div class="categoria">
