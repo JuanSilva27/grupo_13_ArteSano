@@ -31,6 +31,12 @@ main.register{
     height: 23px;
     width: 255px;
 }
+.register .tamaño-desc{
+    border-radius: 3%;
+    border: solid 2px var(--rojo);
+    height: 90px;
+    width: 310px;
+}
 .register .boton {
     border: none;
     color: white;
@@ -53,14 +59,25 @@ main.register{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px auto;
+    margin: 15px auto;
 }
-
+.register .formRegister p{
+    margin-top: 40px;
+}
+.register .background{
+    background-color: var(--amarillo);
+    width: 350px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
 
 @media (min-width: 481px){ 
     .register .tamaño{
         height: 26px;
         width: 290px;
+    }
+    .register .background{
+        width: 384px;
     }
 }
 @media (min-width: 769px){ 
@@ -72,10 +89,7 @@ main.register{
         width: 310px;
     }
     .register .background{
-        background-color: var(--amarillo);
         width: 50%;
-        margin-top: 15px;
-        margin-bottom: 25px;
     }
 }
  /* margin left formregister 38% 

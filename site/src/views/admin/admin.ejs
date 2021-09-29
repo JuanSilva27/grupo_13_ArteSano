@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head.ejs")  %> 
+<body>
+
+    <%- include("../partials/header.ejs") %> 
+
+
+    <main class="admin">
+        
+        <div class="botones">
+            <a href="/admin/create">
+                <input class="crear" type="button" value="Agrega un producto">
+            </a>
+        </div>
+
+        <section class="listado">
+        <div class="tit-container">
+            <h2 class="titulo">↓ Estos son los productos existentes ↓</h2> 
+        </div>
+            <% relacionados.forEach(relacionado=>{%>
+                <article>
+                    <div class="product">
+                        <h4> Imagen</h4>
+                        <div>
+                            <img src="/img/<%= relacionado.img %> " alt="">
+                        </div>
+                    </div>
+                    
+                    <div class="product">
+                        <h4> Nombre</h4>
+                        <div>
+                            <p><%= relacionado.name %></p>
+                        </div>
+                    </div>
+
+                    <div class="precio">
+                        <div class="product">
+                            <h4>Precio</h4>
+                            <p><%= relacionado.price %> </p>
+                        </div>
+                    </div>
+                    
+                    <div class="categoria">
+                        <div class="product">
+                            <h4>Categoría</h4>
+                            <p><%= relacionado.categoria %> </p>
+                        </div>
+                    </div>
+
+                    <div class="botones-admin">
+                        <a href="/admin/edit">
+                            <div class="editar">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                        </a>
+                        
+                        <div class="eliminar">
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                    </div>
+                </article>
+            <% }) %>  
+        </section>
+
+    </main>
+
+    <%- include("../partials/footer.ejs") %> 
+</body>
+</html>
