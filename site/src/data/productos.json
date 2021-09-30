@@ -1,6 +1,6 @@
 [
     {
-        "id":"01",
+        "id":1,
         "titulo":"Taza Alta",
         "img":"taza-alta.jpg",
         "descripcion":"Taza alta",
@@ -13,7 +13,7 @@
         "relacionado": false
     },
     {
-        "id":"02",
+        "id":2,
         "titulo":"Taza Base Cuadrada",
         "img":"taza-cuadrada.jpg",
         "descripcion":"taza con base cuadrada",
@@ -22,11 +22,11 @@
         "capacidad":"300 ml",
         "precio":"$1.050",
         "categoria":"Cocina",
-        "favorito":false,
+        "favorito":true,
         "relacionado":false
     },
     {
-        "id":"03",
+        "id":3,
         "titulo":"Taza Gigante",
         "img":"taza-gigante.jpg",
         "descripcion":"Taza gigante",
@@ -39,7 +39,7 @@
         "relacionado": false        
     },
     {
-        "id":"04",
+        "id":4,
         "titulo":"Taza Grande Sopera",
         "img":"taza-sopera.jpg",
         "descripcion":"Taza grande sopera",
@@ -52,7 +52,7 @@
         "relacionado":false       
     },
     {
-        "id":"05",
+        "id":5,
         "titulo":"Taza Jarrito",
         "img":"taza-jarrito",
         "descripcion":"Taza Jarrito",
@@ -61,11 +61,11 @@
         "capacidad":"300 ml",
         "precio":"$1.165",
         "categoria":"Cocina",
-        "favorito": true,
+        "favorito": false,
         "relacionado":false       
     },
     {
-        "id":"06",
+        "id":6,
         "titulo":"Taza de Té",
         "img":"taza-te.jpg",
         "descripcion":"Taza para te",
@@ -79,7 +79,7 @@
         "relacionado":false       
     },
     {
-        "id":"07",
+        "id":7,
         "titulo":"Taza Mediana",
         "img":"taza-mediana.jpg",
         "descripcion":"Taza mediana",
@@ -89,10 +89,10 @@
         "precio":"$1.165",
         "categoria":"Cocina",
         "favorito": true,
-        "relacionado":false       
+        "relacionado":true       
     },
     {
-        "id":"08",
+        "id":8,
         "titulo":"Ensaladera Cuadrada",
         "img":"ensaladera-cuadrada.jpg",
         "descripcion":"",
@@ -105,7 +105,7 @@
         "relacionado":false       
     },
     {
-        "id":"09",
+        "id":9,
         "titulo":"Ensaladera Grande Redonda",
         "img":"ensaladera-redonda-grande.jpg",
         "descripcion":"Ensaladera Grande Redonda",
@@ -117,7 +117,7 @@
         "relacionado":false       
     },
     {
-        "id":"10",
+        "id":10,
         "titulo":"Ensaladera Redonda",
         "img":"ensaladera-redonda.jpg",
         "descripcion":"Ensaladera Redonda",
@@ -129,7 +129,7 @@
         "relacionado":false       
     },
     {
-        "id":"11",
+        "id":11,
         "titulo":"Ensaladera Individual Grande",
         "img":"ensaladera-individual-grande.jpg",
         "descripcion":"Ensaladera Individual Grande",
@@ -141,7 +141,7 @@
         "relacionado":false       
     },
     {
-        "id":"12",
+        "id":12,
         "titulo":"Ensaladera Individual Chica",
         "img":"ensaladera-individual-chica.jpg",
         "descripcion":"Ensaladera individual chica",
@@ -153,9 +153,9 @@
         "relacionado":false       
     },
     {
-        "id":"13",
+        "id":13,
         "titulo":"Mate con Asa",
-        "img":"mate-asa.jpg",
+        "img":"mate-asa.jpeg",
         "descripcion":"Mate con asa",
         "medida-alto":"7,5 cm",
         "medida-diametro":"5 cm",
@@ -165,7 +165,7 @@
         "relacionado":false       
     },
     {
-        "id":"14",
+        "id":14,
         "titulo":"Mate sin Asa",
         "img":"mate-chico.jpg",
         "descripcion":"Mate chico sin asa",
@@ -177,7 +177,7 @@
         "relacionado":false       
     },
     {
-        "id":"15",
+        "id":15,
         "titulo":"Mate Grande",
         "img":"mate-grande.jpg",
         "descripcion":"Mate grande sin asa",
@@ -189,19 +189,19 @@
         "relacionado":false       
     },
     {
-        "id":"16",
+        "id":16,
         "titulo":"Posa Cuchara",
-        "img":"posacuchara.jpg",
+        "img":"posacuchara.jpeg",
         "descripcion":"Posa cuchara para no ensuciar la mesada mientras cocinas.",
         "medida-alto":"24 cm",
         "medida-ancho":"10 cm",
         "precio":"$1.055",
         "categoria":"Cocina",
         "favorito": true,
-        "relacionado":false       
+        "relacionado":true       
     },
     {
-        "id":"17",
+        "id":17,
         "titulo":"Compotera Cuadrada",
         "img":"compotera-cuadrada.jpg",
         "descripcion":"Compotera con forma cuadrada",
@@ -210,10 +210,10 @@
         "precio":"$935",
         "categoria":"Cocina",
         "favorito": true,
-        "relacionado":false       
+        "relacionado":true       
     },
     {
-        "id":"18",
+        "id":18,
         "titulo":"Compotera Redonda",
         "img":"compotera-redonda.jpg",
         "descripcion":"Compotera redonda",
@@ -225,7 +225,7 @@
         "relacionado":false       
     },
     {
-        "id":"19",
+        "id":19,
         "titulo":"Compotera Cónica",
         "img":"compotera-conica.jpg",
         "descripcion":"Compotera con forma conica",
@@ -234,10 +234,10 @@
         "precio":"$935",
         "categoria":"Cocina",
         "favorito": true,
-        "relacionado":false       
+        "relacionado":true       
     },
     {
-        "id":"20",
+        "id":20,
         "titulo":"Compotera Afectada",
         "img":"compotera-afectada.jpg",
         "descripcion":"Compotera con relieve",
@@ -249,7 +249,7 @@
         "relacionado":false       
     },
     {
-        "id":"21",
+        "id":21,
         "titulo":"Tetera",
         "img":"tetera.jpg",
         "capacidad":"700 ml",
@@ -259,17 +259,17 @@
         "relacionado":false       
     },
     {
-        "id":"22",
+        "id":22,
         "titulo":"Catan + extensión",
-        "img":"catan.jpg",
+        "img":"catan.jpeg",
         "descripcion":"El objetivo del juego es construir pueblos, ciudades y caminos sobre un tablero que es distinto cada vez, mientras se van acumulando varios tipos de cartas. Todos estos elementos proporcionan distintas puntuaciones, ganando la partida el primer jugador que llega a los diez puntos. Juego original + expansión para seis personas.",
         "precio":"$25.000",
         "categoria":"Juegos",
         "favorito": true,
-        "relacionado":false       
+        "relacionado":true       
     },
     {
-        "id":"23",
+        "id":23,
         "titulo":"Carcassonne",
         "img":"carcassonne.jpg",
         "descripcion":"Ambientado en la ciudad medieval amurallada francesa de Carcasona, el juego consiste en crear un mapa de juego donde los jugadores compiten por hacer el máximo número de puntos con las mejores posesiones (ciudades, praderas, caminos y monasterios) del mapa.",
@@ -279,7 +279,7 @@
         "relacionado":false       
     },
     {
-        "id":"24",
+        "id":24,
         "titulo":"Caja para cartas",
         "img":"porta-naipes.jpg",
         "descripcion":"Caja para cartas con división interna y tapa.",
@@ -290,7 +290,7 @@
         "relacionado":false       
     },
     {
-        "id":"25",
+        "id":25,
         "titulo":"Domino",
         "img":"domino.jpg",
         "descripcion":"Juego domino color blanco y negro.",
@@ -300,7 +300,7 @@
         "relacionado":false       
     },
     {
-        "id":"26",
+        "id":26,
         "titulo":"Triomino",
         "img":"triomino.jpg",
         "descripcion":"Triominó es una variante de dominó usando fichas triangulares.",
@@ -310,7 +310,7 @@
         "relacionado":false       
     },
     {
-        "id":"27",
+        "id":27,
         "titulo":"Triomino",
         "img":"triomino.jpg",
         "descripcion":"Triominó es una variante de dominó usando fichas triangulares.",
@@ -320,7 +320,7 @@
         "relacionado":false       
     },
     {
-        "id":"28",
+        "id":28,
         "titulo":"Maceta Colgante Grande",
         "img":"maceta-colgante-grande.jpg",
         "descripcion":"Maceta colgante grande.",
@@ -330,7 +330,7 @@
         "relacionado":false       
     },
     {
-        "id":"29",
+        "id":29,
         "titulo":"Maceta Colgante Mediana",
         "img":"maceta-colgante-mediana.jpg",
         "descripcion":"Maceta colgante mediana.",
@@ -340,7 +340,7 @@
         "relacionado":false       
     },
     {
-        "id":"30",
+        "id":30,
         "titulo":"Maceta Colgante Chica",
         "img":"maceta-colgante-chica.jpg",
         "descripcion":"Maceta colgante chica.",
@@ -350,7 +350,7 @@
         "relacionado":false       
     },
     {
-        "id":"31",
+        "id":31,
         "titulo":"Pajaritos",
         "img":"pajaritos.jpg",
         "descripcion":"Pajaritos sonajeros.",
@@ -360,7 +360,7 @@
         "relacionado":false       
     },
     {
-        "id":"32",
+        "id":32,
         "titulo":"Comedero para pajaritos",
         "img":"comedero-pajaros.jpg",
         "descripcion":"Comedero colgante para pajaritos.",
@@ -370,17 +370,17 @@
         "relacionado":false       
     },
     {
-        "id":"33",
+        "id":33,
         "titulo":"Set Jabonera y Vaso",
         "img":"set-banio.jpg",
         "descripcion":"Set jabonera y vaso porta cepillos.",
         "precio":"$1.600",
         "categoria":"Banio",
         "favorito": true,
-        "relacionado":false       
+        "relacionado":true       
     },
     {
-        "id":"34",
+        "id":34,
         "titulo":"Jabonera con Plato",
         "img":"jabonera.jpg",
         "descripcion":"Jabonera con plato.",
@@ -390,13 +390,13 @@
         "relacionado":false       
     },
     {
-        "id":"35",
+        "id":35,
         "titulo":"Vaso para Cepillos de Dientes",
         "img":"porta-cepillos.jpg",
         "descripcion":"Vaso Porta Cepillos de dientes.",
         "precio":"$710",
         "categoria":"Banio",
         "favorito": true,
-        "relacionado":false       
+        "relacionado":true       
     }
 ]

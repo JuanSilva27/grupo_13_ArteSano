@@ -1,8 +1,13 @@
-<% relacionados.forEach(relacionado=>{%>
+
+<% let cont=1 %> 
+<% productos.forEach(relacionado=>{%>
+    <% if(relacionado.relacionado===true && cont<6) {%> 
                 
-    <div class="prodRelac">
-        <a href="/products/detail"><img  src="/img/<%= relacionado.img %> " alt="<%= relacionado.alt %> "></a>
-        <h4><%= relacionado.name %> </h4>
-        <p><%= relacionado.price %> </p>                
-    </div>
+        <div class="prodRelac">
+            <a href="/products/detail/<%= relacionado.id %> "><img  src="/img/<%= relacionado.img %> " alt="<%= relacionado.titulo %> "></a>
+            <h4><%= relacionado.titulo %> </h4>
+            <p><%= relacionado.precio %> </p>                
+        </div>
+        <%cont++  %> 
+    <% } %> 
 <% }) %>

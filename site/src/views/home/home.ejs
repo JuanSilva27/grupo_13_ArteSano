@@ -66,11 +66,13 @@
             </div>
 
             <div class="fav-container">
-
-                <% favoritos.forEach(favorito=>{%>
-                    <article class="fav-<%= favorito.id %> ">
+                <% let contador = 1 %>
+                <% productos.forEach(favorito=>{%>
+                    
+                    <% if(favorito.favorito===true && contador<5){ %>  
+                    <article class="fav-<%= contador %> ">
                         <div class="photo">
-                           <a href="/products/detail"> <img src='/img/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' /></a>
+                           <a href="/products/detail/<%= favorito.id %> "> <img src='/img/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' /></a>
                         </div>
                         <div class="description">
                             <div class="categoria">
@@ -81,7 +83,10 @@
                             <h2 class="subt precio"><%= favorito.precio %> </h2>
                             <p><%= favorito.descipcion %></p>
                         </div>
-                    </article> 
+                        
+                    </article>
+                    <% contador++ %>
+                    <% } %> 
 
                 <% }) %>  
 
