@@ -1,6 +1,6 @@
 # Retrospectiva
 
-# Sprint 3
+# Sprint 2
 
 ## Seguir haciendo:
 - Buena comunicación.
@@ -18,7 +18,7 @@
 - Reuniones extensas.
 
 
-# Sprint 4
+# Sprint 3
 
 ## Seguir haciendo:
 - Buena comunicación.
