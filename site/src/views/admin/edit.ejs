@@ -5,18 +5,18 @@
     <%- include("../partials/header.ejs") %> 
 
     <main class="register">
-        <P class="cont.tituloRegister"><h1>Edición de producto</h1></P>
+        <P class="cont.tituloRegister"><h1>Editando: <%= productEdit.titulo %> </h1></P>
         <div class="background">
-        <form class="formRegister" action="/" >
+        <form class="formRegister" action="/admin/edit/<%= productEdit.id %>?_method=PUT" method="POST">
              
             <p>
-                <label for="nombre">NOMBRE</label>
-                <input class="tamaño" type="text" id="nombre" name="nombre">
+                <label for="titulo">NOMBRE</label>
+                <input class="tamaño" type="text" id="titulo" name="titulo" value="<%= productEdit.titulo %>">
             </p>
     
             <p>
                 <label for="precio">PRECIO</label>
-                <input class="tamaño" type="number" id="precio" name="precio">
+                <input class="tamaño" type="text" id="precio" name="precio" value="<%= productEdit.precio %>">
             </p>
             
             <p>
@@ -24,14 +24,14 @@
             <select name="categoria" class="tamaño">
                 <option selected hidden>Seleccione la categoría</option>
                 <% categorias.forEach(categorias=>{%>
-                    <option value="<%= categorias.id %> "><%= categorias.name %> </option>
+                    <option value="<%= categorias.name %>" <%= productEdit.categoria === categorias.name ? "selected" : null %>  ><%= categorias.name %> </option>
                 <% }) %>
             </select>
             </p>
     
             <p>
                 <label for="descripcion">DESCRIPCION</label>
-                <textarea class="tamaño-desc" name="" id="descripcion" cols="30" rows="10"></textarea>
+                <textarea class="tamaño-desc" name="descripcion" id="descripcion" cols="30" rows="10"><%= productEdit.descripcion %></textarea>
             </p>
             
             <p>
@@ -40,9 +40,9 @@
             </p>
     
             <div class="botones">
-                <a href="/admin">
-                    <input class="guardar" type="button" value="Guardar">
-                </a>
+
+                <button type="submit" class="guardar">Guardar</button>
+
             </div>
         </form>
     </div>
