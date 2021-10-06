@@ -28,7 +28,7 @@
            <% if(producto.categoria === selecCategoria.name && cont<5){%>  
             <article class="pdto<%= cont %> ">
                 <div class="photo">
-                    <img src='/img/<%= producto.img  %> ' width="100%" alt="<%= producto.titulo  %>" />
+                  <a href="/products/detail/<%= producto.id  %>"> <img src='/img/<%= producto.img  %> ' width="100%" alt="<%= producto.titulo  %>" /></a>
                 </div>
                 <div class="description">
                     <div class="categoria">
