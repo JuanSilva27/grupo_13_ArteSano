@@ -10,5 +10,9 @@ const favoritos=require("../data/favoritos.json")
 module.exports={
     index:function(req, res, next) {
         res.render('home/home',{categorias,productos});
-      }
+      },
+
+    about:(req,res,next)=>{
+      res.render("home/aboutus")
+    }
 }

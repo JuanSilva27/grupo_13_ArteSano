@@ -1,0 +1,89 @@
+.aboutus {
+    background-color: var(--crema);
+}
+
+.aboutus .img-container .photo {
+width: 100%
+}
+.aboutus h2 {
+    font-family: var(--titulos);
+    color: var(--rojo);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.aboutus h3 {
+    font-family: var(--titulos);
+    color: var(--rojo);
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.aboutus p {
+    font-family: var(--textos);
+}
+
+.aboutus .tit-container {
+    padding-bottom: 7px;
+    border-bottom: solid 2px var(--rojo);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.aboutus .sobre-nosotras  {
+    display: flex;
+    flex-direction: column;
+} 
+
+.aboutus .sobre-nosotras .photo{
+    width: 100%;
+}
+
+.aboutus .sobre-nosotras .text-container {
+    padding: 20px;
+}
+
+/* .aboutus .cada-una {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+ */
+.aboutus .cada-una .ana, .aboutus .cada-una .ailin, .aboutus .cada-una .paula {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+
+.aboutus .cada-una p {
+    padding: 15px;
+}
+
+.productos .titulo-container a h3 {
+    font-size: 25px;
+    font-family: var(--titulos);
+    text-align: center;
+}
+
+
+/* Tablet------------- */
+
+@media (min-width: 481px) {
+
+ .aboutus .cada-una {
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-between;
+}
+}
+
+@media (min-width: 769px) {
+    .aboutus .sobre-nosotras .text-container {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
