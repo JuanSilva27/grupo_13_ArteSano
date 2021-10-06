@@ -264,7 +264,7 @@
         "img":"catan.jpeg",
         "descripcion":"El objetivo del juego es construir pueblos, ciudades y caminos sobre un tablero que es distinto cada vez, mientras se van acumulando varios tipos de cartas. Todos estos elementos proporcionan distintas puntuaciones, ganando la partida el primer jugador que llega a los diez puntos. Juego original + expansión para seis personas.",
         "precio":"$25.000",
-        "categoria":"Juegos",
+        "categoria":"Juegos de mesa",
         "favorito": true,
         "relacionado":true       
     },
@@ -274,7 +274,7 @@
         "img":"carcassonne.jpg",
         "descripcion":"Ambientado en la ciudad medieval amurallada francesa de Carcasona, el juego consiste en crear un mapa de juego donde los jugadores compiten por hacer el máximo número de puntos con las mejores posesiones (ciudades, praderas, caminos y monasterios) del mapa.",
         "precio":"$15.000",
-        "categoria":"Juegos",
+        "categoria":"Juegos de mesa",
         "favorito": true,
         "relacionado":false       
     },
@@ -285,7 +285,7 @@
         "descripcion":"Caja para cartas con división interna y tapa.",
         "medidas":"20 x 10cm",
         "precio":"$2.500",
-        "categoria":"Juegos",
+        "categoria":"Juegos de mesa",
         "favorito": true,
         "relacionado":false       
     },
@@ -295,7 +295,7 @@
         "img":"domino.jpg",
         "descripcion":"Juego domino color blanco y negro.",
         "precio":"$4.500",
-        "categoria":"Juegos",
+        "categoria":"Juegos de mesa",
         "favorito": true,
         "relacionado":false       
     },
@@ -305,7 +305,7 @@
         "img":"triomino.jpg",
         "descripcion":"Triominó es una variante de dominó usando fichas triangulares.",
         "precio":"$4.500",
-        "categoria":"Juegos",
+        "categoria":"Juegos de mesa",
         "favorito": true,
         "relacionado":false       
     },
@@ -315,7 +315,7 @@
         "img":"triomino.jpg",
         "descripcion":"Triominó es una variante de dominó usando fichas triangulares.",
         "precio":"$4.500",
-        "categoria":"Juegos",
+        "categoria":"Juegos de mesa",
         "favorito": true,
         "relacionado":false       
     },
@@ -375,7 +375,7 @@
         "img":"set-banio.jpg",
         "descripcion":"Set jabonera y vaso porta cepillos.",
         "precio":"$1.600",
-        "categoria":"Banio",
+        "categoria":"Baño",
         "favorito": true,
         "relacionado":true       
     },
@@ -385,7 +385,7 @@
         "img":"jabonera.jpg",
         "descripcion":"Jabonera con plato.",
         "precio":"$1.100",
-        "categoria":"Banio",
+        "categoria":"Baño",
         "favorito": true,
         "relacionado":false       
     },
@@ -395,7 +395,7 @@
         "img":"porta-cepillos.jpg",
         "descripcion":"Vaso Porta Cepillos de dientes.",
         "precio":"$710",
-        "categoria":"Banio",
+        "categoria":"Baño",
         "favorito": true,
         "relacionado":true       
     }
