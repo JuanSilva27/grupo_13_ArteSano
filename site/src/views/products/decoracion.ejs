@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head.ejs') %> 
+
+<body class="decoracion">
+    <!--     Comienza el header---------------------------- -->
+   <%- include('../partials/header.ejs') %> 
+<!-- Fin header ------------------------------------------------------ -->
+
+<section class="main-header">
+    <div class="img-container">
+        <img src="/img/decoracion.jpg" width="100%" alt="Decoración para el hogar">
+    </div>
+    <div class="tit-container">
+        <h1 class="titulo">¡Decorá cada rincón de tu casa!</h1>
+    </div>
+</section>
+
+
+<div class="pdtos-container">
+
+    <article class="pdto01">
+        <div class="photo">
+            <img src='/img/maceta-mediana.jpg' width="100%" alt='Maceta' />
+        </div>
+        <div class="description">
+            <div class="categoria">
+                <h3 class="subt">Maceta mediana</h3>
+                <i class="fas fa-regular fa-heart"></i>
+            </div>
+
+            <h2 class="subtprecio">$1000</h2>
+            <p>Maceta mediana, pintada con técnica esgrafiado.</p>
+
+        </div>
+    </article>
+
+    <article class="pdto02">
+        <div class="photo">
+            <img src='/img/colgante-lunas.jpg' width="100%" alt='Colgante Lunas' />
+        </div>
+        <div class="description">
+            <div class="categoria">
+                <h3 class="subt">Colgante Fases de la Luna</h3>
+                <i class="fas fa-regular fa-heart"></i>
+            </div>
+
+            <h2 class="subtprecio">$5000</h2>
+            <p>Colgante para pared con las fases de la Luna.</p>
+        </div>
+    </article>
+
+    <article class="pdto03">
+        <div class="photo">
+            <img src='/img/maceta-abejas.jpg' width="100%" alt='Maceta Abejas' />
+        </div>
+        <div class="description">
+            <div class="categoria">
+                <h3 class="subt">Maceta Panal de Abejas</h3>
+                <i class="fas fa-regular fa-heart"></i>
+            </div>
+
+            <h2 class="subtprecio">$1500</h2>
+            <p>Maceta de pared inspirada en un panal de abejas.</p>
+        </div>
+    </article>
+
+    <article class="pdto04">
+        <div class="photo">
+            <img src='/img/comedero-pajaros.jpg' width="100%" alt='Comedero para pajaros' />
+        </div>
+        <div class="description">
+            <div class="categoria">
+                <h3 class="subt">Comedero para pájaros</h3>
+                <i class="fas fa-regular fa-heart"></i>
+            </div>
+
+            <h2 class="subtprecio">$3000</h2>
+            <p>Comedero para pájaros colgante.</p>
+        </div>
+    </article>
+</div>
+
+
+<!-- Footer------------------------------- -->
+<%- include('../partials/footer.ejs') %> 
+<!-- Fin del footer ------------------------------------->
+</body>
+</html>
