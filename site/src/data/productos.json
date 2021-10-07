@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "titulo": "Taza Baja",
+    "titulo": "Taza Alta",
     "img": "taza-alta.jpg",
     "descripcion": "Taza alta",
     "medida-alto": "13,5 cm",
@@ -9,19 +9,22 @@
     "capacidad": "350 ml",
     "precio": "$1.165",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
   {
     "id": 2,
     "titulo": "Taza Base Cuadrada",
-    "img": "taza-cuadrada.jpg",
+    "img": "taza-cuadrada.jpg"
+,
     "descripcion": "taza con base cuadrada",
     "medida-alto": "10,5 cm",
     "medida-diametro": "8 cm",
     "capacidad": "300 ml",
     "precio": "$1.050",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -35,6 +38,7 @@
     "capacidad": "650 ml",
     "precio": "$1.450",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -48,6 +52,7 @@
     "capacidad": "500 ml",
     "precio": "$1.165",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -61,6 +66,7 @@
     "capacidad": "300 ml",
     "precio": "$1.165",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": false,
     "relacionado": false
   },
@@ -75,6 +81,7 @@
     "capacidad": "300 ml",
     "precio": "$1050",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -88,6 +95,7 @@
     "capacidad": "450 ml",
     "precio": "$1.165",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": true
   },
@@ -101,6 +109,7 @@
     "medida-diametro": "13,5 cm",
     "precio": "$2.442",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -113,6 +122,7 @@
     "medida-diametro": "26,5 cm",
     "precio": "$3.108",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -125,6 +135,7 @@
     "medida-diametro": "19 cm",
     "precio": "$1.960",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -137,6 +148,7 @@
     "medida-diametro": "18 cm",
     "precio": "$1.887",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -149,6 +161,7 @@
     "medida-diametro": "15 cm",
     "precio": "$1.554",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -161,6 +174,7 @@
     "medida-diametro": "5 cm",
     "precio": "$780",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -173,6 +187,7 @@
     "medida-diametro": "5,5 cm",
     "precio": "$890",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -185,6 +200,7 @@
     "medida-diametro": "8 cm",
     "precio": "$990",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -197,6 +213,7 @@
     "medida-ancho": "10 cm",
     "precio": "$1.055",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": true
   },
@@ -209,6 +226,7 @@
     "medida-ancho": "12,5 cm",
     "precio": "$935",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": true
   },
@@ -221,6 +239,7 @@
     "medida-diametro": "11 cm",
     "precio": "$910",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -233,6 +252,7 @@
     "medida-diametro": "13 cm",
     "precio": "$935",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": true
   },
@@ -245,6 +265,7 @@
     "medida-diametro": "13 cm",
     "precio": "$935",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
@@ -255,6 +276,7 @@
     "capacidad": "700 ml",
     "precio": "$3.108",
     "categoria": "Cocina",
+    "flor": ["Aljaba", "Lupino", "Rosa Mosqueta", "Muticia", "Todas"],
     "favorito": true,
     "relacionado": false
   },
