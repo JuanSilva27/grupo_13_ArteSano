@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "titulo": "Taza Baja",
+    "titulo": "Taza Alta",
     "img": "taza-alta.jpg",
     "descripcion": "Taza alta",
     "medida-alto": "13,5 cm",
@@ -398,5 +398,15 @@
     "categoria": "Banio",
     "favorito": true,
     "relacionado": true
+  },
+  {
+    "titulo": "estufa",
+    "precio": "12",
+    "categoria": "1 ",
+    "descripcion": "dada",
+    "imagen": "",
+    "id": 36,
+    "favorito": false,
+    "relacionados": false
   }
 ]
