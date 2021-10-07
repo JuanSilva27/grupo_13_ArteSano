@@ -53,6 +53,7 @@ module.exports={
         object.id=productos.length+1
         object.favorito = false
         object.relacionados = false
+        object.precio = "$" + object.precio
         productos.push(object)
         
         fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))

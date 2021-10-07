@@ -398,15 +398,5 @@
     "categoria": "Banio",
     "favorito": true,
     "relacionado": true
-  },
-  {
-    "titulo": "estufa",
-    "precio": "12",
-    "categoria": "1 ",
-    "descripcion": "dada",
-    "imagen": "",
-    "id": 36,
-    "favorito": false,
-    "relacionados": false
   }
 ]
