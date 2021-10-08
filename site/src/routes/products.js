@@ -15,5 +15,6 @@ router.get('/detail/:id', detail);
 
 ///categotias
 router.get("/:categoria",categoria)
+router.get('/products', products);
 
 module.exports=router

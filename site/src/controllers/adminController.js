@@ -4,7 +4,7 @@ const path= require ("path")
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 let productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
 const categorias=require("../data/categorias.json");
-const { products } = require("./productsController");
+/* const { products } = require("./productsController"); */
 
 module.exports={
     list:function(req, res, next) {
@@ -46,6 +46,19 @@ module.exports={
         productos=productos.filter(product=> product.id !== +req.params.id)
         fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
         res.redirect("/admin")
-      }
+      },
+
+      newProduct: (req, res) => {
+        let object=req.body
+        object.id=productos.length+1
+        object.favorito = false
+        object.relacionados = false
+        object.precio = "$" + object.precio
+        productos.push(object)
+        
+        fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
+        res.redirect(`/products/detail/${object.id}`)
+      },
+      
     
 }
