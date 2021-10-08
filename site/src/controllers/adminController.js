@@ -57,7 +57,7 @@ module.exports={
         productos.push(object)
         
         fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
-        res.redirect(`/admin`)
+        res.redirect(`/products/detail/${object.id}`)
       },
       
     
