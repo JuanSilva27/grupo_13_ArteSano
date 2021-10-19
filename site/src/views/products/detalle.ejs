@@ -7,7 +7,7 @@
 
     <main class="detalle-producto">
         <div class="tit-container">
-            <h2 class="titulo">Nombre del producto</h2>
+            <h2 class="titulo"><%= producto.titulo%> </h2>
         </div>
 
         <!-- En esta parte se muestra todo lo referido al producto como fotos, descripcion, etc. -->
@@ -17,7 +17,7 @@
                     <button>
                         <i class="fas fa-solid fa-angle-left"></i>
                     </button>
-                    <img src="/img/taza01-a.jpg" alt="Imagen principal">
+                    <img src="/img/<%= producto.img %> " alt="Imagen principal">
                     <button>
                         <i class="fas fa-solid fa-angle-right"></i>
                     </button>
@@ -32,8 +32,8 @@
             </article>    
 
             <article class="descripcion">
-                <h2>$12.345</h2>
-                <h4>Descripción del producto</h4>
+                <h2>$<%= producto.precio %> </h2>
+                <h4><%= producto.descripcion %></h4>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad consequuntur tenetur illo ex delectus, quod dolorum.</p>
                 <div class="cantidad">
                     <h4>Cantidad</h4>

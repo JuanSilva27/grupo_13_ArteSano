@@ -46,11 +46,9 @@
     Saber que, en cada región del mundo, un pueblo tiene una técnica para el mismo material nos conecta profundamente con el proceso de crear piezas para nuestras cotidianidades que estén llenas de valor.
                     </p>
 
-                    <button class="button">
-                        <a href="/sobrenosotras">
-                            <h4>Conocenos!</h4>
-                        </a>
-                    </button>
+                    <a href="/about" class="button">
+                        <h4>Conocenos!</h4>
+                    </a>
 
                 </div>
             </article>
@@ -63,65 +61,30 @@
             </div>
 
             <div class="fav-container">
-                <article class="fav-01">
-                    <div class="photo">
-                        <img src='/img/taza01-a.jpg' width="100%" alt='Taza' />
-                    </div>
-                    <div class="description">
-                        <div class="categoria">
-                            <small>Cocina</small>
-                            <i class="fas fa-regular fa-heart"></i>
+                <% let contador = 1 %>
+                <% productos.forEach(favorito=>{%>
+                    
+                    <% if(favorito.favorito===true && contador<5){ %>  
+                    <article class="fav-<%= contador %> ">
+                        <div class="photo">
+                           <a href="/products/detail/<%= favorito.id %> "> <img src='/img/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' /></a>
                         </div>
-                        <h3 class="subt">Taza Mediana</h3>
-                        <h2 class="subt precio">$1000</h2>
-                        <p>Taza mediana, capacidad 500ml. Pintada con Aljabas</p>
-                    </div>
-                </article>
+                        <div class="description">
+                            <div class="categoria">
+                                <small><%= favorito.categoria %> </small>
+                                <i class="fas fa-regular fa-heart"></i>
+                            </div>
+                            <h3 class="subt"><%= favorito.name %> </h3>
+                            <h2 class="subt precio">$<%= favorito.precio %> </h2>
+                            <p><%= favorito.descipcion %></p>
+                        </div>
+                        
+                    </article>
+                    <% contador++ %>
+                    <% } %> 
 
-                <article class="fav-02">
-                    <div class="photo">
-                        <img src='/img/taza03-a.jpg' width="100%" alt='Taza' />
-                    </div>
-                    <div class="description">
-                        <div class="categoria">
-                            <small>Cocina</small>
-                            <i class="fas fa-regular fa-heart"></i>
-                        </div>
-                        <h3 class="subt">Ensaladera</h3>
-                        <h2 class="subt precio">$3000</h2>
-                        <p>Ensaladera grande, 30cm de diámetro. Pintada con Lupinos</p>
-                    </div>
-                </article>
+                <% }) %>  
 
-                <article class="fav-03">
-                    <div class="photo">
-                        <img src='/img/taza01-a.jpg' width="100%" alt='Taza' />
-                    </div>
-                    <div class="description">
-                        <div class="categoria">
-                            <small>Cocina</small>
-                            <i class="fas fa-regular fa-heart"></i>
-                        </div>
-                        <h3 class="subt">Taza Mediana</h3>
-                        <h2 class="subt precio">$1000</h2>
-                        <p>Taza mediana, capacidad 500ml. Pintada con Aljabas</p>
-                    </div>
-                </article>
-
-                <article class="fav-04">
-                    <div class="photo">
-                        <img src='/img/taza03-a.jpg' width="100%" alt='Taza' />
-                    </div>
-                    <div class="description">
-                        <div class="categoria">
-                            <small>Cocina</small>
-                            <i class="fas fa-regular fa-heart"></i>
-                        </div>
-                        <h3 class="subt">Ensaladera</h3>
-                        <h2 class="subt precio">$3000</h2>
-                        <p>Ensaladera grande, 30cm de diámetro. Pintada con Lupinos</p>
-                    </div>
-                </article>
             </div>
         </section>
         <!-- Termina Favoritos -->
@@ -133,23 +96,14 @@
                 </a>
             </div>
 
-            <article class="sec-categorias">
-                    <div class="img-container">
-                    <img class="photo" src="/img/cocina.jpg" width="100%" alt="Sección Cocina">
-                    <a class="titulo" href="/products/cocina">Cocina</a>
-                </div>
-                <div class="img-container">
-                    <img class="photo" src="/img/banio.jpg" width="100%" alt="Sección baño">
-                    <a class="titulo" href="/products/banio">Baño</a>
-                </div>
-                <div class="img-container">
-                    <img class="photo" src="/img/decoracion.jpg" width="100%" alt="Sección Decoración">
-                    <a class="titulo" href="/products/decoracion">Decoración</a>
-                </div>
-                <div class="img-container">
-                    <img class="photo" src="/img/juegos.jpg" width="100%" alt="Sección Juegos de Mesa">
-                    <a class="titulo" href="/products/juegos">Juegos de mesa</a>
-                </div>
+           <article class="sec-categorias">
+                <!-- <div class="img-container"> -->
+                    <% categorias.forEach(categoria=>{%> 
+                        <div class="img-container">
+                        <img class="photo" src="/img/<%= categoria.img %> " width="100%" alt="<%= categoria.alt %> ">
+                        <a href="/products/<%= categoria.href %> " class="titulo"><%= categoria.name %> </a>
+                        </div>
+                    <% }) %> 
 
             </article>
 

@@ -1,6 +1,6 @@
 # Retrospectiva
 
-# Sprint 3
+# Sprint 2
 
 ## Seguir haciendo:
 - Buena comunicación.
@@ -13,6 +13,47 @@
 ## Empezar a hacer:
 - Poner fechas de vencimiento.
 - Dailys.
+
+## Hacer menos:
+- Reuniones extensas.
+
+
+# Sprint 3
+
+## Seguir haciendo:
+- Buena comunicación.
+- Consultar entre nosotros.
+- Ayudar cuando otro tiene dificultades.
+- Avisar cambios que se suban a develop.
+
+## Hacer más:
+- Organización en trello.
+- Anotaciones de preguntas e ideas que surgen.
+
+## Empezar a hacer:
+- Reuniones el mismo día que nos entregan el sprint.
+- Poner fechas de vencimiento.
+- Dailys.
+
+
+## Hacer menos:
+- Reuniones extensas.
+
+# Sprint 4
+
+## Seguir haciendo:
+- Buena comunicación.
+- Consultar entre nosotros.
+- Ayudar cuando otro tiene dificultades.
+- Poner fechas de vencimiento.
+
+## Hacer más:
+- Organización en trello.
+- Buscar mas informacion e ideas para mejorar el proyecto.
+
+## Empezar a hacer:
+- Weekly.
+- Tomar nota de las reuniones.
 
 ## Hacer menos:
 - Reuniones extensas.

@@ -102,11 +102,11 @@ background-position: center;
     flex-direction: row;
     }
 
-    .home .fav-01, .fav-02 {
+    .home .fav-1, .fav-2 {
     width: 45%;
 }
 
-.home .fav-03, .fav-04{
+.home .fav-3, .fav-4{
     display: none;
 }
 
@@ -195,11 +195,11 @@ background-position: center;
         }
 
 
-        .home .fav-03 {
+        .home .fav-3 {
      display: block;
  }
 
- .home .fav-01, .fav-02, .fav-03 {
+ .home .fav-1, .fav-2, .fav-3 {
     width: 30%;
 }
 
@@ -223,11 +223,11 @@ background-position: center;
     .home .banner {
         height: 450px;
     }
-    .home .fav-04{
+    .home .fav-4{
         display: block;
     }
 
-    .home .fav-01, .fav-02, .fav-03, .fav-04{
+    .home .fav-1, .fav-2, .fav-3, .fav-4{
         width: 20%;
     }
     
