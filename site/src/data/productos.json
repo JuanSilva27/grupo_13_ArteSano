@@ -7,7 +7,7 @@
     "medida-alto": "13,5 cm",
     "medida-diametro": "8,5 cm",
     "capacidad": "350 ml",
-    "precio": 1.165,
+    "precio": 1165,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -27,7 +27,7 @@
     "medida-alto": "10,5 cm",
     "medida-diametro": "8 cm",
     "capacidad": "300 ml",
-    "precio": 1.050,
+    "precio": 1050,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -47,7 +47,7 @@
     "medida-alto": "11,5 cm",
     "medida-diametro": "10 cm",
     "capacidad": "650 ml",
-    "precio": 1.450,
+    "precio": 1450,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -67,7 +67,7 @@
     "medida-alto": "8 cm",
     "medida-diametro": "13,5 cm",
     "capacidad": "500 ml",
-    "precio": 1.165,
+    "precio": 1165,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -87,7 +87,7 @@
     "medida-alto": "9,5 cm",
     "medida-diametro": "8 cm",
     "capacidad": "300 ml",
-    "precio": 1.165,
+    "precio": 1165,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -128,7 +128,7 @@
     "medida-alto": "10,5 cm",
     "medida-diametro": "9,5 cm",
     "capacidad": "450 ml",
-    "precio": 1.165,
+    "precio": 1165,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -148,7 +148,7 @@
     "medida-alto": "9,5 cm",
     "medida-ancho": "21,5 cm",
     "medida-diametro": "13,5 cm",
-    "precio": 2.442,
+    "precio": 2442,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -167,7 +167,7 @@
     "descripcion": "Ensaladera Grande Redonda",
     "medida-alto": "7 cm",
     "medida-diametro": "26,5 cm",
-    "precio": 3.108,
+    "precio": 3108,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -186,7 +186,7 @@
     "descripcion": "Ensaladera Redonda",
     "medida-alto": "9,5 cm",
     "medida-diametro": "19 cm",
-    "precio": 1.960,
+    "precio": 1960,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -205,7 +205,7 @@
     "descripcion": "Ensaladera Individual Grande",
     "medida-alto": "8,5 cm",
     "medida-diametro": "18 cm",
-    "precio": 1.887,
+    "precio": 1887,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -224,7 +224,7 @@
     "descripcion": "Ensaladera individual chica",
     "medida-alto": "8 cm",
     "medida-diametro": "15 cm",
-    "precio": 1.554,
+    "precio": 1554,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -300,7 +300,7 @@
     "descripcion": "Posa cuchara para no ensuciar la mesada mientras cocinas.",
     "medida-alto": "24 cm",
     "medida-ancho": "10 cm",
-    "precio": 1.055,
+    "precio": 1055,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -393,7 +393,7 @@
     "titulo": "Tetera",
     "img": "tetera.jpg",
     "capacidad": "700 ml",
-    "precio": 3.108,
+    "precio": 3108,
     "categoria": "Cocina",
     "flor": [
       "Aljaba",
@@ -410,7 +410,7 @@
     "titulo": "Catan + extensión",
     "img": "catan.jpeg",
     "descripcion": "El objetivo del juego es construir pueblos, ciudades y caminos sobre un tablero que es distinto cada vez, mientras se van acumulando varios tipos de cartas. Todos estos elementos proporcionan distintas puntuaciones, ganando la partida el primer jugador que llega a los diez puntos. Juego original + expansión para seis personas.",
-    "precio": 25.000,
+    "precio": 25000,
     "categoria": "Juegos de mesa",
     "favorito": true,
     "relacionado": true
@@ -420,7 +420,7 @@
     "titulo": "Carcassonne",
     "img": "carcassonne.jpg",
     "descripcion": "Ambientado en la ciudad medieval amurallada francesa de Carcasona, el juego consiste en crear un mapa de juego donde los jugadores compiten por hacer el máximo número de puntos con las mejores posesiones (ciudades, praderas, caminos y monasterios) del mapa.",
-    "precio": 15.000,
+    "precio": 15000,
     "categoria": "Juegos de mesa",
     "favorito": true,
     "relacionado": false
@@ -431,7 +431,7 @@
     "img": "porta-naipes.jpg",
     "descripcion": "Caja para cartas con división interna y tapa.",
     "medidas": "20 x 10cm",
-    "precio": 2.500,
+    "precio": 2500,
     "categoria": "Juegos de mesa",
     "favorito": true,
     "relacionado": false
@@ -441,7 +441,7 @@
     "titulo": "Domino",
     "img": "domino.jpg",
     "descripcion": "Juego domino color blanco y negro.",
-    "precio": 4.500,
+    "precio": 4500,
     "categoria": "Juegos de mesa",
     "favorito": true,
     "relacionado": false
@@ -451,7 +451,7 @@
     "titulo": "Triomino",
     "img": "triomino.jpg",
     "descripcion": "Triominó es una variante de dominó usando fichas triangulares.",
-    "precio": 4.500,
+    "precio": 4500,
     "categoria": "Juegos de mesa",
     "favorito": true,
     "relacionado": false
@@ -471,7 +471,7 @@
     "titulo": "Maceta Colgante Grande",
     "img": "maceta-colgante-grande.jpg",
     "descripcion": "Maceta colgante grande.",
-    "precio": 2.000,
+    "precio": 2000,
     "categoria": "Decoracion",
     "favorito": true,
     "relacionado": false
@@ -481,7 +481,7 @@
     "titulo": "Maceta Colgante Mediana",
     "img": "maceta-colgante-mediana.jpg",
     "descripcion": "Maceta colgante mediana.",
-    "precio": 1.600,
+    "precio": 1600,
     "categoria": "Decoracion",
     "favorito": true,
     "relacionado": false
@@ -491,7 +491,7 @@
     "titulo": "Maceta Colgante Chica",
     "img": "maceta-colgante-chica.jpg",
     "descripcion": "Maceta colgante chica.",
-    "precio": 1.100,
+    "precio": 1100,
     "categoria": "Decoracion",
     "favorito": true,
     "relacionado": false
@@ -501,7 +501,7 @@
     "titulo": "Pajaritos",
     "img": "pajaritos.jpg",
     "descripcion": "Pajaritos sonajeros.",
-    "precio": 1.330,
+    "precio": 1330,
     "categoria": "Decoracion",
     "favorito": true,
     "relacionado": false
@@ -511,7 +511,7 @@
     "titulo": "Comedero para pajaritos",
     "img": "comedero-pajaros.jpg",
     "descripcion": "Comedero colgante para pajaritos.",
-    "precio": 1.500,
+    "precio": 1500,
     "categoria": "Decoracion",
     "favorito": true,
     "relacionado": false
@@ -521,7 +521,7 @@
     "titulo": "Set Jabonera y Vaso",
     "img": "set-banio.jpg",
     "descripcion": "Set jabonera y vaso porta cepillos.",
-    "precio": 1.600,
+    "precio": 1600,
     "categoria": "Baño",
     "favorito": true,
     "relacionado": true
@@ -531,7 +531,7 @@
     "titulo": "Jabonera con Plato",
     "img": "jabonera.jpg",
     "descripcion": "Jabonera con plato.",
-    "precio": 1.100,
+    "precio": 1100,
     "categoria": "Baño",
     "favorito": true,
     "relacionado": false
