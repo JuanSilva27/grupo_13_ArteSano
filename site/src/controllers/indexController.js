@@ -3,7 +3,6 @@ const path= require ("path")
 
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 const productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
-
 const categorias=require("../data/categorias.json")
 const favoritos=require("../data/favoritos.json")
 

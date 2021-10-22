@@ -27,6 +27,10 @@ module.exports = {
       let categoria= req.params.categoria
       let selecCategoria= categorias.find(e=>e.href=== categoria)
       res.render('products/categorias',{selecCategoria, productos})
+    },
+
+    categoriasCompletas: (req, res) => {
+      res.render('products/categorias/completas', {categorias, productos})
     }
 }
 

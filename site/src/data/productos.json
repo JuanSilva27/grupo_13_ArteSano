@@ -82,7 +82,7 @@
   {
     "id": 5,
     "titulo": "Taza Jarrito",
-    "img": "taza-jarrito",
+    "img": "taza-jarrito.jpg",
     "descripcion": "Taza Jarrito",
     "medida-alto": "9,5 cm",
     "medida-diametro": "8 cm",
@@ -102,7 +102,7 @@
   {
     "id": 6,
     "titulo": "Taza de Té",
-    "img": "taza-te.jpg",
+    "img": "taza-te.jpeg",
     "descripcion": "Taza para te",
     "medida-alto": "7,5 cm",
     "medida-ancho": "",
@@ -258,7 +258,7 @@
   {
     "id": 14,
     "titulo": "Mate sin Asa",
-    "img": "mate-chico.jpg",
+    "img": "mate-chico.jpeg",
     "descripcion": "Mate chico sin asa",
     "medida-alto": "9 cm",
     "medida-diametro": "5,5 cm",
@@ -277,7 +277,7 @@
   {
     "id": 15,
     "titulo": "Mate Grande",
-    "img": "mate-grande.jpg",
+    "img": "mate-grande.jpeg",
     "descripcion": "Mate grande sin asa",
     "medida-alto": "7,5 cm",
     "medida-diametro": "8 cm",
@@ -499,7 +499,7 @@
   {
     "id": 31,
     "titulo": "Pajaritos",
-    "img": "pajaritos.jpg",
+    "img": "pajaritos.jpeg",
     "descripcion": "Pajaritos sonajeros.",
     "precio": 1330,
     "categoria": "Decoracion",
