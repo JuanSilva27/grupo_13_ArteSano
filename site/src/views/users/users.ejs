@@ -5,44 +5,46 @@
     <body class="usuarios">
         <%- include('../partials/header.ejs') %>
             <main>
-
+             <% usuarios.map(usuario => { %>
                 <div class="tit-container">
-                    <h1 class="titulo">¡Bienvenido nombre usuario! </h1>
+                    <h1 class="titulo">¡Hola <%= usuario.firstName %>!</h1>
                 </div>
+
                 <h2>Modificá tus datos</h2>
+
                 <div class="img-container">
-                    <img src='/img/users/user_1.jpg ' width="100%" alt="Foto de perfil">
+                    <img src='/img/users/<%= usuario.image %> ' width="100%" alt="Foto de perfil">
                 </div>
+
                 <div class="boton">
                     <button>Cambiar foto de perfil</button>
                 </div>
 
-
                 <section class="datos">
                     <h3>Datos de tu cuenta</h3>
+                    
                     <form action="/users" method="POST">
 
                         <label for="name">Tu nombre de usuario:</label>
-                        <input type="text" name="name" id="email" placeholder="Nombre usuario">
+                        <input type="text" name="name" id="email" placeholder=<%= usuario.firstName %>>
 
                         <label for="email">Tu email:</label>
-                        <input type="text" name="email" id="email" placeholder="email@usuario.com">
+                        <input type="text" name="email" id="email" placeholder=<%= usuario.email %>>
 
                         <label for="tel">Tu celular:</label>
-                        <input type="text" name="tel" id="tel" placeholder="123-456798">
+                        <input type="text" name="tel" id="tel" placeholder=<%= usuario.phone %>>
 
                         <label for="direction">Tu direccion:</label>
                         <input type="text" name="direction" id="tel"
-                            placeholder="Direccion usuario 132, Provincia, Localidad">
-
-
+                            placeholder=<%= usuario.provincia %> <%= usuario.localidad %>>
                     </form>
+                      
                     <div class="boton">
                         <button>Guardar cambios</button>
                     </div>
 
                 </section>
-
+            <% }) %>
             </main>
             <%- include('../partials/footer.ejs') %>
     </body>

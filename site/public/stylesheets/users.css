@@ -1,11 +1,15 @@
 .usuarios {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
     font-family: var(--subtitulos);
     background-color: var(--crema);
     width: 100%;
     justify-content: center;
+}
+
+.usuarios main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .usuarios .titulo{
@@ -39,14 +43,15 @@ margin-bottom: 20px;
 
 .usuarios form{
     width: 100%;
-/*     display: flex;
+  display: flex;
     flex-direction: column;
-    align-items: center; */
+    align-items: center;
 } 
 
 .usuarios .datos{
 /*     display: flex;
-    justify-content: left; */
+    flex-direction: column;
+    justify-content: center; */
     color: var(--bordo);
     font-weight: bold;
 }
