@@ -26,8 +26,8 @@ module.exports={
         
         let NuevoUsuario = {
           id: usuarios.length+1,
-          nombre: object.Nombre,
-          telefono: object.telefono,
+          firstName: object.Nombre,
+          phone: object.telefono,
           provincia: object.provincia,
           localidad: object.localidad,
           email: object.email,
@@ -37,7 +37,7 @@ module.exports={
         }
       usuarios.push(NuevoUsuario);
       fs.writeFileSync(UsersFilePath,JSON.stringify(usuarios, null,2));
-      res.redirect('/users/login'); }
+      res.redirect(`/users/${NuevoUsuario.id}`); }
       else {
         res.render('users/register', {errors: errors.mapped(), old: object});
       }

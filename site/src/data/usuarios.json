@@ -383,5 +383,15 @@
     "email": "leonetkd@gmail.com",
     "password": "$2a$10$FQpQwX4dgdAFcBOYR5duIO20Y.TnFudUYCPYhlPnu30XPQpYVYTnu",
     "password2": "$2a$10$7txhtlh23mMyOSNIgMm8/eP2PQlM/5N2lT1hHgMUftf/fXWfEM3pC"
+  },
+  {
+    "id": 37,
+    "firstName": "Juan",
+    "phone": "1123456789",
+    "provincia": "Capital Federal",
+    "localidad": "Moron",
+    "email": "juan.silva.0270@gmail.com",
+    "password": "$2a$10$tGQm6NB7pP/6uWfacw98GOgnCuGOk7gAoR0nUWV/tffZ7Ig7ok8kC",
+    "password2": "$2a$10$SKRTYgkGEBPaalywtuz03e9PM/AJ/gD394t0kCxWI93UwvBD1aUAO"
   }
 ]

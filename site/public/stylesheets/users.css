@@ -62,9 +62,11 @@ margin-bottom: 20px;
 /*     display: flex;
     flex-direction: column;
     align-items: center; */
+    display: flex;
+    justify-content: center;
 }
 
-.usuarios button.guardar {
+.usuarios button.guardar, .usuarios button.foto_perfil {
     border: none;
     color: var(--crema);
     padding: 9px;
@@ -81,7 +83,7 @@ margin-bottom: 20px;
 
 
 @media (min-width: 769px){ 
-    .usuarios button.guardar {
+    .usuarios button.guardar, .usuarios button.foto_perfil {
         padding-top: 15px;
     }
 }
