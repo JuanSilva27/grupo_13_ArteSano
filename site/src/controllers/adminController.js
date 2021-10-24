@@ -48,7 +48,7 @@ module.exports={
         res.redirect("/admin")
       },
 
-      newProduct: (req, res) => {
+      newProduct: (req, res, next) => {
         let object=req.body
         object.id=productos.length+1
         object.favorito = false
@@ -58,6 +58,7 @@ module.exports={
         
         fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
         res.redirect(`/admin`)
+        next();
       },
       
     

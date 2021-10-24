@@ -7,79 +7,87 @@
  <main class="register">
     <P class="cont.tituloRegister"><h1>CREA TU CUENTA</h1></P>
     <div class="background">
-    <form class="formRegister" action="/" >
+ 
+        <!-- exprres me manda los errores hasta el controller, el problema esta en pasarlos del controller a la vita  -->
+
+    <form class="formRegister" action="" method="POST" enctype="multipart/form-data" >
          
         <p>
             <label for="Nombre">NOMBRE Y APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo Ford" name="Nombre">
+            <input class="tamaño" type="text" placeholder="ej: Ricardo Ford" name="Nombre"  > 
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
-            <input class="tamaño" type="tel" placeholder="ej: 0112345678" name="telefono">
+            <input class="tamaño" type="tel" placeholder="ej: 0112345678" name="telefono"  >  
         </p>
         <p>
         <label for="provincia">PROVINCIA</label>
-        <select name="provincia" class="tamaño">
+        <select name="provincia" class="tamaño" >
             <option selected hidden>Seleccione tu provincia</option>
-            <option value="1">Buenos Aires</option>
-            <option value="2">Capital Federal</option>
-            <option value="3">Catamarca</option>
-            <option value="4">Chaco</option>
-            <option value="5">Chubut</option>
-            <option value="6">Córdoba</option>
-            <option value="7">Corrientes</option>
-            <option value="8">Entre Ríos</option>
-            <option value="9">Formosa</option>
-            <option value="10">Jujuy</option>
-            <option value="11">Mendoza</option>
-            <option value="12">Misiones</option>
-            <option value="13">Neuquén</option>
-            <option value="14">Río Negro</option>
-            <option value="15">Salta</option>
-            <option value="16">San Juan</option>
-            <option value="17">San Luis</option>
-            <option value="18">Santa Cruz</option>
-            <option value="19">Santa Fe</option>
-            <option value="20">Santiago del Estero</option>
-            <option value="21">Tierra del Fuego</option>
-            <option value="22">Octubre</option>
-            <option value="23">Tucumán</option>
+            <option value="Buenos Aires">Buenos Aires</option>
+            <option value="Capital Federal">Capital Federal</option>
+            <option value="Catamarca">Catamarca</option>
+            <option value="Chaco">Chaco</option>
+            <option value="Chubut">Chubut</option>
+            <option value="Córdoba">Córdoba</option>
+            <option value="Corrientes">Corrientes</option>
+            <option value="Entre Ríos">Entre Ríos</option>
+            <option value="Formosa">Formosa</option>
+            <option value="Jujuy">Jujuy</option>
+            <option value="Mendoza">Mendoza</option>
+            <option value="Misiones">Misiones</option>
+            <option value="Neuquén">Neuquén</option>
+            <option value="Río Negro">Río Negro</option>
+            <option value="Salta">Salta</option>
+            <option value="San Juan">San Juan</option>
+            <option value="San Luis">San Luis</option>
+            <option value="Santa Cruz">Santa Cruz</option>
+            <option value="Santa Fe">Santa Fe</option>
+            <option value="Santiago del Estero">Santiago del Estero</option>
+            <option value="Tierra del Fuego">Tierra del Fuego</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Tucumán">Tucumán</option>
         </select>
         </p>
         <P>
             <label for="localidad">LOCALIDAD</label>
         <select name="localidad" class="tamaño">
             <option selected hidden>Seleccione tu localidad</option>
-            <option value="1">Ramos Mejia</option>
-            <option value="2">Lomas de Zamora</option>
-            <option value="3">Moron</option>
-            <option value="4">Caballito</option>
-            <option value="5">Ciudadela</option>
-            <option value="6">Hurlingham</option>
-            <option value="7">Monte Grande</option>
-            <option value="8">Castillo</option>
-            <option value="9">Lomas del Mirador</option>
-            <option value="10">Liniers</option>
+            <option value="Ramos Mejia">Ramos Mejia</option>
+            <option value="Lomas de Zamora">Lomas de Zamora</option>
+            <option value="Moron">Moron</option>
+            <option value="Caballito">Caballito</option>
+            <option value="Ciudadela">Ciudadela</option>
+            <option value="Hurlingham">Hurlingham</option>
+            <option value="Monte Grande">Monte Grande</option>
+            <option value="Castillo">Castillo</option>
+            <option value="Lomas del Mirador">Lomas del Mirador</option>
+            <option value="Liniers">Liniers</option>
         </select>
         </P>
         <p>
             <label for="email">E-MAIL</label>
-            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" >
+            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email"  >
         </p>
           
         <p>
             <label for="password">CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password">
+            <input class="tamaño" type="password" placeholder="**********" name="password" >
         </p>
 
         <p>
             <label for="password">CONFIRMAR CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password">
+            <input class="tamaño" type="password" placeholder="**********" name="password2" >
+        </p>
+
+        <p>
+            <label for="image">IMAGEN</label>
+            <input class="tam" type="file"  name="image">
         </p>
         <div class="botones">
-            <a href="/">
-                <input class="guardar" type="button" value="Crear cuenta">
-            </a>
+            
+             <button class="guardar" type="submit">Crear cuenta</button>
+            
         </div>
         <p>¿Ya tenés una cuenta? 
           <a href="/users/login">
