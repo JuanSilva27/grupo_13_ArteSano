@@ -6,6 +6,7 @@
 
  <main class="register">
     <P class="cont.tituloRegister"><h1>CREA TU CUENTA</h1></P>
+
     <div class="background">
  
         <!-- exprres me manda los errores hasta el controller, el problema esta en pasarlos del controller a la vita  -->
@@ -14,11 +15,13 @@
          
         <p>
             <label for="Nombre">NOMBRE Y APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo Ford" name="Nombre"  > 
+            <input class="tamaño" type="text" placeholder="ej: Ricardo Ford" name="Nombre"  > <br>
+            <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
-            <input class="tamaño" type="tel" placeholder="ej: 0112345678" name="telefono"  >  
+            <input class="tamaño" type="tel" placeholder="ej: 0112345678" name="telefono"  > <br>
+            <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
         </p>
         <p>
         <label for="provincia">PROVINCIA</label>
@@ -67,17 +70,21 @@
         </P>
         <p>
             <label for="email">E-MAIL</label>
-            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email"  >
+            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email"  > <br>
+            <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>  
+            
         </p>
           
         <p>
             <label for="password">CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password" >
+            <input class="tamaño" type="password" placeholder="**********" name="password" > <br>
+            <small><%= locals.errors && errors.password ? errors.password.msg : null %> </small>              
         </p>
 
         <p>
             <label for="password">CONFIRMAR CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password2" >
+            <input class="tamaño" type="password" placeholder="**********" name="password2" > <br>
+            <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %> </small>
         </p>
 
         <p>
