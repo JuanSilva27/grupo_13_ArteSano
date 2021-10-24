@@ -5,7 +5,7 @@
     <body class="usuarios">
         <%- include('../partials/header.ejs') %>
             <main>
-             <% usuarios.map(usuario => { %>
+            
                 <div class="tit-container">
                     <h1 class="titulo">¡Hola <%= usuario.firstName %>!</h1>
                 </div>
@@ -13,7 +13,7 @@
                 <h2>Modificá tus datos</h2>
 
                 <div class="img-container">
-                    <img src='/img/users/<%= usuario.image %> ' width="100%" alt="Foto de perfil">
+                    <img class="perfil" src='/img/users/<%= usuario.image %> ' width="100%" alt="Foto de perfil">
                 </div>
 
                 <div class="boton">
@@ -23,28 +23,28 @@
                 <section class="datos">
                     <h3>Datos de tu cuenta</h3>
                     
-                    <form action="/users" method="POST">
+                    <form class="form" action="/users" method="POST">
 
                         <label for="name">Tu nombre de usuario:</label>
-                        <input type="text" name="name" id="email" placeholder=<%= usuario.firstName %>>
+                        <input type="text" name="name" id="email" value=<%= usuario.firstName %>>
 
                         <label for="email">Tu email:</label>
-                        <input type="text" name="email" id="email" placeholder=<%= usuario.email %>>
+                        <input type="text" name="email" id="email" value=<%= usuario.email %>>
 
                         <label for="tel">Tu celular:</label>
-                        <input type="text" name="tel" id="tel" placeholder=<%= usuario.phone %>>
+                        <input type="text" name="tel" id="tel" value=<%= usuario.phone %>>
 
                         <label for="direction">Tu direccion:</label>
                         <input type="text" name="direction" id="tel"
-                            placeholder=<%= usuario.provincia %> <%= usuario.localidad %>>
+                            value=<%= usuario.provincia %> <%= usuario.localidad %>>
                     </form>
                       
                     <div class="boton">
-                        <button>Guardar cambios</button>
+                        <button class="Guardar">Guardar cambios</button>
                     </div>
 
                 </section>
-            <% }) %>
+            
             </main>
             <%- include('../partials/footer.ejs') %>
     </body>

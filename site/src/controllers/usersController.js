@@ -21,8 +21,9 @@ module.exports={
       
        
       const errors = validationResult(req);
+      let object = (req.body)
       if (errors.isEmpty()) { 
-        let object = (req.body)
+        
         let NuevoUsuario = {
           id: usuarios.length+1,
           nombre: object.Nombre,
@@ -42,4 +43,10 @@ module.exports={
       }
       
     },
+
+    user: (req,res)=>{
+      const id= req.params.id
+      const usuario = usuarios.find(a=>a.id === +id)
+      res.render("users/users",{usuario})
+    }
 };

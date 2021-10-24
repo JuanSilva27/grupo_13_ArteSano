@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const {check} = require("express-validator")
-const {login,register, NewRegister}=require("../controllers/usersController")
+/* const {check} = require("express-validator") */
+const {login,register, NewRegister, user}=require("../controllers/usersController")
+const validation = require("../middlewares/validate")
 
-const validation = [
+/* const validation = [
     check("Nombre").notEmpty().withMessage("Debes completar este campo"),
     check("telefono").notEmpty().withMessage("Debes completar este campo"),
     check("provincia").notEmpty().withMessage("Debes completar este campo"),
@@ -15,8 +16,8 @@ const validation = [
     .isLength({min: 6}).withMessage("La contraseña debe contener 6 caracteres") ,
     check("password2").notEmpty().withMessage("Debes completar este campo").bail()  
     .isLength({min: 6}).withMessage("La contraseña debe contener 6 caracteres") ,
-];
-/* GET users listing. */
+]; */
+/* Login */
 router.get('/login', login);
 
 const storage = multer.diskStorage({
@@ -29,27 +30,12 @@ const storage = multer.diskStorage({
     } )
     let upload = multer({storage});
 
-
+/* Register */
 router.get('/register', register);
 router.post('/register', upload.single("image"), validation,  NewRegister);
 
-
+/* User */
+router.get("/:id",user)
 
 module.exports = router;
 
-/* const express= require("express")
-const app= express()
-const port= 3030
-const path= require("path")
-
-app.use(express.static('public'))
-app.set("view engine", "ejs");
-
-
-app.get("/carrito", (req,res)=> {res.sendFile(path.join(__dirname,"views","carrito.html"))})
-app.get("/", (req,res)=> {res.sendFile(path.join(__dirname,"views","home.html"))})
-app.get("/producto", (req,res)=> {res.sendFile(path.join(__dirname,"views","producto.html"))})
-app.get("/register", (req,res)=> {res.sendFile(path.join(__dirname,"views","register.html"))})
-app.get("/login", (req,res)=> {res.sendFile(path.join(__dirname,"views","login.html"))})
-
-app.listen(port, ()=> console.log("se levanto server en el puerto " +port)) */
