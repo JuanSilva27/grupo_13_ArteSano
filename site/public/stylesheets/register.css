@@ -31,6 +31,14 @@ main.register{
     height: 23px;
     width: 255px;
 }
+.register .tam {
+    border-radius: 3%;
+    border: solid 2px var(--rojo);
+    height: 32px;
+    width: 310px;
+    background-color: white;
+    color: black;
+}
 .register .tamaño-desc{
     border-radius: 3%;
     border: solid 2px var(--rojo);
