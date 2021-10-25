@@ -58,7 +58,7 @@ module.exports={
       if (req.body.recuerdame !== undefined){
         res.cookie("recuerdame", userToLogin.email, {maxAge: 60*1000})
       }
-      res.redirect("/users/check")
+      res.redirect("/")
     }
     else{
       res.render("users/login",{errors:{msg: "Email o contraseña incorrecta"}})
@@ -74,5 +74,12 @@ module.exports={
       res.send("Usuario no logueado")
     }
 
+  },
+  logout: (req,res) => {
+    req.session.destroy()
+    if (req.cookies.recuerdame !== undefined) {
+      res.cookie('recuerdame', '', {maxAge: -1})
+    }
+    res.redirect('/')
   }
 };

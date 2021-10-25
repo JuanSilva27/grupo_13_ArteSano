@@ -22,6 +22,13 @@ header {
     color: var(--crema);
 }
 
+.header .cerrarSesion {
+    font-family: var(--titulos);
+    color: var(--amarillo);
+    background-color: var(--bordo);
+    border: none;
+}
+
 .header{
     display: flex;
     flex-direction: row;

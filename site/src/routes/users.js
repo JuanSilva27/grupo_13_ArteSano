@@ -3,8 +3,10 @@ var router = express.Router();
 const multer = require("multer");
 const path = require("path");
 /* const {check} = require("express-validator") */
-const {login,register, NewRegister, user, processLogin, check}=require("../controllers/usersController")
+const {login,register, NewRegister, user, processLogin, check, logout}=require("../controllers/usersController")
 const validation = require("../middlewares/validate")
+const guestUser = require('../middlewares/guestUser')
+const authUser = require('../middlewares/authUser')
 
 /* const validation = [
     check("Nombre").notEmpty().withMessage("Debes completar este campo"),
@@ -18,7 +20,7 @@ const validation = require("../middlewares/validate")
     .isLength({min: 6}).withMessage("La contraseña debe contener 6 caracteres") ,
 ]; */
 /* Login */
-router.get('/login', login);
+router.get('/login', guestUser, login);
 router.post("/login",processLogin)
 
 const storage = multer.diskStorage({
@@ -32,14 +34,17 @@ const storage = multer.diskStorage({
     let upload = multer({storage});
 
 /* Register */
-router.get('/register', register);
+router.get('/register', guestUser, register);
 router.post('/register', upload.single("image"), validation,  NewRegister);
 
 /* User */
-router.get("/perfil/:id",user)
+router.get("/perfil/:id", authUser, user)
 
 /* check */
 router.get("/check",check)
+
+// Cerrar sesión
+router.get('/logout', logout)
 
 module.exports = router;
 
