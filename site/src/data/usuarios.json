@@ -346,11 +346,11 @@
   },
   {
     "id": 33,
-    "nombre": "",
-    "telefono": "",
+    "nombre": "sasasasas",
+    "telefono": "123456789",
     "provincia": "Seleccione tu provincia",
     "localidad": "Seleccione tu localidad",
-    "email": "",
+    "email": "jorge@asd.com",
     "password": "$2a$10$.EK2PktR8wy.fHAxHCj89ueHJhsNigrbY7CMe5CCUjefHTAFCcXJm",
     "password2": "$2a$10$PgKif4c8XFcdvf6C2W1C9.MbvS4sENpSwzxhoColJW8MmZufgAt92"
   },
