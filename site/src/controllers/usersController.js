@@ -51,8 +51,8 @@ module.exports={
     },
 
     processLogin: (req,res)=>{
-      const userToLogin= usuarios.find(usuario=> usuario.email === req.body.email)
-    
+      const userToLogin= usuarios.find(usuario=> usuario.email.toLowerCase() === req.body.email.toLowerCase())
+      
     if (userToLogin && bcrypt.compareSync(req.body.password, userToLogin.password)){
       req.session.userLog = userToLogin
       if (req.body.recuerdame !== undefined){
