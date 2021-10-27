@@ -38,7 +38,7 @@ router.get('/register', guestUser, register);
 router.post('/register', upload.single("image"), validation,  NewRegister);
 
 /* User */
-router.get("/perfil/:id", authUser, user)
+router.get("/Miperfil", authUser, user)
 
 /* check */
 router.get("/check",check)

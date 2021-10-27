@@ -36,8 +36,12 @@ module.exports={
           Imagen: object.image
         }
       usuarios.push(NuevoUsuario);
+      
       fs.writeFileSync(UsersFilePath,JSON.stringify(usuarios, null,2));
-      res.redirect(`/users/perfil/${NuevoUsuario.id}`); }
+      req.session.userLog=NuevoUsuario
+      res.cookie("recuerdame", NuevoUsuario.email, {maxAge: 60*1000})
+      res.redirect(`/users/Miperfil`);
+    }
       else {
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
@@ -45,8 +49,8 @@ module.exports={
     },
 
     user: (req,res)=>{
-      const id= req.params.id
-      const usuario = usuarios.find(a=>a.id === +id)
+      const user=req.session.userLog
+      const usuario = usuarios.find(a=>a.id === user.id)
       res.render("users/users",{usuario})
     },
 
