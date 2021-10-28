@@ -4,12 +4,11 @@ const path= require ("path")
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 let productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const categorias= require('../data/categorias.json');
-const relacionados=require('../data/relacionados.json');
 
 
 module.exports = {
     carrito: function(req, res, next) {
-        res.render('products/carrito',{productos,relacionados});
+        res.render('products/carrito',{productos});
       },
   
     store: function(req, res, next) {
