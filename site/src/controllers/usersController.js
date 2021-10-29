@@ -18,25 +18,24 @@ module.exports={
       },
     NewRegister: (req, res, ) => {
       let object = (req.body)
-      
-        let NuevoUsuario = {
-        id: usuarios.length+1,
-        nombre: object.Nombre,
-        telefono: object.telefono,
-        provincia: object.provincia,
-        localidad: object.localidad,
-        email: object.email,
-        password: bcrypt.hashSync(object.password, 10),
-        password2: bcrypt.hashSync(object.password2, 10),
-        Imagen: object.image
-      }
       const errors = validationResult(req);
       if (errors.isEmpty()) { 
+        let NuevoUsuario = {
+          id: usuarios.length+1,
+          nombre: object.Nombre,
+          telefono: object.telefono,
+          provincia: object.provincia,
+          localidad: object.localidad,
+          email: object.email,
+          password: bcrypt.hashSync(object.password, 10),
+          password2: bcrypt.hashSync(object.password2, 10),
+          Imagen: object.image}
       usuarios.push(NuevoUsuario);
       fs.writeFileSync(UsersFilePath,JSON.stringify(usuarios, null,2));
       res.redirect('/users/login'); }
       else {
-        res.render('users/register', {errors: errors.mapped(), old: object});
+        /* return res.send(errors) */
+        res.render('users/register', {errors: errors.array(), old: object});
       }
       
     },

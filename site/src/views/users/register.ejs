@@ -6,6 +6,7 @@
 
  <main class="register">
     <P class="cont.tituloRegister"><h1>CREA TU CUENTA</h1></P>
+     
     <div class="background">
  
         <!-- exprres me manda los errores hasta el controller, el problema esta en pasarlos del controller a la vita  -->
@@ -14,7 +15,8 @@
          
         <p>
             <label for="Nombre">NOMBRE Y APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo Ford" name="Nombre"  > 
+            <input class="tamaño" type="text" placeholder="ej: Ricardo Ford" name="Nombre"  value= <%= locals.old && old.Nombre ? old.Nombre : ""  %> > 
+            <!-- <p > <%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %>  </p> -->
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
@@ -24,7 +26,7 @@
         <label for="provincia">PROVINCIA</label>
         <select name="provincia" class="tamaño" >
             <option selected hidden>Seleccione tu provincia</option>
-            <option value="Buenos Aires">Buenos Aires</option>
+            <option value="Buenos Aires">Buenos Aires</option>  
             <option value="Capital Federal">Capital Federal</option>
             <option value="Catamarca">Catamarca</option>
             <option value="Chaco">Chaco</option>
@@ -87,7 +89,12 @@
         <div class="botones">
             
              <button class="guardar" type="submit">Crear cuenta</button>
-            
+              <% if (locals.errors) { 
+                 errors.forEach(error => { %>
+                 <p> <%= error.msg %> </p>
+             <%   })
+                 }
+             %> 
         </div>
         <p>¿Ya tenés una cuenta? 
           <a href="/users/login">

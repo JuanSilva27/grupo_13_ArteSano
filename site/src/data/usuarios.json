@@ -383,5 +383,15 @@
     "email": "leonetkd@gmail.com",
     "password": "$2a$10$FQpQwX4dgdAFcBOYR5duIO20Y.TnFudUYCPYhlPnu30XPQpYVYTnu",
     "password2": "$2a$10$7txhtlh23mMyOSNIgMm8/eP2PQlM/5N2lT1hHgMUftf/fXWfEM3pC"
+  },
+  {
+    "id": 37,
+    "nombre": "lajesi",
+    "telefono": "01150213296",
+    "provincia": "Buenos Aires",
+    "localidad": "Hurlingham",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$MkfxEA6g/UOfKxY7W6F2Wez4U2uaDNrJafEqoai8XXG.qyBBTkZXS",
+    "password2": "$2a$10$l6QY8BnBRxPtu1GO149k9.8GyBZrx55l2Sq.6jGhZCw73ogDaRXvi"
   }
 ]
