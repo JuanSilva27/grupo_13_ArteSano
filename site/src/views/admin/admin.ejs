@@ -22,9 +22,9 @@
                 <article>
                     <div class="product">
                         <h4> Imagen</h4>
-                        <div>
+                        <a href="/products/detail/<%= producto.id %> ">
                             <img src="/img/<%= producto.img %> " alt="">
-                        </div>
+                        </a>
                     </div>
                     
                     <div class="product">
@@ -37,7 +37,7 @@
                     <div class="precio">
                         <div class="product">
                             <h4>Precio</h4>
-                            <p><%= producto.precio %> </p>
+                            <p>$<%= producto.precio %> </p>
                         </div>
                     </div>
                     

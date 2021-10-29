@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride =  require('method-override');
+const session= require("express-session")
+const recordarme= require("./middlewares/recuerdame")
+const localsCheck= require("./middlewares/localsCheck")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -22,6 +25,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,"..",'public')));
 app.use(methodOverride('_method'));
+app.use(session({secret: "clave secreta"}))
+app.use(recordarme)
+app.use(localsCheck)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

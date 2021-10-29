@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+    <body class="usuarios">
+        <%- include('../partials/header.ejs') %>
+            <main>
+            
+                <div class="tit-container">
+                    <h1 class="titulo">¡Hola <%= usuario.firstName %>!</h1>
+                </div>
+
+                <h2>Modificá tus datos</h2>
+
+                <div class="img-container">
+                    <img class="perfil" src='/img/users/<%= usuario.image %> ' width="100%" alt="Foto de perfil">
+                </div>
+
+                <div class="boton">
+                    <button class="foto_perfil">Cambiar foto de perfil</button>
+                </div>
+
+                <section class="datos">
+                    <h3>Datos de tu cuenta</h3>
+                    
+                    <form class="form" action="/users" method="POST">
+
+                        <label for="name">Tu nombre de usuario:</label>
+                        <input type="text" name="name" id="email" value=<%= usuario.firstName %>>
+
+                        <label for="email">Tu email:</label>
+                        <input type="text" name="email" id="email" value=<%= usuario.email %>>
+
+                        <label for="tel">Tu celular:</label>
+                        <input type="text" name="tel" id="tel" value=<%= usuario.phone %>>
+
+                        <label for="direction">Tu direccion:</label>
+                        <input type="text" name="direction" id="tel"
+                            value=<%= usuario.provincia %> <%= usuario.localidad %>>
+                    </form>
+                      
+                    <div class="boton">
+                        <button class="guardar">Guardar cambios</button>
+                    </div>
+
+                </section>
+            
+            </main>
+            <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>

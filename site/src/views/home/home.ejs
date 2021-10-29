@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include("../partials/head.ejs")  %> 
+<%- include('../partials/head.ejs') %>
+
 <body class="body-home">
-    <%- include("../partials/header.ejs") %> 
-
-
-
-
-
+    <%- include('../partials/header.ejs') %> 
 
     <!-- seccion home -->
     <main class="home">
 
         <!--  banner -->
         <section class="banner">
-
 
             <button>
                 <i class="fas fa-solid fa-angle-left"></i>
@@ -46,21 +41,21 @@
 
 
                 <div class="text-container">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, ab nam sed porro aperiam
-                        pariatur recusandae modi animi! Qui minus corporis facere mollitia optio aspernatur hic
-                        consectetur
-                        necessitatibus vitae doloribus?</p>
+                    <p>Somos Ana, Ailin y Paula, madre e hijas, y juntas queremos darle la bienvenida a nuestro portal de La Siesta Arte, nuestro emprendimiento de cerámica artesanal en Villa la Angostura, Patagonia Argentina. <br><br> 
+                        ¡Nuestras piezas son muy diversas! Disfrutamos mucho distintas técnicas y nos inspira profundamente buscar diferentes lenguajes. <br> 
+    Saber que, en cada región del mundo, un pueblo tiene una técnica para el mismo material nos conecta profundamente con el proceso de crear piezas para nuestras cotidianidades que estén llenas de valor.
+                    </p>
 
-                    <button class="button">
+                    <a href="/about" class="button">
                         <h4>Conocenos!</h4>
-                    </button>
+                    </a>
 
                 </div>
             </article>
         </section>
         <!--         Termina sobre nosotras -->
         <!-- Favoritos -->
-        <section class="favoritos" id="favoritos">
+        <section class="favoritos">
             <div class="tit-container">
                 <h2 class="titulo">Favoritos</h3>
             </div>
@@ -80,7 +75,7 @@
                                 <i class="fas fa-regular fa-heart"></i>
                             </div>
                             <h3 class="subt"><%= favorito.name %> </h3>
-                            <h2 class="subt precio"><%= favorito.precio %> </h2>
+                            <h2 class="subt precio">$<%= favorito.precio %> </h2>
                             <p><%= favorito.descipcion %></p>
                         </div>
                         
@@ -94,9 +89,11 @@
         </section>
         <!-- Termina Favoritos -->
         <!-- Categorias -->
-        <section class="categorias" id="categorias">
+        <section class="categorias">
             <div class="tit-container">
-                <h2 class="titulo">Categorias</h2>
+                <a href="/products/categorias/completas">
+                    <h2 class="titulo">Categorias</h2>
+                </a>
             </div>
 
            <article class="sec-categorias">
@@ -104,13 +101,11 @@
                     <% categorias.forEach(categoria=>{%> 
                         <div class="img-container">
                         <img class="photo" src="/img/<%= categoria.img %> " width="100%" alt="<%= categoria.alt %> ">
-                        <a href="" class="titulo"><%= categoria.name %> </a>
+                        <a href="/products/<%= categoria.href %> " class="titulo"><%= categoria.name %> </a>
                         </div>
                     <% }) %> 
 
             </article>
-
-
 
         </section>
         <!-- Termina Categorias -->
@@ -132,7 +127,8 @@
 
     <!-- footer -->
 
-    <%- include("../partials/footer.ejs") %> 
+    <%- include('../partials/footer.ejs') %> 
+
 </body>
 
 </html>

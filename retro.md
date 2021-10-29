@@ -35,6 +35,26 @@
 - Poner fechas de vencimiento.
 - Dailys.
 
+
+## Hacer menos:
+- Reuniones extensas.
+
+# Sprint 4
+
+## Seguir haciendo:
+- Buena comunicación.
+- Consultar entre nosotros.
+- Ayudar cuando otro tiene dificultades.
+- Poner fechas de vencimiento.
+
+## Hacer más:
+- Organización en trello.
+- Buscar mas informacion e ideas para mejorar el proyecto.
+
+## Empezar a hacer:
+- Weekly.
+- Tomar nota de las reuniones.
+
 ## Hacer menos:
 - Reuniones extensas.
 

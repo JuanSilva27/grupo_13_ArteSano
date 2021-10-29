@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head.ejs")  %> 
+<body>
+    <%- include("../partials/header.ejs") %> 
+
+   
+
+ <main class="login">
+
+    <h2>Esta página es solo para usuarios logueados</h2>
+    <br> <br><br>
+    <p>¿Ya estás registrado? 
+        <a href="/users/login"><br><br>
+          <p>¡Inicia sesión!</p>
+        </a> 
+      </p> <br> <br><br>
+    <p>¿No tenés una cuenta? <br><br>
+        <a href="/users/register">
+          <p>¡Registrate acá!</p>
+        </a> 
+      </p>
+    
+ </main>
+ <%- include("../partials/footer.ejs") %> 
+</body>
+</html>
