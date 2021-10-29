@@ -11,7 +11,7 @@
         <div class="tit-container">
             <h2 class="titulo">Detalle del carrito</h2> 
         </div>
-            <% relacionados.forEach(relacionado=>{%>
+            <% productos.forEach(relacionado=>{%>
                 <article>
                     <div class="product">
                         <h4> Producto</h4>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="precio">
                         <h4>Precio</h4>
-                        <p><%= relacionado.price %> </p>
+                        <p><%= relacionado.precio %> </p>
                     </div>
                     <div class="cantidad">
                         <h4>Cantidad</h4>

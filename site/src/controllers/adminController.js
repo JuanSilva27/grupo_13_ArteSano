@@ -48,7 +48,7 @@ module.exports={
         res.redirect("/admin")
       },
 
-      newProduct: (req, res) => {
+      newProduct: (req, res, next) => {
         let object=req.body
         object.id=productos.length+1
         object.favorito = false

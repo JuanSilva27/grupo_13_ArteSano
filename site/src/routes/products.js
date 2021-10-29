@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const {carrito, detail, categoria, store, categoriasCompletas}=require('../controllers/productsController')
+const authUser = require ("../middlewares/authUser")
 /* GET users listing. */
 
 /// carrito
-router.get('/carrito', carrito);
+router.get('/carrito', authUser, carrito);
 
 
 ///detalle de los productos

@@ -461,7 +461,7 @@
     "titulo": "Triomino",
     "img": "triomino.jpg",
     "descripcion": "Triominó es una variante de dominó usando fichas triangulares.",
-    "precio": 4.500,
+    "precio": 4500,
     "categoria": "Juegos de mesa",
     "favorito": true,
     "relacionado": false
