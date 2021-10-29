@@ -403,5 +403,15 @@
     "email": "ravallelucas@gmail.com",
     "password": "$2a$10$S6yjzG3tyMHfvYd5ecVC..Hq2SuAT3KrIT0cnaigKTKYcwl8veqau",
     "password2": "$2a$10$Vs.hxkHCf.ToVBJ/NnRgZ.PjIO2uA.xtvb9BGgS9M5ZpQ/cbXJa/e"
+  },
+  {
+    "id": 39,
+    "firstName": "asd",
+    "phone": "123456",
+    "provincia": "Santa Fe",
+    "localidad": "Lomas de Zamora",
+    "email": "123@456.com",
+    "password": "$2a$10$6Km2J9Z7EXWyKqavL7jxDOz9Fha642.3jy9n49YDpit4ToRJG0PTO",
+    "imagen": "userDefault.jpeg"
   }
 ]

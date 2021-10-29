@@ -4,7 +4,7 @@
     <% if(relacionado.relacionado===true && cont<6) {%> 
                 
         <div class="prodRelac">
-            <a href="/products/detail/<%= relacionado.id %> "><img  src="/img/<%= relacionado.img %> " alt="<%= relacionado.titulo %> "></a>
+            <a href="/products/detail/<%= relacionado.id %> "><img  src="/img/products/<%= relacionado.img %> " alt="<%= relacionado.titulo %> "></a>
             <h4><%= relacionado.titulo %> </h4>
             <p>$<%= relacionado.precio %> </p>                
         </div>
