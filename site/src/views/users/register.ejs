@@ -9,7 +9,6 @@
      
     <div class="background">
  
-        <!-- exprres me manda los errores hasta el controller, el problema esta en pasarlos del controller a la vita  -->
 
     <form class="formRegister" action="" method="POST" enctype="multipart/form-data" >
          
@@ -20,7 +19,7 @@
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
-            <input class="tamaño" type="tel" placeholder="ej: 0112345678" name="telefono"  > <br>
+            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono"  > <br>
             <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
         </p>
         <p>

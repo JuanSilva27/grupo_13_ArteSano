@@ -413,5 +413,25 @@
     "email": "123@456.com",
     "password": "$2a$10$6Km2J9Z7EXWyKqavL7jxDOz9Fha642.3jy9n49YDpit4ToRJG0PTO",
     "imagen": "userDefault.jpeg"
+  },
+  {
+    "id": 40,
+    "firstName": "coco",
+    "phone": "1564165165",
+    "provincia": "Capital Federal",
+    "localidad": "Lomas de Zamora",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$fW/06D6z1WMwx/agWUFmfOM8iknHlBs7Ear1aS1zHSp9w/wIpDPVq",
+    "imagen": "img1635892874398.jpg"
+  },
+  {
+    "id": 41,
+    "firstName": "cocossss",
+    "phone": "1564165165",
+    "provincia": "Capital Federal",
+    "localidad": "Lomas de Zamora",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$6BStJS3O5wT5Tv.forb1KOAYlqMKJkKq/Ne.AJdx9w9FIipLZRsz.",
+    "imagen": "img1635893118608.jpg"
   }
 ]
