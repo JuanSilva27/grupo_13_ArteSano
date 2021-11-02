@@ -94,12 +94,6 @@
         <div class="botones">
             
              <button class="guardar" type="submit">Crear cuenta</button>
-              <% if (locals.errors) { 
-                 errors.forEach(error => { %>
-                 <p> <%= error.msg %> </p>
-             <%   })
-                 }
-             %> 
         </div>
         <p>¿Ya tenés una cuenta? 
           <a href="/users/login">

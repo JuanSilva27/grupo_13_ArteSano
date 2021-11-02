@@ -44,7 +44,7 @@ module.exports={
     }
       else {
         /* return res.send(errors) */
-        res.render('users/register', {errors: errors.array(), old: object});
+        res.render('users/register', {errors: errors.mapped(), old: object});
       }
       
     },
