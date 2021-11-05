@@ -5,9 +5,9 @@ module.exports=[
     check("telefono")
         .notEmpty().withMessage("Debes completar este campo").bail(),
     check("provincia")
-        .notEmpty().withMessage("Debes completar este campo"),
+        .notEmpty().withMessage("Debes seleccionar una provincia"),
     check("localidad")
-        .notEmpty().withMessage("Debes completar este campo"),
+        .notEmpty().withMessage("Debes seleccionar una localidad"),
     check("email")
         .isEmail().withMessage("Tienes que completar el campo con un Email valido").bail(),
     check("password")
