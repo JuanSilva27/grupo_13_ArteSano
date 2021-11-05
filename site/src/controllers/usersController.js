@@ -43,6 +43,7 @@ module.exports={
       res.redirect(`/users/Miperfil`);
     }
       else {
+        /* return res.send(errors) */
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
       

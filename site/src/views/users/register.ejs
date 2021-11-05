@@ -6,10 +6,9 @@
 
  <main class="register">
     <P class="cont.tituloRegister"><h1>CREA TU CUENTA</h1></P>
-
+     
     <div class="background">
  
-        <!-- exprres me manda los errores hasta el controller, el problema esta en pasarlos del controller a la vita  -->
 
     <form class="formRegister" action="" method="POST" enctype="multipart/form-data" >
          
@@ -20,14 +19,14 @@
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
-            <input class="tamaño" type="tel" placeholder="ej: 0112345678" name="telefono"  > <br>
+            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono"  > <br>
             <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
         </p>
         <p>
         <label for="provincia">PROVINCIA</label>
         <select name="provincia" class="tamaño" >
             <option selected hidden>Seleccione tu provincia</option>
-            <option value="Buenos Aires">Buenos Aires</option>
+            <option value="Buenos Aires">Buenos Aires</option>  
             <option value="Capital Federal">Capital Federal</option>
             <option value="Catamarca">Catamarca</option>
             <option value="Chaco">Chaco</option>
@@ -94,7 +93,6 @@
         <div class="botones">
             
              <button class="guardar" type="submit">Crear cuenta</button>
-            
         </div>
         <p>¿Ya tenés una cuenta? 
           <a href="/users/login">
