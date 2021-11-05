@@ -32,7 +32,8 @@ module.exports={
           localidad: object.localidad,
           email: object.email,
           password: bcrypt.hashSync(object.password, 10),
-          imagen: req.file ? req.file.filename : "userDefault.jpeg"
+          imagen: req.file ? req.file.filename : "userDefault.jpeg",
+          rol: "usuario"
         }
       usuarios.push(NuevoUsuario);
       

@@ -9,7 +9,7 @@
                 <a href="/users/login"> <img  class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user"> </a>
             <% } else {%>
                 <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="/users/Miperfil "> <img  class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user"> </a>
+                <a href="/users/Miperfil "> <img  class="user" src="/img/users/<%= locals.user.imagen %> " alt="user"> </a>
                 <a class="carrito" href="/admin"><i class="fas fa-user-cog"></i></a> 
                 <li><form action="/users/logout" method="GET"><button class="cerrarSesion"type="submit"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</button></form></li>   
             <% } %> 
