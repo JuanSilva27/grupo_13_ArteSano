@@ -439,7 +439,7 @@
     "email": "juan.silva.0270@gmail.com",
     "password": "$2a$10$tGQm6NB7pP/6uWfacw98GOgnCuGOk7gAoR0nUWV/tffZ7Ig7ok8kC",
     "password2": "$2a$10$SKRTYgkGEBPaalywtuz03e9PM/AJ/gD394t0kCxWI93UwvBD1aUAO",
-    "rol": "user",
+    "rol": "admin",
     "imagen": "userDefault.jpeg"
   },
   {
