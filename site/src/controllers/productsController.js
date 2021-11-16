@@ -30,6 +30,62 @@ module.exports = {
 
     categoriasCompletas: (req, res) => {
       res.render('products/categorias/completas', {categorias, productos})
-    }
+    },
+    // crear rutas hacia el controlador y en el controlador los metodos que renderisen la vista. La vista que envie la informacion por POST para crear editar o eliminar 
+/* add: (req, res) => {
+   res.render('admin/create',{categorias});
+  },
+
+  create: (req, res) => {
+    db.Create.Product(req.body)
+    .then( result => {
+      res.redirect(`/products/detail/${req.body.id}`)
+    })
+    .catch(
+      (err) => {
+        res.send(err)
+    })
+  },
+  edite: (req, res) => {
+    res.render(''admin/edit'', {categorias, productos})
+  },
+  update: (req, res) => {
+    db.Product.update({ 
+       where{id: req.params.id}
+    })
+    .then( result => {
+      res.redirect(`/products/detail/${req.body.id}`)
+    })
+    .catch(
+      (err) => {
+        res.send(err)
+    })
+  },
+  destroy: (req, res) => {
+    db.product.destroy({ 
+       where{id: req.params.id}
+    })
+    .then(
+      results => {
+        res.redirect("/products")
+    })
+    .catch(
+      (err) => {
+        res.send(err)
+    })
+    res.render("/admin", {categorias, productos})
+  }, 
+  
+  list: (req, res) => {
+    res.render('products/categorias/completas', {categorias, productos})
+  },
+
+  buscar: (req, res) => {
+    res.render('products/categorias/completas', {categorias, productos})
+  },
+
+  detail: (req, res) => {
+    res.render('products/categorias/completas', {categorias, productos})
+  } */
 }
 

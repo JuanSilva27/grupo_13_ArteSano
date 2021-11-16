@@ -433,5 +433,15 @@
     "email": "leonetkd@gmail.com",
     "password": "$2a$10$6BStJS3O5wT5Tv.forb1KOAYlqMKJkKq/Ne.AJdx9w9FIipLZRsz.",
     "imagen": "img1635893118608.jpg"
+  },
+  {
+    "id": 42,
+    "firstName": "barbara",
+    "phone": "1150213296",
+    "provincia": "Chaco",
+    "localidad": "Hurlingham",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$pqUc0tvZEXEoCzFCJ9f0jOtfP3J/mI7jGQz0OuRFbtWuQoe5llzd.",
+    "imagen": "userDefault.jpeg"
   }
 ]
