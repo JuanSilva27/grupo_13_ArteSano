@@ -19,6 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
         timestamps: false
+    },
+    
+    Imagen.associate = (models) => {
+        Imagen.belongTo(models.Producto, {
+            as: 'productos',
+            foreignKey: 'id_producto'
+        })
     }
 )
 return Imagen

@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Usuario = sequelize.define(
-    'Usuario',
+    'Usuarios',
     {
         id: {
             type: DataTypes.INTEGER,
@@ -43,6 +43,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
         timestamps: false
+    },
+
+    Usuario.associate = (models) => {
+        Usuario.belongTo(models.Rol, {
+            as: 'roles',
+            foreignKey: 'id_rol'
+        })
     }
 )
 return Usuario

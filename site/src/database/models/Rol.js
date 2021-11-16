@@ -15,6 +15,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
         timestamps: false
+    },
+
+
+    Rol.associate = (models) => {
+        Rol.hasMany(models.Usuario, {
+            as: 'usuarios',
+            foreignKey: 'id_rol'
+        })
     }
 )
 return Rol

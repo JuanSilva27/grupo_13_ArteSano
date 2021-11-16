@@ -101,49 +101,55 @@ CREATE TABLE`lasiesta_arte`.`productos` (
   `capacidad` INT NULL,
   `precio` DECIMAL(10,2) NOT NULL,
   `id_categoria` INT NOT NULL,
+  `id_motivo` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `FK_id_categorias_idx` (`id_categoria` ASC) VISIBLE,
   CONSTRAINT `FK_id_categorias_productos`
     FOREIGN KEY (`id_categoria`)
     REFERENCES `lasiesta_arte`.`categorias` (`id`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    CONSTRAINT `FK_id_motivos`
+    FOREIGN KEY (`id_motivo`)
+    REFERENCES `lasiesta_arte`.`motivos` (`id`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-insert into `productos` values (1,"Taza Alta","taza-alta.jpg","Taza alta",13.5,8.5,350,1165,1),
-(2,"Taza Base Cuadrada","taza-cuadrada.jpg","taza con base cuadrada",10.5,8,300,1050,1),
-(3,"Taza Gigante","taza-gigante.jpg","Taza gigante",11.5,10,650,1450,1),
-(4,"Taza Grande Sopera","taza-sopera.jpg","Taza Grande Sopera",8,13.5,500,1165,1),
-(5,"Taza Jarrito","taza-jarrito.jpg","Taza Jarrito",9.5,8,300,1165,1),
-(6,"Taza de Té","taza-te.jpeg","Taza de Té",7.5,8,300,1050,1),
-(7,"Taza Mediana","taza-mediana.jpg","Taza Mediana",10.5,9.5,450,1165,1),
-(8,"Ensaladera Cuadrada","ensaladera-cuadrada.jpg","Ensaladera Cuadrada",9.5,21.5,null,2442,1),
-(9,"Ensaladera Grande Redonda","ensaladera-redonda-grande.jpg","Ensaladera Grande Redonda",7,26.5,null,3108,1),
-(10,"Ensaladera Redonda","ensaladera-redonda.jpg","Ensaladera Redonda",9.5,19,null,1960,1),
-(11,"Ensaladera Individual Grande","ensaladera-redonda.jpg","Ensaladera Individual Grande",8.5,18,null,1887,1),
-(12,"Ensaladera Individual Chica","ensaladera-individual-chica.jpg","Ensaladera Individual Chica",8,15,null,1554,1),
-(13,"Mate con Asa","mate-asa.jpeg","Mate con Asa",7.5,5,null,780,1),
-(14,"Mate sin Asa","mate-chico.jpeg","Mate sin Asa",9,5.5,null,890,1),
-(15,"Mate Grande","mate-grande.jpeg","Mate grande sin asa",7.5,8,null,990,1),
-(16,"Posa Cuchara","posacuchara.jpeg","Posa cuchara para no ensuciar la mesada mientras cocinas.",24,10,null,1055,1),
-(17,"Compotera Cuadrada","compotera-cuadrada.jpg","Compotera con forma cuadrada",5.5,12.5,null,935,1),
-(18,"Compotera Redonda","compotera-redonda.jpg","Compotera Redonda",6,11,null,910,1),
-(19,"Compotera Cónica","compotera-conica.jpg","Compotera con forma conica",8,13,null,935,1),
-(20,"Compotera Afectada","compotera-afectada.jpg","Compotera con relieve",7.5,13,null,935,1),
-(21,"Tetera","tetera.jpg","Tetera",null,null,700,3108,1),
-(22,"Catan + extensión","catan.jpeg","El objetivo del juego es construir pueblos, ciudades y caminos sobre un tablero que es distinto cada vez, mientras se van acumulando varios tipos de cartas. Todos estos elementos proporcionan distintas puntuaciones, ganando la partida el primer jugador que llega a los diez puntos. Juego original + expansión para seis personas.",null,null,null,25000,4),
-(23,"Carcassonne","Carcassonne","Ambientado en la ciudad medieval amurallada francesa de Carcasona, el juego consiste en crear un mapa de juego donde los jugadores compiten por hacer el máximo número de puntos con las mejores posesiones (ciudades, praderas, caminos y monasterios) del mapa.",null,null,null,15000,4),
-(24,"Caja para cartas","porta-naipes.jpg","Caja para cartas con división interna y tapa.",20,10,null,2500,4),
-(25,"Domino","domino.jpg","Juego domino color blanco y negro.",null,null,null,4500,4),
-(26,"Triomino","triomino.jpg","Triominó es una variante de dominó usando fichas triangulares.",null,null,null,4500,4),
-(27,"Maceta Colgante Grande","maceta-colgante-grande.jpg","Maceta colgante grande.",null,null,null,2000,3),
-(28,"Maceta Colgante Mediana","maceta-colgante-mediana.jpg","Maceta Colgante Mediana",null,null,null,1600,3),
-(29,"Maceta Colgante Chica","maceta-colgante-chica.jpg","Maceta Colgante Chica",null,null,null,1100,3),
-(30,"Pajaritos","pajaritos.jpeg","Pajaritos sonajeros.",null,null,null,1330,3),
-(31,"Comedero para pajaritos","comedero-pajaros.jpg","Comedero colgante para pajaritos.",null,null,null,1500,3),
-(32,"Set Jabonera y Vaso","set-banio.jpg","Set jabonera y vaso porta cepillos.",null,null,null,1600,2),
-(33,"Jabonera con Plato","jabonera.jpg","Jabonera con plato.",null,null,null,1100,2),
-(34,"Vaso para Cepillos de Dientes","porta-cepillos.jpg","Vaso Porta Cepillos de dientes.",null,null,null,710,2);
+insert into `productos` values (1,"Taza Alta","taza-alta.jpg","Taza alta",13.5,8.5,350,1165,1,null),
+(2,"Taza Base Cuadrada","taza-cuadrada.jpg","taza con base cuadrada",10.5,8,300,1050,1,null),
+(3,"Taza Gigante","taza-gigante.jpg","Taza gigante",11.5,10,650,1450,1,null),
+(4,"Taza Grande Sopera","taza-sopera.jpg","Taza Grande Sopera",8,13.5,500,1165,1,null),
+(5,"Taza Jarrito","taza-jarrito.jpg","Taza Jarrito",9.5,8,300,1165,1,null),
+(6,"Taza de Té","taza-te.jpeg","Taza de Té",7.5,8,300,1050,1,null),
+(7,"Taza Mediana","taza-mediana.jpg","Taza Mediana",10.5,9.5,450,1165,1,null),
+(8,"Ensaladera Cuadrada","ensaladera-cuadrada.jpg","Ensaladera Cuadrada",9.5,21.5,null,2442,1,null),
+(9,"Ensaladera Grande Redonda","ensaladera-redonda-grande.jpg","Ensaladera Grande Redonda",7,26.5,null,3108,1,null),
+(10,"Ensaladera Redonda","ensaladera-redonda.jpg","Ensaladera Redonda",9.5,19,null,1960,1,null),
+(11,"Ensaladera Individual Grande","ensaladera-redonda.jpg","Ensaladera Individual Grande",8.5,18,null,1887,1,null),
+(12,"Ensaladera Individual Chica","ensaladera-individual-chica.jpg","Ensaladera Individual Chica",8,15,null,1554,1,null),
+(13,"Mate con Asa","mate-asa.jpeg","Mate con Asa",7.5,5,null,780,1,null),
+(14,"Mate sin Asa","mate-chico.jpeg","Mate sin Asa",9,5.5,null,890,1,null),
+(15,"Mate Grande","mate-grande.jpeg","Mate grande sin asa",7.5,8,null,990,1,null),
+(16,"Posa Cuchara","posacuchara.jpeg","Posa cuchara para no ensuciar la mesada mientras cocinas.",24,10,null,1055,1,null),
+(17,"Compotera Cuadrada","compotera-cuadrada.jpg","Compotera con forma cuadrada",5.5,12.5,null,935,1,null),
+(18,"Compotera Redonda","compotera-redonda.jpg","Compotera Redonda",6,11,null,910,1,null),
+(19,"Compotera Cónica","compotera-conica.jpg","Compotera con forma conica",8,13,null,935,1,null),
+(20,"Compotera Afectada","compotera-afectada.jpg","Compotera con relieve",7.5,13,null,935,1,null),
+(21,"Tetera","tetera.jpg","Tetera",null,null,700,3108,1,null),
+(22,"Catan + extensión","catan.jpeg","El objetivo del juego es construir pueblos, ciudades y caminos sobre un tablero que es distinto cada vez, mientras se van acumulando varios tipos de cartas. Todos estos elementos proporcionan distintas puntuaciones, ganando la partida el primer jugador que llega a los diez puntos. Juego original + expansión para seis personas.",null,null,null,25000,4,null),
+(23,"Carcassonne","Carcassonne","Ambientado en la ciudad medieval amurallada francesa de Carcasona, el juego consiste en crear un mapa de juego donde los jugadores compiten por hacer el máximo número de puntos con las mejores posesiones (ciudades, praderas, caminos y monasterios) del mapa.",null,null,null,15000,4,null),
+(24,"Caja para cartas","porta-naipes.jpg","Caja para cartas con división interna y tapa.",20,10,null,2500,4,null),
+(25,"Domino","domino.jpg","Juego domino color blanco y negro.",null,null,null,4500,4,null),
+(26,"Triomino","triomino.jpg","Triominó es una variante de dominó usando fichas triangulares.",null,null,null,4500,4,null),
+(27,"Maceta Colgante Grande","maceta-colgante-grande.jpg","Maceta colgante grande.",null,null,null,2000,3,null),
+(28,"Maceta Colgante Mediana","maceta-colgante-mediana.jpg","Maceta Colgante Mediana",null,null,null,1600,3,null),
+(29,"Maceta Colgante Chica","maceta-colgante-chica.jpg","Maceta Colgante Chica",null,null,null,1100,3,null),
+(30,"Pajaritos","pajaritos.jpeg","Pajaritos sonajeros.",null,null,null,1330,3,null),
+(31,"Comedero para pajaritos","comedero-pajaros.jpg","Comedero colgante para pajaritos.",null,null,null,1500,3,null),
+(32,"Set Jabonera y Vaso","set-banio.jpg","Set jabonera y vaso porta cepillos.",null,null,null,1600,2,null),
+(33,"Jabonera con Plato","jabonera.jpg","Jabonera con plato.",null,null,null,1100,2,null),
+(34,"Vaso para Cepillos de Dientes","porta-cepillos.jpg","Vaso Porta Cepillos de dientes.",null,null,null,710,2,null);
 
 
 -- -----------------------------------------------------
@@ -153,14 +159,7 @@ DROP TABLE IF EXISTS `lasiesta_arte`.`motivos`;
 CREATE TABLE `lasiesta_arte`.`motivos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
-  `id_producto` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `FK_id_producto_idx` (`id_producto` ASC) VISIBLE,
-  CONSTRAINT `FK_id_producto_motivos`
-    FOREIGN KEY (`id_producto`)
-    REFERENCES `lasiesta_arte`.`productos` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 

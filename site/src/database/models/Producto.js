@@ -40,10 +40,29 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        id_motivo: {
+            type: DataTypes.INTEGER,
+            defaulValue: null,
+        }
     },
     {
         timestamps: false
+    },
+
+    Producto.associate = (models) => {
+        Producto.belongTo(models.Categoria, {
+            as: 'categorias',
+            foreignKey: 'id_categoria'
+        })
+    },
+
+    Producto.associate = (models) => {
+        Producto.hasMany(models.Imagen, {
+            as: 'imagenes',
+            foreignKey: 'id_producto'
+        })
     }
+
 )
 return Producto
 }
