@@ -27,7 +27,21 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
         timestamps: false
-    }
+    },
+
+    Orden.associate = (models) => {
+        Orden.belongTo(models.Usuario, {
+            as: 'usuarios',
+            foreignKey: 'id_usuario'
+        })
+    },
+
+    Orden.associate = (models) => {
+        Orden.hasMany(models.Carrito, {
+            as: 'carritos',
+            foreignKey: 'id_orden'
+        })
+    },
 )
 return Orden
 }

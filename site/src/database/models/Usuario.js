@@ -50,7 +50,28 @@ module.exports = (sequelize, DataTypes) => {
             as: 'roles',
             foreignKey: 'id_rol'
         })
-    }
+    },
+
+    Usuario.associate = (models) => {
+        Usuario.hasMany(models.Favorito, {
+            as: 'favoritos',
+            foreignKey: 'id_usuario'
+        })
+    },
+
+    Usuario.associate = (models) => {
+        Usuario.hasMany(models.Carrito, {
+            as: 'carritos',
+            foreignKey: 'id_usuario'
+        })
+    },
+
+    Usuario.associate = (models) => {
+        Usuario.hasMany(models.Orden, {
+            as: 'ordenes',
+            foreignKey: 'id_usuario'
+        })
+    },
 )
 return Usuario
 }

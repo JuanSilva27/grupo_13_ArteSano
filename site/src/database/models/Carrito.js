@@ -39,7 +39,28 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
         timestamps: false
-    }
+    },
+
+    Carrito.associate = (models) => {
+        Carrito.belongTo(models.Producto, {
+            as: 'productos',
+            foreignKey: 'id_producto'
+        })
+    },
+
+    Carrito.associate = (models) => {
+        Carrito.belongTo(models.Usuario, {
+            as: 'usuarios',
+            foreignKey: 'id_usuario'
+        })
+    },
+
+    Carrito.associate = (models) => {
+        Carrito.belongTo(models.Orden, {
+            as: 'ordenes',
+            foreignKey: 'id_orden'
+        })
+    },
 )
 return Carrito
 }
