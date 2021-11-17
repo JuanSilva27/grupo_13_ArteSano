@@ -37,7 +37,7 @@ module.exports = {
   },
 
   create: (req, res) => {
-    db.Create.Product(req.body)
+    db.Product.Create(req.body)
     .then( result => {
       res.redirect(`/products/detail/${req.body.id}`)
     })
