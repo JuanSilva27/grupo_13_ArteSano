@@ -15,5 +15,19 @@ router.put("/edit/:id",update)
 //borrar producto
 router.delete("/delete/:id",destroy)
 
+//base de datos
+/* router.get('/', controller.add)
+router.post('/', controller.create)
 
+router.get('/edit/:id', edit);
+router.put("/edit/:id",update)
+
+router.delete("/delete/:id",destroy)
+router.post('/', controller.create)
+
+router.get('/', controller.add)
+router.post('/', controller.create)
+
+router.get('/', controller.add)
+router.post('/', controller.create)*/
 module.exports=router

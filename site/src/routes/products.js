@@ -19,20 +19,6 @@ router.get('/categorias/completas', categoriasCompletas)
 router.get('/:categoria', categoria)
 router.get('/', store);
 
-//base de datos
-/* router.get('/', controller.add)
-router.post('/', controller.create)
 
-router.get('/edit/:id', edit);
-router.put("/edit/:id",update)
-
-router.delete("/delete/:id",destroy)
-router.post('/', controller.create)
-
-router.get('/', controller.add)
-router.post('/', controller.create)
-
-router.get('/', controller.add)
-router.post('/', controller.create)*/
 
 module.exports=router

@@ -16,17 +16,26 @@ module.exports={
     register:function(req, res, ) {
         res.render('users/register');
       },
-    NewRegister: (req, res, ) => {
-      
-      
-       
+    NewRegister: (req, res, ) => {  
       const errors = validationResult(req);
       let object = (req.body)
       if (errors.isEmpty()) { 
-        
+    /*     db.Usuario.Create(req.body)
+    .then( result => {
+      res.cookie("recuerdame", result.email, {maxAge: 60*1000})
+      res.redirect(`/users/Miperfil`);
+      else {
+        res.render('users/register', {errors: errors.mapped(), old: req.body});
+      }
+    })
+    .catch(
+      (err) => {
+        res.send(err)
+    }) */
         let NuevoUsuario = {
           id: usuarios.length+1,
           firstName: object.Nombre,
+          lastName: object.Apellido,
           phone: object.telefono,
           provincia: object.provincia,
           localidad: object.localidad,
@@ -42,7 +51,7 @@ module.exports={
       res.redirect(`/users/Miperfil`);
     }
       else {
-        /* return res.send(errors) */
+        
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
       
