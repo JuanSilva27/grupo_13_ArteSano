@@ -15,7 +15,7 @@ router.put("/edit/:id",update)
 //borrar producto
 router.delete("/delete/:id",destroy)
 
-//base de datos
+//ESTO ESTA DE GUIA PERO EN TEORIA NO CAMBIARIAN LAS DE ARRIBA
 /* router.get('/', controller.add)
 router.post('/', controller.create)
 

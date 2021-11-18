@@ -56,7 +56,23 @@ module.exports={
       }
       
     },
-
+    //Falta ruta
+    /* edite: (req, res) => {
+      res.render('/users/Miperfil')
+    },
+    update: (req, res) => {
+      db.Usuario.update(
+        req.body,
+        { 
+         where{id: req.params.id}
+        })
+      .then( result => {
+        res.redirect('/users/Miperfil')
+      })
+      .catch(
+        (err) => {
+          res.send(err)
+      }) */
     user: (req,res)=>{
       const user=req.session.userLog
       const usuario = usuarios.find(a=>a.id === user.id)

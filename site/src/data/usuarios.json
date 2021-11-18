@@ -443,5 +443,18 @@
     "email": "leonetkd@gmail.com",
     "password": "$2a$10$pqUc0tvZEXEoCzFCJ9f0jOtfP3J/mI7jGQz0OuRFbtWuQoe5llzd.",
     "imagen": "userDefault.jpeg"
+  },
+  {
+    "id": 43,
+    "firstName": [
+      "Eric ",
+      "Benitez"
+    ],
+    "phone": "1150213296",
+    "provincia": "Seleccione tu provincia",
+    "localidad": "Ramos Mejia",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$0s9h7aMNxn05mmv88GGs4.zLX1//yqU2XHMg1r1Y076m0RejhgrwW",
+    "imagen": "userDefault.jpeg"
   }
 ]
