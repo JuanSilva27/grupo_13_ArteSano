@@ -32,8 +32,8 @@ module.exports={
           localidad: object.localidad,
           email: object.email,
           password: bcrypt.hashSync(object.password, 10),
-          password2: bcrypt.hashSync(object.password2, 10),
-          Imagen: object.image
+          imagen: req.file ? req.file.filename : "userDefault.jpeg",
+          rol: "usuario"
         }
       usuarios.push(NuevoUsuario);
       
@@ -43,6 +43,7 @@ module.exports={
       res.redirect(`/users/Miperfil`);
     }
       else {
+        /* return res.send(errors) */
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
       

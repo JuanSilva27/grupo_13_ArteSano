@@ -39,6 +39,7 @@
 ## Hacer menos:
 - Reuniones extensas.
 
+
 # Sprint 4
 
 ## Seguir haciendo:
@@ -57,4 +58,28 @@
 
 ## Hacer menos:
 - Reuniones extensas.
+
+
+# Sprint 5
+
+## Seguir haciendo:
+- Buena comunicación.
+- Consultar entre nosotros.
+- Ayudar cuando otro tiene dificultades.
+- Poner fechas de vencimiento.
+- Reuniones concisas.
+
+## Hacer más:
+- Organización en trello.
+- Buscar mas informacion e ideas para mejorar el proyecto.
+- Utilizar trello más seguido.
+- Tomar nota de las reuniones.
+
+## Empezar a hacer:
+- Weekly.
+- Exponer trabajo realizado antes del nuevo sprint. 
+
+## Hacer menos:
+- Reuniones extensas.
+
 

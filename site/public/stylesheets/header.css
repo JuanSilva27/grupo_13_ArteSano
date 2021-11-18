@@ -40,17 +40,21 @@ header {
 }
 
 
-.header a.imgConteiner{
+.header div.imgConteiner{
     width: 70%;
 }
 
 
-.header .logo{
+.header .logo {
+    display: block;
+    width: 140px;
+}
+
+.header a.linkLogo{
     display: block;
     width: 140px;
     margin-left: 15px;
 }
-
 .header .esquina {
     width: 20%;
     display: flex;
@@ -218,7 +222,7 @@ footer div.copyright {
     }
 
 
-    .header img.logo{
+    .header img.logo, .header a.linkLogo{
         width: 250px;
     }
 
