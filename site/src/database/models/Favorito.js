@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     },
 
-    Favorito.associate = (models) => {
+    /*Favorito.associate = (models) => {
         Favorito.belongTo(models.Producto, {
             as: 'productos',
             foreignKey: 'id_producto'
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
             as: 'usuarios',
             foreignKey: 'id_usuario'
         })
-    },
+    },*/
 
 )
 return Favorito

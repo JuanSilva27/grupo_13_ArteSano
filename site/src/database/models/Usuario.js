@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     },
 
-    Usuario.associate = (models) => {
+    /*Usuario.associate = (models) => {
         Usuario.belongTo(models.Rol, {
             as: 'roles',
             foreignKey: 'id_rol'
@@ -71,7 +71,7 @@ module.exports = (sequelize, DataTypes) => {
             as: 'ordenes',
             foreignKey: 'id_usuario'
         })
-    },
+    },*/
 )
 return Usuario
 }

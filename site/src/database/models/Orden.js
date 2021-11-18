@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     },
 
-    Orden.associate = (models) => {
+    /*Orden.associate = (models) => {
         Orden.belongTo(models.Usuario, {
             as: 'usuarios',
             foreignKey: 'id_usuario'
@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
             as: 'carritos',
             foreignKey: 'id_orden'
         })
-    },
+    },*/
 )
 return Orden
 }

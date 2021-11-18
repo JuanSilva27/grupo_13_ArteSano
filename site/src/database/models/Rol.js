@@ -18,12 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     },
 
 
-    Rol.associate = (models) => {
+    /*Rol.associate = (models) => {
         Rol.hasMany(models.Usuario, {
             as: 'usuarios',
             foreignKey: 'id_rol'
         })
-    }
+    }*/
 )
 return Rol
 }
