@@ -21,7 +21,13 @@ module.exports={
       
       },
     create:function(req, res, next) {
+      db.Categorias.findAll({
+        include:[{association:"categoriasPr"}]
+      })
+      .then(categorias=>{
+        
         res.render('admin/create',{categorias});
+      })
       },
 
       //edit
