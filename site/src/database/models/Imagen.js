@@ -18,15 +18,16 @@ module.exports = (sequelize, DataTypes) => {
         },
     },
     {
+        tableName: "iamgenes",
         timestamps: false
-    },
+    })
     
-    /*Imagen.associate = (models) => {
-        Imagen.belongTo(models.Producto, {
+    Imagen.associate = (models) => {
+        Imagen.belongsTo(models.Productos, {
             as: 'productos',
             foreignKey: 'id_producto'
         })
-    }*/
-)
+    }
+
 return Imagen
 }

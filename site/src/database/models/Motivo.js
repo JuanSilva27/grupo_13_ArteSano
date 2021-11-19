@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-    const Motivo = sequelize.define(
-    'Motivo',
+    const Motivos = sequelize.define(
+    'Motivos',
     {
         id: {
             type: DataTypes.INTEGER,
@@ -14,15 +14,16 @@ module.exports = (sequelize, DataTypes) => {
         },
     },
     {
+        tableName: "motivos",
         timestamps: false
-    },
+    })
 
-    /*Motivo.associate = (models) => {
-        Motivo.hasMany(models.Producto, {
-            as: 'productos',
+    Motivos.associate = (models) => {
+        Motivos.hasMany(models.Productos, {
+            as: 'motivos',
             foreignKey: 'id_motivo'
         })
-    }*/
-)
-return Motivo
+    }
+
+return Motivos
 }

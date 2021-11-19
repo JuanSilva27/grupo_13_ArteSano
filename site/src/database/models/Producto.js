@@ -12,10 +12,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(45),
             allowNull: false,
         },
-        imagen: {
-            type: DataTypes.STRING(75),
-            allowNull: false,
-        },
         descripcion: {
             type: DataTypes.TEXT,
             allowNull: false,
@@ -46,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     },
     {
+        tableName: "productos",
         timestamps: false
     },
     )
@@ -56,34 +53,40 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'id_categoria'
         })
     }
+    
+    Productos.associate = (models) => {
+            Productos.belongsTo(models.Motivos, {
+                as: 'motivos',
+                foreignKey: 'id_motivo'
+            })
+    }
+
+    Productos.associate = (models) => {
+            Productos.hasMany(models.Imagen, {
+                as: 'productos',
+                foreignKey: 'id_producto'
+            })
+    }
+
+        
+    Productos.associate = (models) => {
+            Productos.belongsToMany(models.Usuarios, {
+                as: 'usuarios_favorito',
+                through: 'favoritos',
+                foreignKey: 'id_producto',
+                otherKey: 'id_usuario'
+            })
+    }
+    
+    Productos.associate = (models) => {
+            Productos.belongsToMany(models.Usuarios, {
+                as: 'usuarios_carrito',
+                through: 'carrito',
+                foreignKey: 'id_producto',
+                otherKey: 'id_usuario'
+            })
+    }
+
+
 return Productos
 }
-
-
-/*Producto.associate = (models) => {
-        Producto.belongsTo(models.Motivo, {
-            as: 'motivos',
-            foreignKey: 'id_motivo'
-        })
-    },
-
-    Producto.associate = (models) => {
-        Producto.hasMany(models.Imagen, {
-            as: 'imagenes',
-            foreignKey: 'id_producto'
-        })
-    },
-    
-    Producto.associate = (models) => {
-        Producto.hasMany(models.Favorito, {
-            as: 'favoritos',
-            foreignKey: 'id_producto'
-        })
-    },
-
-    Producto.associate = (models) => {
-        Producto.hasMany(models.Carrito, {
-            as: 'carritos',
-            foreignKey: 'id_producto'
-        })
-    },*/

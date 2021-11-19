@@ -42,14 +42,35 @@ module.exports = (sequelize, DataTypes) => {
         }, 
     },
     {
+        tableName: "usuarios",
         timestamps: false
-    },
-)
- Usuarios.associate = (models) => {
+    })
+
+    Usuarios.associate = (models) => {
         Usuarios.belongsTo(models.Rol, {
             as: 'roles',
             foreignKey: 'id_rol'
         })
     }
+
+    Usuarios.associate = (models) => {
+        Usuarios.belongsToMany(models.Productos, {
+            as: 'productos_favorito',
+            through: 'favoritos',
+            foreignKey: 'id_usuario',
+            otherKey: 'id_producto'
+        })
+    }
+    
+    Usuarios.associate = (models) => {
+        Usuarios.belongsToMany(models.Productos, {
+            as: 'productos_carrito',
+            through: 'carrito',
+            foreignKey: 'id_usuario',
+            otherKey: 'id_producto'
+        })
+    }
+
+
 return Usuarios
 }
