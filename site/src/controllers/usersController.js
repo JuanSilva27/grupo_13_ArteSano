@@ -5,10 +5,6 @@ const {validationResult} = require("express-validator")
 const UsersFilePath = path.join(__dirname, '../data/usuarios.json');
 let usuarios=JSON.parse(fs.readFileSync(UsersFilePath, "utf-8"))
 
-
-
-
-
 module.exports={
     login:function(req, res, ) {
         res.render('users/login');
@@ -16,24 +12,33 @@ module.exports={
     register:function(req, res, ) {
         res.render('users/register');
       },
-    NewRegister: (req, res, ) => {
-      
-      
-       
+    NewRegister: (req, res, ) => {  
       const errors = validationResult(req);
       let object = (req.body)
       if (errors.isEmpty()) { 
-        
+     db.Usuario.Create(req.body)
+    .then( result => {
+      res.cookie("recuerdame", result.email, {maxAge: 60*1000})
+      res.redirect(`/users/Miperfil`);
+      else {
+        res.render('users/register', {errors: errors.mapped(), old: req.body});
+      }
+    })
+    .catch(
+      (err) => {
+        res.send(err)
+    }) 
+
         let NuevoUsuario = {
           id: usuarios.length+1,
           firstName: object.Nombre,
+          lastName: object.Apellido,
           phone: object.telefono,
           provincia: object.provincia,
           localidad: object.localidad,
           email: object.email,
           password: bcrypt.hashSync(object.password, 10),
-          imagen: req.file ? req.file.filename : "userDefault.jpeg",
-          rol: "usuario"
+          imagen: req.file ? req.file.filename : "userDefault.jpeg"
         }
       usuarios.push(NuevoUsuario);
       
@@ -43,12 +48,29 @@ module.exports={
       res.redirect(`/users/Miperfil`);
     }
       else {
-        /* return res.send(errors) */
+        
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
       
     },
 
+    //Falta ruta
+    edite: (req, res) => {
+      res.render('/users/Miperfil')
+    },
+    update: (req, res) => {
+      db.Usuario.update(
+        req.body,
+        { 
+         where{id: req.params.id}
+        })
+      .then( result => {
+        res.redirect('/users/Miperfil')
+      })
+      .catch(
+        (err) => {
+          res.send(err)
+      })
     user: (req,res)=>{
       const user=req.session.userLog
       const usuario = usuarios.find(a=>a.id === user.id)
