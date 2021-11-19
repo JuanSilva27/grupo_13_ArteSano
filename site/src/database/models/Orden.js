@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         }, 
     },
     {
+        tableName: "ordenes",
         timestamps: false
     },
 
