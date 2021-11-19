@@ -4,12 +4,21 @@ const path= require ("path")
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 let productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
 const categorias=require("../data/categorias.json");
+const db = require("../database/models");
 /* const { products } = require("./productsController"); */
 
 module.exports={
     list:function(req, res, next) {
-      productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
-        res.render('admin/admin',{productos});
+      db.Productos.findAll({
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ]
+      })
+      .then(productos=>{
+        res.render('admin/admin',{productos})
+      })
+      
       },
     create:function(req, res, next) {
         res.render('admin/create',{categorias});
