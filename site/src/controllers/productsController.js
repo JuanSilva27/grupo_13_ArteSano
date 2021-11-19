@@ -67,8 +67,5 @@ module.exports = {
       res.render('products/categorias',{selecCategoria, productos})
     },
 
-    categoriasCompletas: (req, res) => {
-      res.render('products/categorias/completas', {categorias, productos})
-    }
 }
 
