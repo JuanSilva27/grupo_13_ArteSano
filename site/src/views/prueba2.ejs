@@ -8,7 +8,7 @@
     <h1>Usuarios</h1>
     <% for (let i=0; i<usuarios.length; i++) { %>
       <li> <%= usuarios[i].id %> <%= usuarios[i].nombre %></a> <%= usuarios[i].apellido %> 
-        <% if usuarios[i].roles) { %> 
+        <% if (usuarios[i].roles) { %> 
           <%= usuarios[i].roles.nombre %>   </li>
         <% } %>
       <% } %> 
