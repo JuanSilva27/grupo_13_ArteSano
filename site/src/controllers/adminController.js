@@ -64,15 +64,19 @@ module.exports={
       },
 
       newProduct: (req, res, next) => {
-        let object=req.body
-        object.id=productos.length+1
-        object.favorito = false
-        object.relacionados = false
-        object.precio = "$" + object.precio
-        productos.push(object)
-        
-        fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
-        res.redirect(`/products/detail/${object.id}`)
+        db.Productos.create({
+          nombre:req.body.titulo,
+          descripcion:req.body.descripcion,
+          precio:req.body.precio,
+          id_categoria:req.body.categoria,
+        })
+        .then(resultado=>{
+          db.Imagen.create({
+            id_producto:resultado.id,
+            nombre:"",
+          })
+          res.redirect(`/products/detail/${resultado.id}`)
+        })
       },
       
     
