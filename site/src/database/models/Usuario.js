@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Usuario = sequelize.define(
+    let Usuarios = sequelize.define(
     'Usuarios',
     {
         id: {
@@ -44,34 +44,12 @@ module.exports = (sequelize, DataTypes) => {
     {
         timestamps: false
     },
-
-    /*Usuario.associate = (models) => {
-        Usuario.belongTo(models.Rol, {
+)
+ Usuarios.associate = (models) => {
+        Usuarios.belongsTo(models.Rol, {
             as: 'roles',
             foreignKey: 'id_rol'
         })
-    },
-
-    Usuario.associate = (models) => {
-        Usuario.hasMany(models.Favorito, {
-            as: 'favoritos',
-            foreignKey: 'id_usuario'
-        })
-    },
-
-    Usuario.associate = (models) => {
-        Usuario.hasMany(models.Carrito, {
-            as: 'carritos',
-            foreignKey: 'id_usuario'
-        })
-    },
-
-    Usuario.associate = (models) => {
-        Usuario.hasMany(models.Orden, {
-            as: 'ordenes',
-            foreignKey: 'id_usuario'
-        })
-    },*/
-)
-return Usuario
+    }
+return Usuarios
 }

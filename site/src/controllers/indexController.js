@@ -17,18 +17,33 @@ module.exports={
     },
 
     prueba: function(req, res, next) {
-      db.Producto.findAll(
+      db.Productos.findAll(
         {
         include: [{association: "categorias"}]
       }
       )
         .then(products => {
-          console.log(products.categoria);
           res.render('prueba', { productos: products })
           
         })
         .catch(err => {
           res.send(err);
         })
-    }
+    },
+    
+    prueba2: function(req, res, next) {
+      db.Usuarios.findAll(
+        {
+        include: [{association: "roles"}]
+      }
+      )
+        .then(users => {
+          res.render('prueba2', { usuarios: users })
+          
+        })
+        .catch(err => {
+          res.send(err);
+        })
+    },
+
 }

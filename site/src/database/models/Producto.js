@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-    let Producto = sequelize.define(
-    'Producto',
+    let Productos = sequelize.define(
+    'Productos',
     {
         id: {
             type: DataTypes.INTEGER,
@@ -50,13 +50,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     )
 
-    Producto.associate = (models) => {
-        Producto.belongsTo(models.Categoria, {
+    Productos.associate = (models) => {
+        Productos.belongsTo(models.Categorias, {
             as: 'categorias',
-            foreignKey: 'FK_id_categorias_productos'
+            foreignKey: 'id_categoria'
         })
     }
-return Producto
+return Productos
 }
 
 
