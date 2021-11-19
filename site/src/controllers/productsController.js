@@ -9,8 +9,27 @@ const db = require('../database/models')
 
 module.exports = {
     carrito: function(req, res, next) {
-        res.render('products/carrito',{productos});
-      },
+     let productos= db.Productos.findAll({
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ]
+      })
+      let relacionados= db.Productos.findAll({
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ],
+        limit: 6
+      })
+      Promise.all([productos,relacionados])
+      .then(([productos, relacionados])=>{
+        res.render('products/carrito',{productos, relacionados});
+
+
+      }
+
+      )},
   
     store: function(req, res, next) {
       db.Productos.findAll(
