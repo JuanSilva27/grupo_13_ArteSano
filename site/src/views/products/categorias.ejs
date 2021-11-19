@@ -25,10 +25,10 @@
 
         <% let cont= 1 %> 
         <% productos.forEach(producto=>{ %> 
-           <% if(producto.categoria === selecCategoria.name && cont<5){%>  
+           <% if(producto.categoriasPr.nombre === selecCategoria.nombre && cont<5){%>  
             <article class="pdto<%= cont %> ">
                 <div class="photo">
-                  <a href="/products/detail/<%= producto.id  %>"> <img src='/img/products/<%= producto.img  %> ' width="100%" alt="<%= producto.titulo  %>" /></a>
+                  <a href="/products/detail/<%= producto.id %>"> <img src='/img/products/<%= producto.productosIm[0].nombre   %> ' width="100%" alt="<%= producto.titulo  %>" /></a>
                 </div>
                 <div class="description">
                     <div class="categoria">
