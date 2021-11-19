@@ -19,7 +19,10 @@ module.exports={
     prueba: function(req, res, next) {
       db.Productos.findAll(
         {
-        include: [{association: "categorias"}]
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ]
       }
       )
         .then(products => {

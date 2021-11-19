@@ -49,42 +49,29 @@ module.exports = (sequelize, DataTypes) => {
 
     Productos.associate = (models) => {
         Productos.belongsTo(models.Categorias, {
-            as: 'categorias',
+            as: 'categoriasPr',
             foreignKey: 'id_categoria'
         })
-    }
-    
-    Productos.associate = (models) => {
-            Productos.belongsTo(models.Motivos, {
-                as: 'motivos',
-                foreignKey: 'id_motivo'
-            })
-    }
-
-    Productos.associate = (models) => {
-            Productos.hasMany(models.Imagen, {
-                as: 'productos',
-                foreignKey: 'id_producto'
-            })
-    }
-
-        
-    Productos.associate = (models) => {
-            Productos.belongsToMany(models.Usuarios, {
-                as: 'usuarios_favorito',
-                through: 'favoritos',
-                foreignKey: 'id_producto',
-                otherKey: 'id_usuario'
-            })
-    }
-    
-    Productos.associate = (models) => {
-            Productos.belongsToMany(models.Usuarios, {
-                as: 'usuarios_carrito',
-                through: 'carrito',
-                foreignKey: 'id_producto',
-                otherKey: 'id_usuario'
-            })
+        Productos.belongsTo(models.Motivos, {
+            as: 'motivosPr',
+            foreignKey: 'id_motivo'
+        })
+        Productos.hasMany(models.Imagen, {
+            as: 'productosIm',
+            foreignKey: 'id_producto'
+        })
+        Productos.belongsToMany(models.Usuarios, {
+            as: 'usuarios_favorito',
+            through: 'favoritos',
+            foreignKey: 'id_producto',
+            otherKey: 'id_usuario'
+        })
+        Productos.belongsToMany(models.Usuarios, {
+            as: 'usuarios_carrito',
+            through: 'carrito',
+            foreignKey: 'id_producto',
+            otherKey: 'id_usuario'
+        })
     }
 
 
