@@ -7,7 +7,7 @@
 
     <main class="detalle-producto">
         <div class="tit-container">
-            <h2 class="titulo"><%= producto.titulo%> </h2>
+            <h2 class="titulo"><%= producto.nombre%> </h2>
         </div>
 
         <!-- En esta parte se muestra todo lo referido al producto como fotos, descripcion, etc. -->
@@ -17,7 +17,7 @@
                     <button>
                         <i class="fas fa-solid fa-angle-left"></i>
                     </button>
-                    <img src="/img/products/<%= producto.img %> " alt="Imagen principal">
+                    <img src="/img/products/<%= producto.productosIm[0].nombre %> " alt="Imagen principal">
                     <button>
                         <i class="fas fa-solid fa-angle-right"></i>
                     </button>

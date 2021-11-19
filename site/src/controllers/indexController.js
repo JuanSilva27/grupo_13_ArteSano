@@ -17,7 +17,8 @@ module.exports={
     },
 
     prueba: function(req, res, next) {
-      db.Productos.findAll(
+      const {id}=req.params
+      db.Productos.findByPk(+id,
         {
         include: [
           {association: "categoriasPr"},
@@ -26,7 +27,7 @@ module.exports={
       }
       )
         .then(products => {
-          res.render('prueba', { productos: products })
+          res.render('products/prueba', { producto: products })
           
         })
         .catch(err => {

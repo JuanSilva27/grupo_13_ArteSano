@@ -13,14 +13,52 @@ module.exports = {
       },
   
     store: function(req, res, next) {
-      res.render('products/products', {productos})
+      db.Productos.findAll(
+        {
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ]
+      }
+      )
+        .then(products => {
+          res.render('products/products', { producto: products })
+          
+        })
+        .catch(err => {
+          res.send(err);
+        })
     }, 
       
     detail: (req, res)=>{
-      productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
-      const id= req.params.id
-      const producto= productos.find(element=>element.id=== +id)
-      res.render('products/detalle',{producto, productos})
+      const {id}=req.params
+      let producto=db.Productos.findByPk(+id,
+        {
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ]
+      }
+      );
+      let relacionados = db.Productos.findAll(
+        {
+          include: [
+            {association: "categoriasPr"},
+            {association: "productosIm"}
+          ],
+          limit: 6
+        }
+      );
+      Promise.all([producto, relacionados])
+        .then(([producto, relacionados]) => {
+          res.render('products/detalle', { 
+            producto: producto,
+            relacionados: relacionados })
+          
+        })
+        .catch(err => {
+          res.send(err);
+        })
     },
 
     categoria: (req,res)=>{

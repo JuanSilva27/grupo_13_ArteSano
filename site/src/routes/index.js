@@ -9,7 +9,7 @@ router.get('/', index );
 
 router.get("/about",about)
 
-router.get('/prueba', prueba);
+router.get('/prueba/:id', prueba);
 
 router.get('/prueba2', prueba2);
 
