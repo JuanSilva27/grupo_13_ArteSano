@@ -62,9 +62,21 @@ module.exports = {
     },
 
     categoria: (req,res)=>{
-      let categoria= req.params.categoria
-      let selecCategoria= categorias.find(e=>e.href=== categoria)
-      res.render('products/categorias',{selecCategoria, productos})
+      let {categoria}= req.params
+      let selecCategoria=db.Categorias.findOne({
+        where:{
+          href: categoria
+        }, 
+        include: [{association: "categoriasPr"}]
+      });
+      let productos=db.Productos.findAll({
+        include:[{association: "categoriasPr"}, {association:"productosIm"}]
+      });
+      Promise.all([selecCategoria,productos])
+      .then(([selecCategoria,productos])=>{
+
+        res.render('products/categorias',{selecCategoria, productos})
+      })
     },
 
 }
