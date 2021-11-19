@@ -11,7 +11,7 @@
              
             <p>
                 <label for="titulo">NOMBRE</label>
-                <input class="tamaño" type="text" id="titulo" name="titulo" value="<%= productEdit.titulo %>">
+                <input class="tamaño" type="text" id="titulo" name="titulo" value="<%= productEdit.nombre %>">
             </p>
     
             <p>
@@ -24,7 +24,7 @@
             <select name="categoria" class="tamaño">
                 <option selected hidden>Seleccione la categoría</option>
                 <% categorias.forEach(categorias=>{%>
-                    <option value="<%= categorias.name %>" <%= productEdit.categoria === categorias.name ? "selected" : null %>  ><%= categorias.name %> </option>
+                    <option value="<%= categorias.id %>" <%= productEdit.id_categoria === categorias.id ? "selected" : null %>  ><%= categorias.nombre %> </option>
                 <% }) %>
             </select>
             </p>

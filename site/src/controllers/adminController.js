@@ -20,6 +20,8 @@ module.exports={
       })
       
       },
+
+      ////crear
     create:function(req, res, next) {
       db.Categorias.findAll({
         include:[{association:"categoriasPr"}]
@@ -28,40 +30,8 @@ module.exports={
         
         res.render('admin/create',{categorias});
       })
-      },
-
-      //edit
-    edit:function(req, res, next) {
-        const{id}=req.params
-        const productEdit=productos.find(producto=>producto.id === +id)
-
-        res.render('admin/edit',{productEdit, categorias});
-      },
-
-      update: (req,res,next)=>{
-        let productToUpdate = productos.find(producto=>producto.id === +req.params.id)
-        let {titulo,precio,categoria,descripcion}=req.body
-        if(productToUpdate){
-          productToUpdate.titulo=titulo
-          productToUpdate.descripcion=descripcion
-          productToUpdate.precio=precio
-          productToUpdate.categoria=categoria
-
-          fs.writeFileSync(productsFilePath,JSON.stringify(productos,null,2))
-          res.redirect(`/products/detail/${+req.params.id}`)
-        }
-        else{
-          res.redirect("/")
-        }
-
-      },
-
-      //borrar
-      destroy: (req,res, next)=>{
-        productos=productos.filter(product=> product.id !== +req.params.id)
-        fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
-        res.redirect("/admin")
-      },
+      }
+      ,
 
       newProduct: (req, res, next) => {
         db.Productos.create({
@@ -78,6 +48,44 @@ module.exports={
           res.redirect(`/products/detail/${resultado.id}`)
         })
       },
+
+      //edit
+    edit:function(req, res, next) {
+        const{id}=req.params
+        let productEdit = db.Productos.findByPk(id);
+        let categorias = db.Categorias.findAll();
+
+        Promise.all([productEdit, categorias])
+        .then(([productEdit,categorias])=>{
+
+          res.render('admin/edit',{productEdit, categorias});
+
+        })
+
+      },
+
+      update: (req,res,next)=>{
+        db.Productos.update({
+          nombre:req.body.titulo,
+          descripcion:req.body.descripcion,
+          precio:req.body.precio,
+          id_categoria:req.body.categoria,
+        },{
+          where: {id: req.params.id}
+        })
+        .then(resultado=>{
+          res.redirect(`/products/detail/${+req.params.id}`)
+        })
+
+
+      },
+
+      //borrar
+      destroy: (req,res, next)=>{
+        productos=productos.filter(product=> product.id !== +req.params.id)
+        fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
+        res.redirect("/admin")
+      }
       
     
 }
