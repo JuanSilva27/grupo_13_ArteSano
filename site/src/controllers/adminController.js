@@ -18,6 +18,9 @@ module.exports={
       .then(productos=>{
         res.render('admin/admin',{productos})
       })
+      .catch((error) => {
+              res.send(error)
+          })
       
       },
 
@@ -30,6 +33,9 @@ module.exports={
         
         res.render('admin/create',{categorias});
       })
+      .catch((error) => {
+        res.send(error)
+    })
       }
       ,
 
@@ -47,6 +53,9 @@ module.exports={
           })
           res.redirect(`/products/detail/${resultado.id}`)
         })
+        .catch((error) => {
+          res.send(error)
+      })
       },
 
       //edit
@@ -61,6 +70,9 @@ module.exports={
           res.render('admin/edit',{productEdit, categorias});
 
         })
+        .catch((error) => {
+          res.send(error)
+      })
 
       },
 
@@ -76,6 +88,9 @@ module.exports={
         .then(resultado=>{
           res.redirect(`/products/detail/${+req.params.id}`)
         })
+        .catch((error) => {
+          res.send(error)
+      })
 
 
       },
@@ -99,13 +114,6 @@ module.exports={
           .catch((error) => {
               res.send(error)
           })
-/*         db.Imagen.destroy({
-          where: {id_producto: req.params.id}
-        }) */
-        
-        /* productos=productos.filter(product=> product.id !== +req.params.id)
-        fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
-        res.redirect("/admin") */
       }
     
       
