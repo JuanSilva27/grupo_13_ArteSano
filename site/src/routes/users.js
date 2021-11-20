@@ -10,7 +10,7 @@ const authUser = require('../middlewares/authUser')
 const upload = require('../middlewares/multer.js')
 
 router.get('/login', guestUser, login);
-router.post("/login",processLogin)
+router.post('/login',processLogin)
 
 
 /* Register */

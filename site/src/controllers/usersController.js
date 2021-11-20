@@ -39,25 +39,9 @@ module.exports={
         })
         .catch(err => {
           res.send(err);
-        })
-        /*let NuevoUsuario = {
-          id: usuarios.length+1,
-          firstName: object.Nombre,
-          phone: object.telefono,
-          provincia: object.provincia,
-          localidad: object.localidad,
-          email: object.email,
-          password: bcrypt.hashSync(object.password, 10),
-          imagen: req.file ? req.file.filename : "userDefault.jpeg",
-          rol: "usuario"
-        }
-      usuarios.push(NuevoUsuario);*/
-      
-      //fs.writeFileSync(UsersFilePath,JSON.stringify(usuarios, null,2));
-      
+        })   
     }
       else {
-        /* return res.send(errors) */
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
       
@@ -70,19 +54,39 @@ module.exports={
     },
 
     processLogin: (req,res)=>{
-      const userToLogin= usuarios.find(usuario=> usuario.email.toLowerCase() === req.body.email.toLowerCase())
+      const errors = validationResult(req);
+      if (errors.isEmpty()) { 
+        db.Usuarios.findOne({
+          where: {
+            email: req.body.email
+          }
+        })
+        .then (user => {
+          if (user && bcrypt.compareSync(req.body.password, user.password)){
+            req.session.userLog = user
+            if (req.body.recuerdame !== undefined){
+              res.cookie("recuerdame", user.email, {maxAge: 60*1000})
+            }
+            res.redirect("/")
+          }
+        })
+        .catch(err => {
+          res.send(err);
+        })
+      } else {
+        res.render("users/login",{errors:{msg: "Email o contraseña incorrecta"}})
+      }
+    },
+      //const userToLogin= usuarios.find(usuario=> usuario.email.toLowerCase() === req.body.email.toLowerCase())
+      /*const userToLogin= db.Usuarios.findAll(usuario=> usuario.email.toLowerCase() === req.body.email.toLowerCase())
       
     if (userToLogin && bcrypt.compareSync(req.body.password, userToLogin.password)){
-      req.session.userLog = userToLogin
-      if (req.body.recuerdame !== undefined){
-        res.cookie("recuerdame", userToLogin.email, {maxAge: 60*1000})
-      }
-      res.redirect("/")
+      
     }
     else{
       res.render("users/login",{errors:{msg: "Email o contraseña incorrecta"}})
-    }
-  },
+    }*/
+  
 
   check: (req,res)=>{
 
