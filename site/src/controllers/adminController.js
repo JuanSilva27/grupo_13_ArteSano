@@ -82,10 +82,32 @@ module.exports={
 
       //borrar
       destroy: (req,res, next)=>{
-        productos=productos.filter(product=> product.id !== +req.params.id)
+        
+        db.Imagen.destroy({
+          where: {
+              id_producto: req.params.id
+          }
+      })
+          .then(result => {
+            db.Productos.destroy({
+              where:{
+                id: req.params.id
+              }
+            })
+              return res.redirect("/")
+          })
+          .catch((error) => {
+              res.send(error)
+          })
+/*         db.Imagen.destroy({
+          where: {id_producto: req.params.id}
+        }) */
+        
+        /* productos=productos.filter(product=> product.id !== +req.params.id)
         fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
-        res.redirect("/admin")
+        res.redirect("/admin") */
       }
+    
       
     
 }
