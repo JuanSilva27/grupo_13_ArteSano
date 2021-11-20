@@ -32,11 +32,11 @@ module.exports={
           provincia: object.provincia,
           localidad: object.localidad,
           imagen: req.file ? req.file.filename : "userDefault.jpeg",
-          id_rol: "1"
+          id_rol: 1
         })
         .then(resultado => {
           req.session.userLog=resultado
-          res.cookie("recuerdame", resultado.email, {maxAge: 60*1000})
+          res.cookie("recuerdame", resultado.email, {maxAge: 60*1000*5})
           res.redirect('/users/Miperfil');
         })
         .catch(err => {
@@ -120,7 +120,8 @@ module.exports={
   },
   update: (req,res) => {
     let object = (req.body)
-    db.Usuarios.update({
+    res.send(req.body)
+    /*db.Usuarios.update({
         nombre: object.Nombre,
         apellido: object.Apellido,
         email: object.email,
@@ -133,6 +134,12 @@ module.exports={
         id: req.params.id
       }
     })
-    res.redirect('/')
+    .then(resultado => {
+      res.redirect('/')
+    })
+    .catch(err => {
+      res.send(err);
+    })*/
+    
   }
 };
