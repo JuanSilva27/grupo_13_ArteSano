@@ -28,8 +28,10 @@ module.exports = {
 
 
       }
-
-      )},
+      )
+      .catch((error) => {
+        res.send(error)
+    })},
   
     store: function(req, res, next) {
       db.Productos.findAll(
@@ -41,7 +43,7 @@ module.exports = {
       }
       )
         .then(products => {
-          res.render('products/products', { producto: products })
+          res.render('products/products', { productos: products })
           
         })
         .catch(err => {
@@ -96,6 +98,9 @@ module.exports = {
 
         res.render('products/categorias',{selecCategoria, productos})
       })
+      .catch((error) => {
+        res.send(error)
+    })
     },
 
 }
