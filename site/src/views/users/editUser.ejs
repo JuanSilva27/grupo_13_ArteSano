@@ -10,16 +10,16 @@
     <div class="background">
  
 
-    <form class="formRegister" action="" method="POST" enctype="multipart/form-data" >
+    <form class="formRegister" action="/users/edit/<%= usuario.id %>?_method=PUT " method="POST" enctype="multipart/form-data" >
          
         <p>
             <label for="Nombre">NOMBRE</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value=<%= usuario.nombre %>  > <br>
+            <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value="<%= usuario.nombre %>"  > <br>
             <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
         </p>
         <p>
             <label for="Apellido">APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value=<%= usuario.apellido %>  > <br>
+            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value="<%= usuario.apellido %>"  > <br>
             <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
         </p>
         <p>

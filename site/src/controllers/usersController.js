@@ -120,8 +120,7 @@ module.exports={
   },
   update: (req,res) => {
     let object = (req.body)
-    res.send(req.body)
-    /*db.Usuarios.update({
+    db.Usuarios.update({
         nombre: object.Nombre,
         apellido: object.Apellido,
         email: object.email,
@@ -135,11 +134,11 @@ module.exports={
       }
     })
     .then(resultado => {
-      res.redirect('/')
+      res.redirect('/users/Miperfil')
     })
     .catch(err => {
       res.send(err);
-    })*/
+    })
     
   }
 };

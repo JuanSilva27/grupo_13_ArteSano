@@ -23,7 +23,7 @@ router.get("/Miperfil", authUser, user)
 
 /*Editar perfil*/
 router.get('/edit/:id', edit);
-router.post("/edit/:id", update)
+router.put("/edit/:id",upload.single("image"), update)
 
 /* check */
 router.get("/check",check)
