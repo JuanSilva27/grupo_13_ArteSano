@@ -49,8 +49,20 @@ module.exports={
 
     user: (req,res)=>{
       const user=req.session.userLog
-      const usuario = usuarios.find(a=>a.id === user.id)
-      res.render("users/users",{usuario})
+      //const usuario = usuarios.find(a=>a.id === user.id)
+      db.Usuarios.findOne({
+        where: {
+          id: user.id
+        },
+        include: [{association: 'roles'}]
+      })
+        .then(user => {
+          res.render("users/users",{usuario: user})
+        })
+        .catch(err => {
+          res.send(err);
+        })
+      
     },
 
     processLogin: (req,res)=>{
