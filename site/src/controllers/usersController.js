@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const {validationResult} = require("express-validator")
 const UsersFilePath = path.join(__dirname, '../data/usuarios.json');
 let usuarios=JSON.parse(fs.readFileSync(UsersFilePath, "utf-8"))
+const db = require('../database/models')
 
 
 
@@ -17,14 +18,29 @@ module.exports={
         res.render('users/register');
       },
     NewRegister: (req, res, ) => {
-      
-      
-       
       const errors = validationResult(req);
       let object = (req.body)
       if (errors.isEmpty()) { 
-        
-        let NuevoUsuario = {
+        db.Usuarios.create({
+          nombre: object.Nombre,
+          apellido: object.Apellido,
+          email: object.email,
+          password: bcrypt.hashSync(object.password, 10),
+          telefono: object.telefono,
+          provincia: object.provincia,
+          localidad: object.localidad,
+          imagen: req.file ? req.file.filename : "userDefault.jpeg",
+          id_rol: "1"
+        })
+        .then(resultado => {
+          req.session.userLog=resultado
+          res.cookie("recuerdame", resultado.email, {maxAge: 60*1000})
+          res.redirect('/users/Miperfil');
+        })
+        .catch(err => {
+          res.send(err);
+        })
+        /*let NuevoUsuario = {
           id: usuarios.length+1,
           firstName: object.Nombre,
           phone: object.telefono,
@@ -35,12 +51,10 @@ module.exports={
           imagen: req.file ? req.file.filename : "userDefault.jpeg",
           rol: "usuario"
         }
-      usuarios.push(NuevoUsuario);
+      usuarios.push(NuevoUsuario);*/
       
-      fs.writeFileSync(UsersFilePath,JSON.stringify(usuarios, null,2));
-      req.session.userLog=NuevoUsuario
-      res.cookie("recuerdame", NuevoUsuario.email, {maxAge: 60*1000})
-      res.redirect(`/users/Miperfil`);
+      //fs.writeFileSync(UsersFilePath,JSON.stringify(usuarios, null,2));
+      
     }
       else {
         /* return res.send(errors) */

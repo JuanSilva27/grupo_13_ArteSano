@@ -17,6 +17,7 @@ router.post("/login",processLogin)
 router.get('/register', guestUser, register);
 router.post('/register', upload.single("image"), validation,  NewRegister);
 
+
 /* User */
 router.get("/Miperfil", authUser, user)
 
