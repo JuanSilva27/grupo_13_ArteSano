@@ -3,7 +3,7 @@ var router = express.Router();
 const multer = require("multer");
 const path = require("path");
 /* const {check} = require("express-validator") */
-const {login,register, NewRegister, user, processLogin, check, logout}=require("../controllers/usersController")
+const {login,register, NewRegister, user, processLogin, check, logout, edit, update}=require("../controllers/usersController")
 const validation = require("../middlewares/validate")
 const guestUser = require('../middlewares/guestUser')
 const authUser = require('../middlewares/authUser')
@@ -20,6 +20,10 @@ router.post('/register', upload.single("image"), validation,  NewRegister);
 
 /* User */
 router.get("/Miperfil", authUser, user)
+
+/*Editar perfil*/
+router.get('/edit/:id', edit);
+router.post("/edit/:id", update)
 
 /* check */
 router.get("/check",check)
