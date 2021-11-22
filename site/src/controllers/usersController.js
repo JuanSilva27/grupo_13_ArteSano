@@ -110,7 +110,8 @@ module.exports={
   },
 
   edit: (req,res) => {
-    db.Usuarios.findByPk(req.params.id)
+    const user=req.session.userLog
+    db.Usuarios.findByPk(user.id)
       .then(user => {
         res.render('users/editUser', {usuario:user})
       })
@@ -119,6 +120,7 @@ module.exports={
       })
   },
   update: (req,res) => {
+    const user=req.session.userLog
     let object = (req.body)
     db.Usuarios.update({
         nombre: object.Nombre,
@@ -130,7 +132,7 @@ module.exports={
         //imagen: req.file ? req.file.filename : "userDefault.jpeg",
     },{
       where: {
-        id: req.params.id
+        id: user.id
       }
     })
     .then(resultado => {
