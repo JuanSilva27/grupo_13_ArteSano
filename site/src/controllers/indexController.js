@@ -9,45 +9,22 @@ const db = require('../database/models')
 
 module.exports={
     index:function(req, res, next) {
+      let productos = db.Productos.findAll({include:["productosIm"],limit:4})
+      let categorias = db.Categorias.findAll()
+      Promise.all([productos,categorias])
+      .then(([productos,categorias])=>{
+        
         res.render('home/home',{categorias,productos});
+      })
+      .catch(err=>{
+        res.send(err)
+      })
       },
 
     about:(req,res,next)=>{
       res.render("home/aboutus")
-    },
+    }
 
-    prueba: function(req, res, next) {
-      const {id}=req.params
-      db.Productos.findByPk(+id,
-        {
-        include: [
-          {association: "categoriasPr"},
-          {association: "productosIm"}
-        ]
-      }
-      )
-        .then(products => {
-          res.render('products/prueba', { producto: products })
-          
-        })
-        .catch(err => {
-          res.send(err);
-        })
-    },
     
-    prueba2: function(req, res, next) {
-      db.Usuarios.findAll(
-        {
-        include: [{association: "roles"}]
-      }
-      )
-        .then(users => {
-          res.render('prueba2', { usuarios: users })
-          
-        })
-        .catch(err => {
-          res.send(err);
-        })
-    },
 
 }
