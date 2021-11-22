@@ -53,33 +53,40 @@ module.exports = {
       
     detail: (req, res)=>{
       const {id}=req.params
-      let producto=db.Productos.findByPk(+id,
+      db.Productos.findByPk(+id,
         {
         include: [
           {association: "categoriasPr"},
           {association: "productosIm"}
         ]
       }
-      );
-      let relacionados = db.Productos.findAll(
-        {
-          include: [
-            {association: "categoriasPr"},
-            {association: "productosIm"}
-          ],
-          limit: 6
-        }
-      );
-      Promise.all([producto, relacionados])
-        .then(([producto, relacionados]) => {
-          res.render('products/detalle', { 
-            producto: producto,
-            relacionados: relacionados })
-          
+      )
+      .then(resultado=>{
+        db.Productos.findAll(
+          {
+            include: [
+              {association: "categoriasPr"},
+              {association: "productosIm"}
+            ],
+            where:{id_categoria:resultado.id_categoria},
+            limit: 6
+          }
+        )
+        .then(relacionados=>{
+          res.render("products/detalle", {producto: resultado , relacionados})
         })
-        .catch(err => {
-          res.send(err);
+        .catch(err=>{
+          res.send(err)
         })
+
+      })
+      .catch(err=>{
+        res.send(err)
+      })
+     ;
+      
+        
+        
     },
 
     categoria: (req,res)=>{
