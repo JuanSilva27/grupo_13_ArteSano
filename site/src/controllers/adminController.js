@@ -1,5 +1,5 @@
 const fs= require("fs")
-const path= require ("path")
+const path= require ("path");
 
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 let productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
@@ -40,16 +40,17 @@ module.exports={
       ,
 
       newProduct: (req, res, next) => {
+        let object = (req.body)
         db.Productos.create({
-          nombre:req.body.titulo,
-          descripcion:req.body.descripcion,
-          precio:req.body.precio,
-          id_categoria:req.body.categoria,
+          nombre:object.titulo,
+          descripcion:object.descripcion,
+          precio:object.precio,
+          id_categoria:object.categoria,
         })
         .then(resultado=>{
           db.Imagen.create({
             id_producto:resultado.id,
-            nombre:"",
+            nombre: req.file ? req.file.filename : "userDefault.jpeg",
           })
           res.redirect(`/products/detail/${resultado.id}`)
         })
@@ -61,7 +62,7 @@ module.exports={
       //edit
     edit:function(req, res, next) {
         const{id}=req.params
-        let productEdit = db.Productos.findByPk(id);
+        let productEdit = db.Productos.findByPk(id,{include:[{association: "productosIm"}]});
         let categorias = db.Categorias.findAll();
 
         Promise.all([productEdit, categorias])
@@ -83,9 +84,15 @@ module.exports={
           precio:req.body.precio,
           id_categoria:req.body.categoria,
         },{
+          include: [{association:"productosIm"}],
           where: {id: req.params.id}
         })
         .then(resultado=>{
+          db.Imagen.update({
+            nombre: req.file ? req.file.filename : req.body.imageName
+          },{
+            where : {id_producto: req.params.id}
+          })
           res.redirect(`/products/detail/${+req.params.id}`)
         })
         .catch((error) => {
