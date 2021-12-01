@@ -41,7 +41,7 @@ module.exports = {
       }
       )
         .then(products => {
-          res.render('products/products', { producto: products })
+          res.render('products/products', { productos: products })
           
         })
         .catch(err => {
