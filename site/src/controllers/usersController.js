@@ -129,7 +129,7 @@ module.exports={
         telefono: object.telefono,
         provincia: object.provincia,
         localidad: object.localidad,
-        //imagen: req.file ? req.file.filename : "userDefault.jpeg",
+       imagen: req.file ? req.file.filename : user.imagen
     },{
       where: {
         id: user.id
