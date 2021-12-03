@@ -98,7 +98,7 @@ background-position: center;
 .home .fav-container{
     display: flex;  
     justify-content: space-evenly;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     }
 
@@ -190,7 +190,7 @@ background-position: center;
 .home .fav-container{
         display: flex;  
         justify-content: space-evenly;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         flex-direction: row;
         }
 
@@ -200,7 +200,7 @@ background-position: center;
  }
 
  .home .fav-1, .fav-2, .fav-3 {
-    width: 30%;
+    width: 40%;
 }
 
 .home .map-container {

@@ -129,14 +129,19 @@ module.exports={
         telefono: object.telefono,
         provincia: object.provincia,
         localidad: object.localidad,
-        //imagen: req.file ? req.file.filename : "userDefault.jpeg",
+       imagen: req.file ? req.file.filename : user.imagen
     },{
       where: {
         id: user.id
       }
     })
     .then(resultado => {
-      res.redirect('/users/Miperfil')
+      db.Usuarios.findByPk(user.id)
+      .then(usuario=>{
+        user.imagen= usuario.imagen
+        res.redirect('/users/Miperfil')
+      })
+      
     })
     .catch(err => {
       res.send(err);
