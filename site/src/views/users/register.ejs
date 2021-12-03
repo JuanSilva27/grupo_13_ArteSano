@@ -13,9 +13,14 @@
     <form class="formRegister" action="" method="POST" enctype="multipart/form-data" >
          
         <p>
-            <label for="Nombre">NOMBRE Y APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo Ford" name="Nombre" value=<%= locals.old && old.Nombre? old.Nombre : null %>  > <br>
+            <label for="Nombre">NOMBRE</label>
+            <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value=<%= locals.old && old.Nombre? old.Nombre : null %>  > <br>
             <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
+        </p>
+        <p>
+            <label for="Apellido">APELLIDO</label>
+            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value=<%= locals.old && old.Apellido? old.Apellido : null %>  > <br>
+            <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
