@@ -22,7 +22,7 @@ router.post('/register', upload.single("image"), validation,  NewRegister);
 router.get("/Miperfil", authUser, user)
 
 /*Editar perfil*/
-router.get('/edit/:id', edit);
+router.get('/edit/:id',authUser, edit);
 router.put("/Miperfil/edit",upload.single("image"), update)
 
 /* check */
