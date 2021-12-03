@@ -136,7 +136,12 @@ module.exports={
       }
     })
     .then(resultado => {
-      res.redirect('/users/Miperfil')
+      db.Usuarios.findByPk(user.id)
+      .then(usuario=>{
+        user.imagen= usuario.imagen
+        res.redirect('/users/Miperfil')
+      })
+      
     })
     .catch(err => {
       res.send(err);
