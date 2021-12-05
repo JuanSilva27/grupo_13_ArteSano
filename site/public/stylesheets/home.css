@@ -46,7 +46,7 @@ background-position: center;
 
 .body-home {
     font-family: var(--textos);
-    background-color: var(--crema);
+    background-image: url(../img/background.jpg);
 }
 
 .body-home p {

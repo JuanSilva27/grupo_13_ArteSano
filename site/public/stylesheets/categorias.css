@@ -1,5 +1,5 @@
 .banio {
-    background-color: var(--crema);
+    background-image: url(../img/background.jpg);
     font-family: var(--textos);
 }
 

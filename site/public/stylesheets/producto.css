@@ -1,3 +1,7 @@
+.detalle-producto{
+    background-image: url(../img/background.jpg);
+}
+
 .detalle-producto section .img-principal{
     display: flex;
     width:50%;

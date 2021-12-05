@@ -24,7 +24,7 @@ header {
 
 .header .cerrarSesion {
     font-family: var(--titulos);
-    color: var(--amarillo);
+    color: var(--crema);
     background-color: var(--bordo);
     border: none;
 }
@@ -189,10 +189,10 @@ footer{
 .footer nav.redes{
     width: 100%;
     height: 40px;
+    display: flex;
 }
 
 .footer nav.redes ul{
-    display: flex;
     justify-content: center;
     height: 40px;
 }
@@ -253,7 +253,7 @@ footer div.copyright {
 
     .logoInf{
         display: block;
-        width: 143px;
+        width: 100%;
     }
 
     .footer nav.Contact {
@@ -289,6 +289,7 @@ footer div.copyright {
     .footer .redes{
         display: flex;
         justify-content: center;
+       
         width: 100%;
     }
 
@@ -296,8 +297,8 @@ footer div.copyright {
         width: 30%;
     }
 
-    .footer nav.redes ul{
-        display: flex;
+    .footer nav.redes ul{ 
+        flex-wrap: nowrap;
         width: 100%;
         justify-content: center;
     }
@@ -360,8 +361,7 @@ footer div.copyright {
 
 
     .footer img.logoInf{
-        width: 230px;
-        height: 100px;
+        width: 100;
     }
 }
 
