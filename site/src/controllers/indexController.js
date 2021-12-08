@@ -17,13 +17,17 @@ module.exports={
     },
 
     prueba: function(req, res, next) {
-      db.Productos.findAll(
+      const {id}=req.params
+      db.Productos.findByPk(+id,
         {
-        include: [{association: "categorias"}]
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ]
       }
       )
         .then(products => {
-          res.render('prueba', { productos: products })
+          res.render('products/prueba', { producto: products })
           
         })
         .catch(err => {

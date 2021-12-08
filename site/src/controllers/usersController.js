@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const {validationResult} = require("express-validator")
 const UsersFilePath = path.join(__dirname, '../data/usuarios.json');
 let usuarios=JSON.parse(fs.readFileSync(UsersFilePath, "utf-8"))
+const db = require('../database/models')
 
 
 
@@ -13,63 +14,82 @@ module.exports={
     login:function(req, res, ) {
         res.render('users/login');
       },
+
     register:function(req, res, ) {
         res.render('users/register');
       },
+
     NewRegister: (req, res, ) => {
-      
-      
-       
       const errors = validationResult(req);
       let object = (req.body)
       if (errors.isEmpty()) { 
-        
-        let NuevoUsuario = {
-          id: usuarios.length+1,
-          firstName: object.Nombre,
-          phone: object.telefono,
-          provincia: object.provincia,
-          localidad: object.localidad,
+        db.Usuarios.create({
+          nombre: object.Nombre,
+          apellido: object.Apellido,
           email: object.email,
           password: bcrypt.hashSync(object.password, 10),
+          telefono: object.telefono,
+          provincia: object.provincia,
+          localidad: object.localidad,
           imagen: req.file ? req.file.filename : "userDefault.jpeg",
-          rol: "usuario"
-        }
-      usuarios.push(NuevoUsuario);
-      
-      fs.writeFileSync(UsersFilePath,JSON.stringify(usuarios, null,2));
-      req.session.userLog=NuevoUsuario
-      res.cookie("recuerdame", NuevoUsuario.email, {maxAge: 60*1000})
-      res.redirect(`/users/Miperfil`);
-    }
+          id_rol: 1
+        })
+        .then(resultado => {
+          req.session.userLog=resultado
+          res.cookie("recuerdame", resultado.email, {maxAge: 60*1000*5})
+          res.redirect('/users/Miperfil');
+        })
+        .catch(err => {
+          res.send(err);
+        })   
+      } 
       else {
-        /* return res.send(errors) */
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
-      
     },
 
     user: (req,res)=>{
       const user=req.session.userLog
-      const usuario = usuarios.find(a=>a.id === user.id)
-      res.render("users/users",{usuario})
+      db.Usuarios.findOne({
+        where: {
+          id: user.id
+        },
+        include: [{association: 'roles'}]
+      })
+        .then(user => {
+          res.render("users/users",{usuario: user})
+        })
+        .catch(err => {
+          res.send(err);
+        })
+      
     },
 
     processLogin: (req,res)=>{
-      const userToLogin= usuarios.find(usuario=> usuario.email.toLowerCase() === req.body.email.toLowerCase())
-      
-    if (userToLogin && bcrypt.compareSync(req.body.password, userToLogin.password)){
-      req.session.userLog = userToLogin
-      if (req.body.recuerdame !== undefined){
-        res.cookie("recuerdame", userToLogin.email, {maxAge: 60*1000})
+      const errors = validationResult(req);
+      if (errors.isEmpty()) { 
+        db.Usuarios.findOne({
+          where: {
+            email: req.body.email
+          }
+        })
+        .then (user => {
+          if (user && bcrypt.compareSync(req.body.password, user.password)){
+            req.session.userLog = user
+            if (req.body.recuerdame !== undefined){
+              res.cookie("recuerdame", user.email, {maxAge: 60*1000})
+            }
+            res.redirect("/")
+          }
+        })
+        .catch(err => {
+          res.send(err);
+        })
+      } else {
+        res.render("users/login",{errors:{msg: "Email o contraseña incorrecta"}})
       }
-      res.redirect("/")
-    }
-    else{
-      res.render("users/login",{errors:{msg: "Email o contraseña incorrecta"}})
-    }
-  },
-
+    },
+ 
   check: (req,res)=>{
 
     if(req.session.userLog !== undefined){
@@ -80,11 +100,45 @@ module.exports={
     }
 
   },
+
   logout: (req,res) => {
     req.session.destroy()
     if (req.cookies.recuerdame !== undefined) {
       res.cookie('recuerdame', '', {maxAge: -1})
     }
     res.redirect('/')
+  },
+
+  edit: (req,res) => {
+    db.Usuarios.findByPk(req.params.id)
+      .then(user => {
+        res.render('users/editUser', {usuario:user})
+      })
+      .catch(err => {
+        res.send(err);
+      })
+  },
+  update: (req,res) => {
+    let object = (req.body)
+    db.Usuarios.update({
+        nombre: object.Nombre,
+        apellido: object.Apellido,
+        email: object.email,
+        telefono: object.telefono,
+        provincia: object.provincia,
+        localidad: object.localidad,
+        //imagen: req.file ? req.file.filename : "userDefault.jpeg",
+    },{
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(resultado => {
+      res.redirect('/users/Miperfil')
+    })
+    .catch(err => {
+      res.send(err);
+    })
+    
   }
 };

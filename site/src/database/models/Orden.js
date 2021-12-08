@@ -28,21 +28,18 @@ module.exports = (sequelize, DataTypes) => {
     {
         tableName: "ordenes",
         timestamps: false
-    },
-
-    /*Orden.associate = (models) => {
-        Orden.belongTo(models.Usuario, {
-            as: 'usuarios',
+    })
+    Orden.associate = (models) => {
+        Orden.belongsTo(models.Usuarios, {
+            as: 'usuariosOr',
             foreignKey: 'id_usuario'
         })
-    },
-
-    Orden.associate = (models) => {
         Orden.hasMany(models.Carrito, {
-            as: 'carritos',
+            as: 'ordenCa',
             foreignKey: 'id_orden'
         })
-    },*/
-)
+    }
+
+        
 return Orden
 }

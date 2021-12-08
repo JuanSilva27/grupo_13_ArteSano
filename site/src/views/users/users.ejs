@@ -7,43 +7,51 @@
             <main>
             
                 <div class="tit-container">
-                    <h1 class="titulo">¡Hola <%= usuario.firstName %>!</h1>
+                    <h1 class="titulo">¡Hola <%= usuario.nombre %>!</h1>
                 </div>
 
-                <h2>Modificá tus datos</h2>
 
-                <div class="img-container">
-                    <img class="perfil" src='/img/users/<%= usuario.imagen %> ' width="100%" alt="Foto de perfil">
-                </div>
+                <h2>Bienvenido a tu perfil</h2>
 
-                <div class="boton">
-                    <button class="foto_perfil">Cambiar foto de perfil</button>
-                </div>
-
-                <section class="datos">
-                    <h3>Datos de tu cuenta</h3>
-                    
-                    <form class="form" action="/users" method="POST">
-
-                        <label for="name">Tu nombre de usuario:</label>
-                        <input type="text" name="name" id="email" value=<%= usuario.firstName %>>
-
-                        <label for="email">Tu email:</label>
-                        <input type="text" name="email" id="email" value=<%= usuario.email %>>
-
-                        <label for="tel">Tu celular:</label>
-                        <input type="text" name="tel" id="tel" value=<%= usuario.phone %>>
-
-                        <label for="direction">Tu direccion:</label>
-                        <input type="text" name="direction" id="tel"
-                            value=<%= usuario.provincia %> <%= usuario.localidad %>>
-                    </form>
-                      
-                    <div class="boton">
-                        <button class="guardar">Guardar cambios</button>
+                <div class="container">
+                    <div class="img-container">
+                        <div class="foto">
+                            <img class="perfil" src='/img/users/<%= usuario.imagen %> ' width="100%" alt="Foto de perfil">
+                        </div>
                     </div>
-
+                    
+                    <section class="datos">
+                        <h3>Datos de tu cuenta</h3> <br>
+                        
+                        <form class="form" action="/users" method="POST">
+                            <p class="a">Tu nombre:</p>
+                            <p class="b"> <%= usuario.nombre %> <%= usuario.apellido %></p>
+                            
+                            <p class="a">Tipo de usuario:</p>
+                            <p class="b"> <%= usuario.roles.nombre %></p>
+                            
+                            <p class="a">Tu email:</p>
+                            <p class="b"> <%= usuario.email %></p>
+                           
+                            <p class="a">Tu celular:</p>
+                            <p class="b"> <%= usuario.telefono %></p>
+                           
+                            <p class="a">Tu ubicación:</p>
+                            <p class="b"> <%= usuario.localidad %>- <%= usuario.provincia %></p> 
+                        </form>
+                          
+                    
                 </section>
+                
+                </div>
+
+
+                <br><br><p> Editá tu perfil</p>
+                <a href="/users/edit/<%= usuario.id %> ">
+                    <div class="editar">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                </a>
             
             </main>
             <%- include('../partials/footer.ejs') %>

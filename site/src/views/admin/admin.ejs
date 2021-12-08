@@ -23,14 +23,14 @@
                     <div class="product">
                         <h4> Imagen</h4>
                         <a href="/products/detail/<%= producto.id %> ">
-                            <img src="/img/products/<%= producto.img %> " alt="">
+                            <img src="/img/products/<%= producto.productosIm[0].nombre %> " alt="">
                         </a>
                     </div>
                     
                     <div class="product">
                         <h4> Nombre</h4>
                         <div>
-                            <p><%= producto.titulo %></p>
+                            <p><%= producto.nombre %></p>
                         </div>
                     </div>
 
@@ -44,7 +44,7 @@
                     <div class="categoria">
                         <div class="product">
                             <h4>Categoría</h4>
-                            <p><%= producto.categoria %> </p>
+                            <p><%= producto.categoriasPr.nombre %> </p>
                         </div>
                     </div>
 

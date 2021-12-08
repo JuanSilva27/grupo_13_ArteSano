@@ -4,61 +4,118 @@ const path= require ("path")
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 let productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
 const categorias=require("../data/categorias.json");
+const db = require("../database/models");
 /* const { products } = require("./productsController"); */
 
 module.exports={
     list:function(req, res, next) {
-      productos=JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
-        res.render('admin/admin',{productos});
+      db.Productos.findAll({
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ]
+      })
+      .then(productos=>{
+        res.render('admin/admin',{productos})
+      })
+      .catch((error) => {
+              res.send(error)
+          })
+      
       },
+
+      ////crear
     create:function(req, res, next) {
+      db.Categorias.findAll({
+        include:[{association:"categoriasPr"}]
+      })
+      .then(categorias=>{
+        
         res.render('admin/create',{categorias});
+      })
+      .catch((error) => {
+        res.send(error)
+    })
+      }
+      ,
+
+      newProduct: (req, res, next) => {
+        db.Productos.create({
+          nombre:req.body.titulo,
+          descripcion:req.body.descripcion,
+          precio:req.body.precio,
+          id_categoria:req.body.categoria,
+        })
+        .then(resultado=>{
+          db.Imagen.create({
+            id_producto:resultado.id,
+            nombre:"",
+          })
+          res.redirect(`/products/detail/${resultado.id}`)
+        })
+        .catch((error) => {
+          res.send(error)
+      })
       },
 
       //edit
     edit:function(req, res, next) {
         const{id}=req.params
-        const productEdit=productos.find(producto=>producto.id === +id)
+        let productEdit = db.Productos.findByPk(id);
+        let categorias = db.Categorias.findAll();
 
-        res.render('admin/edit',{productEdit, categorias});
+        Promise.all([productEdit, categorias])
+        .then(([productEdit,categorias])=>{
+
+          res.render('admin/edit',{productEdit, categorias});
+
+        })
+        .catch((error) => {
+          res.send(error)
+      })
+
       },
 
       update: (req,res,next)=>{
-        let productToUpdate = productos.find(producto=>producto.id === +req.params.id)
-        let {titulo,precio,categoria,descripcion}=req.body
-        if(productToUpdate){
-          productToUpdate.titulo=titulo
-          productToUpdate.descripcion=descripcion
-          productToUpdate.precio=precio
-          productToUpdate.categoria=categoria
-
-          fs.writeFileSync(productsFilePath,JSON.stringify(productos,null,2))
+        db.Productos.update({
+          nombre:req.body.titulo,
+          descripcion:req.body.descripcion,
+          precio:req.body.precio,
+          id_categoria:req.body.categoria,
+        },{
+          where: {id: req.params.id}
+        })
+        .then(resultado=>{
           res.redirect(`/products/detail/${+req.params.id}`)
-        }
-        else{
-          res.redirect("/")
-        }
+        })
+        .catch((error) => {
+          res.send(error)
+      })
+
 
       },
 
       //borrar
       destroy: (req,res, next)=>{
-        productos=productos.filter(product=> product.id !== +req.params.id)
-        fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
-        res.redirect("/admin")
-      },
-
-      newProduct: (req, res, next) => {
-        let object=req.body
-        object.id=productos.length+1
-        object.favorito = false
-        object.relacionados = false
-        object.precio = "$" + object.precio
-        productos.push(object)
         
-        fs.writeFileSync(productsFilePath,JSON.stringify(productos, null,2))
-        res.redirect(`/products/detail/${object.id}`)
-      },
+        db.Imagen.destroy({
+          where: {
+              id_producto: req.params.id
+          }
+      })
+          .then(result => {
+            db.Productos.destroy({
+              where:{
+                id: req.params.id
+              }
+            })
+              return res.redirect("/")
+          })
+          .catch((error) => {
+              res.send(error)
+          })
+      }
+    
       
     
 }

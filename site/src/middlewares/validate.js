@@ -2,6 +2,8 @@ const {check} = require("express-validator")
 module.exports=[
     check("Nombre")
         .notEmpty().withMessage("Debes completar este campo").bail(),
+    check("Apellido")
+        .notEmpty().withMessage("Debes completar este campo").bail(),
     check("telefono")
         .notEmpty().withMessage("Debes completar este campo").bail(),
     check("provincia")
