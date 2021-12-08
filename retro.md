@@ -83,3 +83,29 @@
 - Reuniones extensas.
 
 
+# Sprint 6
+
+## Seguir haciendo:
+- Buena comunicación.
+- Consultar entre nosotros.
+- Ayudar cuando otro tiene dificultades.
+- Poner fechas de vencimiento.
+- Reuniones concisas.
+
+## Hacer más:
+- Organización en trello.
+- Buscar más informacion e ideas para mejorar el proyecto.
+- Utilizar trello más seguido.
+- Tomar nota de las reuniones.
+- Estar al día con el contenido.
+- Mejorar división de tareas.
+
+## Empezar a hacer:
+- Exponer trabajo realizado antes del nuevo sprint. 
+
+## Hacer menos:
+- Reuniones extensas.
+
+## Dejar de hacer:
+- No cumplir con la fecha de entrega.
+
