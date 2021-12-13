@@ -14,14 +14,16 @@
             <label for="email">CORREO ELECTRÓNICO:</label>
             <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" >
           </p>
+          <%= locals.errors && errors.email ? errors.email.msg : null %>
           
           <p>
             <label for="password">CONTRASEÑA:</label>
             <input  class="tamaño" type="password" placeholder="**********" name="password">
           </p>
+          <%= locals.errors && errors.password ? errors.password.msg : null %>
+
           <% if (locals.errors && errors.msg){ %>
             <small><%= errors.msg %> </small>
-          
           <% } %> 
           <input type="checkbox" name="recuerdame" id="recuerdame">
           <label for="recuerdame">Recordarme</label>  

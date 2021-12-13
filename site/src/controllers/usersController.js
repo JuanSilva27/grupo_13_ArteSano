@@ -86,7 +86,7 @@ module.exports={
           res.send(err);
         })
       } else {
-        res.render("users/login",{errors:{msg: "Email o contraseña incorrecta"}})
+        res.render('users/login', {errors: errors.mapped()});
       }
     },
  

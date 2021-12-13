@@ -8,9 +8,10 @@ const validation = require("../middlewares/validate")
 const guestUser = require('../middlewares/guestUser')
 const authUser = require('../middlewares/authUser')
 const upload = require('../middlewares/multer.js')
+const loginValidate = require('../middlewares/loginValidate')
 
 router.get('/login', guestUser, login);
-router.post('/login',processLogin)
+router.post('/login',loginValidate, processLogin)
 
 
 /* Register */
