@@ -80,6 +80,8 @@ module.exports={
               res.cookie("recuerdame", user.email, {maxAge: 60*1000})
             }
             res.redirect("/")
+          } else{
+            res.render("users/login",{errors:{msg: "Contraseña incorrecta"}})
           }
         })
         .catch(err => {
