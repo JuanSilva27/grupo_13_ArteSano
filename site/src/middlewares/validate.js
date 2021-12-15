@@ -1,5 +1,6 @@
 const {check} = require("express-validator")
 const db = require('../database/models')
+
 module.exports=[
     check("Nombre")
         .notEmpty().withMessage("Debes completar este campo").bail()
@@ -35,8 +36,9 @@ module.exports=[
         .custom((confirmPassword, {req})=>{
             const password = req.body.password
             if(password !== confirmPassword){
-                throw new Error ("las contraseñas no son iguales")
+                return false
+            } else{
+                return true
             }
-        }) ,
-
+        }).withMessage("las contraseñas deben ser iguales") ,
 ]
