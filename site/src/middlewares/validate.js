@@ -31,6 +31,12 @@ module.exports=[
         .isLength({min: 8}).withMessage("La contraseña debe contener 8 caracteres") ,
     check("password2")
         .notEmpty().withMessage("Debes completar este campo").bail()  
-        .isLength({min: 8}).withMessage("La contraseña debe contener 8 caracteres") ,
+        .isLength({min: 8}).withMessage("La contraseña debe contener 8 caracteres")
+        .custom((confirmPassword, {req})=>{
+            const password = req.body.password
+            if(password !== confirmPassword){
+                throw new Error ("las contraseñas no son iguales")
+            }
+        }) ,
 
 ]
