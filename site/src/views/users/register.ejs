@@ -89,13 +89,14 @@
 
         <p>
             <label for="password2">CONFIRMAR CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password2" > <br>
+            <input class="tamaño" type="password" placeholder="**********" name="password2"  > <br>
             <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %> </small>
         </p>
 
         <p>
             <label for="image">IMAGEN</label>
-            <input class="tam" type="file"  name="image">
+            <input class="tam" type="file"  name="image" accept=".png, .jpg, .jpeg"> <br>
+            <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
         </p>
         <div class="botones">
             

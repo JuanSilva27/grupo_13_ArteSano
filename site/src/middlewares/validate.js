@@ -40,5 +40,13 @@ module.exports=[
             } else{
                 return true
             }
-        }).withMessage("las contraseñas deben ser iguales") ,
+        }).withMessage("las contraseñas deben ser iguales"),
+    /* check("image").custom(({req})=>{
+        if(req.fileValidationError){
+            console.log(req.fileValidationError)
+            return false
+        } else {
+            return true
+        }
+    }).withMessage("solo imagenes") */
 ]
