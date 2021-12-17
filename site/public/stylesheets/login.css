@@ -57,6 +57,22 @@ margin-bottom: 20px;
     font-family: var(--textos);
     margin-bottom: 70px;
 }
+
+.login .is-invalid{
+    border-color: var(--bordo);
+    background-color: var(--crema);
+}
+
+.login .is-valid{
+    background-color: var(--verde);
+}
+
+small {
+    background-color: var(--bordo);
+    color: var(--crema);
+    border-radius: 30px;
+}
+
 @media (min-width: 481px){ 
     .login .tamaño{
         height: 26px;
