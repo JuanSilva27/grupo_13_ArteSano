@@ -21,6 +21,13 @@ module.exports={
 
     NewRegister: (req, res, ) => {
       const errors = validationResult(req);
+      if (req.fileValidationError) {
+        let image = {
+            param : 'image',
+            msg: req.fileValidationError,
+        }
+        errors.errors.push(image)
+    }
       let object = (req.body)
       if (errors.isEmpty()) { 
         db.Usuarios.create({
