@@ -6,6 +6,7 @@ window.addEventListener('load', () => {
     }
 
     
+    const form = qs('.formLogin')
     const email = qs("#email")
     const smallEmail = qs('small.email')
     const password = qs('#password')
@@ -105,5 +106,26 @@ window.addEventListener('load', () => {
         }
         funcValidate(validate)
     })
+
+    form.addEventListener("submit", (e) => {
+        var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        var esValido = expReg.test(form.email.value)
+        console.log(form.email.value);
+        if(esValido == false){
+            e.preventDefault()
+            email.classList.add('is-invalid')
+            email.classList.remove('is-valid')
+            smallEmail.innerHTML = 'Direción de correo inválida'
+            smallEmail.style.padding = '8px'
+            validate.email = false
+        } else {
+            email.classList.remove('is-invalid')
+            email.classList.add('is-valid')
+            smallEmail.innerHTML = ''
+            smallEmail.style.padding = ''
+            validate.email = true
+        }
+        funcValidate(validate)
+    }) 
 
 })
