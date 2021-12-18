@@ -45,7 +45,11 @@ CREATE TABLE`lasiesta_arte`.`usuarios` (
   `imagen` VARCHAR(100) NULL,
   `id_rol` INT NOT NULL,
   PRIMARY KEY (`id`),
+<<<<<<< HEAD
+  INDEX `FK_id_rol_idx` (`id_rol` ASC)  ,
+=======
   INDEX `FK_id_rol_idx` (`id_rol` ASC),
+>>>>>>> juanSilva
   CONSTRAINT `FK_id_rol_usuarios`
     FOREIGN KEY (`id_rol`)
     REFERENCES `lasiesta_arte`.`rol` (`id`)
@@ -173,7 +177,11 @@ CREATE TABLE `lasiesta_arte`.`ordenes` (
   `createdAt` DATETIME NULL,
   `updateAt` DATETIME NULL,
   PRIMARY KEY (`id`),
+<<<<<<< HEAD
+  INDEX `FK_id_usuario_idx` (`id_usuario` ASC) ,
+=======
   INDEX `FK_id_usuario_idx` (`id_usuario` ASC),
+>>>>>>> juanSilva
   CONSTRAINT `FK_id_usuario_ordenes`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `lasiesta_arte`.`usuarios` (`id`)
@@ -196,9 +204,15 @@ CREATE TABLE `lasiesta_arte`.`carrito` (
   `createdAt` DATETIME NULL,
   `updateAt` DATETIME NULL,
   PRIMARY KEY (`id`),
+<<<<<<< HEAD
+  INDEX `FK_id_producto_idx` (`id_producto` ASC)  ,
+  INDEX `FK_id_orden_idx` (`id_orden` ASC)  ,
+  INDEX `FK_id_usuario_idx` (`id_usuario` ASC)  ,
+=======
   INDEX `FK_id_producto_idx` (`id_producto` ASC),
   INDEX `FK_id_orden_idx` (`id_orden` ASC),
   INDEX `FK_id_usuario_idx` (`id_usuario` ASC),
+>>>>>>> juanSilva
   CONSTRAINT `FK_id_producto`
     FOREIGN KEY (`id_producto`)
     REFERENCES `lasiesta_arte`.`productos` (`id`)
@@ -226,7 +240,11 @@ CREATE TABLE `lasiesta_arte`.`imagenes` (
   `id_producto` INT NOT NULL,
   `nombre` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
+<<<<<<< HEAD
+  INDEX `FK_id_producto_idx` (`id_producto` ASC)  ,
+=======
   INDEX `FK_id_producto_idx` (`id_producto` ASC),
+>>>>>>> juanSilva
   CONSTRAINT `FK_id_producto_imagenes`
     FOREIGN KEY (`id_producto`)
     REFERENCES `lasiesta_arte`.`productos` (`id`)
@@ -279,8 +297,13 @@ CREATE TABLE`lasiesta_arte`.`favoritos` (
   `id_usuario` INT NOT NULL,
   `id_producto` INT NOT NULL,
   PRIMARY KEY (`id`),
+<<<<<<< HEAD
+  INDEX `FK_id_usuario_idx` (`id_usuario` ASC)  ,
+  INDEX `FK_id_producto_idx` (`id_producto` ASC)  ,
+=======
   INDEX `FK_id_usuario_idx` (`id_usuario` ASC),
   INDEX `FK_id_producto_idx` (`id_producto` ASC),
+>>>>>>> juanSilva
   CONSTRAINT `FK_id_usuario_favoritos`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `lasiesta_arte`.`usuarios` (`id`)
