@@ -11,32 +11,44 @@
          
         <p>
             <label for="titulo">NOMBRE</label>
-            <input class="tamaño" type="text" id="titulo" name="titulo">
+            <input class="tamaño" type="text" id="titulo" name="titulo" value="<%= locals.old && old.titulo ? old.titulo : null%> ">
+            <% if (locals.errors && errors.name) {%> 
+                <p class="error"><% errors.name %>  </p>
+                <% } %> 
         </p>
 
         <p>
             <label for="precio">PRECIO</label>
-            <input class="tamaño" type="number" id="precio" name="precio" value="">
+            <input class="tamaño" type="number" id="precio" name="precio" value="<%= locals.old && old.precio ? old.precio : null%>">
+            <% if (locals.errors && errors.name) {%> 
+                <p class="error"><% errors.name %>  </p>
+                <% } %> 
         </p>
         
         <p>
-        <label for="categoria">CATEGORÍA</label>
-        <select name="categoria" class="tamaño">
-            <option selected hidden>Seleccione la categoría</option>
-            <% categorias.forEach(categorias=>{%>
-                <option value="<%= categorias.id %> "><%= categorias.nombre %> </option>
-            <% }) %>
-        </select>
-        </p>
+            <label for="categorias">CATEGORÍA</label>
+            <select name="categorias" class="tamaño">
+                <option selected hidden>Seleccione la categoría</option>
+                <% categorias.forEach(categoria => { %> 
+                    <option value="<%= categorias.id %> "><%= categorias.nombre %> </option>
+                <% }) %>
+            </select>
+            </p>
 
         <p>
             <label for="descripcion">DESCRIPCION</label>
-            <textarea class="tamaño-desc" name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+            <textarea class="tamaño-desc" name="descripcion" id="descripcion" cols="30" rows="10" value="<%= locals.old && old.descripcion ? old.descripcion : null%>"></textarea>
+            <% if (locals.errors && errors.name) {%> 
+                <p class="error"><% errors.name %>  </p>
+                <% } %> 
         </p>
         
         <p>
             <label for="image">IMAGEN</label>
-            <input  type="file" id="image" name="image" >
+            <input  type="file" id="image" name="image" value="<%= locals.old && old.image ? old.image : null%>">
+            <% if (locals.errors && errors.name) {%> 
+                <p class="error"><% errors.name %>  </p>
+                <% } %> 
         </p>
 
         <div class="botones">

@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 const {list, create, edit, update, destroy, newProduct}=require("../controllers/adminController")
 const adminValidate = require("../middlewares/adminValidate")
+const productValidate = require("../middlewares/productValidate")
 const upload = require('../middlewares/multerProducts')
 /* GET users listing. */
 router.get('/',adminValidate, list);
 
 router.get('/create',adminValidate, create);
-router.post('/create',adminValidate,upload.single("image"), newProduct);
+router.post('/create',adminValidate,upload.single("image"),productValidate, newProduct);
 
 
 //editar producto
