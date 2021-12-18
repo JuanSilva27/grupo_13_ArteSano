@@ -61,7 +61,7 @@ INSERT INTO `usuarios` VALUES (1,"Delcina","Farrar","dfarrar0@youtube.com","CCgK
 (6,"Sloan","Bilverstone","sbilverstone5@cnn.com","SsaVdSF","9772504041","Chaco","diam nam","user_6.jpg",1),
 (7,"Conny","Crank","ccrank6@jiathis.com","06PxkUUq1g","6762945838","Tucumán","ante","user_7.jpg",1),
 (8,"Tine","Ewington","tewington7@sphinn.com","An37FiGfCy2","4853726707","Tucumán","penatibus","user_8.jpg",1),
-(9,"Juan","Siva","juan.silva.0270@gmail.com","$2a$10$tGQm6NB7pP/6uWfacw98GOgnCuGOk7gAoR0nUWV/tffZ7Ig7ok8kC","1123456789","Capital Federal","Moron","userDefault.jpeg",2),
+(9,"Juan","Siva","juan.silva.0270@gmail.com","$2a$10$nElKF8m4C/2KxoulMOPeE.MtF00xS.RJ.0Hwo9jbzEv1wzgPbepxS","1123456789","Capital Federal","Moron","userDefault.jpeg",2),
 (10,"Lucas","Ravalle","ravallelucas@gmail.com","$2a$10$S6yjzG3tyMHfvYd5ecVC..Hq2SuAT3KrIT0cnaigKTKYcwl8veqau","01150593307","Buenos Aires","Castillo","userDefault.jpeg",2);
 
 
