@@ -1,9 +1,6 @@
-const fs= require("fs")
-const path= require ("path")
+
 const bcrypt = require("bcryptjs");
 const {validationResult} = require("express-validator")
-const UsersFilePath = path.join(__dirname, '../data/usuarios.json');
-let usuarios=JSON.parse(fs.readFileSync(UsersFilePath, "utf-8"))
 const db = require('../database/models')
 
 
@@ -21,6 +18,13 @@ module.exports={
 
     NewRegister: (req, res, ) => {
       const errors = validationResult(req);
+      if (req.fileValidationError) {
+        let image = {
+            param : 'image',
+            msg: req.fileValidationError,
+        }
+        errors.errors.push(image)
+    }
       let object = (req.body)
       if (errors.isEmpty()) { 
         db.Usuarios.create({

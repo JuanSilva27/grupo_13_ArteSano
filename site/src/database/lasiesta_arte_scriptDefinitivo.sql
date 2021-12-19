@@ -45,11 +45,7 @@ CREATE TABLE`lasiesta_arte`.`usuarios` (
   `imagen` VARCHAR(100) NULL,
   `id_rol` INT NOT NULL,
   PRIMARY KEY (`id`),
-<<<<<<< HEAD
-  INDEX `FK_id_rol_idx` (`id_rol` ASC)  ,
-=======
   INDEX `FK_id_rol_idx` (`id_rol` ASC),
->>>>>>> juanSilva
   CONSTRAINT `FK_id_rol_usuarios`
     FOREIGN KEY (`id_rol`)
     REFERENCES `lasiesta_arte`.`rol` (`id`)
@@ -65,7 +61,7 @@ INSERT INTO `usuarios` VALUES (1,"Delcina","Farrar","dfarrar0@youtube.com","CCgK
 (6,"Sloan","Bilverstone","sbilverstone5@cnn.com","SsaVdSF","9772504041","Chaco","diam nam","user_6.jpg",1),
 (7,"Conny","Crank","ccrank6@jiathis.com","06PxkUUq1g","6762945838","Tucumán","ante","user_7.jpg",1),
 (8,"Tine","Ewington","tewington7@sphinn.com","An37FiGfCy2","4853726707","Tucumán","penatibus","user_8.jpg",1),
-(9,"Juan","Siva","juan.silva.0270@gmail.com","$2a$10$tGQm6NB7pP/6uWfacw98GOgnCuGOk7gAoR0nUWV/tffZ7Ig7ok8kC","1123456789","Capital Federal","Moron","userDefault.jpeg",2),
+(9,"Juan","Siva","juan.silva.0270@gmail.com","$2a$10$nElKF8m4C/2KxoulMOPeE.MtF00xS.RJ.0Hwo9jbzEv1wzgPbepxS","1123456789","Capital Federal","Moron","userDefault.jpeg",2),
 (10,"Lucas","Ravalle","ravallelucas@gmail.com","$2a$10$S6yjzG3tyMHfvYd5ecVC..Hq2SuAT3KrIT0cnaigKTKYcwl8veqau","01150593307","Buenos Aires","Castillo","userDefault.jpeg",2);
 
 
@@ -177,11 +173,7 @@ CREATE TABLE `lasiesta_arte`.`ordenes` (
   `createdAt` DATETIME NULL,
   `updateAt` DATETIME NULL,
   PRIMARY KEY (`id`),
-<<<<<<< HEAD
-  INDEX `FK_id_usuario_idx` (`id_usuario` ASC) ,
-=======
   INDEX `FK_id_usuario_idx` (`id_usuario` ASC),
->>>>>>> juanSilva
   CONSTRAINT `FK_id_usuario_ordenes`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `lasiesta_arte`.`usuarios` (`id`)
@@ -204,15 +196,9 @@ CREATE TABLE `lasiesta_arte`.`carrito` (
   `createdAt` DATETIME NULL,
   `updateAt` DATETIME NULL,
   PRIMARY KEY (`id`),
-<<<<<<< HEAD
-  INDEX `FK_id_producto_idx` (`id_producto` ASC)  ,
-  INDEX `FK_id_orden_idx` (`id_orden` ASC)  ,
-  INDEX `FK_id_usuario_idx` (`id_usuario` ASC)  ,
-=======
   INDEX `FK_id_producto_idx` (`id_producto` ASC),
   INDEX `FK_id_orden_idx` (`id_orden` ASC),
   INDEX `FK_id_usuario_idx` (`id_usuario` ASC),
->>>>>>> juanSilva
   CONSTRAINT `FK_id_producto`
     FOREIGN KEY (`id_producto`)
     REFERENCES `lasiesta_arte`.`productos` (`id`)
@@ -240,11 +226,7 @@ CREATE TABLE `lasiesta_arte`.`imagenes` (
   `id_producto` INT NOT NULL,
   `nombre` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
-<<<<<<< HEAD
-  INDEX `FK_id_producto_idx` (`id_producto` ASC)  ,
-=======
   INDEX `FK_id_producto_idx` (`id_producto` ASC),
->>>>>>> juanSilva
   CONSTRAINT `FK_id_producto_imagenes`
     FOREIGN KEY (`id_producto`)
     REFERENCES `lasiesta_arte`.`productos` (`id`)
@@ -297,13 +279,8 @@ CREATE TABLE`lasiesta_arte`.`favoritos` (
   `id_usuario` INT NOT NULL,
   `id_producto` INT NOT NULL,
   PRIMARY KEY (`id`),
-<<<<<<< HEAD
-  INDEX `FK_id_usuario_idx` (`id_usuario` ASC)  ,
-  INDEX `FK_id_producto_idx` (`id_producto` ASC)  ,
-=======
   INDEX `FK_id_usuario_idx` (`id_usuario` ASC),
   INDEX `FK_id_producto_idx` (`id_producto` ASC),
->>>>>>> juanSilva
   CONSTRAINT `FK_id_usuario_favoritos`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `lasiesta_arte`.`usuarios` (`id`)

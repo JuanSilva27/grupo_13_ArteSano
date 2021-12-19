@@ -16,7 +16,7 @@ router.post('/login',loginValidate, processLogin)
 
 /* Register */
 router.get('/register', guestUser, register);
-router.post('/register', upload.single("image"), validation,  NewRegister);
+router.post('/register',upload.single("image"),validation,  NewRegister);
 
 
 /* User */
