@@ -64,7 +64,7 @@ margin-bottom: 20px;
 }
 
 .login .is-valid{
-    background-color: var(--verde);
+    border-color: var(--verde);
 }
 
 small {
