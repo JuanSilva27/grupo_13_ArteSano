@@ -37,14 +37,33 @@ window.addEventListener('load', () => {
         email: false,
         password: false
     }
+    
 
     email.addEventListener('blur', (e) => {
+        var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        var esValido = expReg.test(e.target.value)
+        console.log(e.target.value);
         if(e.target.value === ""){
             email.classList.add('is-invalid')
             email.classList.remove('is-valid')
             smallEmail.innerHTML = 'Debes ingresar un email'
             smallEmail.style.padding = '8px'
             validate.email = false
+        } else if (esValido == false){
+            if(esValido == false){
+                e.preventDefault()
+                email.classList.add('is-invalid')
+                email.classList.remove('is-valid')
+                smallEmail.innerHTML = 'Direción de correo inválida'
+                smallEmail.style.padding = '8px'
+                validate.email = false
+            } else {
+                email.classList.remove('is-invalid')
+                email.classList.add('is-valid')
+                smallEmail.innerHTML = ''
+                smallEmail.style.padding = ''
+                validate.email = true
+                }
         } else{
             email.classList.remove('is-invalid')
             email.classList.add('is-valid')
@@ -53,6 +72,8 @@ window.addEventListener('load', () => {
             validate.email = true
         }
         funcValidate(validate)
+
+        
     })
     
     email.addEventListener('input', (e) => {
@@ -106,26 +127,5 @@ window.addEventListener('load', () => {
         }
         funcValidate(validate)
     })
-
-    form.addEventListener("submit", (e) => {
-        var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-        var esValido = expReg.test(form.email.value)
-        console.log(form.email.value);
-        if(esValido == false){
-            e.preventDefault()
-            email.classList.add('is-invalid')
-            email.classList.remove('is-valid')
-            smallEmail.innerHTML = 'Direción de correo inválida'
-            smallEmail.style.padding = '8px'
-            validate.email = false
-        } else {
-            email.classList.remove('is-invalid')
-            email.classList.add('is-valid')
-            smallEmail.innerHTML = ''
-            smallEmail.style.padding = ''
-            validate.email = true
-        }
-        funcValidate(validate)
-    }) 
 
 })
