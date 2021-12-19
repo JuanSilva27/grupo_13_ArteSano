@@ -5,9 +5,9 @@
     <body>
         <%- include('../partials/header.ejs') %>
             <main class="products">
-
+                <% if (productos.length!=0) {%> 
                 <div class="tit-container">
-                    <h1 class="titulo">Todos nuestros productos</h1>
+                    <h1 class="titulo">Resultados de tu busqueda: "<%= busqueda %>" </h1>
                 </div>
 
                 <section class="pdtos-container">
@@ -38,7 +38,12 @@
                             </div>
                         </article>
                      <% }) %>
-
+                     
+                      <% } else {%>
+                        <div class="tit-container">
+                            <h1 class="titulo">No se encoto resltado para la busqueda: "<%= busqueda %>" </h1>
+                        </div>
+                        <% } %> 
                 </section>
             </main>
             <%- include('../partials/footer.ejs') %>

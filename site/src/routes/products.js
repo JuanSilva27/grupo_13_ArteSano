@@ -15,7 +15,6 @@ router.get('/detail', store);
 router.get('/detail/:id', detail);
 
 ///categorias
-router.get('/categorias/completas', categoriasCompletas)
 router.get('/:categoria', categoria)
 router.get('/', store);
 

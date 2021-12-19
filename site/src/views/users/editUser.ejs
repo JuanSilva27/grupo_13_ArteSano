@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head.ejs")  %> 
+<body>
+    <%- include("../partials/header.ejs") %> 
+
+ <main class="register">
+    <P class="cont.tituloRegister"><h1>EDITA TUS DATOS</h1></P>
+     
+    <div class="background">
+ 
+
+    <form class="formRegister" action="/users/Miperfil/edit/?_method=PUT " method="POST" enctype="multipart/form-data" >
+         
+        <p>
+            <label for="Nombre">NOMBRE</label>
+            <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value="<%= usuario.nombre %>"  > <br>
+            <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
+        </p>
+        <p>
+            <label for="Apellido">APELLIDO</label>
+            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value="<%= usuario.apellido %>"  > <br>
+            <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
+        </p>
+        <p>
+            <label for="telefono">TELEFONO</label>
+            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono" value=<%= usuario.telefono %>  > <br>
+            <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
+        </p>
+        <p>
+        <label for="provincia">PROVINCIA</label>
+        <select name="provincia" class="tamaño" >
+            <option value=""<%= usuario.provincia=== ""? "selected" : null %>  hidden>Seleccione tu provincia</option>
+            <option value="Buenos Aires"<%= usuario.provincia=== "Buenos Aires"? "selected" : null %>>Buenos Aires</option>  
+            <option value="Capital Federal"<%= usuario.provincia=== "Capital Federal"? "selected" : null %>>Capital Federal</option>
+            <option value="Catamarca"<%= usuario.provincia=== "Catamarca"? "selected" : null %>>Catamarca</option>
+            <option value="Chaco"<%= usuario.provincia=== "Chaco"? "selected" : null %>>Chaco</option>
+            <option value="Chubut"<%= usuario.provincia=== "Chubut"? "selected" : null %>>Chubut</option>
+            <option value="Córdoba"<%= usuario.provincia=== "Córdoba"? "selected" : null %>>Córdoba</option>
+            <option value="Corrientes"<%= usuario.provincia=== "Corrientes"? "selected" : null %>>Corrientes</option>
+            <option value="Entre Ríos"<%= usuario.provincia=== "Entre Ríos"? "selected" : null %>>Entre Ríos</option>
+            <option value="Formosa"<%= usuario.provincia=== "Formosa"? "selected" : null %>>Formosa</option>
+            <option value="Jujuy"<%= usuario.provincia=== "Jujuy"? "selected" : null %>>Jujuy</option>
+            <option value="Mendoza"<%= usuario.provincia=== "Mendoza"? "selected" : null %>>Mendoza</option>
+            <option value="Misiones"<%= usuario.provincia=== "Misiones"? "selected" : null %>>Misiones</option>
+            <option value="Neuquén"<%= usuario.provincia=== "Neuquén"? "selected" : null %>>Neuquén</option>
+            <option value="Río Negro"<%= usuario.provincia=== "Río Negro"? "selected" : null %>>Río Negro</option>
+            <option value="Salta"<%= usuario.provincia=== "Salta"? "selected" : null %>>Salta</option>
+            <option value="San Juan"<%= usuario.provincia=== "San Juan"? "selected" : null %>>San Juan</option>
+            <option value="San Luis"<%= usuario.provincia=== "San Luis"? "selected" : null %>>San Luis</option>
+            <option value="Santa Cruz"<%= usuario.provincia=== "Santa Cruz"? "selected" : null %>>Santa Cruz</option>
+            <option value="Santa Fe"<%= usuario.provincia=== "Santa Fe"? "selected" : null %>>Santa Fe</option>
+            <option value="Santiago del Estero"<%= usuario.provincia=== "Santiago del Estero"? "selected" : null %>>Santiago del Estero</option>
+            <option value="Tierra del Fuego"<%= usuario.provincia=== "Tierra del Fuego"? "selected" : null %>>Tierra del Fuego</option>
+            <option value="Octubre"<%= usuario.provincia=== "Octubre"? "selected" : null %>>Octubre</option>
+            <option value="Tucumán"<%= usuario.provincia=== "Tucumán"? "selected" : null %>>Tucumán</option>
+        </select> <br>
+        <small><%= locals.errors && errors.provincia ? errors.provincia.msg : null %> </small>
+        </p>
+        <P>
+            <label for="localidad">LOCALIDAD</label>
+        <select name="localidad" class="tamaño">
+            <option value="" <%= usuario.localidad=== ""? "selected" : null %> hidden>Seleccione tu localidad</option>
+            <option value="Ramos Mejia"<%= usuario.localidad=== "Ramos Mejia"? "selected" : null %>>Ramos Mejia</option>
+            <option value="Lomas de Zamora"<%= usuario.localidad=== "Lomas de Zamora"? "selected" : null %>>Lomas de Zamora</option>
+            <option value="Moron"<%= usuario.localidad=== "Moron"? "selected" : null %>>Moron</option>
+            <option value="Caballito"<%= usuario.localidad=== "Caballito"? "selected" : null %>>Caballito</option>
+            <option value="Ciudadela"<%= usuario.localidad=== "Ciudadela"? "selected" : null %>>Ciudadela</option>
+            <option value="Hurlingham"<%= usuario.localidad=== "Hurlingham"? "selected" : null %>>Hurlingham</option>
+            <option value="Monte Grande"<%= usuario.localidad=== "Monte Grande"? "selected" : null %>>Monte Grande</option>
+            <option value="Castillo"<%= usuario.localidad=== "Castillo"? "selected" : null %>>Castillo</option>
+            <option value="Lomas del Mirador"<%= usuario.localidad=== "Lomas del Mirador"? "selected" : null %>>Lomas del Mirador</option>
+            <option value="Liniers" <%= usuario.localidad=== "Liniers"? "selected" : null %>>Liniers</option>
+        </select> <br>
+        <small><%= locals.errors && errors.localidad ? errors.localidad.msg : null %> </small>
+        </P>
+        <p>
+            <label for="email">E-MAIL</label>
+            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" value=<%= usuario.email %>  > <br>
+            <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>  
+            
+        </p>
+        <p>
+            <label for="image">IMAGEN</label>
+            <input class="tam" type="file"  name="image">
+        </p>
+
+        <div class="botones">
+            
+             <button class="guardar" type="submit">Guardar cambios</button>
+        </div>
+    </form>
+</div>
+ </main>
+ <%- include("../partials/footer.ejs") %> 
+</body>
+</html>

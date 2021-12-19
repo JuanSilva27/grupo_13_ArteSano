@@ -20,6 +20,13 @@
     margin-bottom: 25px;
 }
 
+.usuarios .container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
 .usuarios .tit-container{
     border-bottom: solid 2px var(--rojo);
 }
@@ -28,33 +35,45 @@
     width: 50%;
 }
 
+.usuarios .foto{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.usuarios .datos{
+    width: 45%;
+}
+
 .usuarios img.perfil{
     border-radius: 50%;
 }
 
 .usuarios h2 {
     text-align: center;
+    margin-bottom: 25px;
 }
 
 .usuarios form p{
 margin-top: 20px;
-margin-bottom: 20px;  
+margin-bottom: 20px; 
+width: 50%;  
+font-weight: bold;
+padding-bottom: 20px;
+
 }
+
+
 
 .usuarios form.form{
-    width: 100%;
+    width: 80%;
   display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
 } 
 
-.usuarios .datos{
-/*     display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    color: var(--bordo);
-    font-weight: bold;
-}
+
+
 
 .usuarios .boton{
     border: none;
@@ -78,12 +97,15 @@ margin-bottom: 20px;
 
 
 @media (min-width: 481px){ 
-
+    
 }
 
 
 @media (min-width: 769px){ 
     .usuarios button.guardar, .usuarios button.foto_perfil {
         padding-top: 15px;
+    }
+    .usuarios .container{
+        flex-direction: row;
     }
 }

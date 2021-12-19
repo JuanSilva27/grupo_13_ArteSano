@@ -1,19 +1,21 @@
 var express = require('express');
 var router = express.Router();
 const {list, create, edit, update, destroy, newProduct}=require("../controllers/adminController")
+const adminValidate = require("../middlewares/adminValidate")
+const upload = require('../middlewares/multerProducts')
 /* GET users listing. */
-router.get('/', list);
+router.get('/',adminValidate, list);
 
-router.get('/create', create);
-router.post('/create', newProduct);
+router.get('/create',adminValidate, create);
+router.post('/create',adminValidate,upload.single("image"), newProduct);
 
 
 //editar producto
-router.get('/edit/:id', edit);
-router.put("/edit/:id",update)
+router.get('/edit/:id',adminValidate, edit);
+router.put("/edit/:id",adminValidate,upload.single("image"),update)
 
 //borrar producto
-router.delete("/delete/:id",destroy)
+router.delete("/delete/:id",adminValidate,destroy)
 
 //ESTO ESTA DE GUIA PERO EN TEORIA NO CAMBIARIAN LAS DE ARRIBA
 /* router.get('/', controller.add)

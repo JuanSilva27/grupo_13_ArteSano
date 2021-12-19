@@ -64,24 +64,24 @@
                 <% let contador = 1 %>
                 <% productos.forEach(favorito=>{%>
                     
-                    <% if(favorito.favorito===true && contador<5){ %>  
+                      
                     <article class="fav-<%= contador %> ">
                         <div class="photo">
-                           <a href="/products/detail/<%= favorito.id %> "> <img src='/img/products/<%= favorito.img %> ' width="100%" alt='<%= favorito.alt %> ' /></a>
+                           <a href="/products/detail/<%= favorito.id %> "> <img src='/img/products/<%= favorito.productosIm[0].nombre %> ' width="100%" alt='<%= favorito.alt %> ' /></a>
                         </div>
                         <div class="description">
                             <div class="categoria">
                                 <small><%= favorito.categoria %> </small>
                                 <i class="fas fa-regular fa-heart"></i>
                             </div>
-                            <h3 class="subt"><%= favorito.name %> </h3>
+                            <h3 class="subt"><%= favorito.nombre %> </h3>
                             <h2 class="subt precio">$<%= favorito.precio %> </h2>
                             <p><%= favorito.descipcion %></p>
                         </div>
                         
                     </article>
-                    <% contador++ %>
-                    <% } %> 
+                    
+                     
 
                 <% }) %>  
 
@@ -101,7 +101,7 @@
                     <% categorias.forEach(categoria=>{%> 
                         <div class="img-container">
                         <img class="photo" src="/img/<%= categoria.img %> " width="100%" alt="<%= categoria.alt %> ">
-                        <a href="/products/<%= categoria.href %> " class="titulo"><%= categoria.name %> </a>
+                        <a href="/products/<%= categoria.href %> " class="titulo"><%= categoria.nombre %> </a>
                         </div>
                     <% }) %> 
 
