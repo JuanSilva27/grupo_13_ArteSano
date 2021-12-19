@@ -48,7 +48,7 @@ module.exports={
               imagen: resultado.imagen
           }
           req.session.userLog=user
-          res.cookie("recuerdame", resultado, {maxAge: 60*1000*5})
+          res.cookie("recuerdame", user, {maxAge: 60*1000*5})
           res.redirect('/users/Miperfil');
         })
         .catch(err => {
