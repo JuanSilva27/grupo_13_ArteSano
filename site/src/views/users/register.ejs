@@ -3,33 +3,37 @@
     <%- include("../partials/head.ejs")  %> 
 <body>
     <%- include("../partials/header.ejs") %> 
-
+   
  <main class="register">
     <P class="cont.tituloRegister"><h1>CREA TU CUENTA</h1></P>
      
     <div class="background">
  
 
-    <form class="formRegister" action="" method="POST" enctype="multipart/form-data" >
+    <form class="formRegister" action="" method="POST" enctype="multipart/form-data" id= "formV" >
          
         <p>
             <label for="Nombre">NOMBRE</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo " name="Nombre"  > <br>
-            <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
+            <input class="tamaño" type="text" placeholder="ej: Ricardo " name="Nombre" id= "Nombre" > <br>
+            <small ><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
+            <small id="smallNombre"></small>
+            
         </p>
         <p>
             <label for="Nombre">APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ford" name="Nombre"  > <br>
+            <input class="tamaño" type="text" placeholder="ej: Ford" name="apellido" id="apellido" > <br>
             <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
+            <small id="smallApellido"></small>
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
-            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono"  > <br>
+            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono" id="telefono" > <br>
             <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
+            <small id="smallTelefono"></small>
         </p>
         <p>
         <label for="provincia">PROVINCIA</label>
-        <select name="provincia" class="tamaño" >
+        <select name="provincia" class="tamaño" id= "provincia" >
             <option selected hidden>Seleccione tu provincia</option>
             <option value="Buenos Aires">Buenos Aires</option>  
             <option value="Capital Federal">Capital Federal</option>
@@ -54,11 +58,12 @@
             <option value="Tierra del Fuego">Tierra del Fuego</option>
             <option value="Octubre">Octubre</option>
             <option value="Tucumán">Tucumán</option>
-        </select>
+        </select> <br>
+        <small id="smallProvincia"></small>
         </p>
         <P>
             <label for="localidad">LOCALIDAD</label>
-        <select name="localidad" class="tamaño">
+        <select name="localidad" class="tamaño" id="localidad">
             <option selected hidden>Seleccione tu localidad</option>
             <option value="Ramos Mejia">Ramos Mejia</option>
             <option value="Lomas de Zamora">Lomas de Zamora</option>
@@ -70,30 +75,33 @@
             <option value="Castillo">Castillo</option>
             <option value="Lomas del Mirador">Lomas del Mirador</option>
             <option value="Liniers">Liniers</option>
-        </select>
+        </select> <br>
+        <small id="smallLocalidad"></small>
         </P>
         <p>
             <label for="email">E-MAIL</label>
-            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email"  > <br>
+            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" id="email" > <br>
             <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>  
-            
+            <small id="smallEmail"></small>
         </p>
           
         <p>
             <label for="password">CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password" > <br>
-            <small><%= locals.errors && errors.password ? errors.password.msg : null %> </small>              
+            <input class="tamaño" type="password" placeholder="**********" name="password" id="Password" > <br>
+            <small><%= locals.errors && errors.password ? errors.password.msg : null %> </small>  
+            <small id="smallPassword"></small>            
         </p>
 
         <p>
             <label for="password">CONFIRMAR CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password2" > <br>
+            <input class="tamaño" type="password" placeholder="**********" name="password2" id="Password2"> <br>
             <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %> </small>
+            <small id="smallPassword2"></small> 
         </p>
 
         <p>
             <label for="image">IMAGEN</label>
-            <input class="tam" type="file"  name="image">
+            <input class="tam" type="file"  name="image" id="image">
         </p>
         <div class="botones">
             
@@ -109,4 +117,5 @@
  </main>
  <%- include("../partials/footer.ejs") %> 
 </body>
+<script src = "/js/validation.js"></script>
 </html>

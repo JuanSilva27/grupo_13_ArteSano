@@ -456,5 +456,15 @@
     "email": "leonetkd@gmail.com",
     "password": "$2a$10$0s9h7aMNxn05mmv88GGs4.zLX1//yqU2XHMg1r1Y076m0RejhgrwW",
     "imagen": "userDefault.jpeg"
+  },
+  {
+    "id": 44,
+    "firstName": "faqfa",
+    "phone": "agsagagasd",
+    "provincia": "Capital Federal",
+    "localidad": "Lomas de Zamora",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$eCre6hIUIdvMwxfnRFy3DuAB6k9tO9y4H82aU2d6mpF0OcpOcky22",
+    "imagen": "userDefault.jpeg"
   }
 ]
