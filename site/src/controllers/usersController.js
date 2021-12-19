@@ -99,13 +99,15 @@ module.exports={
               res.cookie("recuerdame", req.session.userLog, {maxAge: 60*1000*10})
             }
             res.redirect("/")
+          } else{
+            res.render("users/login",{errors:{msg: "Contraseña incorrecta"}})
           }
         })
         .catch(err => {
           res.send(err);
         })
       } else {
-        res.render("users/login",{errors:{msg: "Email o contraseña incorrecta"}})
+        res.render('users/login', {errors: errors.mapped()});
       }
     },
  
