@@ -39,8 +39,16 @@ module.exports={
           id_rol: 1
         })
         .then(resultado => {
-          req.session.userLog=resultado
-          res.cookie("recuerdame", resultado.email, {maxAge: 60*1000*5})
+          let user = {
+            id: resultado.id,
+              nombre: resultado.nombre,
+              apellido: resultado.apellido,
+              email: resultado.email,
+              id_rol: resultado.id_rol,
+              imagen: resultado.imagen
+          }
+          req.session.userLog=user
+          res.cookie("recuerdame", resultado, {maxAge: 60*1000*5})
           res.redirect('/users/Miperfil');
         })
         .catch(err => {
@@ -79,9 +87,16 @@ module.exports={
         })
         .then (user => {
           if (user && bcrypt.compareSync(req.body.password, user.password)){
-            req.session.userLog = user
+            req.session.userLog = {
+              id: user.id,
+              nombre: user.nombre,
+              apellido: user.apellido,
+              email: user.email,
+              id_rol: user.id_rol,
+              imagen: user.imagen
+            }
             if (req.body.recuerdame !== undefined){
-              res.cookie("recuerdame", user.email, {maxAge: 60*1000})
+              res.cookie("recuerdame", req.session.userLog, {maxAge: 60*1000*10})
             }
             res.redirect("/")
           }
