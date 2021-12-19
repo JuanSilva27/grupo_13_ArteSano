@@ -1,9 +1,6 @@
-const fs = require("fs")
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/productos.json');
-let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
-let categorias = require("../data/categorias.json");
 const db = require("../database/models");
 /* const { products } = require("./productsController"); */
 const { validationResult } = require("express-validator")
@@ -40,38 +37,39 @@ module.exports = {
   }
   ,
 
-  newProduct: (req, res) => {
-
-    const errors = validationResult(req);
-    let object = (req.body)
-    if (errors.isEmpty()) {
-
-      db.Productos.create({
-        nombre: object.titulo,
-        descripcion: object.descripcion,
-        precio: object.precio,
-        id_categoria: object.categoria,
-      })
-   
-      .then(resultado => {
-      db.Imagen.create({
-        id_producto: resultado.id,
-        nombre: req.file ? req.file.filename : "userDefault.jpeg",
-      })
-      res.redirect(`/products/detail/${resultado.id}`)
-    })
-    .catch((error) => {
-      res.send(error)
-    })
-} else {
-res.render('admin/create', {errors: errors.mapped(), old: object})
-}},
+   newProduct: (req, res, next) => {
+      const errors = validationResult(req)
+  
+      if (errors.isEmpty()) {
+        db.Productos.create({
+          nombre: object.titulo,
+          descripcion: object.descripcion,
+          precio: object.precio,
+          id_categoria: object.categoria,
+        })
+          .then(resultado => {
+            db.Imagen.create({
+              id_producto: resultado.id,
+              nombre: req.file ? req.file.filename : "userDefault.jpeg",
+            })
+            res.redirect(`/products/detail/${resultado.id}`)
+          })
+          .catch((error) => {
+            res.send(error)
+          })
+  
+      } else {
+          res.render('admin/create', { errors: errors.mapped(), old: req.body });
+      }
+    }, 
 
   //edit
   edit: function (req, res, next) {
+
     const { id } = req.params
     let productEdit = db.Productos.findByPk(id, { include: [{ association: "productosIm" }] });
     let categorias = db.Categorias.findAll();
+
 
     Promise.all([productEdit, categorias])
       .then(([productEdit, categorias]) => {
@@ -85,30 +83,37 @@ res.render('admin/create', {errors: errors.mapped(), old: object})
 
   },
 
-update: (req, res, next) => {
-  db.Productos.update({
-    nombre: req.body.titulo,
-    descripcion: req.body.descripcion,
-    precio: req.body.precio,
-    id_categoria: req.body.categoria,
-  }, {
-    include: [{ association: "productosIm" }],
-    where: { id: req.params.id }
-  })
-    .then(resultado => {
-      db.Imagen.update({
-        nombre: req.file ? req.file.filename : req.body.imageName
+  update: (req, res, next) => {
+    const errors = validationResult(req);
+
+    let object = (req.body)
+
+    if (errors.isEmpty()) {
+
+      db.Productos.update({
+        nombre: req.body.titulo,
+        descripcion: req.body.descripcion,
+        precio: req.body.precio,
+        id_categoria: req.body.categoria,
       }, {
-        where: { id_producto: req.params.id }
+        include: [{ association: "productosIm" }],
+        where: { id: req.params.id }
       })
-      res.redirect(`/products/detail/${+req.params.id}`)
-    })
-    .catch((error) => {
-      res.send(error)
-    })
-
-
-},
+        .then(resultado => {
+          db.Imagen.update({
+            nombre: req.file ? req.file.filename : req.body.imageName
+          }, {
+            where: { id_producto: req.params.id }
+          })
+          res.redirect(`/products/detail/${+req.params.id}`)
+        })
+        .catch((error) => {
+          res.send(error)
+        })
+    } else {
+      res.render("admin/edit", { errors: errors.mapped(), old: req.body })
+    }
+  },
 
   //borrar
   destroy: (req, res, next) => {
@@ -130,4 +135,6 @@ update: (req, res, next) => {
         res.send(error)
       })
   }
+
+
 }

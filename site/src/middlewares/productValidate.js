@@ -7,7 +7,7 @@ module.exports = [
     
     check('precio')
     .notEmpty().withMessage('Debes completar este campo').bail()
-    .isNumeric().withMessage('Debes ingresar un valor numérico'),
+    .isFloat().withMessage('Debes ingresar un valor numérico'),
    
     check('categoria')
     .notEmpty().withMessage('Debes seleccionar una categoría'),

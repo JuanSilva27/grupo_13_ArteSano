@@ -12,6 +12,10 @@
             <p>
                 <label for="titulo">NOMBRE</label>
                 <input class="tamaño" type="text" id="titulo" name="titulo" value="<%= productEdit.nombre %>">
+               
+            <% if (locals.errors && errors.nombre) { %>
+                <small> <%errors.nombre.msg %> </small>
+                <% } %> 
             </p>
     
             <p>
@@ -50,4 +54,7 @@
      </main>
  <%- include("../partials/footer.ejs") %> 
 </body>
+
+<script src="js/productValidate.js"> </script>
+
 </html>
