@@ -246,5 +246,6 @@ modele.exports = {
         .then(response => response.json())
     }
 } */
-
+console.log(validate)
 });
+

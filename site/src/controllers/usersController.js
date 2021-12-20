@@ -30,7 +30,7 @@ module.exports={
         db.Usuarios.create({
           nombre: object.Nombre,
           apellido: object.Apellido,
-          email: object.email,
+          email: object.email.trim(),
           password: bcrypt.hashSync(object.password, 10),
           telefono: object.telefono,
           provincia: object.provincia,
@@ -98,7 +98,7 @@ module.exports={
       if (errors.isEmpty()) { 
         db.Usuarios.findOne({
           where: {
-            email: req.body.email
+            email: req.body.email.trim()
           }
         })
         .then (user => {
@@ -162,7 +162,7 @@ module.exports={
     db.Usuarios.update({
         nombre: object.Nombre,
         apellido: object.Apellido,
-        email: object.email,
+        email: object.email.trim(),
         telefono: object.telefono,
         provincia: object.provincia,
         localidad: object.localidad,
