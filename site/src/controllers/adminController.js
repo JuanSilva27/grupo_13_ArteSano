@@ -37,31 +37,45 @@ module.exports = {
   }
   ,
 
-   newProduct: (req, res, next) => {
-      const errors = validationResult(req)
-  
-      if (errors.isEmpty()) {
-        db.Productos.create({
-          nombre: object.titulo,
-          descripcion: object.descripcion,
-          precio: object.precio,
-          id_categoria: object.categoria,
+  newProduct: (req, res, next) => {
+    db.Categorias.findAll({
+      include: [{ association: "categoriasPr" }]
+    })
+    const errors = validationResult(req)
+    let object = (req.body)
+    if (errors.isEmpty()) {
+      db.Productos.create({
+        nombre: object.titulo,
+        descripcion: object.descripcion,
+        precio: object.precio,
+        id_categoria: object.categoria,
+      })
+        .then(resultado => {
+          db.Imagen.create({
+            id_producto: resultado.id,
+            nombre: req.file ? req.file.filename : "userDefault.jpeg",
+          })
+          res.redirect(`/products/detail/${resultado.id}`)
         })
-          .then(resultado => {
-            db.Imagen.create({
-              id_producto: resultado.id,
-              nombre: req.file ? req.file.filename : "userDefault.jpeg",
-            })
-            res.redirect(`/products/detail/${resultado.id}`)
-          })
-          .catch((error) => {
-            res.send(error)
-          })
-  
-      } else {
-          res.render('admin/create', { errors: errors.mapped(), old: req.body });
-      }
-    }, 
+        .catch((error) => {
+          res.send(error)
+        })
+
+    } else {
+
+      db.Categorias.findAll({
+        include: [{ association: "categoriasPr" }]
+      })
+        .then(categorias => {
+         
+          res.render('admin/create', {categorias, errors: errors.mapped(), old: req.object })
+        })
+        .catch((error) => {
+          res.send(error)
+        })
+     ;
+    }
+  },
 
   //edit
   edit: function (req, res, next) {
@@ -84,9 +98,9 @@ module.exports = {
   },
 
   update: (req, res, next) => {
-    const errors = validationResult(req);
 
-    let object = (req.body)
+    
+    const errors = validationResult(req);
 
     if (errors.isEmpty()) {
 
@@ -111,7 +125,19 @@ module.exports = {
           res.send(error)
         })
     } else {
-      res.render("admin/edit", { errors: errors.mapped(), old: req.body })
+
+      const { id } = req.params
+      let productEdit = db.Productos.findByPk(id, { include: [{ association: "productosIm" }] });
+      let categorias = db.Categorias.findAll();
+  
+  
+      Promise.all([productEdit, categorias])
+        .then(([productEdit, categorias]) => {
+          
+          res.render('admin/edit', { productEdit, categorias, errors: errors.mapped(), old: req.body })
+  
+        })
+       
     }
   },
 

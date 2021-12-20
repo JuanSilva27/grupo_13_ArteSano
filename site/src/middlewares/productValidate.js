@@ -15,8 +15,5 @@ module.exports = [
     check('descripcion')
     .notEmpty().withMessage('Debes completar este campo').bail()
     .isLength({min: 20}).withMessage('La descripción debe tener al menos 20 caracteres'),
-
-    check('image')
-    .notEmpty().withMessage('Debe cargar una imagen del producto').bail(),
     
 ]
