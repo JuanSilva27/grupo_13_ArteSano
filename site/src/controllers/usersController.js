@@ -59,7 +59,23 @@ module.exports={
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
     },
-
+    //Falta ruta
+    /* edite: (req, res) => {
+      res.render('/users/Miperfil')
+    },
+    update: (req, res) => {
+      db.Usuario.update(
+        req.body,
+        { 
+         where{id: req.params.id}
+        })
+      .then( result => {
+        res.redirect('/users/Miperfil')
+      })
+      .catch(
+        (err) => {
+          res.send(err)
+      }) */
     user: (req,res)=>{
       const user=req.session.userLog
       db.Usuarios.findOne({
