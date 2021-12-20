@@ -95,6 +95,13 @@ main.register{
     padding: 1px;
     border-radius: 5px;
 }
+.register .is-invalidSmall{
+    border: solid 1px var(--rojo);
+    background-color: var(--crema);
+    color: var(--rojo);;
+    padding: 1px;
+    border-radius: 5px;
+}
 @media (min-width: 481px){ 
     .register .tamaño{
         height: 26px;

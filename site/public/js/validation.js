@@ -56,15 +56,13 @@ window.addEventListener('load', () => {
 
  }
 
-
-
 nombre.focus();
 nombre.addEventListener("input",(e)=>{
     if(e.target.value.length<3){
         nombre.classList.remove("is-valid")
         nombre.classList.add("is-invalid")
         smallNombre.innerHTML= "El Nombre debe tener mas de 3 caracteres"
-        smallNombre.classList.add("is-invalid")
+        smallNombre.classList.add("is-invalidSmall")
         smallNombre.classList.remove("is-validSmall")
         validate.nombre=false
 
@@ -72,7 +70,7 @@ nombre.addEventListener("input",(e)=>{
         nombre.classList.remove("is-invalid")
         nombre.classList.add("is-valid")
         smallNombre.innerHTML= "Bien!"
-        smallNombre.classList.remove("is-invalid")
+        smallNombre.classList.remove("is-invalidSmall")
         smallNombre.classList.add("is-validSmall")
         validate.nombre=true
     }
@@ -84,15 +82,15 @@ apellido.addEventListener("input",(e)=>{
         apellido.classList.remove("is-valid")
         apellido.classList.add("is-invalid")
         smallApellido.innerHTML= "El Apellido debe tener al menos 3 caracteres"
-        smallApellido.classList.add("is-invalid")
-        smallApellido.style.color = "rgb(30, 196, 30)";
+        smallApellido.classList.add("is-invalidSmall")
+        smallApellido.classList.remove("is-validSmall");
         validate.apellido=false
 
     } else{
         apellido.classList.remove("is-invalid")
         apellido.classList.add("is-valid")
         smallApellido.innerHTML= "Bien!"
-        smallApellido.classList.remove("is-invalid")
+        smallApellido.classList.remove("is-invalidSmall")
         smallApellido.classList.add("is-validSmall")
         validate.apellido=true
     }
@@ -104,15 +102,15 @@ telefono.addEventListener("input",(e)=>{
         telefono.classList.remove("is-valid")
         telefono.classList.add("is-invalid")
         smallTelefono.innerHTML= "Debes ingresar un telefono valido"
-        smallTelefono.classList.add("is-invalid")
-        smallTelefono.style.color = "rgb(30, 196, 30)";
+        smallTelefono.classList.add("is-invalidSmall")
+        smallTelefono.classList.remove("is-validSmall")
         validate.telefono=false
 
     } else{ 
         telefono.classList.remove("is-invalid")
         telefono.classList.add("is-valid")
         smallTelefono.innerHTML= "Bien!"
-        smallTelefono.classList.remove("is-invalid")
+        smallTelefono.classList.remove("is-invalidSmall")
         smallTelefono.classList.add("is-validSmall")
         validate.telefono=true
     }
@@ -123,16 +121,15 @@ provincia.addEventListener("input",(e)=>{
         provincia.classList.remove("is-valid")
         provincia.classList.add("is-invalid")
         smallProvincia.innerHTML= "Debes elegir una Provincia"
-        smallProvincia.classList.add("is-invalid")
-        smallProvincia.style.color = "rgb(30, 196, 30)";
+        smallProvincia.classList.add("is-invalidSmall")
+        smallProvincia.classList.remove("is-validSmall")
         validate.provincia=false
 
     } else{ 
         provincia.classList.remove("is-invalid")
         provincia.classList.add("is-valid")
         smallProvincia.innerHTML= "Bien!"
-        smallProvincia.classList.remove("is-invalid")
-        smallProvincia.style.color = "rgb(30, 196, 30)"
+        smallProvincia.classList.remove("is-invalidSmall")
         smallProvincia.classList.add("is-validSmall")
         validate.provincia=true
     }
@@ -143,16 +140,15 @@ localidad.addEventListener("input",(e)=>{
         localidad.classList.remove("is-valid")
         localidad.classList.add("is-invalid")
         smallLocalidad.innerHTML= "Debes elegir una localidad"
-        smallLocalidad.classList.add("is-invalid")
-        smallLocalidad.style.color = "rgb(30, 196, 30)";
+        smallLocalidad.classList.add("is-invalidSmall")
+        smallLocalidad.classList.remove("is-validSmall")
         validate.localidad=false
 
     } else{ 
         localidad.classList.remove("is-invalid")
         localidad.classList.add("is-valid")
         smallLocalidad.innerHTML= "Bien!"
-        smallLocalidad.classList.remove("is-invalid")
-        smallLocalidad.style.color = "rgb(30, 196, 30)"
+        smallLocalidad.classList.remove("is-invalidSmall")
         smallLocalidad.classList.add("is-validSmall")
         validate.localidad=true
     }
@@ -164,8 +160,8 @@ email.addEventListener("input",(e)=>{
         email.classList.remove("is-valid")
         email.classList.add("is-invalid")
         smallEmail.innerHTML= "Debes ingresar un email valido"
-        smallEmail.classList.add("is-invalid")
-        smallEmail.style.color = "rgb(30, 196, 30)";
+        smallEmail.classList.add("is-invalidSmall")
+        smallEmail.classList.remove("is-validSmall")
         
         validate.email=false
 
@@ -173,7 +169,7 @@ email.addEventListener("input",(e)=>{
         email.classList.remove("is-invalid")
         email.classList.add("is-valid")
         smallEmail.innerHTML= "Bien!"
-        smallEmail.classList.remove("is-invalid")
+        smallEmail.classList.remove("is-invalidSmall")
         smallEmail.classList.add("is-validSmall")
         validate.email=true
     }
@@ -185,16 +181,15 @@ password.addEventListener("input",(e)=>{
         password.classList.remove("is-valid")
         password.classList.add("is-invalid")
         smallPassword.innerHTML= "La contraseña debe tener 8 caracteres"
-        smallPassword.classList.add("is-invalid")
-        smallPassword.style.color = "rgb(30, 196, 30)";
+        smallPassword.classList.add("is-invalidSmall")
+        smallPassword.classList.remove("is-validSmall")
         validate.password=false
 
     } else{ 
         password.classList.remove("is-invalid")
         password.classList.add("is-valid")
         smallPassword.innerHTML= "Bien!"
-        smallPassword.classList.remove("is-invalid")
-        smallPassword.style.color = "rgb(30, 196, 30)"
+        smallPassword.classList.remove("is-invalidSmall")
         smallPassword.classList.add("is-validSmall")
         validate.password=true
     }
@@ -206,16 +201,15 @@ password2.addEventListener("input",(e)=>{
         password2.classList.remove("is-valid")
         password2.classList.add("is-invalid")
         smallPassword2.innerHTML= "La contraseña debe tener 8 caracteres"
-        smallPassword2.classList.add("is-invalid")
-        smallPassword2.style.color = "rgb(30, 196, 30)";
+        smallPassword2.classList.add("is-invalidSmall")
+        smallPassword2.classList.remove("is-validSmall")
         validate.password2=false
 
     } else{ 
         password2.classList.remove("is-invalid")
         password2.classList.add("is-valid")
         smallPassword2.innerHTML= "Bien!"
-        smallPassword2.classList.remove("is-invalid")
-        smallPassword2.style.color = "rgb(30, 196, 30)"
+        smallPassword2.classList.remove("is-invalidSmall")
         smallPassword2.classList.add("is-validSmall")
         validate.password2=true
     }

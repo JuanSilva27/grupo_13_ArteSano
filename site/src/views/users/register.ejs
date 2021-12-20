@@ -14,25 +14,25 @@
          
         <p>
             <label for="Nombre">NOMBRE</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value=<%= locals.old && old.Nombre? old.Nombre : null %>  > <br>
+            <input class="tamaño" type="text" placeholder="ej: Ricardo" id = "Nombre" name="Nombre"value=<%= locals.old && old.Nombre? old.Nombre : null %> > <br>
             <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
             <small id="smallNombre"></small>
         </p>
         <p>
             <label for="Apellido">APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value=<%= locals.old && old.Apellido? old.Apellido : null %>  > <br>
+            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" id = "apellido"value=<%= locals.old && old.Apellido? old.Apellido : null %>  > <br>
             <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
             <small id="smallApellido"></small>
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
-            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono" value=<%= locals.old && old.telefono? old.telefono : null %>  > <br>
+            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" id = "telefono"name="telefono" value=<%= locals.old && old.telefono? old.telefono : null %>  > <br>
             <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
             <small id="smallTelefono"></small>
         </p>
         <p>
         <label for="provincia">PROVINCIA</label>
-        <select name="provincia" class="tamaño" >
+        <select id = "provincia" name="provincia" class="tamaño" >
             <option value=""<%= locals.old && old.provincia=== ""? "selected" : null %>  hidden>Seleccione tu provincia</option>
             <option value="Buenos Aires"<%= locals.old && old.provincia=== "Buenos Aires"? "selected" : null %>>Buenos Aires</option>  
             <option value="Capital Federal"<%= locals.old && old.provincia=== "Capital Federal"? "selected" : null %>>Capital Federal</option>
@@ -63,7 +63,7 @@
         </p>    
         <P>
             <label for="localidad">LOCALIDAD</label>
-        <select name="localidad" class="tamaño">
+        <select id = "localidad" name="localidad" class="tamaño">
             <option value="" <%= locals.old && old.localidad=== ""? "selected" : null %> hidden>Seleccione tu localidad</option>
             <option value="Ramos Mejia"<%= locals.old && old.localidad=== "Ramos Mejia"? "selected" : null %>>Ramos Mejia</option>
             <option value="Lomas de Zamora"<%= locals.old && old.localidad=== "Lomas de Zamora"? "selected" : null %>>Lomas de Zamora</option>
@@ -81,7 +81,7 @@
         </P>
         <p>
             <label for="email">E-MAIL</label>
-            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" value=<%= locals.old && old.email? old.email : null %>  > <br>
+            <input class="tamaño" type="text" placeholder="ej: Ricardo@gmail.com" name="email" id = "email" value=<%= locals.old && old.email? old.email : null %>  > <br>
             <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>  
             <small id="smallEmail"></small>
         </p>
@@ -95,7 +95,7 @@
 
         <p>
             <label for="password2">CONFIRMAR CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password2"  > <br>
+            <input class="tamaño" type="password" placeholder="**********" name="password2" id = "Password2"  > <br>
             <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %> </small>
             <small id="smallPassword2"></small> 
         </p>
