@@ -453,5 +453,71 @@
     "password2": "$2a$10$Vs.hxkHCf.ToVBJ/NnRgZ.PjIO2uA.xtvb9BGgS9M5ZpQ/cbXJa/e",
     "rol": "admin",
     "imagen": "userDefault.jpeg"
+<<<<<<< HEAD
+  },
+  {
+    "id": 40,
+    "firstName": "coco",
+    "phone": "1564165165",
+    "provincia": "Capital Federal",
+    "localidad": "Lomas de Zamora",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$fW/06D6z1WMwx/agWUFmfOM8iknHlBs7Ear1aS1zHSp9w/wIpDPVq",
+    "imagen": "img1635892874398.jpg"
+  },
+  {
+    "id": 41,
+    "firstName": "cocossss",
+    "phone": "1564165165",
+    "provincia": "Capital Federal",
+    "localidad": "Lomas de Zamora",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$6BStJS3O5wT5Tv.forb1KOAYlqMKJkKq/Ne.AJdx9w9FIipLZRsz.",
+    "imagen": "img1635893118608.jpg"
+  },
+  {
+    "id": 42,
+    "firstName": "barbara",
+    "phone": "1150213296",
+    "provincia": "Chaco",
+    "localidad": "Hurlingham",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$pqUc0tvZEXEoCzFCJ9f0jOtfP3J/mI7jGQz0OuRFbtWuQoe5llzd.",
+    "imagen": "userDefault.jpeg"
+  },
+  {
+    "id": 43,
+    "firstName": [
+      "Eric ",
+      "Benitez"
+    ],
+    "phone": "1150213296",
+    "provincia": "Seleccione tu provincia",
+    "localidad": "Ramos Mejia",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$0s9h7aMNxn05mmv88GGs4.zLX1//yqU2XHMg1r1Y076m0RejhgrwW",
+    "imagen": "userDefault.jpeg"
+  },
+  {
+    "id": 44,
+    "firstName": "faqfa",
+    "phone": "agsagagasd",
+    "provincia": "Capital Federal",
+    "localidad": "Lomas de Zamora",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$eCre6hIUIdvMwxfnRFy3DuAB6k9tO9y4H82aU2d6mpF0OcpOcky22",
+    "imagen": "userDefault.jpeg"
+  },
+  {
+    "id": 45,
+    "firstName": "erric",
+    "phone": "1150213296",
+    "provincia": "Capital Federal",
+    "localidad": "Lomas de Zamora",
+    "email": "leonetkd@gmail.com",
+    "password": "$2a$10$O7eB5675llRY0n3dc4bsou9a/KoCTR7XyZ1oDutKS0aHcbinv8pI2",
+    "imagen": "userDefault.jpeg"
+=======
+>>>>>>> develop
   }
 ]

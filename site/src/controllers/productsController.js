@@ -98,11 +98,18 @@ module.exports = {
       Promise.all([selecCategoria,productos])
       .then(([selecCategoria,productos])=>{
 
+<<<<<<< HEAD
+    categoriasCompletas: (req, res) => {
+      res.render('products/categorias/completas', {categorias, productos})
+    },
+}
+=======
         res.render('products/categorias',{selecCategoria, productos})
       })
       .catch((error) => {
         res.send(error)
     })
     },
+>>>>>>> develop
 
 }

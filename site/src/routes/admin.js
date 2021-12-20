@@ -17,5 +17,19 @@ router.put("/edit/:id",adminValidate,upload.single("image"),update)
 //borrar producto
 router.delete("/delete/:id",adminValidate,destroy)
 
+//ESTO ESTA DE GUIA PERO EN TEORIA NO CAMBIARIAN LAS DE ARRIBA
+/* router.get('/', controller.add)
+router.post('/', controller.create)
 
+router.get('/edit/:id', edit);
+router.put("/edit/:id",update)
+
+router.delete("/delete/:id",destroy)
+router.post('/', controller.create)
+
+router.get('/', controller.add)
+router.post('/', controller.create)
+
+router.get('/', controller.add)
+router.post('/', controller.create)*/
 module.exports=router
