@@ -16,11 +16,13 @@
             <label for="Nombre">NOMBRE</label>
             <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value=<%= locals.old && old.Nombre? old.Nombre : null %>  > <br>
             <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
+            <small id="smallNombre"></small>
         </p>
         <p>
             <label for="Apellido">APELLIDO</label>
             <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value=<%= locals.old && old.Apellido? old.Apellido : null %>  > <br>
             <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
+            <small id="smallApellido"></small>
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
@@ -57,7 +59,8 @@
             <option value="Tucumán"<%= locals.old && old.provincia=== "Tucumán"? "selected" : null %>>Tucumán</option>
         </select> <br>
         <small><%= locals.errors && errors.provincia ? errors.provincia.msg : null %> </small>
-        </p>
+        <small id="smallProvincia"></small>
+        </p>    
         <P>
             <label for="localidad">LOCALIDAD</label>
         <select name="localidad" class="tamaño">
@@ -74,6 +77,7 @@
             <option value="Liniers" <%= locals.old && old.localidad=== "Liniers"? "selected" : null %>>Liniers</option>
         </select> <br>
         <small><%= locals.errors && errors.localidad ? errors.localidad.msg : null %> </small>
+        <small id="smallLocalidad"></small>
         </P>
         <p>
             <label for="email">E-MAIL</label>
