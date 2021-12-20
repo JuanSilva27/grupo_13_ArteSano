@@ -18,4 +18,6 @@ router.get('/detail/:id', detail);
 router.get('/:categoria', categoria)
 router.get('/', store);
 
+
+
 module.exports=router
