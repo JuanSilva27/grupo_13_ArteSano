@@ -58,8 +58,8 @@
         
         <p>
             <label for="image">IMAGEN</label>
-            <input  type="file" id="image" name="image" value="">
-
+            <input  type="file" id="image" name="image" accept=".png, .jpg, .jpeg"> <br>
+            <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
         </p>
 
         <div class="botones">

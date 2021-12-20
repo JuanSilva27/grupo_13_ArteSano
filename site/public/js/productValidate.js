@@ -4,14 +4,12 @@ window.addEventListener('load', () => {
     const qs = (tag) => {
         return document.querySelector(tag)
     }
-
- const form = qs(".createForm") 
+ 
  const titulo = qs("#titulo")
  const precio = qs("#precio")
  const categorias = qs("#categorias")
  const descripcion = qs("#descripcion")
 
- const inputs =document.querySelectorAll("input")
  const button = qs('.crear')
  
  //Se deshabilita el botón de iniciar sesión, si los campos cumplen los requisitos se activará
@@ -37,10 +35,8 @@ window.addEventListener('load', () => {
      precio: false,
      categorias: false,
      descripcion: false,
-     image: false,
  }
 
-titulo.focus();
 titulo.addEventListener("input",(e)=>{
     if(e.target.value.length<5){
         titulo.classList.remove("is-valid")
@@ -122,4 +118,4 @@ descripcion.addEventListener("input",(e)=>{
 
 
 console.log(validate)
-});
+})
