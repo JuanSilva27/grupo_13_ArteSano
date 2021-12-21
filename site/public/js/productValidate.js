@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
  const precio = qs("#precio")
  const categorias = qs("#categorias")
  const descripcion = qs("#descripcion")
+ const image = qs("#image")
 
  const button = qs('.crear')
  
@@ -35,6 +36,7 @@ window.addEventListener('load', () => {
      precio: false,
      categorias: false,
      descripcion: false,
+     image:true
  }
 
 titulo.addEventListener("input",(e)=>{
@@ -116,6 +118,26 @@ descripcion.addEventListener("input",(e)=>{
     funcValidate(validate)
 })
 
+image.addEventListener("change", () => {
+    let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+    if (!regExExt.exec(image.value)) {
+        image.classList.remove("is-valid")
+        image.classList.add("is-invalid")
+        smallImage.innerHTML = "solo se permiten imagenes"
+        smallImage.classList.add("is-invalidSmall")
+        smallImage.classList.remove("is-validSmall")
+        validate.image = false
+    } else{
+        image.classList.remove("is-invalid")
+        image.classList.add("is-valid")
+        smallImage.innerHTML = "Bien!"
+        smallImage.classList.remove("is-invalidSmall")
+        smallImage.classList.add("is-validSmall")
+        validate.image = true
+
+    }
+
+})
 
 console.log(validate)
 })
