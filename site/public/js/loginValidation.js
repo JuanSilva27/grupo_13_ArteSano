@@ -41,8 +41,7 @@ window.addEventListener('load', () => {
 
     email.addEventListener('blur', (e) => {
         var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-        var esValido = expReg.test(e.target.value)
-        console.log(e.target.value);
+        var esValido = expReg.test(e.target.value.toLowerCase())
         if(e.target.value === ""){
             email.classList.add('is-invalid')
             email.classList.remove('is-valid')

@@ -219,7 +219,7 @@ password2.addEventListener("input",(e)=>{
 
 form.addEventListener("submit", (e) => {
     var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    var esValido = expReg.test(form.email.value)
+    var esValido = expReg.test(form.email.value.toLowerCase())
     console.log(form.email.value);
     if(esValido == false){
         e.preventDefault()
