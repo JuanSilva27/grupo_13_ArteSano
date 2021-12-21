@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
     const form = qs(".formEdit")
     const text = qs("textarea")
     const select = qs("select")
-    const img = qs("#image")
+    const image = qs("#image")
 const smallTitulo = qs("#smallTitulo")
 
     const titulo = qs("#titulo")
@@ -18,9 +18,9 @@ const smallTitulo = qs("#smallTitulo")
     const categorias = qs("#categorias")
     const descripcion = qs("#descripcion")
     const smallText = qs("#smallDescripcion")
+    const smallImage= qs("#smallImage")
 
     const inputs = [titulo, precio]
-    const button = qs('.crear')
 
 
     form.addEventListener("submit", (e) => {
@@ -71,6 +71,26 @@ const smallTitulo = qs("#smallTitulo")
             smallText.classList.remove("is-invalidSmall")
             smallText.classList.add("is-validSmall")
         }
+    })
+
+    image.addEventListener("change", () => {
+        let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+        if (!regExExt.exec(image.value)) {
+            image.classList.remove("is-valid")
+            image.classList.add("is-invalid")
+            smallImage.innerHTML = "solo se permiten imagenes"
+            smallImage.classList.add("is-invalidSmall")
+            smallImage.classList.remove("is-validSmall")
+            validate.image = false
+        } else{
+            image.classList.remove("is-invalid")
+            image.classList.add("is-valid")
+            smallImage.innerHTML = "Bien!"
+            smallImage.classList.remove("is-invalidSmall")
+            smallImage.classList.add("is-validSmall")
+
+        }
+
     })
 
 })

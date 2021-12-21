@@ -42,6 +42,13 @@ module.exports = {
       include: [{ association: "categoriasPr" }]
     })
     const errors = validationResult(req)
+    if (req.fileValidationError) {
+      let image = {
+          param : 'image',
+          msg: req.fileValidationError,
+      }
+      errors.errors.push(image)
+  }
     let object = (req.body)
     if (errors.isEmpty()) {
       db.Productos.create({
@@ -101,6 +108,13 @@ module.exports = {
 
     
     const errors = validationResult(req);
+    if (req.fileValidationError) {
+      let image = {
+          param : 'image',
+          msg: req.fileValidationError,
+      }
+      errors.errors.push(image)
+  }
 
     if (errors.isEmpty()) {
 
