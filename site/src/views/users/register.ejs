@@ -102,8 +102,9 @@
 
         <p>
             <label for="image">IMAGEN</label>
-            <input class="tam" type="file"  name="image" accept=".png, .jpg, .jpeg"> <br>
+            <input class="tam" type="file" id="image" name="image" accept=".png, .jpg, .jpeg"> <br>
             <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
+            <small id="smallImage"></small>
         </p>
         <div class="botones">
             
@@ -119,5 +120,5 @@
  </main>
  <%- include("../partials/footer.ejs") %> 
 </body>
-<script src = "/js/validation.js"></script>
+<script src = "/js/registerValidation.js"></script>
 </html>
