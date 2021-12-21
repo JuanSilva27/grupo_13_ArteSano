@@ -157,10 +157,19 @@ module.exports = {
         })
         return res.redirect("/")
       })
-      .catch((error) => {
-        res.send(error)
-      })
-  }
-
-
+          .then(result => {
+            db.Productos.destroy({
+              where:{
+                id: req.params.id
+              }
+            })
+              return res.redirect("/")
+          })
+          .catch((error) => {
+              res.send(error)
+          })
+      }
+    
+      
+    
 }
