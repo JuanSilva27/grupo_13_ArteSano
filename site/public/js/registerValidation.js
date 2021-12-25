@@ -238,6 +238,10 @@ window.addEventListener('load', () => {
             validate.email = true
         }
         funcValidate(validate)
+
+        
+
+
     })
 
 
