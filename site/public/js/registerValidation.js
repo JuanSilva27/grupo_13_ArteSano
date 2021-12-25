@@ -179,7 +179,7 @@ window.addEventListener('load', () => {
     })
 
     password.addEventListener("input", (e) => {
-        if (e.target.value.length <= 8) {
+        if (e.target.value.length < 8) {
             password.classList.remove("is-valid")
             password.classList.add("is-invalid")
             smallPassword.innerHTML = "La contraseña debe tener 8 caracteres"
@@ -199,7 +199,7 @@ window.addEventListener('load', () => {
     })
 
     password2.addEventListener("input", (e) => {
-        if (e.target.value.length <= 8) {
+        if (e.target.value.length < 8) {
             password2.classList.remove("is-valid")
             password2.classList.add("is-invalid")
             smallPassword2.innerHTML = "La contraseña debe tener 8 caracteres"
