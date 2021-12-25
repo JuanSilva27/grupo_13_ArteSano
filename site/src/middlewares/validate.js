@@ -19,7 +19,7 @@ module.exports=[
         .custom(value=>{
             return db.Usuarios.findOne({
                 where: {
-                    email: value.trim()
+                    email: value
                 }
             }).then(user=>{
                 if(user){

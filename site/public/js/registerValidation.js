@@ -220,26 +220,29 @@ window.addEventListener('load', () => {
 
 
     form.addEventListener("submit", (e) => {
-        var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-        var esValido = expReg.test(form.email.value.toLowerCase())
+        var expReg = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/
         console.log(form.email.value);
-        if (esValido == false) {
+        if (!expReg.test(form.email.value)) {
             e.preventDefault()
-            email.classList.add('is-invalid')
             email.classList.remove('is-valid')
+            email.classList.add('is-invalid')
+            smallEmail.classList.remove("is-validSmall")
+            smallEmail.classList.add("is-invalidSmall")
             smallEmail.innerHTML = 'Direción de correo inválida'
             smallEmail.style.padding = '8px'
             validate.email = false
         } else {
             email.classList.remove('is-invalid')
             email.classList.add('is-valid')
+            smallEmail.classList.remove("is-invalidSmall")
+            smallEmail.classList.add("is-validSmall")
             smallEmail.innerHTML = ''
             smallEmail.style.padding = ''
             validate.email = true
         }
         funcValidate(validate)
 
-        
+
 
 
     })
@@ -254,7 +257,7 @@ window.addEventListener('load', () => {
             smallImage.classList.add("is-invalidSmall")
             smallImage.classList.remove("is-validSmall")
             validate.image = false
-        } else{
+        } else {
             image.classList.remove("is-invalid")
             image.classList.add("is-valid")
             smallImage.innerHTML = "Bien!"
