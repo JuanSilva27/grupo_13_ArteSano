@@ -266,7 +266,7 @@ window.addEventListener('load', () => {
             validate.image = true
 
         }
-
+        funcValidate(validate)
     })
 
     //expreciones para password y mail
