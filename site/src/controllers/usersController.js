@@ -15,12 +15,8 @@ module.exports={
     register:function(req, res, ) {
         res.render('users/register');
       },
-<<<<<<< HEAD
-    NewRegister: (req, res, ) => {  
-=======
 
     NewRegister: (req, res, ) => {
->>>>>>> develop
       const errors = validationResult(req);
       if (req.fileValidationError) {
         let image = {
@@ -31,32 +27,10 @@ module.exports={
     }
       let object = (req.body)
       if (errors.isEmpty()) { 
-<<<<<<< HEAD
-    /*     db.Usuario.Create(req.body)
-    .then( result => {
-      res.cookie("recuerdame", result.email, {maxAge: 60*1000})
-      res.redirect(`/users/Miperfil`);
-      else {
-        res.render('users/register', {errors: errors.mapped(), old: req.body});
-      }
-    })
-    .catch(
-      (err) => {
-        res.send(err)
-    }) */
-        let NuevoUsuario = {
-          id: usuarios.length+1,
-          firstName: object.Nombre,
-          lastName: object.Apellido,
-          phone: object.telefono,
-          provincia: object.provincia,
-          localidad: object.localidad,
-=======
         db.Usuarios.create({
           nombre: object.Nombre,
           apellido: object.Apellido,
->>>>>>> develop
-          email: object.email,
+          email: object.email.trim(),
           password: bcrypt.hashSync(object.password, 10),
           telefono: object.telefono,
           provincia: object.provincia,
@@ -82,10 +56,6 @@ module.exports={
         })   
       } 
       else {
-<<<<<<< HEAD
-        
-=======
->>>>>>> develop
         res.render('users/register', {errors: errors.mapped(), old: object});
       }
     },
@@ -128,7 +98,7 @@ module.exports={
       if (errors.isEmpty()) { 
         db.Usuarios.findOne({
           where: {
-            email: req.body.email
+            email: req.body.email.trim()
           }
         })
         .then (user => {
@@ -192,7 +162,7 @@ module.exports={
     db.Usuarios.update({
         nombre: object.Nombre,
         apellido: object.Apellido,
-        email: object.email,
+        email: object.email.trim(),
         telefono: object.telefono,
         provincia: object.provincia,
         localidad: object.localidad,

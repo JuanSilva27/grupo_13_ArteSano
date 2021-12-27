@@ -19,7 +19,7 @@ USE `lasiesta_arte` ;
 
 -- -----------------------------------------------------
 -- Table `lasiesta_arte`.`rol`
--- -----------------------------------------------------
+-- -----------------------------------------------------usuarios
 DROP TABLE IF EXISTS`lasiesta_arte`.`rol`;
 
 CREATE TABLE `lasiesta_arte`.`rol` (
