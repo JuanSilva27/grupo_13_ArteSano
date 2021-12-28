@@ -5,6 +5,13 @@ window.addEventListener('load', () => {
         return document.querySelector(tag)
     }
 
+    fetch( `http://localhost:3000/api/users?email=juan.silva.0270@gmail.com`)
+        .then(response=>{
+           return response.json()
+        })
+        .then(usuario=>{
+            console.log(usuario.data)
+        })
     const form = qs("#formV")
     const nombre = qs("#Nombre")
     const apellido = qs("#apellido")
@@ -27,23 +34,12 @@ window.addEventListener('load', () => {
     const button = qs('.guardar')
     const smallImage = qs("#smallImage")
 
-    //Se deshabilita el botón de iniciar sesión, si los campos cumplen los requisitos se activará
+    
     button.disabled = true
     button.style.backgroundColor = 'gray'
     button.style.borderColor = 'gray'
 
-    const funcValidate = (obj) => {
-        let arr = Object.values(validate)
-        if (!arr.includes(false)) {
-            button.disabled = false
-            button.style.backgroundColor = 'var(--rojo)'
-            button.style.borderColor = 'var(--bordo)'
-        } else {
-            button.disabled = true
-            button.style.backgroundColor = 'gray'
-            button.style.borderColor = 'gray'
-        }
-    }
+
 
     const validate = {
         nombre: false,
@@ -58,9 +54,65 @@ window.addEventListener('load', () => {
 
     }
 
+//Se deshabilita el botón de iniciar sesión, si los campos cumplen los requisitos se activará
+    const funcValidate = (obj) => {
+        let arr = Object.values(validate)
+        if (!arr.includes(false)) {
+            button.disabled = false
+            button.style.backgroundColor = 'var(--rojo)'
+            button.style.borderColor = 'var(--bordo)'
+        } else {
+            button.disabled = true
+            button.style.backgroundColor = 'gray'
+            button.style.borderColor = 'gray'
+        }
+    }
+    let regExLetras = /^[a-zA-Z\sñáéíóúü]*$/
+    let regExNumeros = /^[0-9]*$/
+    let expRegMail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+
+
     nombre.focus();
-    nombre.addEventListener("input", (e) => {
-        if (e.target.value.length < 3) {
+    nombre.addEventListener("blur", (e) => {
+       switch(true){
+            case  !nombre.value:
+                nombre.classList.remove("is-valid")
+                nombre.classList.add("is-invalid")
+                smallNombre.innerHTML = "El Nombre no debe quedar vacio"
+                smallNombre.classList.add("is-invalidSmall")
+                smallNombre.classList.remove("is-validSmall")
+                validate.nombre = false
+                break
+            case nombre.value.length<3:
+                nombre.classList.remove("is-valid")
+                nombre.classList.add("is-invalid")
+                smallNombre.innerHTML = "El Nombre debe tener mas de 3 caracteres"
+                smallNombre.classList.add("is-invalidSmall")
+                smallNombre.classList.remove("is-validSmall")
+                validate.nombre = false
+                break
+            case !regExLetras.test(nombre.value):
+                nombre.classList.remove("is-valid")
+                nombre.classList.add("is-invalid")
+                smallNombre.innerHTML = "Solo letras"
+                smallNombre.classList.add("is-invalidSmall")
+                smallNombre.classList.remove("is-validSmall")
+                validate.nombre = false
+                break
+            default:
+                nombre.classList.remove("is-invalid")
+                nombre.classList.add("is-valid")
+                smallNombre.innerHTML = "Bien!"
+                smallNombre.classList.remove("is-invalidSmall")
+                smallNombre.classList.add("is-validSmall")
+                validate.nombre = true
+                break;
+       }
+       
+       
+       
+       
+        /* if (e.target.value.length < 3) {
             nombre.classList.remove("is-valid")
             nombre.classList.add("is-invalid")
             smallNombre.innerHTML = "El Nombre debe tener mas de 3 caracteres"
@@ -75,12 +127,48 @@ window.addEventListener('load', () => {
             smallNombre.classList.remove("is-invalidSmall")
             smallNombre.classList.add("is-validSmall")
             validate.nombre = true
-        }
+        } */
 
         funcValidate(validate)
     })
-    apellido.addEventListener("input", (e) => {
-        if (e.target.value.length < 3) {
+    apellido.addEventListener("blur", (e) => {
+        switch(true){
+            case  !apellido.value:
+                apellido.classList.remove("is-valid")
+                apellido.classList.add("is-invalid")
+                smallApellido.innerHTML = "El Apellido no debe quedar vacio"
+                smallApellido.classList.add("is-invalidSmall")
+                smallApellido.classList.remove("is-validSmall")
+                validate.apellido = false
+                break
+            case apellido.value.length<3:
+                apellido.classList.remove("is-valid")
+                apellido.classList.add("is-invalid")
+                smallApellido.innerHTML = "El Apellido debe tener mas de 3 caracteres"
+                smallApellido.classList.add("is-invalidSmall")
+                smallApellido.classList.remove("is-validSmall")
+                validate.apellido = false
+                break;
+            case !regExLetras.test(apellido.value):
+                apellido.classList.remove("is-valid")
+                apellido.classList.add("is-invalid")
+                smallApellido.innerHTML = "Solo letras"
+                smallApellido.classList.add("is-invalidSmall")
+                smallApellido.classList.remove("is-validSmall")
+                validate.apellido = false
+                break
+            default:
+                apellido.classList.remove("is-invalid")
+                apellido.classList.add("is-valid")
+                smallApellido.innerHTML = "Bien!"
+                smallApellido.classList.remove("is-invalidSmall")
+                smallApellido.classList.add("is-validSmall")
+                validate.apellido = true
+                break;
+       }
+        
+        
+        /* if (e.target.value.length < 3) {
             apellido.classList.remove("is-valid")
             apellido.classList.add("is-invalid")
             smallApellido.innerHTML = "El Apellido debe tener al menos 3 caracteres"
@@ -95,12 +183,48 @@ window.addEventListener('load', () => {
             smallApellido.classList.remove("is-invalidSmall")
             smallApellido.classList.add("is-validSmall")
             validate.apellido = true
-        }
+        } */
 
         funcValidate(validate)
     })
-    telefono.addEventListener("input", (e) => {
-        if (e.target.value.length <= 8) {
+    telefono.addEventListener("blur", (e) => {
+        switch (true){
+            case !telefono.value:
+                telefono.classList.remove("is-valid")
+                telefono.classList.add("is-invalid")
+                smallTelefono.innerHTML = "El telefono no debe quedar vacio"
+                smallTelefono.classList.add("is-invalidSmall")
+                smallTelefono.classList.remove("is-validSmall")
+                validate.telefono = false
+                break;
+            case telefono.value.length < 8:
+                telefono.classList.remove("is-valid")
+                telefono.classList.add("is-invalid")
+                smallTelefono.innerHTML = "Debes ingresar un telefono valido"
+                smallTelefono.classList.add("is-invalidSmall")
+                smallTelefono.classList.remove("is-validSmall")
+                validate.telefono = false
+                break;
+            case !regExNumeros.test(telefono.value):
+                telefono.classList.remove("is-valid")
+                telefono.classList.add("is-invalid")
+                smallTelefono.innerHTML = "Solo numeros"
+                smallTelefono.classList.add("is-invalidSmall")
+                smallTelefono.classList.remove("is-validSmall")
+                validate.telefono = false
+                break
+            default:   
+                telefono.classList.remove("is-invalid")
+                telefono.classList.add("is-valid")
+                smallTelefono.innerHTML = "Bien!"
+                smallTelefono.classList.remove("is-invalidSmall")
+                smallTelefono.classList.add("is-validSmall")
+                validate.telefono = true
+                break;
+
+        }
+        
+        /* if (e.target.value.length < 8) {
             telefono.classList.remove("is-valid")
             telefono.classList.add("is-invalid")
             smallTelefono.innerHTML = "Debes ingresar un telefono valido"
@@ -115,7 +239,7 @@ window.addEventListener('load', () => {
             smallTelefono.classList.remove("is-invalidSmall")
             smallTelefono.classList.add("is-validSmall")
             validate.telefono = true
-        }
+        } */
         funcValidate(validate)
     })
     provincia.addEventListener("input", (e) => {
@@ -158,23 +282,50 @@ window.addEventListener('load', () => {
     })
     /* email */
     email.addEventListener("input", (e) => {
-        if (e.target.value.length <= 8) {
-            email.classList.remove("is-valid")
-            email.classList.add("is-invalid")
-            smallEmail.innerHTML = "Debes ingresar un email valido"
-            smallEmail.classList.add("is-invalidSmall")
-            smallEmail.classList.remove("is-validSmall")
 
-            validate.email = false
+        fetch( `http://localhost:3000/api/users?email=${e.target.value}`)
+        .then(response=>{
+           return response.json()
+        })
+        .then(usuario=>{
+            switch(true){
+                case(usuario.data.length>0):
+                    email.classList.remove("is-valid")
+                    email.classList.add("is-invalid")
+                    smallEmail.innerHTML = "Mail ya registrado"
+                    smallEmail.classList.add("is-invalidSmall")
+                    smallEmail.classList.remove("is-validSmall")
+                    validate.email = false
+                    break
+                case (!expRegMail.test(email.value.toLowerCase())):
+                    email.classList.remove("is-valid")
+                    email.classList.add("is-invalid")
+                    smallEmail.innerHTML = "Debes ingresar un mail valido"
+                    smallEmail.classList.add("is-invalidSmall")
+                    smallEmail.classList.remove("is-validSmall")
+                    validate.email = false
+                    break
+                case (!email.value):
+                    email.classList.remove("is-valid")
+                    email.classList.add("is-invalid")
+                    smallEmail.innerHTML = "Email no puede quedar vacio"
+                    smallEmail.classList.add("is-invalidSmall")
+                    smallEmail.classList.remove("is-validSmall")
+                    validate.email = false
+                    break
+                default:
+                    email.classList.remove("is-invalid")
+                    email.classList.add("is-valid")
+                    smallEmail.innerHTML = "Bien!"
+                    smallEmail.classList.remove("is-invalidSmall")
+                    smallEmail.classList.add("is-validSmall")
+                    validate.email = true
+                    break
 
-        } else {
-            email.classList.remove("is-invalid")
-            email.classList.add("is-valid")
-            smallEmail.innerHTML = "Bien!"
-            smallEmail.classList.remove("is-invalidSmall")
-            smallEmail.classList.add("is-validSmall")
-            validate.email = true
-        }
+
+            }
+            funcValidate(validate)
+        })
         funcValidate(validate)
     })
 
@@ -199,7 +350,34 @@ window.addEventListener('load', () => {
     })
 
     password2.addEventListener("input", (e) => {
-        if (e.target.value.length < 8) {
+        switch(true){
+            case e.target.value.length<8:
+                password2.classList.remove("is-valid")
+                password2.classList.add("is-invalid")
+                smallPassword2.innerHTML = "La contraseña debe tener 8 caracteres"
+                smallPassword2.classList.add("is-invalidSmall")
+                smallPassword2.classList.remove("is-validSmall")
+                validate.password2 = false
+                break
+            case e.target.value != password.value:
+                password2.classList.remove("is-valid")
+                password2.classList.add("is-invalid")
+                smallPassword2.innerHTML = "Las contraseñas no coinciden"
+                smallPassword2.classList.add("is-invalidSmall")
+                smallPassword2.classList.remove("is-validSmall")
+                validate.password2 = false
+                break
+            default:
+                password2.classList.remove("is-invalid")
+                password2.classList.add("is-valid")
+                smallPassword2.innerHTML = "Bien!"
+                smallPassword2.classList.remove("is-invalidSmall")
+                smallPassword2.classList.add("is-validSmall")
+                validate.password2 = true
+
+        }
+        funcValidate(validate)
+        /* if (e.target.value.length < 8) {
             password2.classList.remove("is-valid")
             password2.classList.add("is-invalid")
             smallPassword2.innerHTML = "La contraseña debe tener 8 caracteres"
@@ -215,11 +393,11 @@ window.addEventListener('load', () => {
             smallPassword2.classList.add("is-validSmall")
             validate.password2 = true
         }
-        funcValidate(validate)
+        funcValidate(validate) */
     })
 
 
-    form.addEventListener("submit", (e) => {
+    /* form.addEventListener("submit", (e) => {
         var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
         console.log(form.email.value);
         if (!expReg.test(form.email.value.toLowerCase())) {
@@ -240,13 +418,12 @@ window.addEventListener('load', () => {
             smallEmail.style.padding = ''
             validate.email = true
         }
-        funcValidate(validate)
 
 
 
 
     })
-
+ */
 
     image.addEventListener("change", () => {
         let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
