@@ -424,6 +424,13 @@ window.addEventListener('load', () => {
 
     })
  */
+    form.addEventListener("submit",e=>{
+        e.preventDefault();
+        let arr = Object.values(validate)
+        if(!arr.includes(false)){
+            form.submit()
+        }
+    })
 
     image.addEventListener("change", () => {
         let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
