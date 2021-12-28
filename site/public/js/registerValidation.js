@@ -73,9 +73,10 @@ window.addEventListener('load', () => {
 
 
     nombre.focus();
-    nombre.addEventListener("blur", (e) => {
+    nombre.addEventListener("input", (e) => {
+        
        switch(true){
-            case  !nombre.value:
+            case  !e.target.value:
                 nombre.classList.remove("is-valid")
                 nombre.classList.add("is-invalid")
                 smallNombre.innerHTML = "El Nombre no debe quedar vacio"
@@ -83,7 +84,7 @@ window.addEventListener('load', () => {
                 smallNombre.classList.remove("is-validSmall")
                 validate.nombre = false
                 break
-            case nombre.value.length<3:
+            case e.target.value.length<3:
                 nombre.classList.remove("is-valid")
                 nombre.classList.add("is-invalid")
                 smallNombre.innerHTML = "El Nombre debe tener mas de 3 caracteres"
@@ -91,7 +92,7 @@ window.addEventListener('load', () => {
                 smallNombre.classList.remove("is-validSmall")
                 validate.nombre = false
                 break
-            case !regExLetras.test(nombre.value):
+            case !regExLetras.test(e.target.value):
                 nombre.classList.remove("is-valid")
                 nombre.classList.add("is-invalid")
                 smallNombre.innerHTML = "Solo letras"
@@ -131,9 +132,9 @@ window.addEventListener('load', () => {
 
         funcValidate(validate)
     })
-    apellido.addEventListener("blur", (e) => {
+    apellido.addEventListener("input", (e) => {
         switch(true){
-            case  !apellido.value:
+            case  !e.target.value:
                 apellido.classList.remove("is-valid")
                 apellido.classList.add("is-invalid")
                 smallApellido.innerHTML = "El Apellido no debe quedar vacio"
@@ -141,7 +142,7 @@ window.addEventListener('load', () => {
                 smallApellido.classList.remove("is-validSmall")
                 validate.apellido = false
                 break
-            case apellido.value.length<3:
+            case e.target.value.length<3:
                 apellido.classList.remove("is-valid")
                 apellido.classList.add("is-invalid")
                 smallApellido.innerHTML = "El Apellido debe tener mas de 3 caracteres"
@@ -149,7 +150,7 @@ window.addEventListener('load', () => {
                 smallApellido.classList.remove("is-validSmall")
                 validate.apellido = false
                 break;
-            case !regExLetras.test(apellido.value):
+            case !regExLetras.test(e.target.value):
                 apellido.classList.remove("is-valid")
                 apellido.classList.add("is-invalid")
                 smallApellido.innerHTML = "Solo letras"
@@ -187,9 +188,9 @@ window.addEventListener('load', () => {
 
         funcValidate(validate)
     })
-    telefono.addEventListener("blur", (e) => {
+    telefono.addEventListener("input", (e) => {
         switch (true){
-            case !telefono.value:
+            case !e.target.value:
                 telefono.classList.remove("is-valid")
                 telefono.classList.add("is-invalid")
                 smallTelefono.innerHTML = "El telefono no debe quedar vacio"
@@ -197,7 +198,7 @@ window.addEventListener('load', () => {
                 smallTelefono.classList.remove("is-validSmall")
                 validate.telefono = false
                 break;
-            case telefono.value.length < 8:
+            case e.target.value.length < 8:
                 telefono.classList.remove("is-valid")
                 telefono.classList.add("is-invalid")
                 smallTelefono.innerHTML = "Debes ingresar un telefono valido"
@@ -205,7 +206,7 @@ window.addEventListener('load', () => {
                 smallTelefono.classList.remove("is-validSmall")
                 validate.telefono = false
                 break;
-            case !regExNumeros.test(telefono.value):
+            case !regExNumeros.test(e.target.value):
                 telefono.classList.remove("is-valid")
                 telefono.classList.add("is-invalid")
                 smallTelefono.innerHTML = "Solo numeros"
