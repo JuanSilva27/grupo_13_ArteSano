@@ -101,8 +101,12 @@
         </p>
 
         <p>
-            <label for="image">IMAGEN</label>
-            <input class="tam" type="file" id="image" name="image" accept=".png, .jpg, .jpeg"> <br>
+            <label for="product-img">IMAGEN</label>
+            <p id="nombre-imagen">Imagen por defecto</p> 
+            <img id="img-preview" src="/img/users/userDefault.jpeg" alt="">   
+                 
+
+            <input class="tam" type="file" id="product-img" name="image" accept=".png, .jpg, .jpeg" src="/img/taza01-a.jpg"> <br>
             <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
             <small id="smallImage"></small>
         </p>
@@ -121,4 +125,5 @@
  <%- include("../partials/footer.ejs") %> 
 </body>
 <script src = "/js/registerValidation.js"></script>
+<script src = "/js/images.js"></script>
 </html>
