@@ -128,11 +128,13 @@ module.exports = {
         where: { id: req.params.id }
       })
         .then(resultado => {
-          db.Imagen.update({
-            nombre: req.file ? req.file.filename : req.body.imageName
-          }, {
-            where: { id_producto: req.params.id }
-          })
+          if(req.file){
+            db.Imagen.update({
+              nombre: req.file.filename
+            }, {
+              where: { id_producto: req.params.id }
+            })
+          }
           res.redirect(`/products/detail/${+req.params.id}`)
         })
         .catch((error) => {
