@@ -30,7 +30,6 @@ window.addEventListener('load', () => {
     const smallProvincia = qs('#smallProvincia')
     const smallPassword = qs('#smallPassword')
     const smallPassword2 = qs('#smallPassword2')
-    const inputs = document.querySelectorAll("input")
     const button = qs('.guardar')
     const smallImage = qs("#smallImage")
 
@@ -110,25 +109,6 @@ window.addEventListener('load', () => {
                 break;
        }
        
-       
-       
-       
-        /* if (e.target.value.length < 3) {
-            nombre.classList.remove("is-valid")
-            nombre.classList.add("is-invalid")
-            smallNombre.innerHTML = "El Nombre debe tener mas de 3 caracteres"
-            smallNombre.classList.add("is-invalidSmall")
-            smallNombre.classList.remove("is-validSmall")
-            validate.nombre = false
-
-        } else {
-            nombre.classList.remove("is-invalid")
-            nombre.classList.add("is-valid")
-            smallNombre.innerHTML = "Bien!"
-            smallNombre.classList.remove("is-invalidSmall")
-            smallNombre.classList.add("is-validSmall")
-            validate.nombre = true
-        } */
 
         funcValidate(validate)
     })
@@ -168,23 +148,6 @@ window.addEventListener('load', () => {
                 break;
        }
         
-        
-        /* if (e.target.value.length < 3) {
-            apellido.classList.remove("is-valid")
-            apellido.classList.add("is-invalid")
-            smallApellido.innerHTML = "El Apellido debe tener al menos 3 caracteres"
-            smallApellido.classList.add("is-invalidSmall")
-            smallApellido.classList.remove("is-validSmall");
-            validate.apellido = false
-
-        } else {
-            apellido.classList.remove("is-invalid")
-            apellido.classList.add("is-valid")
-            smallApellido.innerHTML = "Bien!"
-            smallApellido.classList.remove("is-invalidSmall")
-            smallApellido.classList.add("is-validSmall")
-            validate.apellido = true
-        } */
 
         funcValidate(validate)
     })
@@ -225,22 +188,6 @@ window.addEventListener('load', () => {
 
         }
         
-        /* if (e.target.value.length < 8) {
-            telefono.classList.remove("is-valid")
-            telefono.classList.add("is-invalid")
-            smallTelefono.innerHTML = "Debes ingresar un telefono valido"
-            smallTelefono.classList.add("is-invalidSmall")
-            smallTelefono.classList.remove("is-validSmall")
-            validate.telefono = false
-
-        } else {
-            telefono.classList.remove("is-invalid")
-            telefono.classList.add("is-valid")
-            smallTelefono.innerHTML = "Bien!"
-            smallTelefono.classList.remove("is-invalidSmall")
-            smallTelefono.classList.add("is-validSmall")
-            validate.telefono = true
-        } */
         funcValidate(validate)
     })
     provincia.addEventListener("input", (e) => {
@@ -378,53 +325,11 @@ window.addEventListener('load', () => {
 
         }
         funcValidate(validate)
-        /* if (e.target.value.length < 8) {
-            password2.classList.remove("is-valid")
-            password2.classList.add("is-invalid")
-            smallPassword2.innerHTML = "La contraseña debe tener 8 caracteres"
-            smallPassword2.classList.add("is-invalidSmall")
-            smallPassword2.classList.remove("is-validSmall")
-            validate.password2 = false
-
-        } else {
-            password2.classList.remove("is-invalid")
-            password2.classList.add("is-valid")
-            smallPassword2.innerHTML = "Bien!"
-            smallPassword2.classList.remove("is-invalidSmall")
-            smallPassword2.classList.add("is-validSmall")
-            validate.password2 = true
-        }
-        funcValidate(validate) */
-    })
-
-
-    /* form.addEventListener("submit", (e) => {
-        var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
-        console.log(form.email.value);
-        if (!expReg.test(form.email.value.toLowerCase())) {
-            e.preventDefault()
-            email.classList.remove('is-valid')
-            email.classList.add('is-invalid')
-            smallEmail.classList.remove("is-validSmall")
-            smallEmail.classList.add("is-invalidSmall")
-            smallEmail.innerHTML = 'Direción de correo inválida'
-            smallEmail.style.padding = '8px'
-            validate.email = false
-        } else {
-            email.classList.remove('is-invalid')
-            email.classList.add('is-valid')
-            smallEmail.classList.remove("is-invalidSmall")
-            smallEmail.classList.add("is-validSmall")
-            smallEmail.innerHTML = ''
-            smallEmail.style.padding = ''
-            validate.email = true
-        }
-
-
-
 
     })
- */
+
+
+
     form.addEventListener("submit",e=>{
         e.preventDefault();
         let arr = Object.values(validate)
