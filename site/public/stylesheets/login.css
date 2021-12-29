@@ -67,6 +67,24 @@ margin-bottom: 20px;
     border-color: var(--verde);
 }
 
+.login .is-validSmall{
+    border: solid 1px rgb(55, 172, 55);
+    background-color: var(--crema);
+    color: rgb(55, 172, 55);;
+    padding: 1px;
+    border-radius: 5px;
+    font-family: var(--textos)
+}
+.login .is-invalidSmall{
+    border: solid 1px var(--rojo);
+    background-color: var(--crema);
+    color: var(--rojo);;
+    padding: 1px;
+    border-radius: 5px;
+    font-family: var(--textos);
+}
+
+
 small {
     background-color: var(--bordo);
     color: var(--crema);
