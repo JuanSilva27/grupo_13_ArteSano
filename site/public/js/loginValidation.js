@@ -67,59 +67,10 @@ window.addEventListener('load', () => {
                 break
 
         }
-
-
-        /* if(e.target.value === ""){
-            email.classList.add('is-invalid')
-            email.classList.remove('is-valid')
-            smallEmail.innerHTML = 'Debes ingresar un email'
-            smallEmail.style.padding = '8px'
-            validate.email = false
-        } else if (esValido == false){
-            if(esValido == false){
-                e.preventDefault()
-                email.classList.add('is-invalid')
-                email.classList.remove('is-valid')
-                smallEmail.innerHTML = 'Direción de correo inválida'
-                smallEmail.style.padding = '8px'
-                validate.email = false
-            } else {
-                email.classList.remove('is-invalid')
-                email.classList.add('is-valid')
-                smallEmail.innerHTML = ''
-                smallEmail.style.padding = ''
-                validate.email = true
-                }
-        } else{
-            email.classList.remove('is-invalid')
-            email.classList.add('is-valid')
-            smallEmail.innerHTML = ''
-            smallEmail.style.padding = ''
-            validate.email = true
-        } */
         funcValidate(validate)
 
         
     })
-    
-/*     email.addEventListener('input', (e) => {
-        if(e.target.value === ""){
-            email.classList.add('is-invalid')
-            email.classList.remove('is-valid')
-            smallEmail.innerHTML = 'Debes ingresar un email'
-            smallEmail.style.padding = '8px'
-            validate.email = false
-        } else{
-            email.classList.remove('is-invalid')
-            email.classList.add('is-valid')
-            smallEmail.innerHTML = ''
-            smallEmail.style.padding = ''
-            validate.email = true
-        }
-        funcValidate(validate)
-    }) */
-
-    
 
     password.addEventListener('input', (e) => {
 
@@ -150,6 +101,14 @@ window.addEventListener('load', () => {
                 break
         }
         funcValidate(validate)
+    })
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let arr = Object.values(validate)
+        if(!arr.includes(false)){
+            form.submit()
+        }
     })
 
 })
