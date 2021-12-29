@@ -97,6 +97,7 @@ main.register{
     color: rgb(55, 172, 55);;
     padding: 1px;
     border-radius: 5px;
+    font-family: var(--textos)
 }
 .register .is-invalidSmall{
     border: solid 1px var(--rojo);
@@ -104,6 +105,7 @@ main.register{
     color: var(--rojo);;
     padding: 1px;
     border-radius: 5px;
+    font-family: var(--textos);
 }
 
 .register #img-preview{
