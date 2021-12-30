@@ -73,6 +73,23 @@ small {
     border-radius: 30px;
 }
 
+.login .contraseña {
+    position: relative;
+}
+
+.login .icon-eye{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-5%);
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+.login .icon-eye:hover{
+    color: var(--bordo);
+}
+
 @media (min-width: 481px){ 
     .login .tamaño{
         height: 26px;
