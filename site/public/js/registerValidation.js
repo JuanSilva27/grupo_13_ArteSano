@@ -30,7 +30,6 @@ window.addEventListener('load', () => {
     const smallProvincia = qs('#smallProvincia')
     const smallPassword = qs('#smallPassword')
     const smallPassword2 = qs('#smallPassword2')
-    const inputs = document.querySelectorAll("input")
     const button = qs('.guardar')
     const smallImage = qs("#smallImage")
 
