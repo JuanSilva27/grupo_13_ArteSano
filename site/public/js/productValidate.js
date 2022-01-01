@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
  const image = qs("#image")
 
  const button = qs('.crear')
- 
+ const form = qs("#createForm")
  //Se deshabilita el botón de iniciar sesión, si los campos cumplen los requisitos se activará
  button.disabled = true
  button.style.backgroundColor = 'gray'
@@ -80,7 +80,7 @@ precio.addEventListener("input",(e)=>{
     funcValidate(validate)
 })
 categorias.addEventListener("input",(e)=>{
-    if(e.target.value === ""){
+    if(!e.target.value){
         categorias.classList.remove("is-valid")
         categorias.classList.add("is-invalid")
         smallCategorias.innerHTML= "Debes elegir una categoria"
@@ -120,7 +120,7 @@ descripcion.addEventListener("input",(e)=>{
 
 image.addEventListener("change", () => {
     let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-    if (!regExExt.exec(image.value)) {
+    if (image.value && !regExExt.exec(image.value) ) {
         image.classList.remove("is-valid")
         image.classList.add("is-invalid")
         smallImage.innerHTML = "solo se permiten imagenes"
@@ -136,8 +136,16 @@ image.addEventListener("change", () => {
         validate.image = true
 
     }
+    funcValidate(validate)
 
 })
 
 console.log(validate)
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let arr = Object.values(validate)
+        if(!arr.includes(false)){
+            form.submit()
+        }
+    })
 })
