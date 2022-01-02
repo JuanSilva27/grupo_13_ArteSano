@@ -58,10 +58,30 @@ module.exports = {
         id_categoria: object.categoria,
       })
         .then(resultado => {
-          db.Imagen.create({
+          if(req.files.length>0){
+            const images = req.files.map(image => {
+              let img = {
+                nombre : image.filename,
+                id_producto :resultado.id
+              }
+              return img
+            })
+            db.Imagen.bulkCreate(images,{validate: true})
+            .then(()=>console.log("imagenes agregadas"))
+            .catch(err=>{
+              res.send(err)
+            })
+          }else {
+            db.Imagen.create({
+              id_producto: resultado.id,
+              nombre:"userDefault.jpeg"
+            })
+          }
+
+          /* db.Imagen.create({
             id_producto: resultado.id,
             nombre: req.file ? req.file.filename : "userDefault.jpeg",
-          })
+          }) */
           res.redirect(`/products/detail/${resultado.id}`)
         })
         .catch((error) => {
