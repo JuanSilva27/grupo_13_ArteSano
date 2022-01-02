@@ -118,29 +118,38 @@ descripcion.addEventListener("input",(e)=>{
     funcValidate(validate)
 })
 
-image.addEventListener("change", () => {
-    let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-    if (image.value && !regExExt.exec(image.value) ) {
+image.addEventListener("change", (e) => {
+
+    let files= image.files
+    let fileErr=[]
+    let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i
+    for(let i=0; i<files.length;i++){
+        if(!regExExt.exec(files[i].name)){
+            fileErr.push("no es una imagen")
+        }
+    }
+    if(fileErr.length>0){
         image.classList.remove("is-valid")
         image.classList.add("is-invalid")
         smallImage.innerHTML = "solo se permiten imagenes"
         smallImage.classList.add("is-invalidSmall")
         smallImage.classList.remove("is-validSmall")
         validate.image = false
-    } else{
+    }
+    else{
         image.classList.remove("is-invalid")
         image.classList.add("is-valid")
         smallImage.innerHTML = "Bien!"
         smallImage.classList.remove("is-invalidSmall")
         smallImage.classList.add("is-validSmall")
         validate.image = true
-
     }
+    
     funcValidate(validate)
 
 })
 
-console.log(validate)
+    console.log(validate)
     form.addEventListener("submit",(e)=>{
         e.preventDefault();
         let arr = Object.values(validate)
