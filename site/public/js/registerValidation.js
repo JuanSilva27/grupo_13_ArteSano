@@ -109,6 +109,8 @@ window.addEventListener('load', () => {
                 break;
        }
        
+       
+       
 
         funcValidate(validate)
     })
@@ -148,7 +150,6 @@ window.addEventListener('load', () => {
                 break;
        }
         
-
         funcValidate(validate)
     })
     telefono.addEventListener("input", (e) => {
@@ -187,7 +188,6 @@ window.addEventListener('load', () => {
                 break;
 
         }
-        
         funcValidate(validate)
     })
     provincia.addEventListener("input", (e) => {
@@ -328,8 +328,6 @@ window.addEventListener('load', () => {
 
     })
 
-
-
     form.addEventListener("submit",e=>{
         e.preventDefault();
         let arr = Object.values(validate)
@@ -340,7 +338,7 @@ window.addEventListener('load', () => {
 
     image.addEventListener("change", () => {
         let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-        if (!regExExt.exec(image.value)) {
+        if (image.value && !regExExt.exec(image.value)) {
             image.classList.remove("is-valid")
             image.classList.add("is-invalid")
             smallImage.innerHTML = "solo se permiten imagenes"
@@ -359,14 +357,6 @@ window.addEventListener('load', () => {
         funcValidate(validate)
     })
 
-    //expreciones para password y mail
-    /* const fetch = require("node-fetch");
-    modele.exports = {
-        read: (res, req) =>{
-            fetch(https://datosgobar.github.io/georef-ar-api/)
-            .then(response => response.json())
-        }
-    } */
     console.log(validate)
 });
 

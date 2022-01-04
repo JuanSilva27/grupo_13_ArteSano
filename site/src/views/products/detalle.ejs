@@ -24,9 +24,14 @@
                 </div>
                 <div class="miniaturas">
                     <div class="img-secundaria">
-                        <img  src="/img/taza01-a.jpg" alt="Imagen miniatura 01">
+                        <!-- <img  src="/img/taza01-a.jpg" alt="Imagen miniatura 01">
                         <img  src="/img/taza01-b.jpg" alt="Imagen miniatura 02">
-                        <img  src="/img/taza01-c.jpg" alt="Imagen miniatura 03">
+                        <img  src="/img/taza01-c.jpg" alt="Imagen miniatura 03"> -->
+                        <% if(producto.productosIm.length>0 && producto.productosIm.length<4 ){ %>
+                            <% for (let i=0; i<producto.productosIm.length;i++){ %>
+                                <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="Imagen principal">
+                            <% } %>  
+                        <% } %>   
                     </div>
                 </div>
             </article>    

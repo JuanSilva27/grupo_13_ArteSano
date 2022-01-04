@@ -8,7 +8,7 @@ const upload = require('../middlewares/multerProducts')
 router.get('/', adminValidate, list);
 
 router.get('/create', adminValidate, create);
-router.post('/create', adminValidate, upload.single("image"), productValidate, newProduct);
+router.post('/create', adminValidate, upload.any(), productValidate, newProduct);
 
 
 //editar producto
