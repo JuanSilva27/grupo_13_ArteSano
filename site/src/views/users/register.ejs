@@ -86,19 +86,25 @@
             <small id="smallEmail"></small>
         </p>
           
-        <p>
+        <p class="contraseña">
             <label for="password">CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password" id="Password" > <br>
+            <input class="tamaño" type="password" placeholder="**********" name="password" id="Password" >
+            <span class="icon-eye">
+                <i id="icon" class="fas fa-eye-slash"></i>
+            </span> <br></p>
             <small><%= locals.errors && errors.password ? errors.password.msg : null %> </small>  
             <small id="smallPassword"></small>            
-        </p>
+        
 
-        <p>
+        <p class="contraseña">
             <label for="password2">CONFIRMAR CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password2" id = "Password2"  > <br>
+            <input class="tamaño" type="password" placeholder="**********" name="password2" id = "Password2"  >
+            <span class="icon-eye2">
+                <i id="icon2" class="fas fa-eye-slash"></i>
+            </span> <br></p>
             <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %> </small>
             <small id="smallPassword2"></small> 
-        </p>
+        
 
         <p>
             <label for="product-img">IMAGEN</label>
@@ -126,4 +132,5 @@
 </body>
 <script src = "/js/registerValidation.js"></script>
 <script src = "/js/images.js"></script>
+<script src="/js/login.js"></script>
 </html>
