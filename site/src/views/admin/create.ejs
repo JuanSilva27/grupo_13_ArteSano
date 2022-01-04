@@ -62,6 +62,11 @@
             <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
             <small id="smallImage"></small>
         </p>
+        <div class="img-preview-container" id="img-preview-container">
+            <img class="img-preview" id="img-preview0" src="/img/users/userDefault.jpeg" alt="" width="5px">
+            <img class="img-preview" id="img-preview1" src="" alt="" width="5px">
+            <img class="img-preview" id="img-preview2" src="" alt="" width="5px"> 
+        </div>
 
         <div class="botones">
             <button type="submit" class="crear">
@@ -75,5 +80,6 @@
 </body>
 
 <script src="/js/productValidate.js"> </script>
+<script src = "/js/imagesProducts.js"></script>
 
 </html>
