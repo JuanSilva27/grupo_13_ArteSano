@@ -1,71 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include("../partials/head.ejs")  %> 
-<body>
-    <%- include("../partials/header.ejs") %> 
+<%- include("../partials/head.ejs") %>
 
-   
-
- <main class="login">
-    <P class="cont.titulo"><h1 class="titulo">¡INGRESA!</h1></P>
-    <div class="background">
-    <form class="formLogin" action="/users/login" method="post" >
-
-
-          <p>
-            <label for="email">CORREO ELECTRÓNICO:</label>
-            <input id="email" class="tamaño" type="text" placeholder="ej: usuario@gmail.com" name="email" >
-          </p>
-
-          <!-- error de la validación del frontend -->
-          <small class="email"></small> <br>
-
-          <!-- error de la validación del backend -->
-          <% if (locals.errors && errors.email){ %>
-            <small style="padding: 8px;"><%= errors.email.msg %> </small>
-          <% } %> 
-          
-
-
-          <p>
-            <label for="password">CONTRASEÑA:</label>
-            <input  id="password" class="tamaño" type="password" placeholder="**********" name="password">
-          </p>
-
-          <!-- error de la validación del frontend -->
-          <small class="password"></small> <br>
-          
-          <!-- error de la validación del backend -->
-          <% if (locals.errors && errors.password){ %>
-            <small style="padding: 8px;"><%= errors.password.msg %> </small>
-          <% } %> 
-          <br>
+  <body>
+    <%- include("../partials/header.ejs") %>
 
 
 
-          <% if (locals.errors && errors.msg){ %>
-            <small style="padding: 8px;"><%= errors.msg %> </small>
-          <% } %> 
-          <br>
+      <main class="login">
+        <P class="cont.titulo">
+        <h1 class="titulo">¡INGRESA!</h1>
+        </P>
+        <div class="background">
+          <form class="formLogin" action="/users/login" method="post">
 
 
-          <input type="checkbox" name="recuerdame" id="recuerdame">
-          <label for="recuerdame">Recordarme</label>
-          
-          
-          <div class="botones">
-            <button class="guardar">Iniciar sesión</button>
-          </div>
+            <p>
+              <label for="email">CORREO ELECTRÓNICO:</label>
+              <input id="email" class="tamaño" type="text" placeholder="ej: usuario@gmail.com" name="email">
+            </p>
 
-          <p>¿No tenés una cuenta? 
-            <a href="/users/register">
-              <p>¡Registrate acá!</p>
-            </a> 
-          </p>
-    </form>
-  </div>
- </main>
- <%- include("../partials/footer.ejs") %> 
-</body>
-<script src="/js/loginValidation.js"></script>
+            <!-- error de la validación del frontend -->
+            <small class="email"></small> <br>
+
+            <!-- error de la validación del backend -->
+            <% if (locals.errors && errors.email){ %>
+              <small style="padding: 8px;">
+                <%= errors.email.msg %>
+              </small>
+              <% } %>
+
+
+
+                <p>
+                  <label for="password">CONTRASEÑA:</label>
+                  <input id="password" class="tamaño" type="password" placeholder="**********" name="password">
+                </p>
+
+                <!-- error de la validación del frontend -->
+                <small class="password"></small> <br>
+
+                <!-- error de la validación del backend -->
+                <% if (locals.errors && errors.password){ %>
+                  <small style="padding: 8px;">
+                    <%= errors.password.msg %>
+                  </small>
+                  <% } %>
+                    <br>
+
+
+
+                    <% if (locals.errors && errors.msg){ %>
+                      <small style="padding: 8px;">
+                        <%= errors.msg %>
+                      </small>
+                      <% } %>
+                        <br>
+
+
+                        <input type="checkbox" name="recuerdame" id="recuerdame">
+                        <label for="recuerdame">Recordarme</label>
+
+
+                        <div class="botones">
+                          <button class="guardar">Iniciar sesión</button>
+                        </div>
+
+                        <p>¿No tenés una cuenta?
+                          <a href="/users/register">
+                            <p>¡Registrate acá!</p>
+                          </a>
+                        </p>
+          </form>
+        </div>
+      </main>
+      <%- include("../partials/footer.ejs") %>
+  </body>
+  <script src="/js/loginValidation.js"></script>
+
 </html>

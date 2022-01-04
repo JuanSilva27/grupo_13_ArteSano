@@ -46,7 +46,7 @@ background-position: center;
 
 .body-home {
     font-family: var(--textos);
-    background-color: var(--crema);
+    background-image: url("../img/background.jpg");
 }
 
 .body-home p {
@@ -62,6 +62,7 @@ background-position: center;
     margin-bottom: 20px;
 }
 
+
 .home .nosotras .text-container {
     display: flex;
     flex-direction: column;
@@ -73,16 +74,28 @@ background-position: center;
       margin: 15px;
 }
 
-
 .home .button {
     border: solid 2px var(--rojo);
-    color: var(--crema);
-    background-color: var(--amarillo);
+    color: var(--rojo);
+    background-color: var(--crema);
     padding: 5px;
     border-radius: 50px;
     font-family: var(--subtitulos);
     font-size: 20px;
     text-align: center;
+    text-decoration: none;
+}
+
+.home .button:hover {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--rojo);
+    padding: 5px;
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;    
+    text-decoration: none;
 }
 
 .home .button h4 {
@@ -170,12 +183,12 @@ background-position: center;
 @media (min-width: 481px) {
  
   
-    .home .nosotras .photo{
-    width: 60%;
+    .home .nosotras .video{
+    width: 70%;
 }
 
 .home .nosotras .text-container {
-    width: 30%;
+    width: 50%;
 }
 
 .home .nosotras .info {
@@ -184,7 +197,7 @@ background-position: center;
     align-content: center;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .home .fav-container{
@@ -211,6 +224,12 @@ background-position: center;
     height: 372px;
 }
 
+.home .map-container .direccion h3 {
+    font-family: var(--subtitulos);
+    padding-bottom: 5px;
+    }
+    
+
 }
 
 
@@ -223,6 +242,23 @@ background-position: center;
     .home .banner {
         height: 450px;
     }
+
+    .home .nosotras .info {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .home .nosotras .video {
+    width: 40%;
+    }
+
+    .home .nosotras .text-container {
+        width: 40%;
+        }
+ 
     .home .fav-4{
         display: block;
     }
@@ -232,17 +268,18 @@ background-position: center;
     }
     
     .home .fav-container{
-        display: flex;  
+        display: flex; 
         justify-content: space-evenly;
         flex-wrap: nowrap;
         flex-direction: row;
         align-items: center;
-        }
+    }
 
-        .home .sec-categorias .img-container {
+    .home .sec-categorias .img-container {
     width: 40%;
-}
-.home .sec-categorias {
+    }
+
+    .home .sec-categorias {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

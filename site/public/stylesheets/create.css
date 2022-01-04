@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     font-family: var(--subtitulos);
-    background-color: var(--crema);
+    background-image: url("../img/background.jpg");
     width: 100%;
 }
 .create h1{

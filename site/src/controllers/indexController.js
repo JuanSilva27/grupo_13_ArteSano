@@ -33,6 +33,10 @@ module.exports={
         res.send(err)
       })
 
+    },
+
+    contacto:(req, res, next) => {
+      res.render('home/contacto')
     }
 
     

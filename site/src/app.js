@@ -8,6 +8,9 @@ const session= require("express-session")
 const recordarme= require("./middlewares/recuerdame")
 const localsCheck= require("./middlewares/localsCheck")
 
+//sweetAlert --------------------
+const Swal = require('sweetalert2')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
