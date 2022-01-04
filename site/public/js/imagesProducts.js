@@ -10,7 +10,6 @@ window.addEventListener('load', () => {
         $("img-preview-container").innerHTML = ""
         for (let i=0; i<e.target.files.length;i++){
             let reader = new FileReader()
-            
             reader.readAsDataURL(e.target.files[i]);
             $("img-preview-container").innerHTML += `<img class="img-preview" id="img-preview${i}" src="" alt="">`
             reader.onload = () => $(`img-preview${i}`).src = reader.result

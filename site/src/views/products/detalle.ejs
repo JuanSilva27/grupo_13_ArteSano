@@ -30,7 +30,11 @@
                         <% if(producto.productosIm.length>0 && producto.productosIm.length<4 ){ %>
                             <% for (let i=0; i<producto.productosIm.length;i++){ %>
                                 <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="Imagen principal">
-                            <% } %>  
+                            <% }  %>  
+                        <% } else { %> 
+                            <% for (let i=0; i<3;i++){ %>
+                                <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="Imagen principal">
+                            <% }  %>
                         <% } %>   
                     </div>
                 </div>
