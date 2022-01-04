@@ -179,6 +179,16 @@ module.exports = {
 
   //borrar
   destroy: (req, res, next) => {
+    db.Imagen.findAll({
+      where: {
+        id_producto:req.params.id
+      }
+    })
+    .then(imagenes=>{
+      for(let i=0;i<imagenes.length;i++){
+        fs.existsSync(path.join(__dirname, '../../public/img/products/' +imagenes[i].nombre)) ? fs.unlinkSync(path.join(__dirname, '../../public/img/products/' +imagenes[i].nombre)) : null 
+      }
+    })
 
     db.Imagen.destroy({
       where: {
