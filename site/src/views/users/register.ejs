@@ -86,19 +86,25 @@
             <small id="smallEmail"></small>
         </p>
           
-        <p>
+        <p class="contraseña">
             <label for="password">CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password" id="Password" > <br>
+            <input class="tamaño" type="password" placeholder="**********" name="password" id="Password" >
+            <span class="icon-eye1">
+                <i id="icon1" class="fas fa-eye-slash"></i>
+            </span> <br></p>
             <small><%= locals.errors && errors.password ? errors.password.msg : null %> </small>  
             <small id="smallPassword"></small>            
-        </p>
+        
 
-        <p>
+        <p class="contraseña">
             <label for="password2">CONFIRMAR CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password2" id = "Password2"  > <br>
+            <input class="tamaño" type="password" placeholder="**********" name="password2" id = "Password2"  >
+            <span class="icon-eye2">
+                <i id="icon2" class="fas fa-eye-slash"></i>
+            </span> <br></p>
             <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %> </small>
             <small id="smallPassword2"></small> 
-        </p>
+        
 
         <p>
             <label for="product-img">IMAGEN</label>
@@ -106,7 +112,7 @@
             <img id="img-preview" src="/img/users/userDefault.jpeg" alt="">   
                  
 
-            <input class="tam" type="file" id="product-img" name="image" accept=".png, .jpg, .jpeg" src="/img/taza01-a.jpg"> <br>
+            <input class="tam" type="file" id="product-img" name="image" accept=".png, .jpg, .jpeg"> <br>
             <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
             <small id="smallImage"></small>
         </p>
@@ -126,4 +132,5 @@
 </body>
 <script src = "/js/registerValidation.js"></script>
 <script src = "/js/images.js"></script>
+<script src="/js/register.js"></script>
 </html>

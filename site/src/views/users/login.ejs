@@ -27,9 +27,12 @@
           
 
 
-          <p>
+          <p class="contraseña">
             <label for="password">CONTRASEÑA:</label>
             <input  id="password" class="tamaño" type="password" placeholder="**********" name="password">
+            <span class="icon-eye">
+              <i id="icon" class="fas fa-eye-slash"></i>
+            </span>
           </p>
 
           <!-- error de la validación del frontend -->
@@ -68,4 +71,5 @@
  <%- include("../partials/footer.ejs") %> 
 </body>
 <script src="/js/loginValidation.js"></script>
+<script src="/js/login.js"></script>
 </html>
