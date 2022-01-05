@@ -13,7 +13,7 @@ router.post('/create', adminValidate, upload.any(), productValidate, newProduct)
 
 //editar producto
 router.get("/edit/:id", adminValidate, edit);
-router.put("/edit/:id", adminValidate, upload.single("image"), productValidate, update)
+router.put("/edit/:id", adminValidate, upload.any(), productValidate, update)
 
 //borrar producto
 router.delete("/delete/:id", adminValidate,destroy)
