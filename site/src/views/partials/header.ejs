@@ -1,28 +1,44 @@
-<header >
+<header>
     <div class="header">
 
         <div class="imgConteiner"><a class="linkLogo" href="/"> <img class="logo" src="/img/Logo_claro.png" alt="Logo"></a></div>
-       
-        <div class="esquina">
-            <% if (!(locals.user)) { %>
-                <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="/users/login"> <img  class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user"> </a>
-            <% } else {%>
-                <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="/users/Miperfil "> <img  class="user" src="/img/users/<%= locals.user.imagen %> " alt="user"> </a>
-                <a class="carrito" href="/admin" style="display: <%= locals.user.id_rol === 2 ? "block" : "none" %>;" ><i class="fas fa-user-cog"></i></a> 
-                <li><form action="/users/logout" method="GET"><button class="cerrarSesion"type="submit"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</button></form></li>   
-            <% } %> 
-        
 
-        
+        <div class="esquina">
+
+            <% if (!(locals.user)) { %>
+
+                <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
+                <a href="/users/login"> <img class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png"
+                        alt="user"></a>
+
+                <% } else {%>
+
+                    <a class="carrito" href="/products/carrito" style="display: <%= locals.user.id_rol === 1 ? " block"
+                        : "none" %>;" ><i class="fas fa-shopping-cart"></i></a>
+
+                    <a href="/users/Miperfil "> <img class="user" src="/img/users/<%= locals.user.imagen %> "
+                            alt="user"> </a>
+
+                    <a class="admin" href="/admin" style="display: <%= locals.user.id_rol === 2 ? " block" : "none"
+                        %>;"><i class="fas fa-user-cog"></i></a>
+
+                    <form action="/users/logout" method="GET"><button class="cerrarSesion" type="submit">Salir <i
+                                class="fas fa-sign-out-alt"></i></button></form>
+
+
+                    <% } %>
+
+        </div>
+
+        <div class="menu-hamburguesa">
+            <input class="menu" type="checkbox" id='menu'>
+            <label class="hamburguesa" id="icono" for='menu'>☰</label>
         </div>
 
 
         <div class="menuBttn">
-            <input class="menu" type="checkbox" id='menu'>
-            <label class="hamburguesa" for='menu'>☰</label>
-            <nav class="options">
+
+            <nav class="options" id="secciones"> 
                 <ul>
                     <li><a href="/">HOME</a></li>
                     <li><a href="/products">PRODUCTOS</a></li>
@@ -30,15 +46,18 @@
                     <li><a href="/contacto">CONTACTO</a></li>
                 </ul>
             </nav>
+
         </div>
 
         <div class="searchBar">
             <form class="search" action="/search" method="GET">
                 <button class="searchBttn" type="submit" style="cursor: pointer;"><i class="fas fa-search"></i></button>
-                <input type="text" name="keywords" >
+                <input type="text" name="keywords">
             </form>
         </div>
 
     </div>
+
+    <script src="/js/menuMovile.js"></script>
 
 </header>

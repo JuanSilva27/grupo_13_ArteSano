@@ -55,8 +55,8 @@
                             </div>
                         </a>
                         
-                        <form id="eliminar" class="eliminar" action="/admin/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                            <button class="borrar" type="submit"><i class="fas fa-trash-alt"></i></button>
+                        <form action="/admin/delete/<%= producto.id %>?_method=DELETE" method="POST" class="eliminar">
+                            <button  class="borrar" type="submit"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </div>
                 </article>
@@ -65,7 +65,11 @@
 
     </main>
 
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/sweetAlert.js"></script>
+
     <%- include("../partials/footer.ejs") %> 
-   <script src = "/js/sweetAlert.js"></script>
+    
 </body>
 </html>

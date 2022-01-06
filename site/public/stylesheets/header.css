@@ -4,50 +4,41 @@
     padding: 0;
 }
 
-a{
-    font-family: var(--textos);
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    background-color: var(--bordo);
-}
-
-.header li, .footer li{
-    list-style: none;
-}
-.header a, footer a{
-    text-decoration: none;
-    color: var(--crema);
-}
-
-.header .cerrarSesion {
-    font-family: var(--titulos);
-    color: var(--amarillo);
-    background-color: var(--bordo);
-    border: none;
-}
-
-.header{
+.header {    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: var(--bordo) ;
-    width: 100%;
-    height: 95px;
-    padding-top: 10px; ;
+    height: 105px;
+    justify-content: space-between;
 }
 
-
-.header div.imgConteiner{
-    width: 70%;
+.header .options a {
+    font-family: var(--titulos);
+    text-decoration: none;
+    color: var(--crema);
+   background-color: transparent;
+   border-radius: 50px;
+    padding: 4px 20px;
+    transition: 0.7s ease-out;
 }
 
+.header .options a:hover {
+     background-color: var(--crema);
+}
+
+.header li {
+    list-style: none;
+}
+
+.header .imgConteiner{
+    width: 50%;
+    padding-top: 15px;
+}
 
 .header .logo {
     display: block;
-    width: 140px;
+    width: 100%;
 }
 
 .header a.linkLogo{
@@ -55,53 +46,53 @@ header {
     width: 140px;
     margin-left: 15px;
 }
+
 .header .esquina {
-    width: 20%;
+    width: 25%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-self: rigth;
 }
 
-
-
-.header a.carrito{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
+.header .carrito i{
+    width: 25px;
+    height: 25px;
 }
 
+/* .header a.admin{
+    width: 40px;
+    height: 40px;
+} */
 
 .user{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     background-color: var(--crema);
 }
 
 /* MENU HAMBURGUESA */
-header input.menu{
+.header .menu-hamburguesa .menu{
     display: none ;
 }
 
-.header nav ul{
+.header .options {
     display: none;
+} 
+
+.header .hamburguesa {
+    color: var(--crema);
 }
 
-header label {
+.header .searchBar {
     display: block;
-    width: 100%;
-    color: white;
+    width: 30px;
+    height: 30px;
     text-align: center;
 }
 
-.header .menuBttn{
-    display: flex;
-    align-items: center;
-    width: 10%;
-}
 
 /* .header div.menuBttn input:checked ~ nav.options ul{
     display: flex;
@@ -114,7 +105,6 @@ header label {
     width: 100%;
 }
 
-
 .header .search{
     display: flex;
     flex-direction: row;
@@ -122,6 +112,7 @@ header label {
     align-items: flex-start;
     padding: .5px 20px;
 }
+
 .header .search input{
     flex-grow: 2;
     width: 80%;
@@ -129,6 +120,7 @@ header label {
     margin-bottom: 10px;
     border: none;
 }
+
 .header .search .searchBttn{
         width: 20px;
         height: 16px;
@@ -141,122 +133,48 @@ header label {
     font-size: 80%;
 }
 
+/* .header .cerrarSesion {
+    display: none;
+} */
 
+.header .esquina {
+    display: none;
+}
 
-/* FOOTER */
-footer{
+.header .menu-hamburguesa {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: var(--bordo);
-}
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    
-    background-color: var(--bordo);
-}
-
-.footer nav{
-    width: 80%;
-    margin: 10px auto;
-}
-
-
-.footer h3{
-    font-family: var(--titulos);
-    color: var(--crema);
-    border-bottom:1px solid var(--crema) ;
-    padding-left: 10px;
-    margin-top: 25px;
-}
-
-.footer li{
-    padding-left: 10px;
-    margin-top: 10px;
-    font-family: var(--textos);
-}
-
-
-.logoInf{
-   display: none;
-}
-
-
-.footer nav.redes{
-    width: 100%;
-    height: 40px;
-}
-
-.footer nav.redes ul{
-    display: flex;
-    justify-content: center;
-    height: 40px;
-}
-
-footer .copyright{
-    display: flex;
-    justify-content: center;
-    background-color: var(--crema);
-}
-
-.copyright p{
-    font-family: var(--textos);
-}
-
-footer div.copyright {
-    width: 100%;
-}
-
-#go-top{
-    width: 60px;
-    height: 60px;
-    background: var(--rojo);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--crema);
-    border-radius: 50%;
-    font-size: 20px;
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    cursor: pointer;
-    border: 4px solid transparent;
-    transition: all 300ms ease;
-    transform: scale(0);
-}
-
-#go-top:hover{
-    transform: scale(1.1);
-    border-color: rgba(0,0,0,0.1);
 }
 
 
 @media (min-width: 481px){
 
-    /* HEADER */
-
-
-    .header{
-        height: 145PX;
-        margin-top: 10px;
+    .header {    
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: var(--bordo) ;
+        height: 200px;
+        justify-content: space-between;
     }
-
 
     .header img.logo, .header a.linkLogo{
         width: 250px;
     }
 
     .header a.carrito .fas{
-        font-size: 30px;
+        width: 30px;
+        height: 30px;
     }
 
-    .header label.hamburguesa{
-        font-size: 30px;
+    .header .user {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header .hamburguesa{
+        font-size:  25px;
+        align-self: rigth;
     }
 
     .header .search input{
@@ -267,78 +185,45 @@ footer div.copyright {
         height: 27px;
         width: 20px;
     } 
-    /* FOOTER */
-    .footer{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
 
-    .logoInf{
-        display: block;
-        width: 143px;
-    }
-
-    .footer nav.Contact {
-        display: flex;
-        flex-direction: row;
-        margin: 0;
-        padding: 0;
-        width: 70%;
-    }
-
-    .footer nav.Contact {
-        display: flex;
-        justify-content: flex-start;
-        margin-bottom: 15px;
-    }
-
-
-
-    .footer nav.Contact ul{
-        padding-left: 20px;
-    }
-
-    .footer .LogoRedes{
-        display: flex;
+    .header .options {
+        position: fixed;
+        height: 100vh;
+        align-self: rigth;
+        width: 100%;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 30%;
-        margin-bottom: 15px;
+        transition: all 1s ease;
+      /*   background: var(--bordo); */
     }
 
+    .uno {
 
-    .footer .redes{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
+        -webkit-clip-path: circle(0% at 100% 0%);
+        clip-path: circle(0% at 100% 0%);
 
-    .footer .redes li{
-        width: 30%;
     }
 
-    .footer nav.redes ul{
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
+    .dos {
 
-    .footer .redes .fab{
-        font-size: 20px;
+        -webkit-clip-path: circle(150% at 100% 0%);
+        clip-path: circle(150% at 100% 0%);
+
     }
-    .footer .copyright{
-        width: 100%;
-    }
+    
 
 }
 
 
+/*     DESKTOP----------- */
+
 @media (min-width:768px){
-    .header {
-        margin-top: 10px;
+
+     .header{
+        height: 200px;
+    }
+
+    .header .imgConteiner {
+        padding-top: 20px;
     }
 
     .header .esquina{
@@ -350,7 +235,7 @@ footer div.copyright {
         width: 70%;
         align-items: center;
         padding-bottom: 18px;
-    }
+    } 
 
     .header nav.options{
         width: 100%;
@@ -359,14 +244,48 @@ footer div.copyright {
     .header nav.options ul {
         display: flex;
         width: 100%;
+        justify-content: space-evenly;
     }
     
     .header nav.options li {
-        width: 24%;
+        width: 20%;
         text-align: center;
     }
 
-    .header label {
+    .header a {
+        font-family: var(--titulos);
+        cursor: pointer;    
+        text-decoration: none;
+        color: var(--crema);
+    }
+    
+    .header .options li:hover {
+        color: var(--bordo);
+    }
+
+    .header .cerrarSesion {
+        font-family: var(--subtitulos);
+        color: var(--crema);
+        background-color: var(--bordo);
+        border: none;
+        display: block;
+        font-size: 18px;
+
+    }
+
+    .header .esquina .carrito:hover {
+        color: var(--amarillo);
+    }
+
+    .header .esquina .cerrarSesion:hover {
+        color: var(--amarillo);
+    }
+
+    .header .esquina .user:hover{
+background-color: var(--amarillo);
+    }
+
+    .header .hamburguesa {
         display: none;
     }
 
@@ -374,27 +293,21 @@ footer div.copyright {
         width: 30%;
     }
 
-    
+    .header .options {
+        display: block;
+    } 
 
-    /* footer */
+    .header .menu-desplegable {
+        display: none;
+    }
 
-   /*  .footer nav.Contact{
-        padding-left: 60px;
-    } */
-
-
-    .footer img.logoInf{
-        width: 230px;
-        height: 100px;
+    .header .esquina {
+        display: flex;
     }
 }
 
 @media (min-width: 1199px){
     .header {
-        width: 1199px;
+       padding: 0 75px;
     }
-
-    .footer{
-        width: 1199px;
-    }
-}
+} 

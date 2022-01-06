@@ -1,23 +1,29 @@
-    let eliminar = document.getElementsById('eliminar')
-    eliminar.onclick = eliminar()
-    
-    function eliminar() {
-    Swal.fire({
-        title: 'Estas segura de eliminar el producto?',
-        text: "Esta accion es irreversible!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si! Eliminalo'
-      }).then((result) => {
-        if (result.isConfirmed) {
-        Swal.fire(
-            'Eliminado!',
-            'El producto ha sido eliminado correctamente',
-            'success'
-          ),
-           window.location = '/admin/delete'+id;
-        }
+window.addEventListener('load', () => {
+
+  console.log("Estoy vinculado");
+
+  let forms = document.querySelectorAll('.eliminar');
+  for (let i = 0; i < forms.length; i++) {
+      forms[i].addEventListener('submit', event => {
+              event.preventDefault();
+      
+              Swal.fire({
+                title: 'Estas segura de eliminar el producto?',
+                text: "Esta accion es irreversible!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#DD8C3D',
+                cancelButtonColor: '#D34A1A',
+                cancelButtonText: 'No, cancela',
+                confirmButtonText: 'Si, eliminalo!'
+
+              }).then((result) => {
+
+                  if (result.isConfirmed) {
+                      forms[i].submit();
+                  }
+
+              })
       })
-    }
+  }
+})
