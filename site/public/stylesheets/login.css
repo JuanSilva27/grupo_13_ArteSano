@@ -67,10 +67,45 @@ margin-bottom: 20px;
     border-color: var(--verde);
 }
 
+.login .is-validSmall{
+    border: solid 1px rgb(55, 172, 55);
+    background-color: var(--crema);
+    color: rgb(55, 172, 55);;
+    padding: 1px;
+    border-radius: 5px;
+    font-family: var(--textos)
+}
+.login .is-invalidSmall{
+    border: solid 1px var(--rojo);
+    background-color: var(--crema);
+    color: var(--rojo);;
+    padding: 1px;
+    border-radius: 5px;
+    font-family: var(--textos);
+}
+
+
 small {
     background-color: var(--bordo);
     color: var(--crema);
     border-radius: 30px;
+}
+
+.login .contraseña {
+    position: relative;
+}
+
+.login .icon-eye{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-5%);
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+.login .icon-eye:hover{
+    color: var(--bordo);
 }
 
 @media (min-width: 481px){ 

@@ -79,6 +79,15 @@
     margin-bottom: 25px;
 }
 
+.create .img-preview-container{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.create .img-preview{
+    width: 100px;
+}
 /* validaciones */
 
 .create .is-invalid{

@@ -58,10 +58,13 @@
         
         <p>
             <label for="image">IMAGEN</label>
-            <input  type="file" id="image" name="image" accept=".png, .jpg, .jpeg"> <br>
+            <input  type="file" id="image" name="image" accept=".png, .jpg, .jpeg" multiple> <br>
             <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
             <small id="smallImage"></small>
         </p>
+        <div class="img-preview-container" id="img-preview-container">
+            
+        </div>
 
         <div class="botones">
             <button type="submit" class="crear">
@@ -75,5 +78,6 @@
 </body>
 
 <script src="/js/productValidate.js"> </script>
+<script src = "/js/imagesProducts.js"></script>
 
 </html>
