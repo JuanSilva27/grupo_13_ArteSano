@@ -187,13 +187,11 @@
     } 
 
     .header .options {
-        position: fixed;
         height: 100vh;
         align-self: rigth;
         width: 100%;
         flex-direction: column;
         transition: all 1s ease;
-      /*   background: var(--bordo); */
     }
 
     .uno {
