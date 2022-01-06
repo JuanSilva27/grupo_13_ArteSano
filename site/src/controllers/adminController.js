@@ -167,19 +167,25 @@ module.exports = {
                 db.Imagen.destroy({
                   where: { id_producto: req.params.id }
                 })
-              })
-              .then(() => {
-                db.Imagen.bulkCreate(images)
-                res.redirect(`/products/detail/${+req.params.id}`)
-              })
-              .catch((err)=>{
-                res.send(err+"1")
+                  .then(() => {
+                  db.Imagen.bulkCreate(images)
+            
+                  })
+                    .then(()=>{
+                    res.redirect(`/products/detail/${+req.params.id}`)
+                    })
+                    .catch((err) => {
+                      res.send(err + "1")
+                    })
+
               })
           }
-          res.redirect(`/products/detail/${+req.params.id}`)
+          else{
+            res.redirect(`/products/detail/${+req.params.id}`)
+          }
         })
         .catch((error) => {
-          res.send(error+"2")
+          res.send(error + "2")
         })
     } else {
 
