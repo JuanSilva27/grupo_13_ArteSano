@@ -29,11 +29,11 @@
                         <img  src="/img/taza01-c.jpg" alt="Imagen miniatura 03"> -->
                         <% if(producto.productosIm.length>0 && producto.productosIm.length<4 ){ %>
                             <% for (let i=0; i<producto.productosIm.length;i++){ %>
-                                <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="Imagen principal">
+                                <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="<%= producto.productosIm[i].nombre %> " class="imgAlt" id="img<%=[i]%>">
                             <% }  %>  
                         <% } else { %> 
                             <% for (let i=0; i<3;i++){ %>
-                                <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="Imagen principal">
+                                <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="<%= producto.productosIm[i].nombre %> " class="imgAlt" id="img<%=[i]%>">
                             <% }  %>
                         <% } %>   
                     </div>
