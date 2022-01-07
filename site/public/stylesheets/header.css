@@ -11,7 +11,7 @@ a{
 header {
     display: flex;
     justify-content: center;
-    background-color: var(--bordo);
+    background-image: url("../img/background.jpg");
 }
 
 .header li, .footer li{
