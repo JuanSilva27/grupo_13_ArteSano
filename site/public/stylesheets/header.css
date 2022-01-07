@@ -11,7 +11,7 @@ a{
 header {
     display: flex;
     justify-content: center;
-    background-image: url("../img/background.jpg");
+   background-color: var(--bordo);
 }
 
 .header li, .footer li{
@@ -337,7 +337,7 @@ footer div.copyright {
 
 
 @media (min-width:768px){
-    .header {
+    header {
         margin-top: 10px;
     }
 
