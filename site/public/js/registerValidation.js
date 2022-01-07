@@ -5,13 +5,6 @@ window.addEventListener('load', () => {
         return document.querySelector(tag)
     }
 
-    fetch( `http://localhost:3000/api/users?email=juan.silva.0270@gmail.com`)
-        .then(response=>{
-           return response.json()
-        })
-        .then(usuario=>{
-            console.log(usuario.data)
-        })
     const form = qs("#formV")
     const nombre = qs("#Nombre")
     const apellido = qs("#apellido")
@@ -33,7 +26,7 @@ window.addEventListener('load', () => {
     const button = qs('.guardar')
     const smallImage = qs("#smallImage")
 
-    
+
     button.disabled = true
     button.style.backgroundColor = 'gray'
     button.style.borderColor = 'gray'
@@ -53,7 +46,7 @@ window.addEventListener('load', () => {
 
     }
 
-//Se deshabilita el botón de iniciar sesión, si los campos cumplen los requisitos se activará
+    //Se deshabilita el botón de iniciar sesión, si los campos cumplen los requisitos se activará
     const funcValidate = (obj) => {
         let arr = Object.values(validate)
         if (!arr.includes(false)) {
@@ -73,9 +66,9 @@ window.addEventListener('load', () => {
 
     nombre.focus();
     nombre.addEventListener("input", (e) => {
-        
-       switch(true){
-            case  !e.target.value:
+
+        switch (true) {
+            case !e.target.value:
                 nombre.classList.remove("is-valid")
                 nombre.classList.add("is-invalid")
                 smallNombre.innerHTML = "El Nombre no debe quedar vacio"
@@ -83,7 +76,7 @@ window.addEventListener('load', () => {
                 smallNombre.classList.remove("is-validSmall")
                 validate.nombre = false
                 break
-            case e.target.value.length<3:
+            case e.target.value.length < 3:
                 nombre.classList.remove("is-valid")
                 nombre.classList.add("is-invalid")
                 smallNombre.innerHTML = "El Nombre debe tener mas de 3 caracteres"
@@ -107,16 +100,16 @@ window.addEventListener('load', () => {
                 smallNombre.classList.add("is-validSmall")
                 validate.nombre = true
                 break;
-       }
-       
-       
-       
+        }
+
+
+
 
         funcValidate(validate)
     })
     apellido.addEventListener("input", (e) => {
-        switch(true){
-            case  !e.target.value:
+        switch (true) {
+            case !e.target.value:
                 apellido.classList.remove("is-valid")
                 apellido.classList.add("is-invalid")
                 smallApellido.innerHTML = "El Apellido no debe quedar vacio"
@@ -124,7 +117,7 @@ window.addEventListener('load', () => {
                 smallApellido.classList.remove("is-validSmall")
                 validate.apellido = false
                 break
-            case e.target.value.length<3:
+            case e.target.value.length < 3:
                 apellido.classList.remove("is-valid")
                 apellido.classList.add("is-invalid")
                 smallApellido.innerHTML = "El Apellido debe tener mas de 3 caracteres"
@@ -148,12 +141,12 @@ window.addEventListener('load', () => {
                 smallApellido.classList.add("is-validSmall")
                 validate.apellido = true
                 break;
-       }
-        
+        }
+
         funcValidate(validate)
     })
     telefono.addEventListener("input", (e) => {
-        switch (true){
+        switch (true) {
             case !e.target.value:
                 telefono.classList.remove("is-valid")
                 telefono.classList.add("is-invalid")
@@ -178,7 +171,7 @@ window.addEventListener('load', () => {
                 smallTelefono.classList.remove("is-validSmall")
                 validate.telefono = false
                 break
-            default:   
+            default:
                 telefono.classList.remove("is-invalid")
                 telefono.classList.add("is-valid")
                 smallTelefono.innerHTML = "Bien!"
@@ -231,49 +224,49 @@ window.addEventListener('load', () => {
     /* email */
     email.addEventListener("input", (e) => {
 
-        fetch( `http://localhost:3000/api/users?email=${e.target.value}`)
-        .then(response=>{
-           return response.json()
-        })
-        .then(usuario=>{
-            switch(true){
-                case(usuario.data.length>0):
-                    email.classList.remove("is-valid")
-                    email.classList.add("is-invalid")
-                    smallEmail.innerHTML = "Mail ya registrado"
-                    smallEmail.classList.add("is-invalidSmall")
-                    smallEmail.classList.remove("is-validSmall")
-                    validate.email = false
-                    break
-                case (!expRegMail.test(email.value.toLowerCase())):
-                    email.classList.remove("is-valid")
-                    email.classList.add("is-invalid")
-                    smallEmail.innerHTML = "Debes ingresar un mail valido"
-                    smallEmail.classList.add("is-invalidSmall")
-                    smallEmail.classList.remove("is-validSmall")
-                    validate.email = false
-                    break
-                case (!email.value):
-                    email.classList.remove("is-valid")
-                    email.classList.add("is-invalid")
-                    smallEmail.innerHTML = "Email no puede quedar vacio"
-                    smallEmail.classList.add("is-invalidSmall")
-                    smallEmail.classList.remove("is-validSmall")
-                    validate.email = false
-                    break
-                default:
-                    email.classList.remove("is-invalid")
-                    email.classList.add("is-valid")
-                    smallEmail.innerHTML = "Bien!"
-                    smallEmail.classList.remove("is-invalidSmall")
-                    smallEmail.classList.add("is-validSmall")
-                    validate.email = true
-                    break
+        fetch(`http://localhost:3000/api/users?email=${e.target.value}`)
+            .then(response => {
+                return response.json()
+            })
+            .then(usuario => {
+                switch (true) {
+                    case (usuario.data.length > 0):
+                        email.classList.remove("is-valid")
+                        email.classList.add("is-invalid")
+                        smallEmail.innerHTML = "Mail ya registrado"
+                        smallEmail.classList.add("is-invalidSmall")
+                        smallEmail.classList.remove("is-validSmall")
+                        validate.email = false
+                        break
+                    case (!expRegMail.test(email.value.toLowerCase())):
+                        email.classList.remove("is-valid")
+                        email.classList.add("is-invalid")
+                        smallEmail.innerHTML = "Debes ingresar un mail valido"
+                        smallEmail.classList.add("is-invalidSmall")
+                        smallEmail.classList.remove("is-validSmall")
+                        validate.email = false
+                        break
+                    case (!email.value):
+                        email.classList.remove("is-valid")
+                        email.classList.add("is-invalid")
+                        smallEmail.innerHTML = "Email no puede quedar vacio"
+                        smallEmail.classList.add("is-invalidSmall")
+                        smallEmail.classList.remove("is-validSmall")
+                        validate.email = false
+                        break
+                    default:
+                        email.classList.remove("is-invalid")
+                        email.classList.add("is-valid")
+                        smallEmail.innerHTML = "Bien!"
+                        smallEmail.classList.remove("is-invalidSmall")
+                        smallEmail.classList.add("is-validSmall")
+                        validate.email = true
+                        break
 
 
-            }
-            funcValidate(validate)
-        })
+                }
+                funcValidate(validate)
+            })
         funcValidate(validate)
     })
 
@@ -298,8 +291,8 @@ window.addEventListener('load', () => {
     })
 
     password2.addEventListener("input", (e) => {
-        switch(true){
-            case e.target.value.length<8:
+        switch (true) {
+            case e.target.value.length < 8:
                 password2.classList.remove("is-valid")
                 password2.classList.add("is-invalid")
                 smallPassword2.innerHTML = "La contraseña debe tener 8 caracteres"
@@ -328,10 +321,10 @@ window.addEventListener('load', () => {
 
     })
 
-    form.addEventListener("submit",e=>{
+    form.addEventListener("submit", e => {
         e.preventDefault();
         let arr = Object.values(validate)
-        if(!arr.includes(false)){
+        if (!arr.includes(false)) {
             form.submit()
         }
     })
@@ -369,12 +362,50 @@ window.addEventListener('load', () => {
         console.log(nombre);
         nombre.style.display = "none"
         reader.onload = () => $("img-preview").src = reader.result
-        changeImage(e.target.name,e.target.files)
+        changeImage(e.target.name, e.target.files)
 
-        
-    
+
+
     })
+    fetch("https://apis.datos.gob.ar/georef/api/provincias")
+        .then(resultado => {
+            return resultado.json()
+        })
+        .then(provData => {
+            let prov = provData.provincias
+            for (let i = 0; i < prov.length; i++) {
+                provincia.innerHTML += `<option value="${prov[i].nombre}"> ${prov[i].nombre} </option>`
+            }
+        })
 
-    console.log(validate)
+        provincia.addEventListener("change", () => {
+            if(provincia.value==="Ciudad Autónoma de Buenos Aires" || provincia.value==="Santiago del Estero" || provincia.value==="Santa Cruz"|| provincia.value==="Entre Ríos"){
+                fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${provincia.value}&max=300`)
+                .then(resultado => {
+                    
+                    return resultado.json()
+                })
+                .then(data => {
+                    localidad.innerHTML = `<option class="optionProv" value="0" disabled selected> Seleccione tu localidad </option>`
+                    for (let i = 0; i < data.localidades.length; i++) {
+                        localidad.innerHTML += `<option class="optionProv" value=${data.localidades[i].nombre}>${data.localidades[i].nombre} </option>`
+                    }
+                })
+            }
+            fetch(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${provincia.value}&max=300`)
+                .then(resultado => {
+                    
+                    return resultado.json()
+                })
+                .then(data => {
+                    localidad.innerHTML = `<option class="optionProv" value="0" disabled selected> Seleccione tu localidad </option>`
+                    for (let i = 0; i < data.municipios.length; i++) {
+                        localidad.innerHTML += `<option class="optionProv" value=${data.municipios[i].nombre}>${data.municipios[i].nombre} </option>`
+                    }
+                })
+        })
+
+
+        console.log(validate)
 });
 

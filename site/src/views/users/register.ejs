@@ -34,7 +34,7 @@
         <label for="provincia">PROVINCIA</label>
         <select id = "provincia" name="provincia" class="tamaño" >
             <option value=""<%= locals.old && old.provincia=== ""? "selected" : null %>  hidden>Seleccione tu provincia</option>
-            <option value="Buenos Aires"<%= locals.old && old.provincia=== "Buenos Aires"? "selected" : null %>>Buenos Aires</option>  
+<!--             <option value="Buenos Aires"<%= locals.old && old.provincia=== "Buenos Aires"? "selected" : null %>>Buenos Aires</option>  
             <option value="Capital Federal"<%= locals.old && old.provincia=== "Capital Federal"? "selected" : null %>>Capital Federal</option>
             <option value="Catamarca"<%= locals.old && old.provincia=== "Catamarca"? "selected" : null %>>Catamarca</option>
             <option value="Chaco"<%= locals.old && old.provincia=== "Chaco"? "selected" : null %>>Chaco</option>
@@ -56,7 +56,7 @@
             <option value="Santiago del Estero"<%= locals.old && old.provincia=== "Santiago del Estero"? "selected" : null %>>Santiago del Estero</option>
             <option value="Tierra del Fuego"<%= locals.old && old.provincia=== "Tierra del Fuego"? "selected" : null %>>Tierra del Fuego</option>
             <option value="Octubre"<%= locals.old && old.provincia=== "Octubre"? "selected" : null %>>Octubre</option>
-            <option value="Tucumán"<%= locals.old && old.provincia=== "Tucumán"? "selected" : null %>>Tucumán</option>
+            <option value="Tucumán"<%= locals.old && old.provincia=== "Tucumán"? "selected" : null %>>Tucumán</option> -->
         </select> <br>
         <small><%= locals.errors && errors.provincia ? errors.provincia.msg : null %> </small>
         <small id="smallProvincia"></small>
@@ -65,7 +65,7 @@
             <label for="localidad">LOCALIDAD</label>
         <select id = "localidad" name="localidad" class="tamaño">
             <option value="" <%= locals.old && old.localidad=== ""? "selected" : null %> hidden>Seleccione tu localidad</option>
-            <option value="Ramos Mejia"<%= locals.old && old.localidad=== "Ramos Mejia"? "selected" : null %>>Ramos Mejia</option>
+            <!-- <option value="Ramos Mejia"<%= locals.old && old.localidad=== "Ramos Mejia"? "selected" : null %>>Ramos Mejia</option>
             <option value="Lomas de Zamora"<%= locals.old && old.localidad=== "Lomas de Zamora"? "selected" : null %>>Lomas de Zamora</option>
             <option value="Moron"<%= locals.old && old.localidad=== "Moron"? "selected" : null %>>Moron</option>
             <option value="Caballito"<%= locals.old && old.localidad=== "Caballito"? "selected" : null %>>Caballito</option>
@@ -74,7 +74,7 @@
             <option value="Monte Grande"<%= locals.old && old.localidad=== "Monte Grande"? "selected" : null %>>Monte Grande</option>
             <option value="Castillo"<%= locals.old && old.localidad=== "Castillo"? "selected" : null %>>Castillo</option>
             <option value="Lomas del Mirador"<%= locals.old && old.localidad=== "Lomas del Mirador"? "selected" : null %>>Lomas del Mirador</option>
-            <option value="Liniers" <%= locals.old && old.localidad=== "Liniers"? "selected" : null %>>Liniers</option>
+            <option value="Liniers" <%= locals.old && old.localidad=== "Liniers"? "selected" : null %>>Liniers</option> -->
         </select> <br>
         <small><%= locals.errors && errors.localidad ? errors.localidad.msg : null %> </small>
         <small id="smallLocalidad"></small>
