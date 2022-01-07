@@ -51,6 +51,17 @@ color: var(--rojo);
     color: var(--bordo);
 }
 
+.products .categorias{
+    border-radius: 6px;
+    border: solid 2px var(--rojo);
+    margin-bottom: 60px;
+}
+
+.products .select{
+    color: var(--rojo);
+    font-family: var(--titulos);
+}
+
     /* desktop------------- */
 
     @media (min-width:769px) {
