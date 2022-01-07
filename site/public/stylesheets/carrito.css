@@ -1,8 +1,8 @@
-h2, h3{
+.carrito h2, h3{
     font-family: var(--titulos);
     color: var(--bordo);
 }
-main .titulo{
+.carrito main .titulo{
     font-family: var(--titulos);
     text-align: center;
     color: var(--bordo);
@@ -13,19 +13,19 @@ main .titulo{
     border-bottom: solid 2px var(--bordo);
     margin: 20px;
 }    
-h4{
+.carrito h4{
     font-family: var(--subtitulos);
 }
-p, input{
+.carrito p, input{
     font-family: var(--textos);
 }
-p{
+.carrito p{
     color: var(--rojo);
 }
-body{
+.carrito body{
     background-image: url("../img/background.jpg");
 }
-main{
+.carrito main{
     margin: 30px auto;
 }
 .carrito img{

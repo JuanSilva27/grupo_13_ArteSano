@@ -19,10 +19,10 @@ main .titulo{
 h4{
     font-family: var(--subtitulos);
 }
-p, input{
+.admin p, input{
     font-family: var(--textos);
 }
-p{
+.admin p{
     color: var(--rojo);
 }
 body{

@@ -1,136 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include("../partials/head.ejs")  %> 
-<body>
-    <%- include("../partials/header.ejs") %> 
-   
- <main class="register">
-    <P class="cont.tituloRegister"><h1>CREA TU CUENTA</h1></P>
-     
-    <div class="background">
- 
+<%- include("../partials/head.ejs") %>
 
-    <form class="formRegister" action="" method="POST" enctype="multipart/form-data" id= "formV" >
-         
-        <p>
-            <label for="Nombre">NOMBRE</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo" id = "Nombre" name="Nombre"value=<%= locals.old && old.Nombre? old.Nombre : null %> > <br>
-            <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
-            <small id="smallNombre"></small>
-        </p>
-        <p>
-            <label for="Apellido">APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" id = "apellido"value=<%= locals.old && old.Apellido? old.Apellido : null %>  > <br>
-            <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
-            <small id="smallApellido"></small>
-        </p>
-        <p>
-            <label for="telefono">TELEFONO</label>
-            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" id = "telefono"name="telefono" value=<%= locals.old && old.telefono? old.telefono : null %>  > <br>
-            <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
-            <small id="smallTelefono"></small>
-        </p>
-        <p>
-        <label for="provincia">PROVINCIA</label>
-        <select id = "provincia" name="provincia" class="tamaño" >
-            <option value=""<%= locals.old && old.provincia=== ""? "selected" : null %>  hidden>Seleccione tu provincia</option>
-            <option value="Buenos Aires"<%= locals.old && old.provincia=== "Buenos Aires"? "selected" : null %>>Buenos Aires</option>  
-            <option value="Capital Federal"<%= locals.old && old.provincia=== "Capital Federal"? "selected" : null %>>Capital Federal</option>
-            <option value="Catamarca"<%= locals.old && old.provincia=== "Catamarca"? "selected" : null %>>Catamarca</option>
-            <option value="Chaco"<%= locals.old && old.provincia=== "Chaco"? "selected" : null %>>Chaco</option>
-            <option value="Chubut"<%= locals.old && old.provincia=== "Chubut"? "selected" : null %>>Chubut</option>
-            <option value="Córdoba"<%= locals.old && old.provincia=== "Córdoba"? "selected" : null %>>Córdoba</option>
-            <option value="Corrientes"<%= locals.old && old.provincia=== "Corrientes"? "selected" : null %>>Corrientes</option>
-            <option value="Entre Ríos"<%= locals.old && old.provincia=== "Entre Ríos"? "selected" : null %>>Entre Ríos</option>
-            <option value="Formosa"<%= locals.old && old.provincia=== "Formosa"? "selected" : null %>>Formosa</option>
-            <option value="Jujuy"<%= locals.old && old.provincia=== "Jujuy"? "selected" : null %>>Jujuy</option>
-            <option value="Mendoza"<%= locals.old && old.provincia=== "Mendoza"? "selected" : null %>>Mendoza</option>
-            <option value="Misiones"<%= locals.old && old.provincia=== "Misiones"? "selected" : null %>>Misiones</option>
-            <option value="Neuquén"<%= locals.old && old.provincia=== "Neuquén"? "selected" : null %>>Neuquén</option>
-            <option value="Río Negro"<%= locals.old && old.provincia=== "Río Negro"? "selected" : null %>>Río Negro</option>
-            <option value="Salta"<%= locals.old && old.provincia=== "Salta"? "selected" : null %>>Salta</option>
-            <option value="San Juan"<%= locals.old && old.provincia=== "San Juan"? "selected" : null %>>San Juan</option>
-            <option value="San Luis"<%= locals.old && old.provincia=== "San Luis"? "selected" : null %>>San Luis</option>
-            <option value="Santa Cruz"<%= locals.old && old.provincia=== "Santa Cruz"? "selected" : null %>>Santa Cruz</option>
-            <option value="Santa Fe"<%= locals.old && old.provincia=== "Santa Fe"? "selected" : null %>>Santa Fe</option>
-            <option value="Santiago del Estero"<%= locals.old && old.provincia=== "Santiago del Estero"? "selected" : null %>>Santiago del Estero</option>
-            <option value="Tierra del Fuego"<%= locals.old && old.provincia=== "Tierra del Fuego"? "selected" : null %>>Tierra del Fuego</option>
-            <option value="Octubre"<%= locals.old && old.provincia=== "Octubre"? "selected" : null %>>Octubre</option>
-            <option value="Tucumán"<%= locals.old && old.provincia=== "Tucumán"? "selected" : null %>>Tucumán</option>
-        </select> <br>
-        <small><%= locals.errors && errors.provincia ? errors.provincia.msg : null %> </small>
-        <small id="smallProvincia"></small>
-        </p>    
-        <P>
-            <label for="localidad">LOCALIDAD</label>
-        <select id = "localidad" name="localidad" class="tamaño">
-            <option value="" <%= locals.old && old.localidad=== ""? "selected" : null %> hidden>Seleccione tu localidad</option>
-            <option value="Ramos Mejia"<%= locals.old && old.localidad=== "Ramos Mejia"? "selected" : null %>>Ramos Mejia</option>
-            <option value="Lomas de Zamora"<%= locals.old && old.localidad=== "Lomas de Zamora"? "selected" : null %>>Lomas de Zamora</option>
-            <option value="Moron"<%= locals.old && old.localidad=== "Moron"? "selected" : null %>>Moron</option>
-            <option value="Caballito"<%= locals.old && old.localidad=== "Caballito"? "selected" : null %>>Caballito</option>
-            <option value="Ciudadela"<%= locals.old && old.localidad=== "Ciudadela"? "selected" : null %>>Ciudadela</option>
-            <option value="Hurlingham"<%= locals.old && old.localidad=== "Hurlingham"? "selected" : null %>>Hurlingham</option>
-            <option value="Monte Grande"<%= locals.old && old.localidad=== "Monte Grande"? "selected" : null %>>Monte Grande</option>
-            <option value="Castillo"<%= locals.old && old.localidad=== "Castillo"? "selected" : null %>>Castillo</option>
-            <option value="Lomas del Mirador"<%= locals.old && old.localidad=== "Lomas del Mirador"? "selected" : null %>>Lomas del Mirador</option>
-            <option value="Liniers" <%= locals.old && old.localidad=== "Liniers"? "selected" : null %>>Liniers</option>
-        </select> <br>
-        <small><%= locals.errors && errors.localidad ? errors.localidad.msg : null %> </small>
-        <small id="smallLocalidad"></small>
-        </P>
-        <p>
-            <label for="email">E-MAIL</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo@gmail.com" name="email" id = "email" value=<%= locals.old && old.email? old.email : null %>  > <br>
-            <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>  
-            <small id="smallEmail"></small>
-        </p>
-          
-        <p class="contraseña">
-            <label for="password">CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password" id="Password" >
-            <span class="icon-eye1">
-                <i id="icon1" class="fas fa-eye-slash"></i>
-            </span> <br></p>
-            <small><%= locals.errors && errors.password ? errors.password.msg : null %> </small>  
-            <small id="smallPassword"></small>            
-        
+    <body>
+        <%- include("../partials/header.ejs") %>
 
-        <p class="contraseña">
-            <label for="password2">CONFIRMAR CONTRASEÑA:</label>
-            <input class="tamaño" type="password" placeholder="**********" name="password2" id = "Password2"  >
-            <span class="icon-eye2">
-                <i id="icon2" class="fas fa-eye-slash"></i>
-            </span> <br></p>
-            <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %> </small>
-            <small id="smallPassword2"></small> 
-        
+            <main class="register">
 
-        <p>
-            <label for="product-img">IMAGEN</label>
-            <p id="nombre-imagen">Imagen por defecto</p> 
-            <img id="img-preview" src="/img/users/userDefault.jpeg" alt="">   
-                 
+                <div class="background">
 
-            <input class="tam" type="file" id="product-img" name="image" accept=".png, .jpg, .jpeg"> <br>
-            <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
-            <small id="smallImage"></small>
-        </p>
-        <div class="botones">
-            
-             <button class="guardar" type="submit">Crear cuenta</button>
-        </div>
-        <p>¿Ya tenés una cuenta? 
-          <a href="/users/login">
-            <p>¡Ingresá desde acá!</p>
-          </a> 
-        </p>
-    </form>
-</div>
- </main>
- <%- include("../partials/footer.ejs") %> 
-</body>
-<script src = "/js/registerValidation.js"></script>
-<script src = "/js/images.js"></script>
-<script src="/js/register.js"></script>
+                    <div class="cont-titulo">
+
+                        <h1 class="titulo">CREA TU CUENTA</h1>
+
+                    </div>
+
+                    <form class="formRegister" action="" method="POST" enctype="multipart/form-data" id="formV">
+
+                        <div>
+
+                            <label for="Nombre" class="form-titulo">Nombre</label>
+                            <input class="tamaño" type="text" placeholder="ej: Ricardo" id="Nombre" name="Nombre"
+                                value=<%=locals.old && old.Nombre? old.Nombre : null %> > <br>
+                            <small>
+                                <%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %>
+                            </small>
+                            <small id="smallNombre"></small>
+
+                        </div>
+
+                        <div>
+
+                            <label for="Apellido" class="form-titulo">Apellido</label>
+                            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" id="apellido"
+                                value=<%=locals.old && old.Apellido? old.Apellido : null %> > <br>
+                            <small>
+                                <%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %>
+                            </small>
+                            <small id="smallApellido"></small>
+
+                        </div>
+
+                        <div>
+
+                            <label for="telefono" class="form-titulo">Telefono</label>
+                            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" id="telefono"
+                                name="telefono" value=<%=locals.old && old.telefono? old.telefono : null %> > <br>
+                            <small>
+                                <%= locals.errors && errors.telefono ? errors.telefono.msg : null %>
+                            </small>
+                            <small id="smallTelefono"></small>
+
+                        </div>
+
+                        <div>
+
+                            <label for="provincia" class="form-titulo">Provincia</label>
+                            <select id="provincia" name="provincia" class="tamaño">
+                                <option value="" <%=locals.old && old.provincia==="" ? "selected" : null %>
+                                    hidden>Seleccione tu provincia</option>
+                                <option value="Buenos Aires" <%=locals.old && old.provincia==="Buenos Aires"
+                                    ? "selected" : null %>>Buenos Aires</option>
+                                <option value="Capital Federal" <%=locals.old && old.provincia==="Capital Federal"
+                                    ? "selected" : null %>>Capital Federal</option>
+                                <option value="Catamarca" <%=locals.old && old.provincia==="Catamarca" ? "selected" :
+                                    null %>>Catamarca</option>
+                                <option value="Chaco" <%=locals.old && old.provincia==="Chaco" ? "selected" : null %>
+                                    >Chaco</option>
+                                <option value="Chubut" <%=locals.old && old.provincia==="Chubut" ? "selected" : null %>
+                                    >Chubut</option>
+                                <option value="Córdoba" <%=locals.old && old.provincia==="Córdoba" ? "selected" : null
+                                    %>>Córdoba</option>
+                                <option value="Corrientes" <%=locals.old && old.provincia==="Corrientes" ? "selected" :
+                                    null %>>Corrientes</option>
+                                <option value="Entre Ríos" <%=locals.old && old.provincia==="Entre Ríos" ? "selected" :
+                                    null %>>Entre Ríos</option>
+                                <option value="Formosa" <%=locals.old && old.provincia==="Formosa" ? "selected" : null
+                                    %>>Formosa</option>
+                                <option value="Jujuy" <%=locals.old && old.provincia==="Jujuy" ? "selected" : null %>
+                                    >Jujuy</option>
+                                <option value="Mendoza" <%=locals.old && old.provincia==="Mendoza" ? "selected" : null
+                                    %>>Mendoza</option>
+                                <option value="Misiones" <%=locals.old && old.provincia==="Misiones" ? "selected" : null
+                                    %>>Misiones</option>
+                                <option value="Neuquén" <%=locals.old && old.provincia==="Neuquén" ? "selected" : null
+                                    %>>Neuquén</option>
+                                <option value="Río Negro" <%=locals.old && old.provincia==="Río Negro" ? "selected" :
+                                    null %>>Río Negro</option>
+                                <option value="Salta" <%=locals.old && old.provincia==="Salta" ? "selected" : null %>
+                                    >Salta</option>
+                                <option value="San Juan" <%=locals.old && old.provincia==="San Juan" ? "selected" : null
+                                    %>>San Juan</option>
+                                <option value="San Luis" <%=locals.old && old.provincia==="San Luis" ? "selected" : null
+                                    %>>San Luis</option>
+                                <option value="Santa Cruz" <%=locals.old && old.provincia==="Santa Cruz" ? "selected" :
+                                    null %>>Santa Cruz</option>
+                                <option value="Santa Fe" <%=locals.old && old.provincia==="Santa Fe" ? "selected" : null
+                                    %>>Santa Fe</option>
+                                <option value="Santiago del Estero" <%=locals.old &&
+                                    old.provincia==="Santiago del Estero" ? "selected" : null %>>Santiago del Estero
+                                </option>
+                                <option value="Tierra del Fuego" <%=locals.old && old.provincia==="Tierra del Fuego"
+                                    ? "selected" : null %>>Tierra del Fuego</option>
+                                <option value="Octubre" <%=locals.old && old.provincia==="Octubre" ? "selected" : null
+                                    %>>Octubre</option>
+                                <option value="Tucumán" <%=locals.old && old.provincia==="Tucumán" ? "selected" : null
+                                    %>>Tucumán</option>
+                            </select> <br>
+                            <small>
+                                <%= locals.errors && errors.provincia ? errors.provincia.msg : null %>
+                            </small>
+                            <small id="smallProvincia"></small>
+                        </div>
+
+                        <div
+                            <label for="localidad" class="form-titulo">Localidad</label>
+                            <select id="localidad" name="localidad" class="tamaño">
+                                <option value="" <%=locals.old && old.localidad==="" ? "selected" : null %>
+                                    hidden>Seleccione tu localidad</option>
+                                <option value="Ramos Mejia" <%=locals.old && old.localidad==="Ramos Mejia" ? "selected"
+                                    : null %>>Ramos Mejia</option>
+                                <option value="Lomas de Zamora" <%=locals.old && old.localidad==="Lomas de Zamora"
+                                    ? "selected" : null %>>Lomas de Zamora</option>
+                                <option value="Moron" <%=locals.old && old.localidad==="Moron" ? "selected" : null %>
+                                    >Moron</option>
+                                <option value="Caballito" <%=locals.old && old.localidad==="Caballito" ? "selected" :
+                                    null %>>Caballito</option>
+                                <option value="Ciudadela" <%=locals.old && old.localidad==="Ciudadela" ? "selected" :
+                                    null %>>Ciudadela</option>
+                                <option value="Hurlingham" <%=locals.old && old.localidad==="Hurlingham" ? "selected" :
+                                    null %>>Hurlingham</option>
+                                <option value="Monte Grande" <%=locals.old && old.localidad==="Monte Grande"
+                                    ? "selected" : null %>>Monte Grande</option>
+                                <option value="Castillo" <%=locals.old && old.localidad==="Castillo" ? "selected" : null
+                                    %>>Castillo</option>
+                                <option value="Lomas del Mirador" <%=locals.old && old.localidad==="Lomas del Mirador"
+                                    ? "selected" : null %>>Lomas del Mirador</option>
+                                <option value="Liniers" <%=locals.old && old.localidad==="Liniers" ? "selected" : null
+                                    %>>Liniers</option>
+                            </select> <br>
+                            <small>
+                                <%= locals.errors && errors.localidad ? errors.localidad.msg : null %>
+                            </small>
+                            <small id="smallLocalidad"></small>
+                        </div>
+
+                        <div>
+                            <label for="email" class="form-titulo">Correo electrónico</label>
+                            <input class="tamaño" type="text" placeholder="ej: Ricardo@gmail.com" name="email"
+                                id="email" value=<%=locals.old && old.email? old.email : null %> > <br>
+                            <small>
+                                <%= locals.errors && errors.email ? errors.email.msg : null %>
+                            </small>
+                            <small id="smallEmail"></small>
+                        </div>
+
+                        <div class="contraseña" >
+                            <label for="password" class="form-titulo">Contraseña</label>
+                            <input class="tamaño" type="password" placeholder="**********" name="password"
+                                id="Password">
+                            <span class="icon-eye1">
+                                <i id="icon1" class="fas fa-eye-slash"></i>
+                            </span> <br>
+                        </div>
+                        <small>
+                            <%= locals.errors && errors.password ? errors.password.msg : null %>
+                        </small>
+                        <small id="smallPassword"></small>
+
+                        <div class="contraseña">
+                            <label for="password2" class="form-titulo">Confirmar contraseña</label>
+                            <input class="tamaño" type="password" placeholder="**********" name="password2"
+                                id="Password2">
+                            <span class="icon-eye2">
+                                <i id="icon2" class="fas fa-eye-slash"></i>
+                            </span> <br>
+                        </div>
+
+                        <small>
+                            <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
+                        </small>
+                        <small id="smallPassword2"></small>
+
+                        <div>
+                            <label for="product-img" class="form-titulo">Imagen de perfil</label>
+                       <!--  <p id="nombre-imagen">Imagen por defecto</p> -->
+                        <img id="img-preview" src="/img/users/userDefault.jpeg" alt="">
+
+                        <input class="tamaño" type="file" id="product-img" name="image" accept=".png, .jpg, .jpeg"> <br>
+                        <small>
+                            <%= locals.errors && errors.image ? errors.image.msg : null %>
+                        </small>
+                        <small id="smallImage"></small>
+                        </div>
+
+                        <div class="botones">
+
+                            <button class="guardar" type="submit">Crear cuenta</button>
+                        </div>
+
+
+                        <p class="cuenta">¿Ya tenes una cuenta?</p>
+
+                        <a href="/users/register" class="button">
+                          <p>¡Inicia Sesion!</p>
+                        </a>
+
+
+                    </form>
+
+                </div>
+
+            </main>
+
+            <%- include("../partials/footer.ejs") %>
+    </body>
+    <script src="/js/registerValidation.js"></script>
+    <script src="/js/images.js"></script>
+    <script src="/js/register.js"></script>
+
 </html>

@@ -1,4 +1,4 @@
-main.register{
+.register{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,45 +6,45 @@ main.register{
     background-image: url("../img/background.jpg");
     width: 100%;
 }
-.register h1{
+
+.register .titulo {
     font-family: var(--titulos);
     text-align: center;
     color: var(--rojo);
     margin-top: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
-.register .cont.tituloRegister{
-    border-bottom: solid 2px var(--rojo);
-}
+
 .register img {
     width: 50% ;
 }
-.register label{
-    display: flex;
-    justify-content: left;
+
+.register .form-title{
+/*     display: flex;
+    justify-content: left; */
     color: var(--bordo);
     font-weight: bold;
+    font-family: var(--subtitulos);
 }
+
 .register .tamaño{
-    border-radius: 6px;
-    border: solid 2px var(--rojo);
+    border-radius: 10px;
+    border: solid 1px var(--rojo);
+    background-color: var(--crema);
     height: 23px;
     width: 255px;
 }
-.register .tam {
-    border-radius: 3%;
-    border: solid 2px var(--rojo);
-    height: 32px;
-    width: 310px;
-    background-color: white;
-    color: black;
-}
-.register .tamaño-desc{
+
+
+/* .register .tamaño-desc{
     border-radius: 3%;
     border: solid 2px var(--rojo);
     height: 90px;
     width: 310px;
-}
+} */
+
 .register .boton {
     border: none;
     color: white;
@@ -54,6 +54,7 @@ main.register{
     background-color: var(--rojo);
     font-family: var(--textos);
 }
+
 .register .botonContenedor{
     border: none;
     margin-top: 6px;
@@ -62,6 +63,7 @@ main.register{
     align-items: center;
     
 }
+
 .register .formRegister{
     width: 100%;
     display: flex;
@@ -69,21 +71,33 @@ main.register{
     align-items: center;
     margin: 15px auto;
 }
-.register .formRegister p{
+
+.register .formRegister .form-title{
     margin-top: 40px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 .register .background{
-    background-color: var(--amarillo);
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin: 10px;
+    padding: 10px;
+    padding-bottom: 25px;
+    background-color: var(--crema);   
+    box-shadow: 0px 0px 25px 5px rgba(233, 78, 27, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    font-family: var(--titulos);
+    color: var(--bordo);
+    width: 90%;   
+    border-radius: 25px;
 }
+
 /* js validation  */
 .register .is-invalid{
-    border: solid 3px var(--rojo);
+    border: solid 2px var(--rojo);
     background-color: var(--crema);
 }
 
@@ -91,6 +105,7 @@ main.register{
     border: solid 3px rgb(55, 172, 55);
     background-color: var(--crema);
 }
+
 .register .is-validSmall{
     border: solid 1px rgb(55, 172, 55);
     background-color: var(--crema);
@@ -99,6 +114,7 @@ main.register{
     border-radius: 5px;
     font-family: var(--textos)
 }
+
 .register .is-invalidSmall{
     border: solid 1px var(--rojo);
     background-color: var(--crema);

@@ -69,7 +69,6 @@ padding-bottom: 7px;
     padding: 5px;
     background-color: var(--crema);
     border: 1px solid var(--rojo);
-
     border-radius: 5px;
 }
 
@@ -100,6 +99,18 @@ padding-bottom: 7px;
 .contacto .form-contacto textarea {
     resize: none;
   }
+
+.contacto .form-contacto .boton {
+    border: solid 2px var(--rojo);
+    color: var(--rojo);
+    background-color: var(--crema);
+    padding: 5px;
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
 
 .contacto .form-contacto .boton:hover {
     background-color: var(--rojo);
@@ -149,13 +160,16 @@ padding-bottom: 5px;
     }
 
     .contacto .map-container {
-    height: 430px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     }
 
     .contacto .map-container .direccion {
     font-family: var(--subtitulos);
     font-size: 14px;
     text-align: center;
+    justify-content: center;
     }
 
     .contacto .mapa iframe {
