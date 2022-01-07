@@ -228,7 +228,7 @@ module.exports = {
             id: req.params.id
           }
         })
-        return res.redirect("/")
+        return res.redirect("/admin")
       })
       .then(result => {
         db.Productos.destroy({
