@@ -201,7 +201,7 @@ module.exports = {
             id: req.params.id
           }
         })
-        return res.redirect("/")
+        return res.redirect("/admin")
       })
           .then(result => {
             db.Productos.destroy({
@@ -209,7 +209,7 @@ module.exports = {
                 id: req.params.id
               }
             })
-              return res.redirect("/")
+              return res.redirect("/admin")
           })
           .catch((error) => {
               res.send(error)
