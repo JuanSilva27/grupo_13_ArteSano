@@ -42,7 +42,34 @@ color: var(--rojo);
 .products .pdtos-container .pdto {
     width: 45%;
     margin-bottom: 15px;
+    background-color: var(--crema);
+    border-radius: 5%;
+    padding: 10px;
+    box-shadow: 1px 10px 15px rgba(0,0,0,0.5);
+    
 }
+.products .pdtos-container .pdto:hover {
+    box-shadow: 1px 10px 15px var(--bordo);
+    
+}
+
+.products .pdtos-container .pdto img{
+    border-radius: 10%;
+    transition: all 500ms ease;
+    width: 100%;
+    height: 100%;
+}
+.products .pdtos-container .pdto img:hover{
+    transform: scale(1.2);
+   
+}
+
+.products .photo{
+    transition: all 500ms ease;
+    overflow: hidden; 
+    border-radius: 10%;
+}
+
 
 
 
