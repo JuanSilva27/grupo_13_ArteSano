@@ -8,6 +8,17 @@
     display: none;
 } 
 
+.header .menu-rp {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.header .menu-rp .user-menu {
+    padding: 7px;
+}
+
 .header .icon-menu{
     margin: 15px 35px; 
     position: relative;
@@ -25,7 +36,7 @@
 .header .cont-menu{
     background-color: var(--bordo);
   /*   box-shadow: 2px 0px 5px 2px rgb(66,66,66); */
-    width: 400px;
+    width: 360px;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -33,16 +44,25 @@
     transition: all .6s ease;
 } 
 .header .cont-menu ul{
-    color: white;
+    margin-left: 25px;
+    margin-right: 50px;
+    color: var(--crema);
     display: block;
     font-size: 20px;
+    font-family: var(--tiulos);
     text-decoration: none;
     padding: 10 px 50px;
     cursor: pointer;
 }
+
+.header .cont-menu ul .menu-option {
+margin-top: 10px;
+border-bottom: 1px solid var(--crema);
+}
+
 .header .cont-menu ul li:hover{
-    background-color: rgb(288,288,288);
-    color: rgb(42,42,42);
+    background-color: var(--rojo);
+
 }
 /* estilos de js */
 .header .active {
@@ -50,7 +70,7 @@
     transition: all .6s ease;
 }
 .header .opacity{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--bordo);
     transition: all .6s ease;
 }
 .header a{
@@ -120,18 +140,9 @@
     height: 30px;
     border-radius: 50%;
     background-color: var(--crema);
-    margin-left: 30px;
-  /*  display: block;  */
 }
 
-/* .user1{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: var(--crema);
-    margin-left: 30px;
-    display: none; 
-}  */
+
 
 /* MENU HAMBURGUESA */
 .header input.menu{
@@ -183,7 +194,7 @@
 }
 .header .search .searchBttn{
         width: 20px;
-        height: 24px;
+        height: 16px;
         background-color: white;
         border: none;
         border-radius: 10px 0 0 10px;    
@@ -301,9 +312,11 @@ footer div.copyright {
 } */
     .header{
         height: 145PX;
-        margin-top: 10px;
     }
 
+    .header .menu-rp .user-menu {
+        padding: 10px;
+    }
 
     .header img.logo, .header a.linkLogo{
         width: 250px;
@@ -464,6 +477,8 @@ footer div.copyright {
     .header div.searchBar{
         width: 30%;
     }
+
+    
 
 
     
