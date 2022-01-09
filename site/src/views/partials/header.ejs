@@ -6,21 +6,31 @@
         <div class="esquina">
             <% if (!(locals.user)) { %>
                 <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="/users/login"> <img  class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user"> </a>
+                <a href="/users/login"> <img  class="user1" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user"> </a>
             <% } else {%>
                 <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
                 <a href="/users/Miperfil "> <img  class="user" src="/img/users/<%= locals.user.imagen %> " alt="user"> </a>
                 <a class="carrito" href="/admin" style="display: <%= locals.user.id_rol === 2 ? "block" : "none" %>;" ><i class="fas fa-user-cog"></i></a> 
                 <li><form action="/users/logout" method="GET"><button class="cerrarSesion"type="submit"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</button></form></li>   
             <% } %> 
-        
+            <div class = "icon-menu ">
+                <small id="icon-menu">☰</small>
+            </div>
 
         
         </div>
-
-
-        <div class="menuBttn">
-            <input class="menu" type="checkbox" id='menu'>
+    
+    <div class="cont-menu active" id="menu">
+        <ul>
+            <a href="/users/login"> <img  class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user"> </a>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/products">PRODUCTOS</a></li>
+            <li><a href="/about">SOBRE NOSOTRAS</a></li>
+            <li><a href="/about">CONTACTO</a></li>
+            
+        </ul>
+    </div>
+        <!-- <div class="menuBttn">
             <label class="hamburguesa" for='menu'>☰</label>
             <nav class="options">
                 <ul>
@@ -30,7 +40,7 @@
                     <li><a href="/about">CONTACTO</a></li>
                 </ul>
             </nav>
-        </div>
+        </div> -->
 
         <div class="searchBar">
             <form class="search" action="/search" method="GET">
@@ -40,6 +50,6 @@
         </div>
 
     </div>
-
+<script src="/js/menu.js"></script>
 </header>
 <script src="/js/search.js"></script>
