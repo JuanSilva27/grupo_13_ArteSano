@@ -3,6 +3,11 @@
     margin: 0;
     padding: 0;
 }
+
+ .header .menu-pc, .header .menupc-navbar {
+    display: none;
+} 
+
 .icon-menu{
     margin: 15px 35px; 
     position: relative;
@@ -18,15 +23,15 @@
     border-radius: 7px;
 }
 .cont-menu{
-    background-color: rgb(42,42,42);
-    box-shadow: 2px 0px 5px 2px rgb(66,66,66);
+    background-color: var(--bordo);
+  /*   box-shadow: 2px 0px 5px 2px rgb(66,66,66); */
     width: 400px;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
     transition: all .6s ease;
-}
+} 
 .cont-menu ul{
     color: white;
     display: block;
@@ -99,14 +104,6 @@ header {
     width: 140px;
     margin-left: 15px;
 }
-.header .esquina {
-    width: 20%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
 
 
 .header a.carrito{
@@ -118,22 +115,24 @@ header {
 }
 
 
-.user{
+ .user{
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: var(--crema);
     margin-left: 30px;
-    display: block;
+  /*  display: block;  */
 }
-.user1{
+
+/* .user1{
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: var(--crema);
     margin-left: 30px;
-    display: none;
-}
+    display: none; 
+}  */
+
 /* MENU HAMBURGUESA */
 header input.menu{
     display: none ;
@@ -192,6 +191,10 @@ header label {
 
 .header .search i.fas{
     font-size: 80%;
+}
+
+.header .esquina {
+    display: none;
 }
 
 
@@ -293,7 +296,9 @@ footer div.copyright {
 
     /* HEADER */
 
-
+/* .header .menu-pc {
+    display: none;
+} */
     .header{
         height: 145PX;
         margin-top: 10px;
@@ -311,15 +316,7 @@ footer div.copyright {
     .header label.hamburguesa{
         font-size: 30px;
     }
-    /* .menuBttn{
 
-    }
-    .hamburguesa{
-
-    }
-    .hamburguesa{
-        
-    } */
     .header .search input{
         height: 27px;
     }
@@ -398,7 +395,23 @@ footer div.copyright {
 
 
 @media (min-width:768px){
-    header {
+
+    .header.menu-pc {
+        display: block;
+    } 
+
+    .header .esquina {
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+.header .menu-rp {
+    display: none;
+}
+    .header {
         margin-top: 10px;
     }
 
@@ -406,37 +419,22 @@ footer div.copyright {
         width: 30%;
         justify-content: space-evenly;
     }
-    .user{
+
+/*   .user{
         display: none;
-    }
+    } 
+
     .user1{
         display: block;
-    }
+    } */
+
     .icon-menu{
         display: none;
     }
     .cont-menu{
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-    width: 70%;
-    height: 0vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all .0s ease;
-    transform: translate(600px);
-    align-items: center;
-    padding-bottom: 18px;
-    margin-left: -550px;
+    display: none;
     }
-    .cont-menu ul{
-        display: flex;
-        width: 100%;
-    }
-    .cont-menu ul li{
-        width: 24%;
-        text-align: center;
-    }
+
     .header div.menuBttn{
         width: 70%;
         align-items: center;
