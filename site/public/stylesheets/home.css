@@ -16,129 +16,52 @@ margin-top: 15px;
     color: var(--rojo);
 }
 
-.home .banner  {
-width: 100%;
-height: 360px;
-} 
 
 /* Slideshow container -----------------------*/
 /* Slideshow container -----------------------*/
-/* Slideshow container -----------------------*/
-/* Slideshow container -----------------------*/
 
-.home .banner .slideshow-container {
-  /*   max-width: 1000px; */
-  
+
+.home .banner {
     width: 100%;
-    position: relative;
-    margin: auto;
-  }
-  
-  /* Hide the images by default */
-  .home .banner .mySlides {
-    display: none;
-  }
-  
-  /* Next & previous buttons */
-  .home .banner .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .home .banner .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .home .banner .prev:hover, .next:hover {
-    background-color: var(--bordo);
-  }
-  
-  /* Caption text */
-  .home .banner .text {
-    color: var(--bordo);
-    font-size: 50%;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 50%;
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Number text (1/3 etc) */
-  .home .banner .numbertext {
-    color: var(--crema);
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-  
-  /* The dots/bullets/indicators */
-  .home .banner  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .home .banner .active, .dot:hover {
-    background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .home .banner .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-
-  .home .banner img {
-      width: 100%;
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-
-.home .banner button {
-    margin: 15px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--crema);
-    font-size: 40px;
+    height: 200px;
+    
 }
 
-.home .banner button:hover {
-    color: var(--bordo);
+/* .home .banner img {
+    height: 100%;
+} */
+
+.home .slider {
+	width: 100%;
+	margin: 2em auto;
+	
 }
 
-.home .banner .titulo {
-    color: var(--crema);
+.home .slider-wrapper {
+	width: 100%;
+	height: 150px;
+	position: relative;
 }
+
+.home .banner .slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+
+	opacity: 0;
+	transition: opacity 1s linear;
+
+}
+
+.home .banner .slider-wrapper > .slide:first-child {
+	opacity: 1;
+}
+
+
+/* Slideshow container -----------------------*/
+/* Slideshow container -----------------------*/
+
+
 
 .body-home {
     font-family: var(--textos);
@@ -272,6 +195,26 @@ height: 360px;
     padding-bottom: 15px;
 }
 
+.home .instagram .posts {
+display: flex;
+flex-direction: row;
+flex-flow: row nowrap;
+justify-content: space-around;
+height: 150px;
+}
+
+.home .instagram .posteo01, .home .instagram .posteo02 {
+    width: 45%;
+}
+
+.home .instagram .posteo03, .home .instagram .posteo04 {
+    display: none;
+}
+
+.home .instagram iframe {
+    height: 100%;
+}
+
 .home .map-container {
     width: 100%;
 }
@@ -290,7 +233,50 @@ height: 360px;
 
 @media (min-width: 481px) {
  
-  
+/* Slideshow container -----------------------*/
+/* Slideshow container -----------------------*/
+
+
+.home .banner {
+    width: 100%;
+    height: 310px;
+    
+}
+
+/* .home .banner img {
+    height: 100%;
+} */
+
+.home .slider {
+	width: 100%;
+	margin: 2em auto;
+	
+}
+
+.home .slider-wrapper {
+	width: 100%;
+	height: 150px;
+	position: relative;
+}
+
+.home .banner .slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+    
+	opacity: 0;
+	transition: opacity 1s linear;
+
+}
+
+.home .banner .slider-wrapper > .slide:first-child {
+	opacity: 1;
+}
+
+
+/* Slideshow container -----------------------*/
+/* Slideshow container -----------------------*/
+
     .home .nosotras .video{
     width: 70%;
 }
@@ -348,9 +334,20 @@ width: 100%;
 @media (min-width:769px) {
 
     .home .banner {
-        height: 450px;
+        width: 100%;
+        height: 500px;
+        
+    }
+    
+    .home .banner .slide {
+        height: 500px;
     }
 
+    .home .banner img {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    
     .home .nosotras .info {
         display: flex;
         justify-content: center;
