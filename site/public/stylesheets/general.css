@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Kulim+Park:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
 
 :root{
     --bordo: #922814;
@@ -11,8 +14,8 @@
     --crema: #fcdfc7;
     --green: green; 
 
-    --titulos: 'Ubuntu', sans-serif;
-    --subtitulos: 'Handlee', "cursive";
+    --titulos: 'Yusei Magic', sans-serif;
+    --subtitulos: 'Kulim Park', sans-serif;
     --textos: 'Roboto', sans-serif;
 
 }

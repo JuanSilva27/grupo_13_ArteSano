@@ -7,22 +7,34 @@
         <div class="esquina">
 
             <% if (!(locals.user)) { %>
-                <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="/users/login"> <img class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png" alt="user">
-                </a>
-                <% } else {%>
-                    <a class="carrito" href="/products/carrito" style="display: <%= locals.user.id_rol === 1 ? " block"
-                        : "none" %>"><i class="fas fa-shopping-cart"></i></a>
-                    <a href="/users/Miperfil "> <img class="user" src="/img/users/<%= locals.user.imagen %> "
+                <li class="user-menuPC">
+                    <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li class="user-menuPC">
+                    <a href="/users/login"> <img class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png"
                             alt="user"> </a>
-                    <a class="carrito" href="/admin" style="display: <%= locals.user.id_rol === 2 ? " block" : "none"
-                        %>;" ><i class="fas fa-user-cog"></i></a>
-                    <li>
+                </li>
+                <% } else {%>
+                    <li class="user-menuPC">
+                        <a class="carrito" href="/products/carrito"
+                            style="display: <%= locals.user.id_rol === 1 ? " block" : "none" %>"><i
+                                class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li class="user-menuPC">
+                        <a href="/users/Miperfil "> <img class="user"
+                                src="/img/users/<%= locals.user.imagen %> " alt="user"> </a>
+                    </li>
+                    <li class="user-menu">
+                        <a class="carrito" href="/admin" style="display: <%= locals.user.id_rol === 2 ? " block"
+                            : "none" %>;" ><i class="fas fa-user-cog"></i></a>
+                    </li>
+
+                    <li class="user-menuPC">
                         <form action="/users/logout" method="GET"><button class="cerrarSesion" type="submit"><i
                                     class="fas fa-sign-out-alt"></i>Salir</button></form>
                     </li>
-                    <% } %>
 
+                    <% } %>
 
         </div>
         <div class="icon-menu ">
@@ -66,18 +78,17 @@
                 <li class="menu-option"><a href="/">HOME</a></li>
                 <li class="menu-option"><a href="/products">PRODUCTOS</a></li>
                 <li class="menu-option"><a href="/about">SOBRE NOSOTRAS</a></li>
-                <li class="menu-option"><a href="/about">CONTACTO</a></li>
+                <li class="menu-option"><a href="/contacto">CONTACTO</a></li>
 
             </ul>
         </div>
         <!-- opciones menu pc -------------- -->
         <div class="menupc-navbar">
-            
             <ul>
                 <li><a href="/">HOME</a></li>
                 <li><a href="/products">PRODUCTOS</a></li>
                 <li><a href="/about">SOBRE NOSOTRAS</a></li>
-                <li><a href="/about">CONTACTO</a></li>
+                <li><a href="/contacto">CONTACTO</a></li>
 
             </ul>
 
