@@ -1,4 +1,8 @@
-main.login {
+.login input  {
+    background-color: blue;
+ }
+
+.login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,37 +11,58 @@ main.login {
     width: 100%;
     justify-content: center;
 }
+
+.login .cont-titulo {
+    margin-bottom: 20px;
+}
+
 .login .titulo{
     font-family: var(--titulos);
     text-align: center;
     color: var(--rojo);
     margin-top: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
-.login .cont.titulo{
-    border-bottom: solid 2px var(--rojo);
-}
-.login form p{
-margin-top: 20px;
-margin-bottom: 20px;  
-}
+
+
 .login .formLogin{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 } 
-.login label{
+
+.login .form-titulo{
+
     display: flex;
     justify-content: left;
     color: var(--bordo);
+    font-family: var(--subtitulos);
     font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
 }
+
 .login .tamaño {
-    border-radius: 3%;
-    border: solid 2px var(--rojo);
-    height: 23px;
-    width: 255px;
+    text-decoration: none;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    border-radius: 10px;  
+    background: transparent;
+    border: 1px solid var(--rojo);
+    font-family: var(--subtitulos);
+    padding: 5px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login .fila input::placeholder {
+    color: var(--bordo);
 }
 
 .login .botonLoginContenedor{
@@ -47,6 +72,7 @@ margin-bottom: 20px;
     flex-direction: column;
     align-items: center;
 }
+
 .login .botonLogin {
     border: none;
     color: white;
@@ -59,39 +85,35 @@ margin-bottom: 20px;
 }
 
 .login .is-invalid{
-    border-color: var(--bordo);
+    border: 2px solid var(--rojo);
     background-color: var(--crema);
 }
 
 .login .is-valid{
-    border-color: var(--verde);
+    border: 2px solid var(--verde);
+    background-color: var(--crema);
 }
 
 .login .is-validSmall{
-    border: solid 1px rgb(55, 172, 55);
-    background-color: var(--crema);
-    color: rgb(55, 172, 55);;
+    color: var(--verde);
     padding: 1px;
-    border-radius: 5px;
     font-family: var(--textos)
 }
+
 .login .is-invalidSmall{
-    border: solid 1px var(--rojo);
-    background-color: var(--crema);
     color: var(--rojo);;
     padding: 1px;
-    border-radius: 5px;
     font-family: var(--textos);
 }
 
 
-small {
-    background-color: var(--bordo);
+
+.login small {
     color: var(--crema);
     border-radius: 30px;
 }
 
-.login .contraseña {
+.login .contraseña .fila {
     position: relative;
 }
 
@@ -108,24 +130,83 @@ small {
     color: var(--bordo);
 }
 
+
+.login .button p {
+    padding: 10px 15px;
+    font-family: var(--subtitulos);
+}
+
+.login .button {
+    border: solid 2px var(--rojo);
+    color: var(--rojo);
+    background-color: var(--crema);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login .button:hover {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--rojo);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;    
+    text-decoration: none;
+}
+
+.login .button p:hover {
+    color: var(--crema);
+}
+
+.login .nuevaCuenta {
+    font-family: var(--titulos);
+    padding-bottom: 10px;
+    font-size: 20px;    
+}
+
+.login .background{
+        margin: 10px;
+        padding: 10px;
+        padding-bottom: 25px;
+        background-color: var(--crema);   
+        box-shadow: 0px 0px 25px 5px rgba(233, 78, 27, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        font-family: var(--titulos);
+        color: var(--bordo);
+        width: 80%;   
+        border-radius: 25px;
+    }
+
 @media (min-width: 481px){ 
+
+
+
     .login .tamaño{
-        height: 26px;
+        padding: 5px 25px;
         width: 290px;
     }
+
 }
+
 @media (min-width: 769px){ 
-    .login .botonLoginContenedor {
-        padding-top: 15px;
+
+    .login .cont-titulo{
+        border-bottom: solid 2px var(--rojo);
+
     }
-    .login .tamaño{
-        height: 32px;
-        width: 310px;
-    }
+    
     .login .background{
-        background-color: var(--amarillo);
-        width: 50%;
-        margin-top: 15px;
-        margin-bottom: 25px;
+
+        width: 50%;   
+
     }
+
+
 }

@@ -1,4 +1,4 @@
-main.register{
+.register{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,45 +6,58 @@ main.register{
     background-image: url("../img/background.jpg");
     width: 100%;
 }
-.register h1{
+
+.register .titulo {
     font-family: var(--titulos);
     text-align: center;
     color: var(--rojo);
     margin-top: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
-.register .cont.tituloRegister{
-    border-bottom: solid 2px var(--rojo);
+
+.register .cont-titulo {
+    margin-bottom: 20px;
 }
+
+
 .register img {
     width: 50% ;
 }
-.register label{
+
+.register .img-usuario {
     display: flex;
-    justify-content: left;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register .form-titulo{
+/*     display: flex;
+    justify-content: left; */
     color: var(--bordo);
     font-weight: bold;
+    font-family: var(--subtitulos);
+    margin-top: 5px;
 }
+
 .register .tamaño{
-    border-radius: 6px;
-    border: solid 2px var(--rojo);
+    border-radius: 10px;
+    border: solid 1px var(--rojo);
+    background-color: var(--crema);
     height: 23px;
     width: 255px;
 }
-.register .tam {
-    border-radius: 3%;
-    border: solid 2px var(--rojo);
-    height: 32px;
-    width: 310px;
-    background-color: white;
-    color: black;
-}
-.register .tamaño-desc{
+
+
+/* .register .tamaño-desc{
     border-radius: 3%;
     border: solid 2px var(--rojo);
     height: 90px;
     width: 310px;
-}
+} */
+
 .register .boton {
     border: none;
     color: white;
@@ -54,6 +67,7 @@ main.register{
     background-color: var(--rojo);
     font-family: var(--textos);
 }
+
 .register .botonContenedor{
     border: none;
     margin-top: 6px;
@@ -62,6 +76,7 @@ main.register{
     align-items: center;
     
 }
+
 .register .formRegister{
     width: 100%;
     display: flex;
@@ -69,18 +84,33 @@ main.register{
     align-items: center;
     margin: 15px auto;
 }
-.register .formRegister p{
-    margin-top: 40px;
-    display: flex;
+
+/* .register .formRegister .form-titulo{
+       display: flex;
     align-items: center;
     flex-direction: column;
-}
+} */
+
 .register .background{
-    background-color: var(--amarillo);
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin: 10px;
+    padding: 10px;
+    padding-bottom: 25px;
+    background-color: var(--crema);   
+    box-shadow: 0px 0px 25px 5px rgba(233, 78, 27, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    font-family: var(--titulos);
+    color: var(--bordo);
+    width: 80%;   
+    border-radius: 25px;
 }
+
+.register .formRegister .form-option {
+    margin-top: 10px;
+}
+
 /* js validation  */
 .register .is-invalid{
     border: solid 3px var(--rojo);
@@ -88,17 +118,19 @@ main.register{
 }
 
 .register .is-valid{
-    border: solid 3px rgb(55, 172, 55);
+    border: solid 3px var(--verde);
     background-color: var(--crema);
 }
+
 .register .is-validSmall{
-    border: solid 1px rgb(55, 172, 55);
+    border: solid 1px var(--verde);
     background-color: var(--crema);
-    color: rgb(55, 172, 55);;
+    color: var(--verde);
     padding: 1px;
     border-radius: 5px;
     font-family: var(--textos)
 }
+
 .register .is-invalidSmall{
     border: solid 1px var(--rojo);
     background-color: var(--crema);
@@ -116,9 +148,9 @@ main.register{
     margin: 20px;
 }
 
-.register #nombre-imagen {
+/* .register #nombre-imagen {
     color: var(--bordo);
-}
+} */
 
 .register .contraseña {
     position: relative;
@@ -133,6 +165,11 @@ main.register{
     transition: .2s ease all;
 }
 
+.register .pass-container {
+    display: flex;
+
+}
+
 .register .icon-eye1:hover{
     color: var(--bordo);
 }
@@ -144,13 +181,60 @@ main.register{
     transform: translateY(-45%);
     cursor: pointer;
     transition: .2s ease all;
-}
+} 
 
 .register .icon-eye2:hover{
     color: var(--bordo);
 }
 
+.register .button p {
+    padding: 10px 15px;
+    font-family: var(--subtitulos);
+}
+
+.register .button {
+    border: solid 2px var(--rojo);
+    color: var(--rojo);
+    background-color: var(--crema);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.register .button:hover {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--rojo);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;    
+    text-decoration: none;
+}
+
+.register .imagen {
+    display: flex;
+    justify-content: center;
+}
+
+.register .button p:hover {
+    color: var(--crema);
+}
+
+.register .nuevaCuenta {
+    font-family: var(--titulos);
+    padding-bottom: 10px;
+    font-size: 20px;    
+}
+
 @media (min-width: 481px){ 
+
+    .register .cont-titulo{
+        border-bottom: solid 2px var(--rojo);
+
+    } 
     .register .tamaño{
         height: 26px;
         width: 290px;
@@ -160,16 +244,15 @@ main.register{
     }
 }
 @media (min-width: 769px){ 
+
     .register .botonContenedor {
         padding-top: 15px;
     }
     .register .tamaño{
         height: 32px;
-        width: 310px;
+        width: 400px;
     }
     .register .background{
         width: 50%;
     }
 }
- 
-    
