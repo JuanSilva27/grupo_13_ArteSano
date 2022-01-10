@@ -17,11 +17,15 @@ window.addEventListener("load",()=>{
             .then(productos=>{
                 buscador.innerHTML=""
                 for(let i=0; i<productos.data.length;i++){
-                    buscador.innerHTML += `<a class="productoEncontrado" href="/products/detail/${productos.data[i].id}">${productos.data[i].nombre}</a>`
+                    buscador.innerHTML += `
+                    <div class="divEncontrado">
+                    <img class="imgEncontrado" src='/img/products/${productos.data[i].productosIm[0].nombre}'/>
+                    <a class="productoEncontrado" href="/products/detail/${productos.data[i].id}">${productos.data[i].nombre}</a>
+                    </div>`
                 }
             })
         }
-        buscador.style.display = "none"
+        buscador.innerHTML=""
     })
 
 
