@@ -372,11 +372,16 @@ window.addEventListener('load', () => {
             return resultado.json()
         })
         .then(provData => {
-            let prov = provData.provincias
-            for (let i = 0; i < prov.length; i++) {
-                provincia.innerHTML += `<option value="${prov[i].nombre}"> ${prov[i].nombre} </option>`
+            let prov = provData.provincias.map(provincia=>{
+                return provincia.nombre
+            })
+            let provAz= prov.sort()
+            
+            for (let i = 0; i < provAz.length; i++) {
+                provincia.innerHTML += `<option value="${provAz[i]}"> ${provAz[i]} </option>`
             }
         })
+
 
         provincia.addEventListener("change", () => {
             if(provincia.value==="Ciudad Autónoma de Buenos Aires" || provincia.value==="Santiago del Estero" || provincia.value==="Santa Cruz"|| provincia.value==="Entre Ríos"){
@@ -387,8 +392,13 @@ window.addEventListener('load', () => {
                 })
                 .then(data => {
                     localidad.innerHTML = `<option class="optionProv" value="0" disabled selected> Seleccione tu localidad </option>`
-                    for (let i = 0; i < data.localidades.length; i++) {
-                        localidad.innerHTML += `<option class="optionProv" value=${data.localidades[i].nombre}>${data.localidades[i].nombre} </option>`
+                    let localidades= data.localidades.map(element=>{
+                        return element.nombre
+                    })
+                    console.log(localidades)
+                    let localidadesAz= localidades.sort()
+                    for (let i = 0; i < localidadesAz.length; i++) {
+                        localidad.innerHTML += `<option class="optionProv" value=${localidadesAz[i]}>${localidadesAz[i]} </option>`
                     }
                 })
             }
@@ -399,8 +409,12 @@ window.addEventListener('load', () => {
                 })
                 .then(data => {
                     localidad.innerHTML = `<option class="optionProv" value="0" disabled selected> Seleccione tu localidad </option>`
-                    for (let i = 0; i < data.municipios.length; i++) {
-                        localidad.innerHTML += `<option class="optionProv" value=${data.municipios[i].nombre}>${data.municipios[i].nombre} </option>`
+                    let muni= data.municipios.map(element=>{
+                        return element.nombre
+                    })
+                    let muniAz= muni.sort()
+                    for (let i = 0; i < muniAz.length; i++) {
+                        localidad.innerHTML += `<option class="optionProv" value=${muniAz[i]}>${muniAz[i]} </option>`
                     }
                 })
         })
