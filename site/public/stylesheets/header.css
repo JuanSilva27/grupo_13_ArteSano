@@ -121,6 +121,7 @@ header label {
     justify-content: center;
     align-items: flex-start;
     padding: .5px 20px;
+    flex-wrap: wrap;
 }
 .header .search input{
     flex-grow: 2;
@@ -140,7 +141,15 @@ header label {
 .header .search i.fas{
     font-size: 80%;
 }
-
+.header .buscador{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: red;
+    justify-content: center;
+    z-index: 1;
+}
 
 
 /* FOOTER */
@@ -372,8 +381,12 @@ footer div.copyright {
 
     .header div.searchBar{
         width: 30%;
-    }
 
+    }
+    .header form.search{
+        position: absolute;
+        width: 30%;
+    }
     
 
     /* footer */
