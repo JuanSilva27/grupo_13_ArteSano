@@ -3,13 +3,29 @@
     margin: 0;
     padding: 0;
 }
-.icon-menu{
+
+ .header .menu-pc, .header .menupc-navbar {
+    display: none;
+} 
+
+.header .menu-rp {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.header .menu-rp .user-menu {
+    padding: 7px;
+}
+
+.header .icon-menu{
     margin: 15px 35px; 
     position: relative;
     z-index: 10;
     
 }
-.icon-menu small{
+.header .icon-menu small{
     vertical-align: top;
     width: 40px;
     cursor: pointer;
@@ -17,49 +33,65 @@
     padding: 5px;
     border-radius: 7px;
 }
-.cont-menu{
-    background-color: rgb(42,42,42);
-    box-shadow: 2px 0px 5px 2px rgb(66,66,66);
-    width: 400px;
+.header .cont-menu{
+    background-color: var(--bordo);
+  /*   box-shadow: 2px 0px 5px 2px rgb(66,66,66); */
+    width: 360px;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
     transition: all .6s ease;
-}
-.cont-menu ul{
-    color: white;
+    z-index: 1;
+} 
+.header .cont-menu ul{
+    margin-left: 25px;
+    margin-right: 50px;
+    color: var(--crema);
     display: block;
     font-size: 20px;
+    font-family: var(--tiulos);
     text-decoration: none;
     padding: 10 px 50px;
     cursor: pointer;
 }
-.cont-menu ul li:hover{
-    background-color: rgb(288,288,288);
-    color: rgb(42,42,42);
+
+.header .cont-menu ul .menu-option {
+margin-top: 10px;
+border-bottom: 1px solid var(--crema);
+}
+
+.header .cont-menu ul li:hover{
+    background-color: var(--rojo);
+
 }
 /* estilos de js */
-.active {
+.header .active {
     transform: translate(-600px);
     transition: all .6s ease;
 }
-.opacity{
-    background-color: rgba(0, 0, 0, 0.5);
+.header .opacity{
+    background-color: var(--bordo);
     transition: all .6s ease;
 }
-a{
+.header a{
     font-family: var(--textos);
 }
 
-header {
+/* .header {
     display: flex;
+<<<<<<< HEAD
     flex-direction: row;
     flex-wrap: wrap;
     background-color: var(--bordo) ;
     height: 105px;
     justify-content: space-between;
 }
+=======
+    justify-content: center;
+   background-color: var(--bordo);
+} */
+>>>>>>> menu-responsive
 
 .header .options a {
     font-family: var(--titulos);
@@ -95,6 +127,7 @@ header {
     margin-left: 15px;
 }
 
+<<<<<<< HEAD
 .header .esquina {
     width: 25%;
     display: flex;
@@ -107,6 +140,15 @@ header {
 .header .carrito i{
     width: 25px;
     height: 25px;
+=======
+
+.header a.carrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+>>>>>>> menu-responsive
 }
 
 /* .header a.admin{
@@ -114,6 +156,7 @@ header {
     height: 40px;
 } */
 
+<<<<<<< HEAD
 .user{
     width: 25px;
     height: 25px;
@@ -123,15 +166,23 @@ header {
     display: block;
 }
 .user1{
+=======
+.header .user{
+>>>>>>> menu-responsive
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: var(--crema);
-    margin-left: 30px;
-    display: none;
 }
+
+
+
 /* MENU HAMBURGUESA */
+<<<<<<< HEAD
 .header .menu-hamburguesa .menu{
+=======
+.header input.menu{
+>>>>>>> menu-responsive
     display: none ;
 }
 
@@ -143,7 +194,11 @@ header {
     color: var(--crema);
 }
 
+<<<<<<< HEAD
 .header .searchBar {
+=======
+.header label {
+>>>>>>> menu-responsive
     display: block;
     width: 30px;
     height: 30px;
@@ -180,7 +235,7 @@ header {
 
 .header .search .searchBttn{
         width: 20px;
-        height: 24px;
+        height: 16px;
         background-color: white;
         border: none;
         border-radius: 10px 0 0 10px;    
@@ -190,9 +245,16 @@ header {
     font-size: 80%;
 }
 
+<<<<<<< HEAD
 /* .header .cerrarSesion {
     display: none;
 } */
+=======
+.header .esquina {
+    display: none;
+}
+
+>>>>>>> menu-responsive
 
 .header .esquina {
     display: none;
@@ -206,6 +268,7 @@ header {
 
 @media (min-width: 481px){
 
+<<<<<<< HEAD
     .header {    
         display: flex;
         flex-direction: row;
@@ -215,6 +278,21 @@ header {
         justify-content: space-between;
     }
 
+=======
+    /* HEADER */
+
+/* .header .menu-pc {
+    display: none;
+} */
+    .header{
+        height: 145PX;
+    }
+
+    .header .menu-rp .user-menu {
+        padding: 10px;
+    }
+
+>>>>>>> menu-responsive
     .header img.logo, .header a.linkLogo{
         width: 250px;
     }
@@ -233,15 +311,7 @@ header {
         font-size:  25px;
         align-self: rigth;
     }
-    /* .menuBttn{
 
-    }
-    .hamburguesa{
-
-    }
-    .hamburguesa{
-        
-    } */
     .header .search input{
         height: 27px;
     }
@@ -285,63 +355,72 @@ header {
         height: 200px;
     }
 
+<<<<<<< HEAD
     .header .imgConteiner {
         padding-top: 20px;
+=======
+@media (min-width:769px){
+
+    
+    .header .esquina {
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+.header .menu-rp {
+    display: none;
+}
+/*     .header {
+        margin-top: 10px;
+    } */
+
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+>>>>>>> menu-responsive
     }
 
     .header .esquina{
         width: 30%;
         justify-content: space-evenly;
     }
-    .user{
+
+/*   .user{
         display: none;
-    }
+    } 
     .user1{
         display: block;
-    }
-    .icon-menu{
+    } */
+
+    .header .icon-menu{
         display: none;
     }
-    .cont-menu{
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-    width: 70%;
-    height: 0vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all .0s ease;
-    transform: translate(600px);
-    align-items: center;
-    padding-bottom: 18px;
-    margin-left: -550px;
+    .header .cont-menu{
+    display: none;
     }
-    .cont-menu ul{
-        display: flex;
-        width: 100%;
-    }
-    .cont-menu ul li{
-        width: 24%;
-        text-align: center;
-    }
-    .header div.menuBttn{
+
+  /*   .header div.menuBttn{
         width: 70%;
         align-items: center;
         padding-bottom: 18px;
-    } 
+    } */
 
-    .header nav.options{
-        width: 100%;
+    .header .menupc-navbar{
+        display: block;
+        width: 70%;
     }
 
-    .header nav.options ul {
+    .header .menupc-navbar ul {
         display: flex;
         width: 100%;
         justify-content: space-evenly;
     }
     
-    .header nav.options li {
-        width: 20%;
+    .header .menupc-navbar li {
+        width: 24%;
         text-align: center;
     }
 
@@ -386,9 +465,16 @@ background-color: var(--amarillo);
         width: 30%;
     }
 
-    .header .options {
-        display: block;
-    } 
+    
+
+
+    
+
+    /* footer */
+
+   /*  .footer nav.Contact{
+        padding-left: 60px;
+    } */
 
     .header .menu-desplegable {
         display: none;
@@ -400,7 +486,9 @@ background-color: var(--amarillo);
 }
 
 @media (min-width: 1199px){
-    .header {
-       padding: 0 75px;
-    }
-} 
+
+        .header {
+           padding: 0 75px;
+        }
+    
+}

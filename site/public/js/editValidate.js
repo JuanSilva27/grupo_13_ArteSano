@@ -21,10 +21,11 @@ const smallTitulo = qs("#smallTitulo")
     const smallImage= qs("#smallImage")
 
     const inputs = [titulo, precio]
-
+    let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
     form.addEventListener("submit", (e) => {
         for (let i = 0; i < inputs.length; i++) {
+            //// ningun campo puede quedar vacio
             if (inputs[i].value === "") {
                 e.preventDefault()
                 inputs[i].classList.remove("is-valid")
@@ -40,7 +41,7 @@ const smallTitulo = qs("#smallTitulo")
                 small[i].classList.add("is-validSmall")
             }
         }
-
+        ///minimo de 5 caracteres para el titulo
         if(titulo.value.length < 5) {
             e.preventDefault()
             titulo.classList.remove("is-valid")
@@ -56,7 +57,7 @@ const smallTitulo = qs("#smallTitulo")
             smallTitulo.classList.add("is-validSmall")
         }
     
-
+        ///// minimo de 20 caracteres en la descripcion
         if (text.value.length < 20) {
             e.preventDefault()
             text.classList.remove("is-valid")
@@ -71,25 +72,57 @@ const smallTitulo = qs("#smallTitulo")
             smallText.classList.remove("is-invalidSmall")
             smallText.classList.add("is-validSmall")
         }
-    })
 
-    image.addEventListener("change", () => {
-        let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-        if (!regExExt.exec(image.value)) {
+
+        ////validacion de las Imagenes
+        let files = image.files
+        let fileErr =[]
+        for(let i=0; i<files.length;i++){
+            if(!regExExt.exec(files[i].name)){
+                fileErr.push("no es una imagen")
+            }
+        }
+        if(fileErr.length>0){
+            e.preventDefault()
             image.classList.remove("is-valid")
             image.classList.add("is-invalid")
             smallImage.innerHTML = "solo se permiten imagenes"
             smallImage.classList.add("is-invalidSmall")
             smallImage.classList.remove("is-validSmall")
-            validate.image = false
-        } else{
+        }else{
             image.classList.remove("is-invalid")
             image.classList.add("is-valid")
             smallImage.innerHTML = "Bien!"
             smallImage.classList.remove("is-invalidSmall")
             smallImage.classList.add("is-validSmall")
-
         }
+
+    })
+
+    image.addEventListener("change", () => {
+        
+        let files = image.files
+        let fileErr =[]
+        console.log(files)
+        for(let i=0; i<files.length;i++){
+            if(!regExExt.exec(files[i].name)){
+                fileErr.push("no es una imagen")
+            }
+        }
+        if(fileErr.length>0){
+            image.classList.remove("is-valid")
+            image.classList.add("is-invalid")
+            smallImage.innerHTML = "solo se permiten imagenes"
+            smallImage.classList.add("is-invalidSmall")
+            smallImage.classList.remove("is-validSmall")
+        }else{
+            image.classList.remove("is-invalid")
+            image.classList.add("is-valid")
+            smallImage.innerHTML = "Bien!"
+            smallImage.classList.remove("is-invalidSmall")
+            smallImage.classList.add("is-validSmall")
+        }
+
 
     })
 

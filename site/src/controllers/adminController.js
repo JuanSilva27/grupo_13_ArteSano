@@ -44,11 +44,11 @@ module.exports = {
     const errors = validationResult(req)
     if (req.fileValidationError) {
       let image = {
-          param : 'image',
-          msg: req.fileValidationError,
+        param: 'image',
+        msg: req.fileValidationError,
       }
       errors.errors.push(image)
-  }
+    }
     let object = (req.body)
     if (errors.isEmpty()) {
       db.Productos.create({
@@ -58,23 +58,23 @@ module.exports = {
         id_categoria: object.categoria,
       })
         .then(resultado => {
-          if(req.files.length>0){
+          if (req.files.length > 0) {
             const images = req.files.map(image => {
               let img = {
-                nombre : image.filename,
-                id_producto :resultado.id
+                nombre: image.filename,
+                id_producto: resultado.id
               }
               return img
             })
-            db.Imagen.bulkCreate(images,{validate: true})
-            .then(()=>console.log("imagenes agregadas"))
-            .catch(err=>{
-              res.send(err)
-            })
-          }else {
+            db.Imagen.bulkCreate(images, { validate: true })
+              .then(() => console.log("imagenes agregadas"))
+              .catch(err => {
+                res.send(err)
+              })
+          } else {
             db.Imagen.create({
               id_producto: resultado.id,
-              nombre:"userDefault.jpeg"
+              nombre: "userDefault.jpeg"
             })
           }
 
@@ -94,13 +94,13 @@ module.exports = {
         include: [{ association: "categoriasPr" }]
       })
         .then(categorias => {
-         
-          res.render('admin/create', {categorias, errors: errors.mapped(), old: req.object })
+
+          res.render('admin/create', { categorias, errors: errors.mapped(), old: req.object })
         })
         .catch((error) => {
           res.send(error)
         })
-     ;
+        ;
     }
   },
 
@@ -126,15 +126,15 @@ module.exports = {
 
   update: (req, res, next) => {
 
-    
+
     const errors = validationResult(req);
     if (req.fileValidationError) {
       let image = {
-          param : 'image',
-          msg: req.fileValidationError,
+        param: 'image',
+        msg: req.fileValidationError,
       }
       errors.errors.push(image)
-  }
+    }
 
     if (errors.isEmpty()) {
 
@@ -148,32 +148,59 @@ module.exports = {
         where: { id: req.params.id }
       })
         .then(resultado => {
-          if(req.file){
-            db.Imagen.update({
-              nombre: req.file.filename
-            }, {
-              where: { id_producto: req.params.id }
+          if (req.files.length > 0) {
+            let images = req.files.map(image => {
+              return {
+                nombre: image.filename,
+                id_producto: req.params.id
+              }
             })
+            db.Imagen.findAll({
+              where: {
+                id_producto: req.params.id
+              }
+            })
+              .then(imagenes => {
+                imagenes.forEach(imagen => {
+                  fs.unlinkSync(path.join(__dirname, '../../public/img/products/' + imagen.nombre))
+                })
+                db.Imagen.destroy({
+                  where: { id_producto: req.params.id }
+                })
+                  .then(() => {
+                  db.Imagen.bulkCreate(images)
+            
+                  })
+                    .then(()=>{
+                    res.redirect(`/products/detail/${+req.params.id}`)
+                    })
+                    .catch((err) => {
+                      res.send(err + "1")
+                    })
+
+              })
           }
-          res.redirect(`/products/detail/${+req.params.id}`)
+          else{
+            res.redirect(`/products/detail/${+req.params.id}`)
+          }
         })
         .catch((error) => {
-          res.send(error)
+          res.send(error + "2")
         })
     } else {
 
       const { id } = req.params
       let productEdit = db.Productos.findByPk(id, { include: [{ association: "productosIm" }] });
       let categorias = db.Categorias.findAll();
-  
-  
+
+
       Promise.all([productEdit, categorias])
         .then(([productEdit, categorias]) => {
-          
+
           res.render('admin/edit', { productEdit, categorias, errors: errors.mapped(), old: req.body })
-  
+
         })
-       
+
     }
   },
 
@@ -181,14 +208,14 @@ module.exports = {
   destroy: (req, res, next) => {
     db.Imagen.findAll({
       where: {
-        id_producto:req.params.id
+        id_producto: req.params.id
       }
     })
-    .then(imagenes=>{
-      for(let i=0;i<imagenes.length;i++){
-        fs.existsSync(path.join(__dirname, '../../public/img/products/' +imagenes[i].nombre)) ? fs.unlinkSync(path.join(__dirname, '../../public/img/products/' +imagenes[i].nombre)) : null 
-      }
-    })
+      .then(imagenes => {
+        for (let i = 0; i < imagenes.length; i++) {
+          fs.existsSync(path.join(__dirname, '../../public/img/products/' + imagenes[i].nombre)) ? fs.unlinkSync(path.join(__dirname, '../../public/img/products/' + imagenes[i].nombre)) : null
+        }
+      })
 
     db.Imagen.destroy({
       where: {

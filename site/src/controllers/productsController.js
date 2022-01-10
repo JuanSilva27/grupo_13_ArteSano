@@ -29,7 +29,26 @@ module.exports = {
     })},
   
     store: function(req, res, next) {
-      db.Productos.findAll(
+
+      let productos= db.Productos.findAll({
+        include: [
+          {association: "categoriasPr"},
+          {association: "productosIm"}
+        ]
+      })
+      let categorias= db.Categorias.findAll({
+        include: [{ association: "categoriasPr" }]
+      })
+      Promise.all([productos,categorias])
+      .then(([productos, categorias])=>{
+        res.render('products/products',{productos, categorias})
+
+      })
+      .catch((error) => {
+        res.send(error)
+      })
+
+      /* db.Productos.findAll(
         {
         include: [
           {association: "categoriasPr"},
@@ -43,7 +62,7 @@ module.exports = {
         })
         .catch(err => {
           res.send(err);
-        })
+        }) */
     }, 
       
     detail: (req, res)=>{
