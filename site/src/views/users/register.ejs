@@ -125,6 +125,11 @@
             <p>¡Ingresá desde acá!</p>
           </a> 
         </p>
+        <% if(locals.old){ %> 
+        <option value="<%= locals.old%>" id="localsOld"></option>
+        <option value="<%= old.provincia%>" id="oldProvincia"></option>
+        <option value="<%= old.localidad%>" id="oldLocalidad"></option>
+        <%}  %> 
     </form>
 </div>
  </main>
