@@ -2,6 +2,9 @@
 const bcrypt = require("bcryptjs");
 const {validationResult} = require("express-validator")
 const db = require('../database/models')
+const fs = require('fs');
+const path = require('path');
+
 
 
 
@@ -165,9 +168,7 @@ module.exports={
         }
         errors.errors.push(image)
     }
-    if(errors.isEmpty()){
-
-    
+    if(errors.isEmpty()){    
     const user=req.session.userLog
     let object = (req.body)
     db.Usuarios.update({
@@ -186,6 +187,7 @@ module.exports={
     .then(resultado => {
       db.Usuarios.findByPk(user.id)
       .then(usuario=>{
+        fs.unlinkSync(path.join(__dirname, '../../public/img/users/' + user.imagen))
         user.imagen= usuario.imagen
         res.redirect('/users/Miperfil')
       })
