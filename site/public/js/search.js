@@ -1,16 +1,15 @@
 window.addEventListener('load', () => {
     console.log("vinculacion search exitosa")
+    let $= (algo)=>{
+        return document.querySelector(algo)
+    }
 
-    let boton = document.querySelector('.search')
-    let input = document.querySelector('.busqueda')
+    let form = $("#formSearch")
+    let busqueda = $("#searchBar")
 
-    boton.addEventListener('click', (e) => {
-        //Si el buscador está vacío, se hace el preventDefault para evitar que realice la búsqueda.
-        //Caso contrario, procede.
-        if(input.value === ""){
+    form.addEventListener("submit",(e)=>{
+        if(!busqueda.value){
             e.preventDefault()
-        } else {
-            boton.submit()
         }
     })
 })

@@ -28,5 +28,9 @@ window.addEventListener("load",()=>{
         buscador.innerHTML=""
     })
 
+    buscador.addEventListener("mouseleave",()=>{
+        buscador.innerHTML=""
+    })
+
 
 })
