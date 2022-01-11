@@ -352,7 +352,7 @@ window.addEventListener('load', () => {
 
     const $ = id => document.getElementById(id)
 
-    /* imagen previa del producto */
+    /* imagen previa de la foto de perfil */
 
     $("product-img").addEventListener('change', (e) => {
 

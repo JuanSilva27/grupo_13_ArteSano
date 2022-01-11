@@ -16,6 +16,7 @@ let smallApellido=qs("#smallApellido")
 let smallTelefono=qs("#smallTelefono")
 let smallPerfil=qs("#smallPerfil")
 let perfil=qs("#perfil")
+let imgPreview=qs("#img-preview")
 
 let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i
 
@@ -91,14 +92,22 @@ formEdit.addEventListener("submit",(e)=>{
         smallPerfil.classList.add("is-invalidSmall")
         smallPerfil.classList.remove("is-validSmall")
     }else{
-        image.classList.remove("is-invalid")
-        image.classList.add("is-valid")
-        smallImage.innerHTML = "Bien!"
-        smallImage.classList.remove("is-invalidSmall")
-        smallImage.classList.add("is-validSmall")
+        formEdit.submit()
+        perfil.classList.remove("is-invalid")
+        perfil.classList.add("is-valid")
+        smallPerfil.innerHTML = "Bien!"
+        smallPerfil.classList.remove("is-invalidSmall")
+        smallPerfil.classList.add("is-validSmall")
     }
 
 
+})
+
+perfil.addEventListener("change",(e)=>{
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0])
+    reader.onload = () => imgPreview.src = reader.result
+    changeImage(e.target.name, e.target.files)
 })
 
 
