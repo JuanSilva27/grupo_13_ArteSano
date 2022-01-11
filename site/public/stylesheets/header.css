@@ -106,7 +106,9 @@ border-bottom: 1px solid var(--crema);
     background-color: var(--bordo) ;
     width: 100%;
     height: 95px;
-    padding-top: 10px; ;
+    padding-top: 10px; 
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -412,7 +414,7 @@ footer div.copyright {
 
     
     .header .esquina {
-        width: 20%;
+        width: 17%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -431,10 +433,6 @@ footer div.copyright {
         flex-wrap: wrap;
     }
 
-    .header .esquina{
-        width: 30%;
-        justify-content: space-evenly;
-    }
 
 /*   .user{
         display: none;
