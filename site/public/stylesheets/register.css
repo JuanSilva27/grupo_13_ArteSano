@@ -126,7 +126,7 @@
 .register .is-validSmall{
 /*     border: solid 1px var(--verde); */
     margin-left: 10px;
-    background-color: var(--crema);
+    
     color: var(--amarillo);
     padding: 1px;
     border-radius: 5px;
@@ -136,7 +136,6 @@
 .register .is-invalidSmall{
     /* border: solid 1px var(--rojo); */
     margin-left: 10px;
-    background-color: var(--crema);
     color: var(--rojo);;
     padding: 1px;
     border-radius: 5px;
@@ -166,7 +165,7 @@
 .register .icon-eye1{
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 65%;
     transform: translateY(-45%);
     cursor: pointer;
     transition: .2s ease all;
@@ -184,7 +183,7 @@
 .register .icon-eye2{
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 65%;
     transform: translateY(-45%);
     cursor: pointer;
     transition: .2s ease all;
