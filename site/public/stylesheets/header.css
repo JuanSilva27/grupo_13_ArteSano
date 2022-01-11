@@ -359,11 +359,6 @@ font-family: var(--tiulos);
     }
     
 
-
-    .footer img.logoInf{
-        width: 230px;
-        height: 100px;
-    }
 }
 
 @media (min-width: 1199px){

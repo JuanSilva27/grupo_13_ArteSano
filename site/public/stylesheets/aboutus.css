@@ -45,7 +45,7 @@ width: 100%
 }
 
 
-.aboutus .cada-una .ana, .aboutus .cada-una .ailin, .aboutus .cada-una .paula {
+.aboutus .cada-una .team {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,9 +94,13 @@ width: 100%
     justify-content: center;
 }
 
+.aboutus .video-container iframe {
+    width: 100%;
+}
+
     .aboutus .video-container  {
         width: 75%;
-        height: 400px;
+
         }
 
     .aboutus .sobre-nosotras .text-container {
@@ -110,8 +114,18 @@ width: 100%
         justify-content: space-between;
         }
 
+        .aboutus .cada-una .team {
+            width: 30%;
+        }
+/* 
     .aboutus .cada-una .img-container {
         width: 100px;
-    }   
+    }    */
+
+
+
+    .aboutus .map-container {
+        width: 100%;
+    }
 
 }
