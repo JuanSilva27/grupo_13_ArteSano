@@ -10,22 +10,25 @@
     <div class="background">
  
 
-    <form class="formRegister" action="/users/Miperfil/edit/?_method=PUT " method="POST" enctype="multipart/form-data" >
+    <form id="formUserEdit" class="formRegister" action="/users/Miperfil/edit/?_method=PUT " method="POST" enctype="multipart/form-data" >
          
         <p>
             <label for="Nombre">NOMBRE</label>
-            <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value="<%= usuario.nombre %>"  > <br>
+            <input id="nombre" class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value="<%= usuario.nombre %>"  > <br>
             <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
+            <small id="smallNombre"></small>
         </p>
         <p>
             <label for="Apellido">APELLIDO</label>
-            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value="<%= usuario.apellido %>"  > <br>
+            <input id="apellido" class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value="<%= usuario.apellido %>"  > <br>
             <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
+            <small id="smallApellido"></small>
         </p>
         <p>
             <label for="telefono">TELEFONO</label>
-            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono" value=<%= usuario.telefono %>  > <br>
-            <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
+            <input id="telefono" class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono" value=<%= usuario.telefono %>  > <br>
+            <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>
+            <small id="smallTelefono"></small>   
         </p>
         <p>
         <label for="provincia">PROVINCIA</label>
@@ -48,7 +51,8 @@
         </p>
         <p>
             <label for="image">IMAGEN</label>
-            <input class="tam" type="file"  name="image">
+            <input id="perfil" class="tam" type="file"  name="image">
+            <small id="smallPerfil"></small>
         </p>
 
         <div class="botones">

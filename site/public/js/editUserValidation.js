@@ -1,9 +1,108 @@
 window.addEventListener("load",()=>{
+let qs =(algo)=>{ return document.querySelector(algo)}
 
-    let provincia= document.querySelector("#provincia")
-let localidad= document.querySelector("#localidad")
-let userProv=document.querySelector("#userProv")
-let userLoc=document.querySelector("#userLoc")
+
+let provincia= qs("#provincia")
+let localidad= qs("#localidad")
+let userProv=qs("#userProv")
+let userLoc=qs("#userLoc")
+let formEdit=qs("#formUserEdit")
+let nombre=qs("#nombre")
+let apellido=qs("#apellido")
+let telefono=qs("#telefono")
+let inputs=[nombre,apellido,telefono]
+let smallNombre=qs("#smallNombre")
+let smallApellido=qs("#smallApellido")
+let smallTelefono=qs("#smallTelefono")
+let smallPerfil=qs("#smallPerfil")
+let perfil=qs("#perfil")
+
+let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i
+
+formEdit.addEventListener("submit",(e)=>{
+
+    for (let i = 0; i < inputs.length; i++) {
+        //// ningun campo puede quedar vacio
+        if (inputs[i].value === "") {
+            e.preventDefault()
+            inputs[i].classList.remove("is-valid")
+            inputs[i].classList.add("is-invalid")
+            small[i].innerText = "No puede quedar vacio"
+            small[i].classList.remove("is-validSmall")
+            small[i].classList.add("is-invalidSmall")
+        } else if (inputs[i].classList.contains("is-invalid")) {
+            inputs[i].classList.remove("is-invalid")
+            inputs[i].classList.add("is-valid")
+            small[i].innerText = "Campo completado correctamente"
+            small[i].classList.remove("is-invalidSmall")
+            small[i].classList.add("is-validSmall")
+        }
+    }
+    if(nombre.value.length < 3) {
+        e.preventDefault()
+        nombre.classList.remove("is-valid")
+        nombre.classList.add("is-invalid")
+        smallNombre.innerText = "El nombre debe contener al menos 5 caracteres"
+        smallNombre.classList.remove("is-validSmall")
+        smallNombre.classList.add("is-invalidSmall")
+    } else if (nombre.classList.contains("is-invalid")) {
+        nombre.classList.remove("is-invalid")
+        nombre.classList.add("is-valid")
+        smallNombre.innerText = "Campo completado correctamente"
+        smallNombre.classList.remove("is-invalidSmall")
+        smallNombre.classList.add("is-validSmall")
+    }
+
+    if(apellido.value.length < 3) {
+        e.preventDefault()
+        apellido.classList.remove("is-valid")
+        apellido.classList.add("is-invalid")
+        smallApellido.innerText = "El apellido debe contener al menos 3 caracteres"
+        smallApellido.classList.remove("is-validSmall")
+        smallApellido.classList.add("is-invalidSmall")
+    } else if (nombre.classList.contains("is-invalid")) {
+        apellido.classList.remove("is-invalid")
+        apellido.classList.add("is-valid")
+        smallApellido.innerText = "Campo completado correctamente"
+        smallApellido.classList.remove("is-invalidSmall")
+        smallApellido.classList.add("is-validSmall")
+    }
+
+    if(telefono.value.length >7 && telefono.value.length<11) {
+        e.preventDefault()
+        telefono.classList.remove("is-valid")
+        telefono.classList.add("is-invalid")
+        smallTelefono.innerText = "El telefono debe contener entre 8 y 10 caracteres"
+        smallTelefono.classList.remove("is-validSmall")
+        smallTelefono.classList.add("is-invalidSmall")
+    } else if (nombre.classList.contains("is-invalid")) {
+        telefono.classList.remove("is-invalid")
+        telefono.classList.add("is-valid")
+        smallTelefono.innerText = "Campo completado correctamente"
+        smallTelefono.classList.remove("is-invalidSmall")
+        smallTelefono.classList.add("is-validSmall")
+    }
+
+    if(!regExExt.exec(perfil.value)){
+        e.preventDefault()
+        perfil.classList.remove("is-valid")
+        perfil.classList.add("is-invalid")
+        smallPerfil.innerHTML = "solo se permiten imagenes"
+        smallPerfil.classList.add("is-invalidSmall")
+        smallPerfil.classList.remove("is-validSmall")
+    }else{
+        image.classList.remove("is-invalid")
+        image.classList.add("is-valid")
+        smallImage.innerHTML = "Bien!"
+        smallImage.classList.remove("is-invalidSmall")
+        smallImage.classList.add("is-validSmall")
+    }
+
+
+})
+
+
+
 
 fetch("https://apis.datos.gob.ar/georef/api/provincias")
     .then(resultado => {
