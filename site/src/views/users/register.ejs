@@ -51,7 +51,7 @@
                             <select id="provincia" name="provincia" class="tamaño">
                                 <option value="" <%=locals.old && old.provincia==="" ? "selected" : null %>
                                     hidden>Seleccione tu provincia</option>
-                            </select>
+                            </select> <br>
                             <small>
                                 <%= locals.errors && errors.provincia ? errors.provincia.msg : null %>
                             </small>
@@ -63,10 +63,10 @@
                             <select id="localidad" name="localidad" class="tamaño">
                                 <option value="" <%=locals.old && old.localidad==="" ? "selected" : null %>
                                     hidden>Seleccione tu localidad</option>
-                            </select>
+                            </select> <br>
                             <small>
                                 <%= locals.errors && errors.localidad ? errors.localidad.msg : null %>
-                            </small>
+                            </small> 
                             <small id="smallLocalidad"></small>
                         </div>
 
@@ -91,7 +91,7 @@
                                 <span class="icon-eye1">
                                     <i id="icon1" class="fas fa-eye-slash"></i>
                                 </span>
-
+                                <br>
                                 <small>
                                     <%= locals.errors && errors.password ? errors.password.msg : null %>
                                 </small>
@@ -109,7 +109,7 @@
                                     <i id="icon2" class="fas fa-eye-slash"></i>
                                 </span>
                             </div>
-
+                            <br>
                             <small>
                                 <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
                             </small>
