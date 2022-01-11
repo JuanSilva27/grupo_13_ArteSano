@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include("../partials/head.ejs") %>
+    <title>Editar producto</title>
 
     <body>
         <%- include("../partials/header.ejs") %>
 
             <main class="edit">
 
-                <div class="cont-titulo">
-                <h1 class="titulo">Editando: <%= productEdit.nombre%>
-                </h1>
-                </div>
 
                 <div class="background">
+
+                    <div class="cont-titulo">
+                        <h1 class="titulo">Editando: <%= productEdit.nombre%>
+                        </h1>
+                    </div>
 
                     <form class="formEdit" action="/admin/edit/<%= productEdit.id %>?_method=PUT" method="POST"
                         enctype="multipart/form-data">
@@ -55,12 +57,11 @@
                             </small>
 
                         </div>
-                        
+
 
                         <div class="form-option">
                             <label for="descripcion" class="form-titulo">Descripción:</label>
-                            <textarea class="tamaño-desc" name="descripcion" id="descripcion" cols="30"
-                                rows="10"><%= productEdit.descripcion %></textarea>
+                            <textarea class="tamaño-desc" name="descripcion" id="descripcion" style="height:200px"><%= productEdit.descripcion %></textarea>
                             <br>
                             <small>
                                 <%= locals.errors && errors.descripcion ? errors.descripcion.msg : null %>
@@ -71,8 +72,10 @@
                         <div class="form-option">
                             <label for="image" class="form-titulo">Imagen:</label>
                             <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" multiple><br>
-            <small><%= locals.errors && errors.image ? errors.image.msg : null %> </small>
-            <small id="smallImage"></small>
+                            <small>
+                                <%= locals.errors && errors.image ? errors.image.msg : null %>
+                            </small>
+                            <small id="smallImage"></small>
                         </div>
 
                         <div class="botones">

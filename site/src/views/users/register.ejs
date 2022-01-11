@@ -1,4 +1,5 @@
 <%- include("../partials/head.ejs") %>
+    <title>Registro</title>
 
     <body>
         <%- include("../partials/header.ejs") %>
@@ -50,7 +51,7 @@
                             <select id="provincia" name="provincia" class="tamaño">
                                 <option value="" <%=locals.old && old.provincia==="" ? "selected" : null %>
                                     hidden>Seleccione tu provincia</option>
-                            </select> 
+                            </select>
                             <small>
                                 <%= locals.errors && errors.provincia ? errors.provincia.msg : null %>
                             </small>
@@ -62,7 +63,7 @@
                             <select id="localidad" name="localidad" class="tamaño">
                                 <option value="" <%=locals.old && old.localidad==="" ? "selected" : null %>
                                     hidden>Seleccione tu localidad</option>
-                            </select> 
+                            </select>
                             <small>
                                 <%= locals.errors && errors.localidad ? errors.localidad.msg : null %>
                             </small>
@@ -80,18 +81,23 @@
                         </div>
 
                         <div class="contraseña form-option">
-                            <label for="password" class="form-titulo">Contraseña:</label> <br>
+
                             <div class="pass-container">
+                                <label for="password" class="form-titulo">Contraseña:</label>
+                                <br>
+
                                 <input class="tamaño" type="password" placeholder="**********" name="password"
                                     id="Password">
                                 <span class="icon-eye1">
                                     <i id="icon1" class="fas fa-eye-slash"></i>
                                 </span>
+
+                                <small>
+                                    <%= locals.errors && errors.password ? errors.password.msg : null %>
+                                </small>
+                                <small id="smallPassword"></small>
+
                             </div>
-                            <small>
-                                <%= locals.errors && errors.password ? errors.password.msg : null %>
-                            </small>
-                            <small id="smallPassword"></small>
                         </div>
 
                         <div class="contraseña form-option">

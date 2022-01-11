@@ -16,7 +16,7 @@
 }
 
 .header .menu-rp .user-menu {
-    padding: 5px;
+    padding: 20px;
 }
 
 .header .icon-menu{
@@ -32,6 +32,7 @@
     font-size: 1.1em;
     padding: 5px;
     border-radius: 7px;
+    color: var(--crema);
 }
 .header .cont-menu{
     background-color: var(--bordo);
@@ -288,7 +289,7 @@ font-family: var(--tiulos);
     }
 
     .header .esquina .user-menuPC {
-        padding: 5px;
+        padding: 20px;
     }
 
 .header .menu-rp {
@@ -297,6 +298,8 @@ font-family: var(--tiulos);
 /*     .header {
         margin-top: 10px;
     } */
+
+
 
     .header {
         display: flex;

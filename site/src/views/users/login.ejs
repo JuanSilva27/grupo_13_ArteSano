@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include("../partials/head.ejs") %>
+  <title>Iniciar sesión</title>
 
   <body>
 
@@ -42,28 +43,27 @@
                 <span class="icon-eye">
                   <i id="icon" class="fas fa-eye-slash"></i>
                 </span>
+
+
+                <!-- error de la validación del frontend -->
+                <small class="password"></small>
+
+                <!-- error de la validación del backend -->
+                <% if (locals.errors && errors.password){ %>
+                  <small style="font-weight: bolder;">
+                    <%= errors.password.msg %>
+                  </small>
+                  <% } %>
+
+
+                    <% if (locals.errors && errors.msg){ %>
+                      <small style="font-weight: bolder;">
+                        <%= errors.msg %>
+                      </small>
+                      <% } %>
               </div>
 
-              <!-- error de la validación del frontend -->
-              <small class="password"></small> <br>
-
-              <!-- error de la validación del backend -->
-              <% if (locals.errors && errors.password){ %>
-                <small style="padding: 8px;">
-                  <%= errors.password.msg %>
-                </small>
-                <% } %>
-
-
-                  <% if (locals.errors && errors.msg){ %>
-                    <small style="padding: 8px;">
-                      <%= errors.msg %>
-                    </small>
-                    <% } %>
-
             </div>
-
-
 
             <div class="remember">
               <input type="checkbox" name="recuerdame" id="recuerdame">

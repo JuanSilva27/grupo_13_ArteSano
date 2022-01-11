@@ -115,10 +115,10 @@
 
 
 
-/* .login small {
-    color: var(--crema);
+.login small {
+    color: var(--rojo);
     border-radius: 30px;
-} */
+} 
 
 .login .contraseña .fila {
     position: relative;
@@ -152,6 +152,10 @@
     font-size: 20px;
     text-align: center;
     text-decoration: none;
+}
+
+.login .remember {
+    margin-top: 15px;
 }
 
 .login .button:hover {

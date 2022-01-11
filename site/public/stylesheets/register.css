@@ -17,6 +17,7 @@
     margin-right: 40px;
 }
 
+
 .register .cont-titulo {
     margin-bottom: 20px;
 }
@@ -154,8 +155,12 @@
     color: var(--bordo);
 } */
 
-.register .contraseña {
+ .register .contraseña {
     position: relative;
+} 
+
+.register input::placeholder{
+    font-family: var(--subtitulos);
 }
 
 .register .icon-eye1{
@@ -167,10 +172,10 @@
     transition: .2s ease all;
 }
 
-.register .pass-container {
+/* .register .pass-container {
     display: flex;
 
-}
+} */
 
 .register .icon-eye1:hover{
     color: var(--bordo);
