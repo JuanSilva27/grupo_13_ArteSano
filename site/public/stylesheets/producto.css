@@ -33,7 +33,7 @@
 .detalle-producto section  .img-secundaria{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .detalle-producto section  .img-secundaria img{
     width: 25%;

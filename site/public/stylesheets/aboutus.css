@@ -1,5 +1,5 @@
 .aboutus {
-    background-color: var(--crema);
+    background-image: url("../img/background.jpg");
 }
 
 .aboutus .img-container .photo {

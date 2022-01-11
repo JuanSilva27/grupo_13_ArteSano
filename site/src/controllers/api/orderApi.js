@@ -1,7 +1,7 @@
 const db = require('../../database/models')
 
 module.exports={
-    productosFiltrados:
+    productosOrdenados:
     async (req,res)=>{
         try{
             let data = await db.Productos.findAll({
@@ -9,7 +9,6 @@ module.exports={
                     {association: "productosIm"},
                     {association: "categoriasPr"}
                   ],
-                where: {id_categoria:req.query.categoria}
             })
             let response={
                 status:200,
