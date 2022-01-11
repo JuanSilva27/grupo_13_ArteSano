@@ -165,7 +165,7 @@
 .register .icon-eye1{
     position: absolute;
     right: 10px;
-    top: 65%;
+    top: 50%;
     transform: translateY(-45%);
     cursor: pointer;
     transition: .2s ease all;
@@ -183,7 +183,7 @@
 .register .icon-eye2{
     position: absolute;
     right: 10px;
-    top: 65%;
+    top: 50%;
     transform: translateY(-45%);
     cursor: pointer;
     transition: .2s ease all;
