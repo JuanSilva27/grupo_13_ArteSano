@@ -9,6 +9,7 @@ const guestUser = require('../middlewares/guestUser')
 const authUser = require('../middlewares/authUser')
 const upload = require('../middlewares/multer.js')
 const loginValidate = require('../middlewares/loginValidate')
+const editUserValidation= require("../middlewares/editUserValidation")
 
 router.get('/login', guestUser, login);
 router.post('/login',loginValidate, processLogin)
@@ -24,7 +25,7 @@ router.get("/Miperfil", authUser, user)
 
 /*Editar perfil*/
 router.get('/edit/:id',authUser, edit);
-router.put("/Miperfil/edit",upload.single("image"), update)
+router.put("/Miperfil/edit",upload.single("image"),editUserValidation, update)
 
 /* check */
 router.get("/check",check)
