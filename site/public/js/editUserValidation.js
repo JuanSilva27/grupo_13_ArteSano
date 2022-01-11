@@ -28,15 +28,9 @@ formEdit.addEventListener("submit",(e)=>{
             e.preventDefault()
             inputs[i].classList.remove("is-valid")
             inputs[i].classList.add("is-invalid")
-            small[i].innerText = "No puede quedar vacio"
-            small[i].classList.remove("is-validSmall")
-            small[i].classList.add("is-invalidSmall")
         } else if (inputs[i].classList.contains("is-invalid")) {
             inputs[i].classList.remove("is-invalid")
             inputs[i].classList.add("is-valid")
-            small[i].innerText = "Campo completado correctamente"
-            small[i].classList.remove("is-invalidSmall")
-            small[i].classList.add("is-validSmall")
         }
     }
     if(nombre.value.length < 3) {
