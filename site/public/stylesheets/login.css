@@ -95,23 +95,30 @@
 }
 
 .login .is-validSmall{
-    color: var(--verde);
+    margin-left: 10px;
+    background-color: var(--crema);
+    color: var(--amarillo);
     padding: 1px;
+    border-radius: 5px;
     font-family: var(--textos)
 }
 
-.login .is-invalidSmall{
+
+.login .is-invalidSmall {
+    margin-left: 10px;
+    background-color: var(--crema);
     color: var(--rojo);;
     padding: 1px;
+    border-radius: 5px;
     font-family: var(--textos);
 }
 
 
 
-.login small {
+/* .login small {
     color: var(--crema);
     border-radius: 30px;
-}
+} */
 
 .login .contraseña .fila {
     position: relative;
@@ -178,7 +185,7 @@
         flex-direction: column;
         align-items: center; 
         justify-content: center;
-        font-family: var(--titulos);
+/*         font-family: var(--titulos); */
         color: var(--bordo);
         width: 80%;   
         border-radius: 25px;

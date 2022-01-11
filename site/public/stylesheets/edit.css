@@ -26,8 +26,9 @@
     font-weight: bold;
 }
 .edit .tamaño{
-    border-radius: 3%;
-    border: solid 2px var(--rojo);
+    border-radius: 10px;
+    border: solid 1px var(--rojo);
+    background-color: var(--crema);
     height: 23px;
     width: 255px;
 }
@@ -102,9 +103,46 @@
     background-color: var(--crema);
     color: var(--rojo);
     padding: 1px;
-}
+}  
    
 /* validaciones */
+
+.edit .form-titulo{
+    /*     display: flex;
+        justify-content: left; */
+        color: var(--bordo);
+        font-weight: bold;
+        font-family: var(--subtitulos);
+        margin-top: 5px;
+    }
+
+    .edit .createForm{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 15px auto;
+    }
+
+    .edit .background{
+        margin: 10px;
+        padding: 10px;
+        padding-bottom: 25px;
+        background-color: var(--crema);   
+        box-shadow: 0px 0px 25px 5px rgba(233, 78, 27, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        font-family: var(--titulos);
+        color: var(--bordo);
+        width: 80%;   
+        border-radius: 25px;
+    }
+    
+    .edit .formRegister .form-option {
+        margin-top: 10px;
+    }
 
 @media (min-width: 481px){ 
     .edit .tamaño{
@@ -116,6 +154,18 @@
     }
 }
 @media (min-width: 769px){ 
+
+    .edit .cont-titulo{
+        border-bottom: solid 2px var(--rojo);
+
+    } 
+    .edit .tamaño{
+        height: 26px;
+        width: 290px;
+    }
+    .edit .background{
+        width: 384px;
+    }
     .edit .botonContenedor {
         padding-top: 15px;
     }
