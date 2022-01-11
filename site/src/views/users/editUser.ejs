@@ -13,22 +13,22 @@
     <form class="formRegister" action="/users/Miperfil/edit/?_method=PUT " method="POST" enctype="multipart/form-data" >
          
         <p>
-            <label for="Nombre">NOMBRE</label>
+            <label for="Nombre">Nombre:</label>
             <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value="<%= usuario.nombre %>"  > <br>
             <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
         </p>
         <p>
-            <label for="Apellido">APELLIDO</label>
+            <label for="Apellido">Apellido:</label>
             <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value="<%= usuario.apellido %>"  > <br>
             <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
         </p>
         <p>
-            <label for="telefono">TELEFONO</label>
+            <label for="telefono">Telefono:</label>
             <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono" value=<%= usuario.telefono %>  > <br>
             <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>   
         </p>
         <p>
-        <label for="provincia">PROVINCIA</label>
+        <label for="provincia">Provincia:</label>
         <select name="provincia" class="tamaño" >
             <option value=""<%= usuario.provincia=== ""? "selected" : null %>  hidden>Seleccione tu provincia</option>
             <option value="Buenos Aires"<%= usuario.provincia=== "Buenos Aires"? "selected" : null %>>Buenos Aires</option>  
@@ -58,7 +58,7 @@
         <small><%= locals.errors && errors.provincia ? errors.provincia.msg : null %> </small>
         </p>
         <P>
-            <label for="localidad">LOCALIDAD</label>
+            <label for="localidad">Localidad:</label>
         <select name="localidad" class="tamaño">
             <option value="" <%= usuario.localidad=== ""? "selected" : null %> hidden>Seleccione tu localidad</option>
             <option value="Ramos Mejia"<%= usuario.localidad=== "Ramos Mejia"? "selected" : null %>>Ramos Mejia</option>
@@ -75,13 +75,13 @@
         <small><%= locals.errors && errors.localidad ? errors.localidad.msg : null %> </small>
         </P>
         <p>
-            <label for="email">E-MAIL</label>
+            <label for="email">Correo electrónico:L</label>
             <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" value=<%= usuario.email %>  > <br>
             <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>  
             
         </p>
         <p>
-            <label for="image">IMAGEN</label>
+            <label for="image">Imagen:</label>
             <input class="tam" type="file"  name="image">
         </p>
 

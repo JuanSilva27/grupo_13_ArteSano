@@ -123,16 +123,18 @@
 }
 
 .register .is-validSmall{
-    border: solid 1px var(--verde);
+/*     border: solid 1px var(--verde); */
+    margin-left: 10px;
     background-color: var(--crema);
-    color: var(--verde);
+    color: var(--amarillo);
     padding: 1px;
     border-radius: 5px;
     font-family: var(--textos)
 }
 
 .register .is-invalidSmall{
-    border: solid 1px var(--rojo);
+    /* border: solid 1px var(--rojo); */
+    margin-left: 10px;
     background-color: var(--crema);
     color: var(--rojo);;
     padding: 1px;
@@ -192,6 +194,12 @@
     font-family: var(--subtitulos);
 }
 
+
+.register .form-option input::placeholder {
+    font-family: var(--subtitulos);
+    color: var(--bordo);
+    padding-left: 5px;
+}
 .register .button {
     border: solid 2px var(--rojo);
     color: var(--rojo);
@@ -202,6 +210,7 @@
     text-align: center;
     text-decoration: none;
 }
+
 
 .register .button:hover {
     border: solid 2px var(--rojo);
