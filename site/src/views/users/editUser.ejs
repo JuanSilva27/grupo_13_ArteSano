@@ -55,7 +55,7 @@
 
         <div class="form-option">
             <label for="email" class="form-titulo">Correo electrónico:</label><br>
-            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" value=<%= usuario.email %>  > <br>
+            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" value=<%= usuario.email %> readonly > <br>
             <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>  
             
         </div>
