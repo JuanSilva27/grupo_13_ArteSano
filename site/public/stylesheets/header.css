@@ -141,6 +141,9 @@ header label {
 .header .search i.fas{
     font-size: 80%;
 }
+
+
+/* estilos buscador en tiempo real */
 .header .buscador{
     display: flex;
     flex-direction: column;
@@ -153,6 +156,11 @@ header label {
 
 .header .divEncontrado{
     display: flex;
+    align-items: center;
+}
+
+.header .divEncontrado:hover{
+    background-color: var(--amarillo);
 }
 
 .header .imgEncontrado{
