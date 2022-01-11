@@ -187,6 +187,7 @@ border-bottom: 1px solid var(--crema);
     justify-content: center;
     align-items: flex-start;
     padding: .5px 20px;
+    flex-wrap: wrap;
 }
 .header .search input{
     flex-grow: 2;
@@ -212,6 +213,29 @@ border-bottom: 1px solid var(--crema);
 }
 
 
+/* estilos buscador en tiempo real */
+.header .buscador{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: var(--bordo);
+    justify-content: center;
+    z-index: 1;
+}
+
+.header .divEncontrado{
+    display: flex;
+    align-items: center;
+}
+
+.header .divEncontrado:hover{
+    background-color: var(--amarillo);
+}
+
+.header .imgEncontrado{
+    width: 20%;
+}
 
 /* FOOTER */
 footer{
@@ -475,8 +499,12 @@ footer div.copyright {
 
     .header div.searchBar{
         width: 30%;
-    }
 
+    }
+    .header form.search{
+        position: absolute;
+        width: 30%;
+    }
     
 
 
