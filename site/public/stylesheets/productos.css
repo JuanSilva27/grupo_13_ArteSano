@@ -6,6 +6,7 @@
 
 .products select{
     font-family: var(--titulos);
+    cursor: pointer;
 }
 .products .container{
     display: flex;

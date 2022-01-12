@@ -195,6 +195,16 @@
         border-radius: 25px;
     }
 
+    .login .warning{
+        color: var(--bordo);
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+
+    .login .recuerdame, .guardar{
+        cursor: pointer;
+    }
+
 @media (min-width: 481px){ 
 
 
