@@ -187,7 +187,9 @@ module.exports={
     .then(resultado => {
       db.Usuarios.findByPk(user.id)
       .then(usuario=>{
-        fs.unlinkSync(path.join(__dirname, '../../public/img/users/' + user.imagen))
+        if(user.imagen!=="userDefault.jpeg"){
+          fs.unlinkSync(path.join(__dirname, '../../public/img/users/' + user.imagen))
+        }
         user.imagen= usuario.imagen
         res.redirect('/users/Miperfil')
       })

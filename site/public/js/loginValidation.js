@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     const smallPassword = qs('small.password')
     const button = qs('.guardar')
     const form = qs("#formLogin")
-    
+    const iconEye = qs('.icon-eye')
 
     //Se deshabilita el botón de iniciar sesión, si los campos cumplen los requisitos se activará
     button.disabled = true
@@ -73,7 +73,7 @@ window.addEventListener('load', () => {
     })
 
     password.addEventListener('input', (e) => {
-
+        iconEye.style.transform = 'translateY(-5%)'
         switch(true){
             case !e.target.value:
                 password.classList.add('is-invalid')
@@ -86,7 +86,7 @@ window.addEventListener('load', () => {
             case e.target.value.length<8:
                 password.classList.add('is-invalid')
                 password.classList.remove('is-valid')
-                smallPassword.innerHTML = 'La contraseña debe tener 8 digitos como minimo'
+                smallPassword.innerHTML = 'La contraseña debe tener 8 digitos minimo'
                 smallPassword.classList.add("is-invalidSmall")
                 smallPassword.classList.remove("is-validSmall")
                 validate.password = false
