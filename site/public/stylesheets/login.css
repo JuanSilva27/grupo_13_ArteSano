@@ -128,7 +128,7 @@
     position: absolute;
     right: 10px;
     top: 50%;
-    transform: translateY(-5%);
+    transform: translateY(35%);
     cursor: pointer;
     transition: .2s ease all;
 }

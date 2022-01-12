@@ -166,7 +166,7 @@
     position: absolute;
     right: 10px;
     top: 50%;
-    transform: translateY(-45%);
+    transform: translateY(5%);
     cursor: pointer;
     transition: .2s ease all;
 }
@@ -184,7 +184,7 @@
     position: absolute;
     right: 10px;
     top: 50%;
-    transform: translateY(-45%);
+    transform: translateY(5%);
     cursor: pointer;
     transition: .2s ease all;
 } 

@@ -25,6 +25,8 @@ window.addEventListener('load', () => {
     const smallPassword2 = qs('#smallPassword2')
     const button = qs('.guardar')
     const smallImage = qs("#smallImage")
+    const iconEye1 = qs('.icon-eye1')
+    const iconEye2 = qs('.icon-eye2')
 
 
     button.disabled = true
@@ -271,6 +273,7 @@ window.addEventListener('load', () => {
     })
 
     password.addEventListener("input", (e) => {
+        iconEye1.style.transform= 'translateY(-35%)'
         if (e.target.value.length < 8) {
             password.classList.remove("is-valid")
             password.classList.add("is-invalid")
@@ -291,6 +294,7 @@ window.addEventListener('load', () => {
     })
 
     password2.addEventListener("input", (e) => {
+        iconEye2.style.transform= 'translateY(-35%)'
         switch (true) {
             case e.target.value.length < 8:
                 password2.classList.remove("is-valid")
