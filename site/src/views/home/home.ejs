@@ -112,10 +112,10 @@
                         <!-- <div class="img-container"> -->
                         <% categorias.forEach(categoria=>{%>
                             <div class="img-container">
-                                <img class="photo" src="/img/<%= categoria.img %> " width="100%"
-                                    alt="<%= categoria.alt %> ">
+                                
                                 <a href="/products/<%= categoria.href %> " class="titulo">
-                                    <%= categoria.nombre %>
+                                    <img class="photo" src="/img/<%= categoria.img %> " width="100%"
+                                    alt="<%= categoria.alt %> ">
                                 </a>
                             </div>
                             <% }) %>
