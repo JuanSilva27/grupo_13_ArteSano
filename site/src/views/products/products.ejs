@@ -15,7 +15,7 @@
                         <div>
                             <label for="categoria" class="select">FILTRAR POR</label> <br>
                             <select name="categoria" class="filtros" id="categorias">
-                                <option selected hidden>Seleccione la categoría</option>
+                                <option value="default" selected hidden>Seleccione la categoría</option>
                                 <% categorias.forEach(categorias=>{%>
                                     <option value="<%= categorias.id %>" ><%= categorias.nombre %> </option>
                                 <% }) %>
@@ -25,7 +25,7 @@
                         <div>
                             <label for="categoria" class="select">ORDENAR POR</label> <br>
                             <select name="categoria" class="filtros" id="orden">
-                                <option selected hidden>Seleccione un parámetro</option>
+                                <option value="default" selected hidden>Seleccione un parámetro</option>
                                 <option value="asc">Precio menor a mayor</option>
                                 <option value="desc">Precio mayor a menor</option>
                                 <option value="a-z">A - Z</option>

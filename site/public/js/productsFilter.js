@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
            return response.json()
         })
         .then(productos => {
+            selectOrden.value = 'default'
             console.log(productos);
             section.innerHTML = ''
             productos.data.forEach(producto => {
@@ -52,6 +53,7 @@ window.addEventListener('load', () => {
            return response.json()
         })
         .then(productos => {
+            select.value = 'default'
             console.log(productos);
             section.innerHTML = ''
             switch (selectOrden.value) {
