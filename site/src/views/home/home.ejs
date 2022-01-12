@@ -71,7 +71,7 @@
                         <% let contador=1 %>
                             <% productos.forEach(favorito=>{%>
                                 <article class="fav-<%= contador %> ">
-                                    <div class="photo">
+                                    <div class="photo-prod">
                                         <a href="/products/detail/<%= favorito.id %> "> <img
                                                 src='/img/products/<%= favorito.productosIm[0].nombre %> ' width="100%"
                                                 alt='<%= favorito.alt %> ' /></a>
