@@ -95,9 +95,13 @@ color: var(--rojo);
 
 .products .filtros{
     border-radius: 6px;
-    border: solid 2px var(--rojo);
+    border: solid 1px var(--rojo);
     background-color: var(--crema);
 }
+
+.products aside div:hover {
+    box-shadow: 0px 0px 7px var(--bordo);
+} 
 
 .products .select{
     color: var(--rojo);
