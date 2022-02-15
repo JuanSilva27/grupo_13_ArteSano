@@ -100,7 +100,6 @@ module.exports={
 
       //borrar
       destroy: (req,res, next)=>{
-        
         db.Imagen.destroy({
           where: {
               id_producto: req.params.id
